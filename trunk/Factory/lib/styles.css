@@ -1,0 +1,81 @@
+
+body {
+	background: #ffffff repeat-y;
+	text-align: center;
+	margin: 0;
+	color: #000000;
+	font: 0.78em 'Lucida Grande', LucidaGrande, Lucida, Helvetica, Arial, sans-serif;
+}
+
+p {
+}
+
+b, strong {
+}
+
+img {
+	border-style: none;
+}
+
+#container {
+	text-align: left;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.clearer {
+	clear: both;
+}
+
+#pageHeader {
+	border-bottom: 1px solid #d6d6d6;
+}
+
+#pageHeader img {
+	float: right;
+	margin-right: 10px;
+}
+
+#pageHeader h1 {
+	font: bold 2em 'Lucida Grande', LucidaGrande, Lucida, Helvetica, Arial, sans-serif;
+	margin: 10px 0 0px;
+	color: #21536a;
+}
+
+#pageHeader h2 {
+	font: 1.6em 'Lucida Grande', LucidaGrande, Lucida, Helvetica, Arial, sans-serif;
+	margin: 0px 0 10px;
+	color: #ffa000;
+}
+
+#contentContainer {
+}
+
+#contentContainer #content {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+blockquote, .standout {
+}
+
+h1 {
+	font: bold 2em 'Lucida Grande', LucidaGrande, Lucida, Helvetica, Arial, sans-serif;
+	margin: 10px 0 0px;
+	color: #21536a;
+}
+
+h2 {
+	font: 1.6em 'Lucida Grande', LucidaGrande, Lucida, Helvetica, Arial, sans-serif;
+	margin: 0px 0 10px;
+	color: #ffa000;
+}
+
+h3 {
+}
+
+h4 {
+}
+
+.imageStyle {
+}

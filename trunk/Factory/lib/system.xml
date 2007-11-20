@@ -1,0 +1,2059 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<factory>
+<!--Factory 0.4.9.4-->
+<package iid="dlambert11709230633172" revision="3" name="net.sourceforge.projectfactory.client" created="Thursday, February 8, 2007 9:24:23 AM CET" updated="Monday, February 26, 2007 9:39:47 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Holds the client side (panels and navigation) of Factory.</comment>
+<headerfile>/*
+
+Copyright (c) 2007 David Lambert
+
+This file is part of Factory.
+
+Factory is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+Factory is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Factory; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+$Source: /cvsroot/projectfactory/development/lib/system.xml,v $
+$Revision: 1.15 $
+$Date: 2007/03/17 20:00:38 $
+$Author: ddlamb_2000 $
+
+*/</headerfile>
+</package>
+<package iid="dlambert11699929401432" active="y" revision="1" name="net.sourceforge.projectfactory.client.grids" created="Sunday, January 28, 2007 3:02:58 PM CET" updated="Sunday, January 28, 2007 3:02:58 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Package that defines the grids used in the core application.
+This package does not generate any code.</comment>
+</package>
+<package iid="david11679501597741" active="y" revision="9" name="net.sourceforge.projectfactory.client.panels" created="Thursday, January 4, 2007 11:36:22 PM CET" updated="Monday, February 26, 2007 7:48:09 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Client side of Factory core (panels).</comment>
+<headerfile>/*
+
+Copyright (c) 2007 David Lambert
+
+This file is part of Factory.
+
+Factory is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+Factory is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Factory; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+$Source: /cvsroot/projectfactory/development/lib/system.xml,v $
+$Revision: 1.15 $
+$Date: 2007/03/17 20:00:38 $
+$Author: ddlamb_2000 $
+
+*/</headerfile>
+</package>
+<package iid="david11679501597752" active="y" revision="7" name="net.sourceforge.projectfactory.server.actions" created="Friday, January 5, 2007 12:09:29 AM CET" updated="Tuesday, January 30, 2007 11:11:12 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines server side that manages actions.</comment>
+<headerfile>/*
+
+Copyright (c) 2007 David Lambert
+
+This file is part of Factory.
+
+Factory is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+Factory is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Factory; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+$Source: /cvsroot/projectfactory/development/lib/system.xml,v $
+$Revision: 1.15 $
+$Date: 2007/03/17 20:00:38 $
+$Author: ddlamb_2000 $
+
+*/</headerfile>
+</package>
+<package iid="david11679501597753" active="y" revision="6" name="net.sourceforge.projectfactory.server.actors" created="Friday, January 5, 2007 12:09:33 AM CET" updated="Monday, January 29, 2007 8:38:46 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines server side that manages actors, teams, location and holiday schedules.</comment>
+<headerfile>/*
+
+Copyright (c) 2007 David Lambert
+
+This file is part of Factory.
+
+Factory is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+Factory is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Factory; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+$Source: /cvsroot/projectfactory/development/lib/system.xml,v $
+$Revision: 1.15 $
+$Date: 2007/03/17 20:00:38 $
+$Author: ddlamb_2000 $
+
+*/</headerfile>
+</package>
+<package iid="dlambert11700805059751" active="y" revision="4" name="net.sourceforge.projectfactory.server.core" created="Monday, January 29, 2007 3:21:52 PM CET" updated="Monday, January 29, 2007 3:39:31 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines server side that manages core objects (used for development).</comment>
+<headerfile>/*
+
+Copyright (c) 2007 David Lambert
+
+This file is part of Factory.
+
+Factory is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+Factory is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Factory; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+$Source: /cvsroot/projectfactory/development/lib/system.xml,v $
+$Revision: 1.15 $
+$Date: 2007/03/17 20:00:38 $
+$Author: ddlamb_2000 $
+
+*/</headerfile>
+</package>
+<package iid="dlambert11703647662101" active="y" revision="2" name="net.sourceforge.projectfactory.server.data" created="Thursday, February 1, 2007 10:19:51 PM CET" updated="Thursday, February 1, 2007 10:22:11 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines server side that manages system data.</comment>
+<headerfile>/*
+
+Copyright (c) 2007 David Lambert
+
+This file is part of Factory.
+
+Factory is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+Factory is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Factory; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+$Source: /cvsroot/projectfactory/development/lib/system.xml,v $
+$Revision: 1.15 $
+$Date: 2007/03/17 20:00:38 $
+$Author: ddlamb_2000 $
+
+*/</headerfile>
+</package>
+<package iid="david11679501597764" active="y" revision="4" name="net.sourceforge.projectfactory.server.projects" created="Friday, January 5, 2007 12:09:47 AM CET" updated="Sunday, January 28, 2007 3:18:55 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<headerfile>/*
+
+Copyright (c) 2007 David Lambert
+
+This file is part of Factory.
+
+Factory is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+Factory is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Factory; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+$Source: /cvsroot/projectfactory/development/lib/system.xml,v $
+$Revision: 1.15 $
+$Date: 2007/03/17 20:00:38 $
+$Author: ddlamb_2000 $
+
+*/</headerfile>
+</package>
+<grid iid="dlambert11702781458532" active="y" revision="4" name="action:items" created="Wednesday, January 31, 2007 10:17:00 PM CET" updated="Wednesday, February 28, 2007 10:35:22 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>List of items defined within an action.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="dateitem" label="label:date" length="20" type="date"/>
+<content xmltag="duration" label="label:duration" length="10" type="integer"/>
+<content xmltag="durationType" label="label:unit" length="10" type="string" combobox="duration"/>
+<content xmltag="assigned" label="label:assigned" length="50" type="string"/>
+<content xmltag="completion" label="label:scheduled" length="10" type="percent"/>
+</grid>
+<grid iid="dlambert11702780236671" active="y" revision="2" name="action:recipients" created="Wednesday, January 31, 2007 10:15:36 PM CET" updated="Wednesday, January 31, 2007 10:18:36 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>List of recipients displayed within an action.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="actor" label="label:actor" length="200" type="string" lookupclass="Actor"/>
+<content xmltag="role" label="label:role" length="20" type="string" defaultvalue="1" combobox="role"/>
+<content xmltag="status" label="label:status" length="10" type="string" defaultvalue="1" combobox="status:recipient"/>
+</grid>
+<grid iid="dlambert11702784032733" active="y" revision="2" name="action:steps" created="Wednesday, January 31, 2007 10:21:59 PM CET" updated="Wednesday, January 31, 2007 10:23:30 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the list of steps within an action.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<hierarchical>y</hierarchical>
+<content xmltag="name" label="label:step" length="200" type="string"/>
+<content xmltag="complexity" label="label:complexity" length="10" type="string" defaultvalue="2" combobox="highlow"/>
+<content xmltag="actionstatus" label="label:status" length="10" type="string" defaultvalue="1" combobox="status"/>
+</grid>
+<grid iid="dlambert11726712439233" active="y" revision="5" name="actionbar:items" created="Wednesday, February 28, 2007 3:00:43 PM CET" updated="Thursday, March 1, 2007 4:41:37 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the panels attached to an action bar.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<nosort>y</nosort>
+<content xmltag="button" label="label:button" length="50" type="string" lookupclass="Dictionary"/>
+<content xmltag="panel" label="label:panel" length="50" type="string" lookupclass="Panel"/>
+</grid>
+<grid iid="david11679501852565" active="y" revision="6" name="actor:absences" created="Friday, January 5, 2007 12:02:07 AM CET" updated="Monday, February 12, 2007 10:37:44 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>List of absences made of a date, a duration with unit and purpose.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="absence" label="label:date" length="10" type="date"/>
+<content xmltag="duration" label="label:duration" length="10" type="integer" defaultvalue="1"/>
+<content xmltag="durationType" label="label:unit" length="10" type="string" defaultvalue="1" combobox="duration"/>
+<content xmltag="purpose" label="label:purpose" length="200" type="string"/>
+</grid>
+<grid iid="dlambert11699983942162" active="y" revision="1" name="actor:actors" created="Sunday, January 28, 2007 4:34:05 PM CET" updated="Sunday, January 28, 2007 4:34:05 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays a list of actors.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="name" label="label:actor" length="100" type="string"/>
+<content xmltag="position" label="label:position" length="100" type="string"/>
+<content xmltag="phoneNumber" label="label:phone" length="20" type="string"/>
+</grid>
+<grid iid="david11679501852566" active="y" revision="4" name="actor:emails" created="Friday, January 5, 2007 12:02:15 AM CET" updated="Sunday, January 28, 2007 3:03:12 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines a list of email addresses.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="address" label="label:email" length="200" type="string"/>
+<content xmltag="principal" label="label:principal" length="10" type="boolean"/>
+</grid>
+<grid iid="david11679501852577" active="y" revision="6" name="actor:projects" created="Friday, January 5, 2007 12:02:28 AM CET" updated="Monday, February 5, 2007 4:49:13 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays a list of projects with begin and target dates.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="name" label="label:name" length="200" type="string"/>
+<content xmltag="begin" label="label:begindate" length="10" type="date"/>
+<content xmltag="target" label="label:targetdate" length="10" type="date"/>
+<content xmltag="lead" label="label:lead" length="100" type="string"/>
+</grid>
+<grid iid="david11679501852578" active="y" revision="4" name="actor:reports" created="Friday, January 5, 2007 12:02:35 AM CET" updated="Sunday, January 28, 2007 3:03:24 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the list of actors who reports.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="name" label="label:actor" length="100" type="string"/>
+<content xmltag="position" label="label:position" length="100" type="string"/>
+<content xmltag="phoneNumber" label="label:phone" length="30" type="string"/>
+</grid>
+<grid iid="david11679501852579" active="y" revision="5" name="actor:skills" created="Friday, January 5, 2007 12:02:42 AM CET" updated="Monday, February 12, 2007 10:37:53 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>List of skills.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="skill" label="label:skill" length="100" type="string"/>
+<content xmltag="level" label="label:level" length="10" type="string" combobox="fivestars"/>
+<content xmltag="comment" label="label:comment" length="10" type="string"/>
+</grid>
+<grid iid="david116795018525810" active="y" revision="4" name="actor:teams" created="Friday, January 5, 2007 12:02:51 AM CET" updated="Sunday, January 28, 2007 3:03:37 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays a list of team with dates.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="team" label="label:team" length="100" type="string"/>
+<content xmltag="from" label="label:from" length="10" type="date"/>
+<content xmltag="to" label="label:to" length="10" type="date"/>
+<content xmltag="role" label="label:role" length="100" type="string"/>
+<content xmltag="lead" label="label:lead" length="100" type="string"/>
+</grid>
+<grid iid="dlambert11702790171152" active="y" revision="1" name="businessprocess:tasks" created="Wednesday, January 31, 2007 10:31:39 PM CET" updated="Wednesday, January 31, 2007 10:31:39 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the list of tasks in a business process (template).</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<hierarchical>y</hierarchical>
+<content xmltag="name" label="label:name" length="200" type="string"/>
+<content xmltag="type" label="label:type" length="10" type="string" defaultvalue="1" combobox="itemtype"/>
+</grid>
+<grid iid="dlambert11701519104041" revision="10" name="class:classcontrols" created="Tuesday, January 30, 2007 11:15:28 AM CET" updated="Wednesday, February 28, 2007 10:36:02 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the list of controls for items in a class.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<nosort>y</nosort>
+<content xmltag="xmlTag" label="label:xmltag" length="10" type="string"/>
+<content xmltag="listName" label="label:listname" length="80" type="string"/>
+<content xmltag="objectReference" label="label:objectreference" length="20" type="string" defaultvalue="this"/>
+<content xmltag="errorMessage" label="label:errormessage" length="50" type="string"/>
+</grid>
+<grid iid="dlambert11700084584492" active="y" revision="9" name="class:items" created="Sunday, January 28, 2007 7:21:52 PM CET" updated="Wednesday, February 28, 2007 8:32:06 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the list of items that are managed in a class.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<nosort>y</nosort>
+<content xmltag="xmltag" label="label:xmltag" length="100" type="string"/>
+<content xmltag="type" label="label:type" length="20" type="string" defaultvalue="string" combobox="class:item:type"/>
+<content xmltag="fromParent" label="label:fromparent" length="5" type="boolean"/>
+<content xmltag="classReference" label="label:class" length="20" type="string" lookupclass="ClassDefinition"/>
+<content xmltag="listName" label="label:listname" length="50" type="string"/>
+<content xmltag="errorMessage" label="label:errormessage" length="50" type="string"/>
+</grid>
+<grid iid="dlambert11716360134182" active="y" revision="1" name="class:static:values" created="Friday, February 16, 2007 3:26:53 PM CET" updated="Friday, February 16, 2007 3:26:53 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays static values to be defined within a class.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="label" label="label:label" length="100" type="string"/>
+<content xmltag="staticValue" label="label:value" length="20" type="string"/>
+</grid>
+<grid iid="dlambert11700801246181" active="y" revision="1" name="combobox:items" created="Monday, January 29, 2007 3:16:51 PM CET" updated="Monday, January 29, 2007 3:16:51 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the list of items in a combobox.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<nosort>y</nosort>
+<content xmltag="code" label="label:code" length="20" type="string" lookupclass="Dictionary"/>
+<content xmltag="label" label="label:label" length="50" type="string"/>
+<content xmltag="style" label="label:style" length="30" type="string" defaultvalue="normal" combobox="style"/>
+<content xmltag="icon" label="label:icon" length="30" type="string"/>
+</grid>
+<grid iid="dlambert11700746948232" active="y" revision="4" name="connexions" created="Monday, January 29, 2007 1:45:23 PM CET" updated="Monday, January 29, 2007 3:02:32 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the list of connected users.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="username" label="label:username" length="50" type="string"/>
+<content xmltag="networkId" label="label:networkid" length="30" type="string"/>
+<content xmltag="os" label="label:os" length="40" type="string"/>
+<content xmltag="build" label="label:build" length="40" type="string"/>
+<content xmltag="host" label="label:host" length="80" type="string"/>
+<content xmltag="requests" label="label:requests" length="10" type="integer"/>
+</grid>
+<grid iid="dlambert11707098506588" active="y" revision="3" name="forecast:completed" created="Monday, February 5, 2007 10:10:50 PM CET" updated="Monday, February 5, 2007 11:03:41 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays completed tasks in a forecast calendar.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="purpose" label="label:description" length="150" type="string"/>
+<content xmltag="duration" label="label:duration" length="5" type="integer"/>
+<content xmltag="durationType" label="label:unit" length="5" type="string" combobox="duration"/>
+</grid>
+<grid iid="dlambert117070994859710" active="y" revision="4" name="forecast:phases" created="Monday, February 5, 2007 10:12:28 PM CET" updated="Tuesday, February 6, 2007 12:23:44 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays phases in a forecast calendar.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="phase" label="label:phase" length="10" type="string"/>
+<content xmltag="from" label="label:from" length="10" type="date"/>
+<content xmltag="to" label="label:to" length="10" type="date"/>
+</grid>
+<grid iid="dlambert11707093963882" active="y" revision="3" name="forecast:sums" created="Monday, February 5, 2007 10:03:16 PM CET" updated="Monday, February 5, 2007 10:31:54 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays a summary in a forecast calendar.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="name" label="label:name" length="150" type="string"/>
+<content xmltag="type" label="label:type" length="10" type="string" combobox="itemtype"/>
+<content xmltag="duration" label="label:duration" length="5" type="integer"/>
+<content xmltag="durationType" label="label:unit" length="5" type="string" combobox="duration"/>
+<content xmltag="from" label="label:from" length="10" type="date"/>
+<content xmltag="to" label="label:to" length="10" type="date"/>
+<content xmltag="phase" label="label:phase" length="20" type="string"/>
+<content xmltag="endphase" label="label:endphase" length="10" type="date"/>
+<content xmltag="nothit" label="label:nothit" length="10" type="highlight"/>
+<content xmltag="action" label="label:action" length="10" type="action"/>
+</grid>
+<grid iid="dlambert11707096969276" active="y" revision="5" name="forecast:weekly:assignment" created="Monday, February 5, 2007 10:08:16 PM CET" updated="Monday, February 5, 2007 10:59:47 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays weekly assignements in a forecast calendar.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="week" label="label:week" length="10" type="string"/>
+<content xmltag="dateItem" label="label:date" length="20" type="date"/>
+<content xmltag="actor" label="label:actor" length="100" type="string"/>
+<content xmltag="anonymous" label="label:anonym" length="100" type="string"/>
+<content xmltag="onTask" label="label:ontask" length="10" type="percent"/>
+<content xmltag="onAbsence" label="label:absence" length="10" type="percent"/>
+<content xmltag="noAssignment" label="label:noassignment" length="10" type="percent"/>
+<content xmltag="badAssignment" label="label:issue?" length="10" type="highlight"/>
+</grid>
+<grid iid="dlambert11707095530244" active="y" revision="4" name="forecast:weekly:tasks" created="Monday, February 5, 2007 10:05:53 PM CET" updated="Monday, February 5, 2007 10:32:08 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Display weekly tasks in a forecast calendar.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="week" label="label:week" length="10" type="string"/>
+<content xmltag="dateItem" label="label:date" length="20" type="date"/>
+<content xmltag="purpose" label="label:description" length="150" type="string"/>
+<content xmltag="type" label="label:type" length="10" type="string" combobox="itemtype"/>
+<content xmltag="assigned" label="label:assigned" length="50" type="string"/>
+<content xmltag="target" label="label:constraint:target" length="10" type="date"/>
+<content xmltag="completion" label="label:scheduled" length="10" type="percent"/>
+<content xmltag="phase" label="label:phase" length="10" type="string"/>
+<content xmltag="nothit" label="label:nothit" length="10" type="highlight"/>
+</grid>
+<grid iid="dlambert11700069051273" active="y" revision="7" name="grid:items" created="Sunday, January 28, 2007 6:55:25 PM CET" updated="Thursday, February 8, 2007 1:37:23 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the list of items that define a grid.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<nosort>y</nosort>
+<content xmltag="xmltag" label="label:xmltag" length="100" type="string"/>
+<content xmltag="label" label="label:label" length="100" type="string" lookupclass="Dictionary"/>
+<content xmltag="type" label="label:type" length="50" type="string" defaultvalue="string" combobox="grid:item:type"/>
+<content xmltag="length" label="label:length" length="10" type="integer"/>
+<content xmltag="readonly" label="label:readonly" length="10" type="boolean"/>
+<content xmltag="duplicate" label="label:autoduplicate" length="5" type="boolean"/>
+<content xmltag="defaultValue" label="label:default" length="10" type="string"/>
+<content xmltag="combobox" label="label:combobox" length="20" type="string" lookupclass="ComboBox"/>
+<content xmltag="lookupclass" label="label:lookupclass" length="20" type="string" lookupclass="ClassDefinition"/>
+<content xmltag="lookupGrid" label="label:lookupgrid" length="20" type="string" lookupclass="Grid"/>
+</grid>
+<grid iid="david11679501852576" active="y" revision="4" name="holiday:days" created="Friday, January 5, 2007 12:02:07 AM CET" updated="Monday, February 12, 2007 10:39:17 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>List of holidays made of a date, a duration with unit and purpose.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="holiday" label="label:date" length="10" type="date"/>
+<content xmltag="duration" label="label:duration" length="10" type="integer" defaultvalue="1"/>
+<content xmltag="durationType" label="label:unit" length="10" type="string" defaultvalue="1" combobox="duration"/>
+<content xmltag="purpose" label="label:purpose" length="200" type="string"/>
+</grid>
+<grid iid="dlambert11708491897102" active="y" revision="4" name="panel:button:parameters" created="Wednesday, February 7, 2007 12:53:09 PM CET" updated="Wednesday, February 7, 2007 2:26:43 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the list of parameters to be used by buttons.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="xmlTagParameter" label="label:xmltag:parameter" length="50" type="string"/>
+<content xmltag="xmlTagValue" label="label:xmltag:value" length="50" type="string"/>
+</grid>
+<grid iid="dlambert11700052973572" active="y" revision="4" name="panel:buttons" created="Sunday, January 28, 2007 6:29:42 PM CET" updated="Monday, February 26, 2007 9:17:55 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the list of buttons that are attached to a panel.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<nosort>y</nosort>
+<content xmltag="label" label="label:label" length="100" type="string" lookupclass="Dictionary"/>
+<content xmltag="icon" label="label:icon" length="50" type="string"/>
+<content xmltag="xmlTag" label="label:action:tag" length="20" type="string"/>
+</grid>
+<grid iid="dlambert11700031166112" active="y" revision="7" name="panel:items" created="Sunday, January 28, 2007 5:54:48 PM CET" updated="Thursday, February 8, 2007 1:36:42 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the content of a panel.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<nosort>y</nosort>
+<content xmltag="xmltag" label="label:xmltag" length="100" type="string"/>
+<content xmltag="label" label="label:label" length="100" type="string" lookupclass="Dictionary"/>
+<content xmltag="type" label="label:type" length="50" type="string" defaultvalue="string" combobox="panel:item:type"/>
+<content xmltag="readonly" label="label:readonly" length="5" type="boolean"/>
+<content xmltag="invisible" label="label:invisible" length="5" type="boolean"/>
+<content xmltag="mustSave" label="label:mustsave" length="5" type="boolean"/>
+<content xmltag="combobox" label="label:combobox" length="20" type="string" lookupclass="ComboBox"/>
+<content xmltag="grid" label="label:grid" length="20" type="string" lookupclass="Grid"/>
+<content xmltag="lookupclass" label="label:lookupclass" length="20" type="string"/>
+</grid>
+<grid iid="dlambert11706982501322" active="y" revision="3" name="plan:adjustments" created="Monday, February 5, 2007 6:57:30 PM CET" updated="Wednesday, February 7, 2007 12:47:34 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the list of tasks with adjustments within a plan.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<nobutton>y</nobutton>
+<content xmltag="task" label="label:name" length="200" type="string" readonly="y"/>
+<content xmltag="type" label="label:type" length="10" type="string" readonly="y" combobox="itemtype"/>
+<content xmltag="duration" label="label:scheduled" length="5" type="integer" readonly="y"/>
+<content xmltag="durationType" label="label:unit" length="5" type="string" readonly="y" combobox="duration"/>
+<content xmltag="adjustment" label="label:adjustment" length="10" type="string" combobox="adjustment"/>
+<content xmltag="adjustmentDuration" label="label:duration" length="5" type="integer"/>
+<content xmltag="adjustmentDurationType" label="label:unit" length="5" type="string" combobox="duration"/>
+<content xmltag="remaining" label="label:remaining" length="5" type="integer" readonly="y"/>
+<content xmltag="remainingDurationType" label="label:unit" length="5" type="string" readonly="y" combobox="duration"/>
+<content xmltag="risk" label="label:risk" length="5" type="highlight" readonly="y"/>
+</grid>
+<grid iid="dlambert11706762144566" active="y" revision="1" name="plan:anonymous" created="Monday, February 5, 2007 12:50:14 PM CET" updated="Monday, February 5, 2007 12:50:14 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the list of anonymous in a plan.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="name" label="label:name" length="100" type="string"/>
+<content xmltag="description" label="label:description" length="100" type="string"/>
+<content xmltag="location" label="label:location" length="20" type="string" lookupclass="Location"/>
+</grid>
+<grid iid="dlambert11707064747616" active="y" revision="3" name="plan:assignments" created="Monday, February 5, 2007 9:14:34 PM CET" updated="Wednesday, February 7, 2007 10:56:23 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the list of assignments to tasks within a plan.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="task" label="label:name" length="100" type="string" readonly="y" duplicate="y"/>
+<content xmltag="type" label="label:type" length="10" type="string" readonly="y" duplicate="y" combobox="itemtype"/>
+<content xmltag="actor" label="label:actor" length="100" type="string" lookupclass="Actor" lookupgrid="team:members"/>
+<content xmltag="anonymous" label="label:anonym" length="100" type="string" lookupclass="Anonymous" lookupgrid="plan:anonymous"/>
+<content xmltag="fte" label="label:fte" length="10" type="percent"/>
+<content xmltag="free" label="label:free" length="10" type="boolean"/>
+</grid>
+<grid iid="dlambert11707000280794" active="y" revision="6" name="plan:constraints" created="Monday, February 5, 2007 7:27:08 PM CET" updated="Wednesday, February 7, 2007 10:56:10 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays constraints on tasks within a plan.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<nosort>y</nosort>
+<content xmltag="task" label="label:name" length="100" type="string" readonly="y" duplicate="y"/>
+<content xmltag="type" label="label:type" length="10" type="string" readonly="y" duplicate="y" combobox="itemtype"/>
+<content xmltag="constraint" label="label:targetdate" length="10" type="date"/>
+<content xmltag="predecessor" label="label:predecessor" length="100" type="string" lookupclass="Task" lookupgrid="plan:constraints"/>
+<content xmltag="priority" label="label:priority" length="10" type="integer" duplicate="y"/>
+<content xmltag="phase" label="label:phase" length="20" type="string" duplicate="y" lookupclass="Phase" lookupgrid="plan:phases"/>
+</grid>
+<grid iid="dlambert11706760099432" active="y" revision="2" name="plan:events" created="Monday, February 5, 2007 12:46:49 PM CET" updated="Tuesday, February 6, 2007 3:55:52 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the list of events defined as part of a plan</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="event" label="label:date" length="10" type="date"/>
+<content xmltag="duration" label="label:duration" length="5" type="integer" defaultvalue="1"/>
+<content xmltag="durationType" label="label:unit" length="5" type="string" defaultvalue="1"/>
+<content xmltag="actor" label="label:actor" length="100" type="string" lookupclass="Actor" lookupgrid="team:members"/>
+<content xmltag="purpose" label="label:purpose" length="200" type="string"/>
+</grid>
+<grid iid="dlambert11706760701024" active="y" revision="1" name="plan:phases" created="Monday, February 5, 2007 12:47:50 PM CET" updated="Monday, February 5, 2007 12:47:50 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the list of phases in a plan.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="phase" label="label:phase" length="10" type="string"/>
+<content xmltag="description" label="label:description" length="100" type="string"/>
+</grid>
+<grid iid="dlambert11707068465008" active="y" revision="3" name="plan:risks" created="Monday, February 5, 2007 9:20:46 PM CET" updated="Wednesday, February 7, 2007 7:09:05 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays risks within a plan.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="risk" label="label:risk" length="100" type="string"/>
+<content xmltag="task" label="label:task" length="50" type="string" lookupclass="Task" lookupgrid="plan:workloads"/>
+<content xmltag="probability" label="label:probability" length="5" type="percent"/>
+<content xmltag="duration" label="label:impact" length="5" type="integer"/>
+<content xmltag="durationType" label="label:unit" length="5" type="string" combobox="duration"/>
+<content xmltag="exposure" label="label:exposure" length="5" type="integer" readonly="y"/>
+<content xmltag="owner" label="label:owner" length="30" type="string" lookupclass="Actor" lookupgrid="team:members"/>
+<content xmltag="actionStatus" label="label:status" length="10" type="string" defaultvalue="1" combobox="status"/>
+</grid>
+<grid iid="dlambert11706997510552" active="y" revision="3" name="plan:workloads" created="Monday, February 5, 2007 7:22:31 PM CET" updated="Wednesday, February 7, 2007 12:47:11 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the workloads within a plan.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<nobutton>y</nobutton>
+<content xmltag="task" label="label:name" length="200" type="string" readonly="y"/>
+<content xmltag="type" label="label:type" length="10" type="string" readonly="y" combobox="itemtype"/>
+<content xmltag="duration" label="label:duration" length="5" type="integer"/>
+<content xmltag="durationType" label="label:unit" length="5" type="string" combobox="duration"/>
+<content xmltag="adjustment" label="label:adjustment" length="10" type="string" combobox="adjustment"/>
+<content xmltag="adjustmentDuration" label="label:duration" length="5" type="integer"/>
+<content xmltag="adjustmentDurationType" label="label:unit" length="5" type="string" combobox="duration"/>
+<content xmltag="risk" label="label:risk" length="5" type="highlight" readonly="y"/>
+</grid>
+<grid iid="dlambert11703602268248" active="y" revision="2" name="project:availabilities" created="Thursday, February 1, 2007 9:06:11 PM CET" updated="Thursday, February 1, 2007 9:07:06 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays availability for actors within a project.&#13;
+This is defined by workday.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="actor" label="label:actor" length="100" type="string" lookupclass="Actor"/>
+<content xmltag="from" label="label:from" length="10" type="date"/>
+<content xmltag="to" label="label:to" length="10" type="date"/>
+<content xmltag="monday" label="label:monday" length="5" type="boolean"/>
+<content xmltag="tuesday" label="label:tuesday" length="5" type="boolean"/>
+<content xmltag="wednesday" label="label:wednesday" length="5" type="boolean"/>
+<content xmltag="thursday" label="label:thursday" length="5" type="boolean"/>
+<content xmltag="friday" label="label:friday" length="5" type="boolean"/>
+<content xmltag="saturday" label="label:saturday" length="5" type="boolean"/>
+<content xmltag="sunday" label="label:sunday" length="5" type="boolean"/>
+</grid>
+<grid iid="dlambert117036059801810" active="y" revision="1" name="project:scopeitems" created="Thursday, February 1, 2007 9:12:01 PM CET" updated="Thursday, February 1, 2007 9:12:01 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the list of scope items defined in a project.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<hierarchical>y</hierarchical>
+<content xmltag="name" label="label:name" length="200" type="string"/>
+<content xmltag="priority" label="label:priority" length="10" type="string" combobox="fivestars"/>
+<content xmltag="complexity" label="label:complexity" length="10" type="string" combobox="highlow"/>
+</grid>
+<grid iid="dlambert11703604401619" active="y" revision="2" name="project:skills" created="Thursday, February 1, 2007 9:09:45 PM CET" updated="Thursday, February 1, 2007 10:51:46 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the skills of each actor assigned in a project.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="actor" label="label:actor" length="50" type="string"/>
+<content xmltag="skill" label="label:skill" length="100" type="string"/>
+<content xmltag="level" label="label:level" length="10" type="string" combobox="fivestars"/>
+<content xmltag="comment" label="label:comment" length="100" type="string"/>
+</grid>
+<grid iid="dlambert117036073304211" active="y" revision="3" name="project:tasks" created="Thursday, February 1, 2007 9:14:38 PM CET" updated="Thursday, February 1, 2007 10:53:17 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines the tasks in a project.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<hierarchical>y</hierarchical>
+<content xmltag="name" label="label:name" length="200" type="string"/>
+<content xmltag="type" label="label:type" length="10" type="string" defaultvalue="1" combobox="itemtype"/>
+<content xmltag="actionstatus" label="label:status" length="10" type="string" defaultvalue="1" combobox="status"/>
+<content xmltag="action" label="label:action" length="5" type="action"/>
+</grid>
+<grid iid="dlambert11703601071927" active="y" revision="2" name="project:teams" created="Thursday, February 1, 2007 9:02:42 PM CET" updated="Thursday, February 1, 2007 9:06:24 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the list of teams of a project.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="team" label="label:team" length="200" type="string" lookupclass="Team"/>
+<content xmltag="lead" label="label:lead" length="100" type="string" readonly="y"/>
+</grid>
+<grid iid="dlambert11707543427071" active="y" revision="5" name="status:adjustments" created="Monday, February 5, 2007 6:57:30 PM CET" updated="Tuesday, February 6, 2007 2:49:55 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the list of tasks with adjustments within a status.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<nobutton>y</nobutton>
+<content xmltag="task" label="label:name" length="200" type="string" readonly="y"/>
+<content xmltag="type" label="label:type" length="10" type="string" readonly="y" combobox="itemtype"/>
+<content xmltag="duration" label="label:scheduled" length="5" type="integer" readonly="y"/>
+<content xmltag="durationType" label="label:unit" length="5" type="string" readonly="y" combobox="duration"/>
+<content xmltag="adjustment" label="label:adjustment" length="10" type="string" combobox="adjustment"/>
+<content xmltag="adjustmentDuration" label="label:duration" length="5" type="integer"/>
+<content xmltag="adjustmentDurationType" label="label:unit" length="5" type="string" combobox="duration"/>
+<content xmltag="remaining" label="label:remaining" length="5" type="integer" readonly="y"/>
+<content xmltag="remainingDurationType" label="label:unit" length="5" type="string" readonly="y" combobox="duration"/>
+<content xmltag="notHit" label="label:issue?" length="5" type="highlight" readonly="y"/>
+</grid>
+<grid iid="dlambert11707541650002" active="y" revision="4" name="status:items" created="Tuesday, February 6, 2007 10:29:25 AM CET" updated="Tuesday, February 6, 2007 2:50:03 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays status items.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<nobutton>y</nobutton>
+<content xmltag="task" label="label:task" type="string" readonly="y"/>
+<content xmltag="type" label="label:type" type="string" readonly="y" combobox="itemtype"/>
+<content xmltag="scheduled" label="label:scheduled" type="percent" readonly="y"/>
+<content xmltag="complete" label="label:complete" type="percent"/>
+<content xmltag="confidence" label="label:confidence" type="string" combobox="confidence"/>
+<content xmltag="actionStatus" label="label:status" type="string" combobox="status"/>
+<content xmltag="notHit" label="label:issue?" type="highlight" readonly="y"/>
+<content xmltag="action" label="label:action" type="action"/>
+</grid>
+<grid iid="dlambert11707604093931" active="y" revision="5" name="status:phases" created="Monday, February 5, 2007 10:12:28 PM CET" updated="Tuesday, February 6, 2007 2:40:27 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays phases in a status.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<nobutton>y</nobutton>
+<content xmltag="phase" label="label:phase" length="10" type="string"/>
+<content xmltag="description" label="label:description" length="100" type="string"/>
+<content xmltag="complete" label="label:complete" length="10" type="percent"/>
+</grid>
+<grid iid="dlambert11707604946312" active="y" revision="3" name="status:risks" created="Monday, February 5, 2007 9:20:46 PM CET" updated="Tuesday, February 6, 2007 2:53:56 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays risks within a plan.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<nobutton>y</nobutton>
+<content xmltag="risk" label="label:risk" length="100" type="string"/>
+<content xmltag="task" label="label:task" length="50" type="string" lookupclass="Task"/>
+<content xmltag="probability" label="label:probability" length="5" type="percent"/>
+<content xmltag="duration" label="label:impact" length="5" type="integer"/>
+<content xmltag="durationType" label="label:unit" length="5" type="string" combobox="duration"/>
+<content xmltag="exposure" label="label:exposure" length="5" type="integer" readonly="y"/>
+<content xmltag="owner" label="label:owner" length="30" type="string"/>
+<content xmltag="actionStatus" label="label:status" length="10" type="string" defaultvalue="1" combobox="status"/>
+</grid>
+<grid iid="dlambert11707604946313" active="y" revision="4" name="status:workloads" created="Monday, February 5, 2007 12:01:45 PM CET" updated="Tuesday, February 6, 2007 2:51:55 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the workloads within a plan.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<nobutton>y</nobutton>
+<content xmltag="task" label="label:name" length="200" type="string" readonly="y"/>
+<content xmltag="type" label="label:type" length="10" type="string" readonly="y" combobox="itemtype"/>
+<content xmltag="duration" label="label:duration" length="5" type="integer"/>
+<content xmltag="durationType" label="label:unit" length="5" type="string" combobox="duration"/>
+<content xmltag="adjustment" label="label:adjustment" length="10" type="string" combobox="adjustment"/>
+<content xmltag="adjustmentDuration" label="label:duration" length="5" type="integer"/>
+<content xmltag="adjustmentDurationType" label="label:unit" length="5" type="string" combobox="duration"/>
+<content xmltag="nothit" label="label:issue?" length="5" type="highlight" readonly="y"/>
+</grid>
+<grid iid="dlambert11699969014143" active="y" revision="1" name="team:absences" created="Sunday, January 28, 2007 4:09:55 PM CET" updated="Sunday, January 28, 2007 4:09:55 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays a list of absences for team members.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="absence" label="label:date" length="10" type="date"/>
+<content xmltag="actor" label="label:actor" length="100" type="string"/>
+<content xmltag="duration" label="label:duration" length="10" type="integer"/>
+<content xmltag="durationType" label="label:unit" length="10" type="string" combobox="duration"/>
+<content xmltag="purpose" label="label:purpose" length="100" type="string"/>
+</grid>
+<grid iid="dlambert11699966815461" active="y" revision="3" name="team:members" created="Sunday, January 28, 2007 4:07:20 PM CET" updated="Thursday, February 1, 2007 10:48:50 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays a list of team members with role, start and end dates.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="actor" label="label:actor" length="100" type="string" lookupclass="Actor"/>
+<content xmltag="from" label="label:from" length="10" type="date"/>
+<content xmltag="to" label="label:to" length="10" type="date"/>
+<content xmltag="role" label="label:role" length="50" type="string"/>
+<content xmltag="location" label="label:location" length="100" type="string" readonly="y"/>
+<content xmltag="phoneNumber" label="label:phone" length="50" type="string" readonly="y"/>
+<content xmltag="interim" label="label:interim" length="20" type="boolean"/>
+</grid>
+<grid iid="dlambert11699970971805" active="y" revision="1" name="team:skills" created="Sunday, January 28, 2007 4:12:49 PM CET" updated="Sunday, January 28, 2007 4:12:49 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays a list of skills by actor.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="actor" label="label:actor" length="100" type="string"/>
+<content xmltag="skill" label="label:skill" length="10" type="string"/>
+<content xmltag="level" label="label:level" length="10" type="string" combobox="fivestars"/>
+<content xmltag="comment" label="label:comment" length="100" type="string"/>
+</grid>
+<grid iid="dlambert11709242782573" active="y" revision="4" name="tracking:items" created="Thursday, February 8, 2007 9:44:38 AM CET" updated="Thursday, February 8, 2007 11:48:05 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the items used for tracking.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<nobutton>y</nobutton>
+<content xmltag="dateItem" label="label:date" length="20" type="date" readonly="y"/>
+<content xmltag="day" label="label:day" length="5" type="string" readonly="y" combobox="day"/>
+<content xmltag="task" label="label:task" length="100" type="string" readonly="y"/>
+<content xmltag="type" label="label:type" length="10" type="string" readonly="y" combobox="itemtype"/>
+<content xmltag="actor" label="label:actor" length="50" type="string" readonly="y"/>
+<content xmltag="duration" label="label:duration" length="5" type="integer" readonly="y"/>
+<content xmltag="durationType" label="label:unit" length="5" type="string" readonly="y" combobox="duration"/>
+<content xmltag="onTrack" label="label:ontrack" length="5" type="boolean"/>
+<content xmltag="trackingItemDuration" label="label:duration" length="5" type="integer"/>
+<content xmltag="trackingItemDurationType" label="label:unit" length="5" type="string" combobox="duration"/>
+</grid>
+<grid iid="dlambert11709250267545" active="y" revision="4" name="tracking:items:unscheduled" created="Thursday, February 8, 2007 9:57:06 AM CET" updated="Thursday, February 8, 2007 11:56:52 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays the list of unscheduled items for tracking.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="dateItem" label="label:date" length="20" type="date"/>
+<content xmltag="day" label="label:day" length="5" type="string" readonly="y" combobox="day"/>
+<content xmltag="task" label="label:task" length="100" type="string" lookupclass="Task" lookupgrid="tracking:tasks"/>
+<content xmltag="type" label="label:type" length="10" type="string" readonly="y" combobox="itemtype"/>
+<content xmltag="actor" label="label:actor" length="50" type="string" lookupclass="Actor" lookupgrid="team:members"/>
+<content xmltag="trackingItemDuration" label="label:duration" length="5" type="integer" defaultvalue="1"/>
+<content xmltag="trackingItemDurationType" label="label:unit" length="5" type="string" defaultvalue="1" combobox="duration"/>
+</grid>
+<grid iid="dlambert11709321007352" active="y" revision="1" name="tracking:tasks" created="Thursday, February 8, 2007 11:55:00 AM CET" updated="Thursday, February 8, 2007 11:55:00 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Stores the list of tasks using for tracking.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="task" type="string"/>
+</grid>
+<grid iid="dlambert11709272417607" active="y" revision="1" name="tracking:total:actors" created="Thursday, February 8, 2007 10:34:01 AM CET" updated="Thursday, February 8, 2007 10:34:01 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays totals by actor of tracking data.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="actor" label="label:actor" length="50" type="string"/>
+<content xmltag="duration" label="label:duration" length="5" type="integer"/>
+<content xmltag="durationType" label="label:unit" length="5" type="string" combobox="duration"/>
+</grid>
+<grid iid="dlambert11709273199439" active="y" revision="1" name="tracking:total:tasks" created="Thursday, February 8, 2007 10:35:19 AM CET" updated="Thursday, February 8, 2007 10:35:19 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays totals by task of tracking data.</comment>
+<packagereference>::dlambert11699929401432:net.sourceforge.projectfactory.client.grids</packagereference>
+<content xmltag="task" label="label:task" length="50" type="string"/>
+<content xmltag="type" label="label:type" length="10" type="string" combobox="itemtype"/>
+<content xmltag="duration" label="label:duration" length="5" type="integer"/>
+<content xmltag="durationType" label="label:unit" length="5" type="string" combobox="duration"/>
+</grid>
+<panel iid="dlambert11700091889212" active="y" revision="21" name="About" created="Sunday, January 28, 2007 7:35:20 PM CET" updated="Monday, February 12, 2007 9:54:14 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Displays information about the system.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<exitxml>licenseText.setText(LocalMessage.get("text:license"));&#13;
+title.setText(getFrame().getBuild());&#13;
+copyright.setText(getFrame().getCopyright());&#13;
+license.setText(getFrame().getLicense());&#13;homepage.setText(getFrame().getHomePage());&#13;
+devpage.setText(getFrame().getDevPage());&#13;
+bugpage.setText(getFrame().getBugPage());&#13;
+osname.setText(System.getProperty("os.name"));&#13;
+osarch.setText(System.getProperty("os.arch"));&#13;
+osversion.setText(System.getProperty("os.version"));&#13;
+javavmname.setText(System.getProperty("java.vm.name"));&#13;
+javavmversion.setText(System.getProperty("java.vm.version"));&#13;
+javavmvendor.setText(System.getProperty("java.vm.vendor"));&#13;
+javahome.setText(System.getProperty("java.home"));&#13;
+javaclasspath.setText(System.getProperty("java.class.path"));&#13;
+userhome.setText(System.getProperty("user.home"));&#13;
+userdir.setText(System.getProperty("user.dir"));&#13;</exitxml>
+<content xmltag="title" label="label:title" type="label" readonly="y"/>
+<content xmltag="copyright" label="label:copyright" type="label" readonly="y"/>
+<content xmltag="license" label="label:license" type="label" readonly="y"/>
+<content xmltag="homepage" label="label:homepage" type="label" readonly="y"/>
+<content xmltag="devpage" label="label:devpage" type="label" readonly="y"/>
+<content xmltag="bugpage" label="label:bugpage" type="label" readonly="y"/>
+<content label="label:about" type="title"/>
+<content xmltag="osname" label="label:osname" type="label" readonly="y"/>
+<content xmltag="osarch" label="label:osarch" type="label" readonly="y"/>
+<content xmltag="osversion" label="label:osversion" type="label" readonly="y"/>
+<content xmltag="javavmname" label="label:javavmname" type="label" readonly="y"/>
+<content xmltag="javavmversion" label="label:javavmversion" type="label" readonly="y"/>
+<content xmltag="javavmvendor" label="label:javavmvendor" type="label" readonly="y"/>
+<content xmltag="javahome" label="label:javahome" type="label" readonly="y"/>
+<content xmltag="javaclasspath" label="label:javaclasspath" type="label" readonly="y"/>
+<content xmltag="userhome" label="label:userhome" type="label" readonly="y"/>
+<content xmltag="userdir" label="label:userdir" type="label" readonly="y"/>
+<content label="label:system" type="title"/>
+<content xmltag="licenseText" type="text" readonly="y"/>
+<content label="label:license" type="title"/>
+</panel>
+<panel iid="dlambert11700093607033" active="y" revision="21" name="Action" created="Sunday, January 28, 2007 7:36:20 PM CET" updated="Monday, February 12, 2007 9:54:16 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used in order to manage actions.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<candelete>y</candelete>
+<cansave>y</cansave>
+<exitxml>status.setEnabler(parentIid.getText().length() == 0);&#13;
+step.setEnabler(parentIid.getText().length() == 0);</exitxml>
+<content type="headername"/>
+<content xmltag="status" label="label:status" type="string" combobox="status"/>
+<content xmltag="recipient" label="label:recipients" type="grid" grid="action:recipients"/>
+<content type="audit"/>
+<content label="label:action" type="title"/>
+<content xmltag="step" type="grid" grid="action:steps"/>
+<content label="instruction:steps" type="instruction"/>
+<content xmltag="details" type="text"/>
+<content label="label:details" type="title"/>
+<content xmltag="project" label="label:project" type="string" readonly="y" mustsave="y"/>
+<content xmltag="task" label="label:task" type="string" readonly="y" mustsave="y"/>
+<content xmltag="attachProject" label="label:attachproject" type="boolean"/>
+<content xmltag="attachForecast" label="label:attachforecast" type="boolean"/>
+<content xmltag="begin" label="label:begindate" type="date" readonly="y" mustsave="y"/>
+<content xmltag="target" label="label:enddate" type="date" readonly="y" mustsave="y"/>
+<content xmltag="item" type="grid" readonly="y" mustsave="y" grid="action:items"/>
+<content label="label:forecast" type="title"/>
+<button label="button:action:answer" icon="action.gif" xmltag="action"/>
+<buttonparameter xmltagparameter="action" xmltagvalue="name"/>
+<buttonparameter xmltagparameter="parentIid" xmltagvalue="iid"/>
+</panel>
+<panel iid="dlambert11725156717093" active="y" revision="13" name="ActionBar" created="Monday, February 26, 2007 7:47:51 PM CET" updated="Thursday, March 1, 2007 4:41:45 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines an action used to be available in the action bar.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<candelete>y</candelete>
+<cansave>y</cansave>
+<content type="headername"/>
+<content type="application"/>
+<content xmltag="labelButton" label="label:labelbutton" type="string"/>
+<content xmltag="icon" label="label:icon" type="string"/>
+<content xmltag="administratorOnly" label="label:administratoronly" type="boolean"/>
+<content xmltag="localOnly" label="label:localonly" type="boolean"/>
+<content xmltag="orderNumber" label="label:ordernumber" type="string"/>
+<content xmltag="item" label="label:panels" type="grid" grid="actionbar:items"/>
+<content type="comment"/>
+<content type="audit"/>
+<content label="label:actionbar" type="title"/>
+</panel>
+<panel iid="david116795018525811" active="y" revision="39" name="Actor" created="Friday, January 5, 2007 12:02:59 AM CET" updated="Wednesday, February 21, 2007 8:48:26 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used for actor definition, including absences, skills and contacts.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<candelete>y</candelete>
+<cansave>y</cansave>
+<content type="headername"/>
+<content xmltag="position" label="label:position" type="string"/>
+<content xmltag="reportsTo" label="label:reportsto" type="string" lookupclass="Actor"/>
+<content type="comment"/>
+<content type="audit"/>
+<content label="label:actor" type="title"/>
+<content xmltag="phoneNumber" label="label:phone" type="string"/>
+<content xmltag="networkID" label="label:networkid" type="string"/>
+<content xmltag="alternateNetworkID" label="label:alternatenetworkid" type="string"/>
+<content xmltag="administrator" label="label:administrator" type="boolean"/>
+<content xmltag="email" label="label:emails" type="grid" grid="actor:emails"/>
+<content label="label:contact" type="title"/>
+<content xmltag="location" label="label:location" type="string" lookupclass="Location"/>
+<content xmltag="holidaySchedule" label="label:holiday" type="string" lookupclass="HolidaySchedule"/>
+<content xmltag="absence" label="label:absences" type="grid" grid="actor:absences"/>
+<content label="label:absences" type="title"/>
+<content xmltag="skill" type="grid" grid="actor:skills"/>
+<content label="label:skills" type="title" grid="actor:absences"/>
+<content xmltag="team" label="label:teams" type="grid" readonly="y" grid="actor:teams"/>
+<content xmltag="whoReport" label="label:whoreport" type="grid" readonly="y" grid="actor:reports"/>
+<content label="label:colleagues" type="title"/>
+<content xmltag="project" type="grid" readonly="y" grid="actor:projects"/>
+<content label="label:projects" type="title"/>
+</panel>
+<panel iid="dlambert11700093916694" active="y" revision="5" name="Blank" created="Sunday, January 28, 2007 7:36:46 PM CET" updated="Monday, February 12, 2007 9:54:20 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Empty panel.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+</panel>
+<panel iid="dlambert11700094763835" active="y" revision="18" name="BusinessProcess" created="Sunday, January 28, 2007 7:38:06 PM CET" updated="Monday, February 12, 2007 9:54:23 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used for the definition of the business processes (template).</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<candelete>y</candelete>
+<cansave>y</cansave>
+<content type="headername"/>
+<content type="comment"/>
+<content type="audit"/>
+<content type="string"/>
+<content label="label:businessprocess" type="title"/>
+<content xmltag="statusTasks" label="label:status" type="string" combobox="status"/>
+<content xmltag="task" type="grid" grid="businessprocess:tasks"/>
+<content label="label:tasks" type="title"/>
+<content xmltag="project" type="grid" readonly="y" grid="actor:projects"/>
+<content label="label:projects" type="title"/>
+<button label="button:businessprocess:newproject" icon="project.gif" xmltag="project"/>
+<buttonparameter xmltagparameter="businessProcess" xmltagvalue="name"/>
+</panel>
+<panel iid="dlambert11701011522192" active="y" revision="15" name="ClassCode" created="Monday, January 29, 2007 9:10:18 PM CET" updated="Monday, February 12, 2007 9:54:24 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used to manage code attached to a class.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<candelete>y</candelete>
+<cansave>y</cansave>
+<content type="headername"/>
+<content xmltag="application" label="label:application" type="application"/>
+<content xmltag="packageReference" label="label:package" type="string"/>
+<content xmltag="smallComments" label="label:comments" type="string"/>
+<content xmltag="className" label="label:class" type="string" lookupclass="ClassDefinition"/>
+<content xmltag="code" label="label:code" type="text"/>
+<content type="audit"/>
+<content label="label:code" type="title"/>
+</panel>
+<panel iid="dlambert11700081630891" active="y" revision="41" name="ClassDefinition" created="Sunday, January 28, 2007 7:18:31 PM CET" updated="Wednesday, February 28, 2007 10:36:22 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used in order to define classes and generate code.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<candelete>y</candelete>
+<cansave>y</cansave>
+<content type="headername"/>
+<content xmltag="application" label="label:application" type="application"/>
+<content xmltag="packageReference" label="label:package" type="string" lookupclass="Package"/>
+<content xmltag="draft" label="label:draft" type="boolean"/>
+<content xmltag="classType" label="label:classtype" type="string" combobox="class:type"/>
+<content xmltag="superClass" label="label:superclass" type="string" lookupclass="ClassDefinition"/>
+<content xmltag="createDerived" label="label:createderived" type="boolean"/>
+<content xmltag="xmlTag" label="label:xmltag" type="string"/>
+<content xmltag="uniqueName" label="label:uniquename" type="boolean"/>
+<content type="comment"/>
+<content type="audit"/>
+<content label="label:class" type="title"/>
+<content xmltag="content" type="grid" grid="class:items"/>
+<content label="label:content" type="title"/>
+<content xmltag="classValue" type="grid" grid="class:static:values"/>
+<content label="label:staticvalues" type="title"/>
+<content xmltag="generatedCode" type="text" readonly="y"/>
+<content label="label:generatedcode" type="title"/>
+<button label="button:class:newcode" icon="plus.gif" xmltag="classCode"/>
+<buttonparameter xmltagparameter="packageReference" xmltagvalue="packageReference"/>
+<buttonparameter xmltagparameter="application" xmltagvalue="application"/>
+<buttonparameter xmltagparameter="className" xmltagvalue="name"/>
+</panel>
+<panel iid="dlambert11700094991166" active="y" revision="6" name="ComboBox" created="Sunday, January 28, 2007 7:38:30 PM CET" updated="Monday, February 12, 2007 9:54:29 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used for the definitions of combo boxes.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<candelete>y</candelete>
+<cansave>y</cansave>
+<content type="headername"/>
+<content xmltag="application" label="label:application" type="application"/>
+<content xmltag="blankRow" label="label:blankrow" type="boolean"/>
+<content type="comment"/>
+<content type="audit"/>
+<content label="label:combobox" type="title"/>
+<content xmltag="item" type="grid" grid="combobox:items"/>
+<content label="label:content" type="title"/>
+</panel>
+<panel iid="dlambert11700095391257" active="y" revision="7" name="Connexion" created="Sunday, January 28, 2007 7:39:12 PM CET" updated="Monday, February 12, 2007 9:54:31 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used in order to display active connexions.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<content xmltag="connexion" type="grid" readonly="y" grid="connexions"/>
+<content xmltag="serverBuild" label="label:serverbuild" type="label" readonly="y"/>
+<content label="label:connexion" type="title"/>
+<content xmltag="osname" label="label:osname" type="label" readonly="y"/>
+<content xmltag="osarch" label="label:osarch" type="label" readonly="y"/>
+<content xmltag="osversion" label="label:osversion" type="label" readonly="y"/>
+<content xmltag="javavmname" label="label:javavmname" type="label" readonly="y"/>
+<content xmltag="javavmversion" label="label:javavmversion" type="label" readonly="y"/>
+<content xmltag="javavmvendor" label="label:javavmvendor" type="label" readonly="y"/>
+<content xmltag="javahome" label="label:javahome" type="label" readonly="y"/>
+<content xmltag="javaclasspath" label="label:javaclasspath" type="label" readonly="y"/>
+<content xmltag="userhome" label="label:userhome" type="label" readonly="y"/>
+<content xmltag="userdir" label="label:userdir" type="label" readonly="y"/>
+<content label="label:system" type="title"/>
+</panel>
+<panel iid="dlambert11700095673668" active="y" revision="6" name="Dictionary" created="Sunday, January 28, 2007 7:40:57 PM CET" updated="Monday, February 12, 2007 9:54:33 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used for the definitions of dictionaries.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<candelete>y</candelete>
+<cansave>y</cansave>
+<content type="headername"/>
+<content xmltag="application" label="label:application" type="application"/>
+<content xmltag="english" label="label:english" type="text"/>
+<content xmltag="french" label="label:french" type="text"/>
+<content xmltag="german" label="label:german" type="text"/>
+<content xmltag="spanish" label="label:spanish" type="text"/>
+<content xmltag="arabic" label="label:arabic" type="text"/>
+<content type="audit"/>
+<content label="label:dictionary" type="title"/>
+</panel>
+<panel iid="dlambert11700098408781" active="y" revision="21" name="Forecast" created="Sunday, January 28, 2007 7:44:08 PM CET" updated="Friday, February 16, 2007 8:32:19 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used for calendar forecasts.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<candelete>y</candelete>
+<cansave>y</cansave>
+<xmltagaction>task</xmltagaction>
+<exitxml>totalScheduled.addLabel("label:totalduration");&#13;
+totalRemaining.addLabel("label:totalremaining");&#13;
+totalCompleted.addLabel("label:total");&#13;</exitxml>
+<content type="header" readonly="y" mustsave="y"/>
+<content xmltag="plan" label="label:plan" type="string" readonly="y" mustsave="y"/>
+<content xmltag="forecastDate" label="label:begincalendar" type="date" readonly="y" mustsave="y"/>
+<content xmltag="endDate" label="label:enddate" type="date" readonly="y" mustsave="y"/>
+<content type="comment"/>
+<content type="audit"/>
+<content label="label:forecast" type="title"/>
+<content xmltag="sumTask" type="grid" readonly="y" grid="forecast:sums"/>
+<content xmltag="totalRemaining" type="label"/>
+<content xmltag="totalScheduled" type="label"/>
+<content label="label:summary" type="title"/>
+<content xmltag="phase" type="grid" readonly="y" grid="forecast:phases"/>
+<content label="label:phases" type="title"/>
+<content xmltag="weeklyTask" type="grid" readonly="y" grid="forecast:weekly:tasks"/>
+<content label="label:weeklytask" type="title"/>
+<content xmltag="weeklyAssignment" type="grid" readonly="y" grid="forecast:weekly:assignment"/>
+<content label="label:weeklyassignment" type="title"/>
+<content xmltag="completed" type="grid" readonly="y" grid="forecast:completed"/>
+<content xmltag="totalCompleted" type="label"/>
+<content label="label:completed" type="title"/>
+<buttonparameter xmltagparameter="plan" xmltagvalue="plan"/>
+</panel>
+<panel iid="dlambert11700067224082" active="y" revision="16" name="Grid" created="Sunday, January 28, 2007 6:53:30 PM CET" updated="Monday, February 12, 2007 10:11:33 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used in order to define grids that are used in panels.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<candelete>y</candelete>
+<cansave>y</cansave>
+<content type="headername"/>
+<content xmltag="application" label="label:application" type="application"/>
+<content xmltag="packageReference" label="label:package" type="string" lookupclass="Package"/>
+<content xmltag="hierarchical" label="label:hierarchical" type="boolean"/>
+<content xmltag="noSort" label="label:nosort" type="boolean"/>
+<content xmltag="noButton" label="label:nobutton" type="boolean"/>
+<content type="comment"/>
+<content type="audit"/>
+<content label="label:grid" type="title"/>
+<content xmltag="content" type="grid" grid="grid:items"/>
+<content label="label:content" type="title"/>
+</panel>
+<panel iid="dlambert11699987791181" active="y" revision="10" name="HolidaySchedule" created="Sunday, January 28, 2007 4:42:10 PM CET" updated="Monday, February 12, 2007 10:40:33 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used for holiday schedules.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<candelete>y</candelete>
+<cansave>y</cansave>
+<content type="headername"/>
+<content xmltag="defaultHolidaySchedule" label="label:default" type="boolean"/>
+<content type="comment"/>
+<content type="audit"/>
+<content label="label:holiday" type="title"/>
+<content xmltag="holiday" type="grid" grid="holiday:days"/>
+<content label="label:calendar" type="title"/>
+<content xmltag="actor" type="grid" readonly="y" grid="actor:actors"/>
+<content label="label:actors" type="title"/>
+</panel>
+<panel iid="dlambert11700098627202" active="y" revision="16" name="LocalHost" created="Sunday, January 28, 2007 7:44:29 PM CET" updated="Monday, February 19, 2007 10:38:59 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used for the definitions of the local host or server.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<cansave>y</cansave>
+<content type="header" mustsave="y"/>
+<content xmltag="port" label="label:port" type="string"/>
+<content label="instruction:port" type="instruction"/>
+<content xmltag="encryptKey" label="label:encryptkey" type="password"/>
+<content xmltag="allowReplication" label="label:allowreplication" type="boolean"/>
+<content label="instruction:localserver" type="instruction"/>
+<content type="comment"/>
+<content type="audit"/>
+<content label="label:server" type="title"/>
+<content xmltag="activeInMail" label="label:active" type="boolean"/>
+<content xmltag="inMailType" label="label:type" type="string" combobox="option:mail:protocol:receive"/>
+<content xmltag="inMailServer" label="label:server" type="string"/>
+<content xmltag="inMailPort" label="label:mailport" type="string"/>
+<content xmltag="inMailUserName" label="label:username" type="string"/>
+<content xmltag="inMailPassword" label="label:password" type="password"/>
+<content label="instruction:localinformation" type="instruction"/>
+<content label="label:inmailbox" type="title"/>
+<content xmltag="activeOutMail" label="label:active" type="boolean"/>
+<content xmltag="outMailType" label="label:type" type="string" combobox="option:mail:protocol:send"/>
+<content xmltag="outMailServer" label="label:server" type="string"/>
+<content xmltag="outMailPort" label="label:mailport" type="string"/>
+<content xmltag="outMailAuth" label="label:auth" type="string" combobox="option:mail:auth"/>
+<content xmltag="outMailUserName" label="label:username" type="string"/>
+<content xmltag="outMailPassword" label="label:password" type="password"/>
+<content label="instruction:localinformation" type="instruction"/>
+<content label="label:outmailbox" type="title"/>
+<content xmltag="path" label="label:path" type="string"/>
+<content label="label:pathcode" type="title"/>
+</panel>
+<panel iid="dlambert11699980884211" active="y" revision="9" name="Location" created="Sunday, January 28, 2007 4:32:01 PM CET" updated="Monday, February 12, 2007 9:54:45 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used for location definition, including timezone and workdays.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<candelete>y</candelete>
+<cansave>y</cansave>
+<content type="headername"/>
+<content xmltag="defaultLocation" label="label:default" type="boolean"/>
+<content xmltag="timezone" label="label:timezone" type="timezone"/>
+<content type="comment"/>
+<content type="audit"/>
+<content label="label:location" type="title"/>
+<content xmltag="monday" label="label:monday" type="boolean"/>
+<content xmltag="tuesday" label="label:tuesday" type="boolean"/>
+<content xmltag="wednesday" label="label:wednesday" type="boolean"/>
+<content xmltag="thursday" label="label:thursday" type="boolean"/>
+<content xmltag="friday" label="label:friday" type="boolean"/>
+<content xmltag="saturday" label="label:saturday" type="boolean"/>
+<content xmltag="sunday" label="label:sunday" type="boolean"/>
+<content label="label:workdays" type="title"/>
+<content xmltag="actor" type="grid" readonly="y" grid="actor:actors"/>
+<content label="label:actors" type="title"/>
+</panel>
+<panel iid="dlambert11700098830803" active="y" revision="20" name="Package" created="Sunday, January 28, 2007 7:44:50 PM CET" updated="Monday, February 12, 2007 11:55:32 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used for the definitions of packages.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<candelete>y</candelete>
+<cansave>y</cansave>
+<content type="headername"/>
+<content xmltag="application" label="label:application" type="application"/>
+<content type="comment"/>
+<content type="audit"/>
+<content label="label:package" type="title"/>
+<content xmltag="headerFile" type="text"/>
+<content label="label:fileheader" type="title"/>
+<content xmltag="generatedCode" type="text" readonly="y"/>
+<content label="label:generatedcode" type="title"/>
+<button label="button:package:newgrid" icon="grid.gif" xmltag="grid"/>
+<button label="button:package:newpanel" icon="panel.gif" xmltag="panel"/>
+<button label="button:package:newclass" icon="classdefinition.gif" xmltag="classDefinition"/>
+<buttonparameter xmltagparameter="application" xmltagvalue="application"/>
+<buttonparameter xmltagparameter="packageReference" xmltagvalue="name"/>
+</panel>
+<panel iid="dlambert11700029314321" active="y" revision="53" name="Panel" created="Sunday, January 28, 2007 5:50:50 PM CET" updated="Monday, February 26, 2007 9:18:12 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used in order to define panels, then generate code.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<candelete>y</candelete>
+<cansave>y</cansave>
+<content type="headername"/>
+<content xmltag="application" label="label:application" type="application"/>
+<content xmltag="packageReference" label="label:package" type="string" lookupclass="Package"/>
+<content xmltag="draft" label="label:draft" type="boolean"/>
+<content xmltag="canSave" label="label:cansave" type="boolean"/>
+<content xmltag="canEdit" label="label:canedit" type="boolean"/>
+<content xmltag="canDelete" label="label:candelete" type="boolean"/>
+<content type="comment"/>
+<content type="audit"/>
+<content label="label:panel" type="title"/>
+<content xmltag="content" type="grid" grid="panel:items"/>
+<content label="label:content" type="title"/>
+<content xmltag="button" label="label:buttons" type="grid" grid="panel:buttons"/>
+<content xmltag="xmlTagAction" label="label:xmltag:action" type="string"/>
+<content xmltag="buttonParameter" label="label:button:parameters" type="grid" grid="panel:button:parameters"/>
+<content label="label:buttons" type="title"/>
+<content xmltag="exitXML" label="label:exitxml" type="text"/>
+<content label="label:predefinedactions" type="title"/>
+<content xmltag="generatedCode" type="text" readonly="y"/>
+<content label="label:generatedcode" type="title"/>
+<button label="button:panel:newcode" icon="plus.gif" xmltag="panelCode"/>
+<buttonparameter xmltagparameter="packageReference" xmltagvalue="packageReference"/>
+<buttonparameter xmltagparameter="application" xmltagvalue="application"/>
+<buttonparameter xmltagparameter="panelName" xmltagvalue="name"/>
+</panel>
+<panel iid="dlambert11701011522191" active="y" revision="15" name="PanelCode" created="Monday, January 29, 2007 9:10:18 PM CET" updated="Monday, February 12, 2007 9:54:52 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used to manage code attached to a panel.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<candelete>y</candelete>
+<cansave>y</cansave>
+<content type="headername"/>
+<content xmltag="application" label="label:application" type="application"/>
+<content xmltag="packageReference" label="label:package" type="string"/>
+<content xmltag="smallComments" label="label:comments" type="string"/>
+<content xmltag="panelName" label="label:panel" type="string" lookupclass="Panel"/>
+<content xmltag="code" label="label:code" type="text"/>
+<content type="audit"/>
+<content label="label:code" type="title"/>
+</panel>
+<panel iid="dlambert11700099009864" active="y" revision="28" name="Plan" created="Sunday, January 28, 2007 7:45:07 PM CET" updated="Monday, February 12, 2007 9:54:54 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used for the definitions of plans.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<candelete>y</candelete>
+<cansave>y</cansave>
+<exitxml>totalWorkload.addLabel("label:total");&#13;
+totalCompleted.addLabel("label:totalcompleted");&#13;
+totalRemaining.addLabel("label:totalremaining");&#13;
+totalExposure.addLabel("label:totalexposure");&#13;
+// Hightlight the "Risk" flag in workload and remaining tables&#13;
+// based on risk table&#13;
+risk.copyHighlightColumns(workload, 0, 7, 1);&#13;
+risk.copyHighlightColumns(adjustment, 0, 9, 1);&#13;</exitxml>
+<content type="headername" readonly="y" mustsave="y"/>
+<content xmltag="project" label="label:project" type="string" readonly="y" mustsave="y" lookupclass="Project"/>
+<content xmltag="version" label="label:version" type="string" readonly="y" mustsave="y"/>
+<content xmltag="forecastDate" label="label:begincalendar" type="string"/>
+<content xmltag="hoursPerDay" label="label:hoursperday" type="string"/>
+<content xmltag="generateForecast" label="label:generate:forecast" type="boolean"/>
+<content xmltag="useRemaining" label="label:generate:remaining" type="boolean"/>
+<content type="comment"/>
+<content type="audit"/>
+<content label="label:plan" type="title"/>
+<content xmltag="member" label="label:actors" type="grid" readonly="y" grid="team:members"/>
+<content xmltag="anonymous" label="label:anonymous" type="grid" grid="plan:anonymous"/>
+<content label="label:actors" type="title"/>
+<content xmltag="absence" label="label:absences" type="grid" readonly="y" grid="team:absences"/>
+<content xmltag="event" label="label:events" type="grid" grid="plan:events"/>
+<content label="label:events" type="title"/>
+<content xmltag="phase" type="grid" grid="plan:phases"/>
+<content label="label:phases" type="title"/>
+<content xmltag="constraint" type="grid" grid="plan:constraints"/>
+<content label="instruction:constraint" type="instruction"/>
+<content label="label:constraints" type="title"/>
+<content xmltag="risk" type="grid" grid="plan:risks"/>
+<content xmltag="totalExposure" type="label"/>
+<content label="label:risks" type="title"/>
+<content xmltag="workload" type="grid" grid="plan:workloads"/>
+<content label="instruction:workload" type="instruction"/>
+<content xmltag="totalWorkload" type="label"/>
+<content label="label:workload" type="title"/>
+<content xmltag="adjustment" type="grid" grid="plan:adjustments"/>
+<content label="instruction:completed" type="instruction"/>
+<content xmltag="totalCompleted" type="label"/>
+<content xmltag="totalRemaining" type="label"/>
+<content label="label:completed" type="title"/>
+<content xmltag="assignment" type="grid" grid="plan:assignments"/>
+<content label="instruction:assignment" type="instruction"/>
+<content label="label:assignments" type="title"/>
+<button label="button:project:newversionplan" icon="plan.gif" xmltag="plan"/>
+<button label="button:project:newstatus" icon="status.gif" xmltag="status"/>
+<button label="button:project:newtracking" icon="tracking.gif" xmltag="tracking"/>
+<buttonparameter xmltagparameter="project" xmltagvalue="project"/>
+<buttonparameter xmltagparameter="plan" xmltagvalue="name"/>
+</panel>
+<panel iid="dlambert11700099169205" active="y" revision="17" name="Project" created="Sunday, January 28, 2007 7:45:28 PM CET" updated="Thursday, February 15, 2007 2:50:46 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used for the definitions of projects.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<candelete>y</candelete>
+<cansave>y</cansave>
+<xmltagaction>task</xmltagaction>
+<content type="headername"/>
+<content xmltag="businessProcess" label="label:businessprocess" type="string" readonly="y" mustsave="y" lookupclass="BusinessProcess"/>
+<content xmltag="begin" label="label:begindate" type="string"/>
+<content xmltag="target" label="label:targetenddate" type="string"/>
+<content xmltag="confidence" label="label:confidence" type="string" combobox="confidence"/>
+<content type="comment"/>
+<content type="audit"/>
+<content label="label:project" type="title"/>
+<content xmltag="lead" label="label:lead" type="string" lookupclass="Actor"/>
+<content xmltag="projectTeam" label="label:teams" type="grid" grid="project:teams"/>
+<content xmltag="member" label="label:actors" type="grid" readonly="y" grid="team:members"/>
+<content label="label:participants" type="title"/>
+<content xmltag="availability" type="grid" grid="project:availabilities"/>
+<content label="instruction:availability" type="instruction"/>
+<content label="label:availability" type="title"/>
+<content xmltag="skill" type="grid" grid="project:skills"/>
+<content label="label:skills" type="title"/>
+<content xmltag="statusScope" type="string" combobox="status"/>
+<content xmltag="scopeItem" type="grid" grid="project:scopeitems"/>
+<content label="label:scope" type="title"/>
+<content xmltag="statusTasks" type="string" combobox="status"/>
+<content xmltag="task" type="grid" grid="project:tasks"/>
+<content label="label:tasks" type="title"/>
+<button label="button:project:newplan" icon="plan.gif" xmltag="plan"/>
+<buttonparameter xmltagparameter="project" xmltagvalue="name"/>
+</panel>
+<panel iid="dlambert11700099479057" active="y" revision="7" name="Server" created="Sunday, January 28, 2007 7:45:53 PM CET" updated="Monday, February 12, 2007 9:54:58 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used for the definitions of servers.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<candelete>y</candelete>
+<cansave>y</cansave>
+<content type="headername"/>
+<content xmltag="address" label="label:address" type="string"/>
+<content xmltag="port" label="label:port" type="string"/>
+<content xmltag="encryptKey" label="label:encryptkey" type="password"/>
+<content xmltag="replication" label="label:replication" type="boolean"/>
+<content type="comment"/>
+<content type="audit"/>
+<content label="label:server" type="title"/>
+</panel>
+<panel iid="dlambert11700099638888" active="y" revision="23" name="Status" created="Sunday, January 28, 2007 7:46:11 PM CET" updated="Monday, February 26, 2007 6:05:05 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used for project statuses.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<candelete>y</candelete>
+<cansave>y</cansave>
+<xmltagaction>task</xmltagaction>
+<exitxml>average.addLabelPercent("label:average");&#13;
+averageScheduled.addLabelPercent("label:totalscheduled");&#13;
+totalWorkload.addLabel("label:total");&#13;
+totalCompleted.addLabel("label:totalcompleted");&#13;
+totalRemaining.addLabel("label:totalremaining");&#13;
+totalExposure.addLabel("label:totalexposure");&#13;
+// Copy the flag "Delay?" calculated in status items&#13;
+// in the remaining/adjustment and workload tables.&#13;
+statusItem.copyColumnsValue(adjustment, 6, 0, 9, 0);&#13;
+statusItem.copyColumnsValue(workload, 6, 0, 7, 0);&#13;</exitxml>
+<content type="header" readonly="y" mustsave="y"/>
+<content xmltag="plan" label="label:plan" type="string" readonly="y" mustsave="y"/>
+<content xmltag="dateStatus" label="label:date" type="date" readonly="y" mustsave="y"/>
+<content type="comment"/>
+<content type="audit"/>
+<content label="label:status" type="title"/>
+<content xmltag="confidence" type="string" combobox="confidence"/>
+<content xmltag="statusItem" type="grid" grid="status:items"/>
+<content xmltag="average" type="label"/>
+<content xmltag="averageScheduled" type="label"/>
+<content label="label:complete" type="title"/>
+<content xmltag="workload" type="grid" grid="status:workloads"/>
+<content label="instruction:workload" type="instruction"/>
+<content xmltag="totalWorkload" type="label"/>
+<content label="label:workload" type="title"/>
+<content xmltag="adjustment" type="grid" grid="status:adjustments"/>
+<content label="instruction:completed" type="instruction"/>
+<content xmltag="totalCompleted" type="label"/>
+<content xmltag="totalRemaining" type="label"/>
+<content label="label:completed" type="title"/>
+<content xmltag="phase" type="grid" readonly="y" grid="status:phases"/>
+<content label="label:phases" type="title"/>
+<content xmltag="risk" type="grid" grid="status:risks"/>
+<content xmltag="totalExposure" type="label"/>
+<content label="label:risks" type="title"/>
+<button label="button:project:newstatus" icon="status.gif" xmltag="status"/>
+<buttonparameter xmltagparameter="plan" xmltagvalue="plan"/>
+</panel>
+<panel iid="dlambert11699925415791" active="y" revision="13" name="Team" created="Sunday, January 28, 2007 2:59:06 PM CET" updated="Monday, February 12, 2007 9:55:03 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used in order to define a team and its members.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<candelete>y</candelete>
+<cansave>y</cansave>
+<content type="headername"/>
+<content xmltag="lead" label="label:lead" type="string" lookupclass="Actor"/>
+<content type="comment"/>
+<content type="audit"/>
+<content label="label:team" type="title"/>
+<content xmltag="member" type="grid" grid="team:members"/>
+<content label="label:selection" type="title"/>
+<content xmltag="absence" type="grid" readonly="y" grid="team:absences"/>
+<content label="label:absences" type="title"/>
+<content xmltag="skill" type="grid" readonly="y" grid="team:skills"/>
+<content label="label:skills" type="title"/>
+<content xmltag="project" type="grid" readonly="y" grid="actor:projects"/>
+<content label="label:projects" type="title"/>
+</panel>
+<panel iid="dlambert11700099831479" active="y" revision="22" name="Tracking" created="Sunday, January 28, 2007 7:46:31 PM CET" updated="Monday, February 12, 2007 9:55:05 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Panel used for project trackings.</comment>
+<packagereference>::david11679501597741:net.sourceforge.projectfactory.client.panels</packagereference>
+<canedit>y</canedit>
+<candelete>y</candelete>
+<cansave>y</cansave>
+<exitxml>totalScheduled.addLabel("label:total");&#13;
+totalUnscheduled.addLabel("label:total");&#13;
+totals.addLabel("label:total");&#13;
+cumulated.addLabel("label:total");&#13;</exitxml>
+<content type="header" readonly="y" mustsave="y"/>
+<content xmltag="plan" label="label:plan" type="string" readonly="y" mustsave="y"/>
+<content xmltag="dateTrackingFrom" label="label:from" type="date"/>
+<content xmltag="dateTrackingTo" label="label:to" type="date"/>
+<content type="comment"/>
+<content type="audit"/>
+<content label="label:tracking" type="title"/>
+<content xmltag="trackingItem" type="grid" grid="tracking:items"/>
+<content xmltag="totalScheduled" type="label"/>
+<content label="label:scheduled" type="title"/>
+<content xmltag="member" type="grid" readonly="y" invisible="y" grid="team:members"/>
+<content xmltag="task" type="grid" readonly="y" invisible="y" grid="tracking:tasks"/>
+<content xmltag="unscheduledTrackingItem" type="grid" grid="tracking:items:unscheduled"/>
+<content xmltag="totalUnscheduled" type="label"/>
+<content label="label:unscheduled" type="title"/>
+<content xmltag="totalActor" label="label:peractor" type="grid" readonly="y" grid="tracking:total:actors"/>
+<content xmltag="totalTask" label="label:pertask" type="grid" readonly="y" grid="tracking:total:tasks"/>
+<content xmltag="totals" type="label"/>
+<content label="label:totals" type="title"/>
+<content xmltag="cumulatedActor" label="label:peractor" type="grid" readonly="y" grid="tracking:total:actors"/>
+<content xmltag="cumulatedTask" label="label:pertask" type="grid" readonly="y" grid="tracking:total:tasks"/>
+<content xmltag="cumulated" type="label"/>
+<content label="label:cumulated" type="title"/>
+<button label="button:project:newtracking" icon="tracking.gif" xmltag="tracking"/>
+<buttonparameter xmltagparameter="plan" xmltagvalue="plan"/>
+</panel>
+<classdefinition iid="david11679530958193" active="y" revision="6" name="Absence" created="Friday, January 5, 2007 12:25:45 AM CET" updated="Monday, January 29, 2007 3:36:29 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Absence composed by a date and duration.</comment>
+<packagereference>::david11679501597753:net.sourceforge.projectfactory.server.actors</packagereference>
+<classtype>duration</classtype>
+<content xmltag="absence" type="date"/>
+</classdefinition>
+<classdefinition iid="dlambert11701088553233" active="y" revision="10" name="Action" created="Monday, January 29, 2007 11:17:45 PM CET" updated="Wednesday, February 28, 2007 10:06:43 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines an action or an answer.</comment>
+<packagereference>::david11679501597752:net.sourceforge.projectfactory.server.actions</packagereference>
+<classtype>standalone</classtype>
+<createderived>y</createderived>
+<content xmltag="status" type="integer"/>
+<content xmltag="details" type="string"/>
+<content xmltag="attachProject" type="boolean"/>
+<content xmltag="attachForecast" type="boolean"/>
+<content xmltag="begin" type="date"/>
+<content xmltag="target" type="date"/>
+<content xmltag="project" type="class" classreference="Project" listname="transaction.getServer().projects.projects" errormessage="error:incorrect:project"/>
+<content xmltag="task" type="class" classreference="Task" listname="project.tasks" errormessage="error:incorrect:task"/>
+<content xmltag="recipients" type="list" classreference="Recipient"/>
+<content xmltag="steps" type="list" classreference="Step"/>
+<content xmltag="items" type="list" classreference="ActionItem"/>
+</classdefinition>
+<classdefinition iid="dlambert11725157843115" active="y" revision="8" name="ActionBar" created="Monday, February 26, 2007 7:49:44 PM CET" updated="Wednesday, February 28, 2007 3:10:00 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines an action available in the action bar.</comment>
+<packagereference>::dlambert11703647662101:net.sourceforge.projectfactory.server.data</packagereference>
+<classtype>standalone</classtype>
+<uniquename>y</uniquename>
+<createderived>y</createderived>
+<content xmltag="application" type="string"/>
+<content xmltag="labelButton" type="string"/>
+<content xmltag="icon" type="string"/>
+<content xmltag="orderNumber" type="integer"/>
+<content xmltag="administratorOnly" type="boolean"/>
+<content xmltag="localOnly" type="boolean"/>
+<content xmltag="items" type="list" classreference="ActionBarItem"/>
+</classdefinition>
+<classdefinition iid="dlambert11726717510893" active="y" revision="5" name="ActionBarItem" created="Wednesday, February 28, 2007 3:09:11 PM CET" updated="Thursday, March 1, 2007 4:42:09 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines a panel attached to a category.</comment>
+<packagereference>::dlambert11703647662101:net.sourceforge.projectfactory.server.data</packagereference>
+<classtype>subclass</classtype>
+<xmltag>item</xmltag>
+<uniquename>y</uniquename>
+<content xmltag="button" type="string"/>
+<content xmltag="panel" type="string"/>
+</classdefinition>
+<classdefinition iid="dlambert11700702437431" active="y" revision="6" name="ActionItem" created="Monday, January 29, 2007 12:32:02 PM CET" updated="Monday, February 26, 2007 9:51:44 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Part of the forecast calendar attached to an action, 
+which contains individual and daily information 
+including date, task and assignment.</comment>
+<packagereference>::david11679501597752:net.sourceforge.projectfactory.server.actions</packagereference>
+<classtype>duration</classtype>
+<xmltag>item</xmltag>
+<createderived>y</createderived>
+<content xmltag="dateItem" type="date"/>
+<content xmltag="completion" type="integer"/>
+<content xmltag="assigned" type="string"/>
+</classdefinition>
+<classdefinition iid="david116795018526012" active="y" revision="14" name="Actor" created="Friday, January 5, 2007 12:09:50 AM CET" updated="Tuesday, February 27, 2007 8:48:41 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Actor definition.</comment>
+<packagereference>::david11679501597753:net.sourceforge.projectfactory.server.actors</packagereference>
+<classtype>standalone</classtype>
+<uniquename>y</uniquename>
+<createderived>y</createderived>
+<content xmltag="networkId" type="string"/>
+<content xmltag="alternateNetworkId" type="string"/>
+<content xmltag="phoneNumber" type="string"/>
+<content xmltag="administrator" type="boolean"/>
+<content xmltag="position" type="string"/>
+<content xmltag="reportsTo" type="class" classreference="Actor"/>
+<content xmltag="holidaySchedule" type="class" classreference="HolidaySchedule"/>
+<content xmltag="location" type="class" classreference="Location"/>
+<content xmltag="absences" type="list" classreference="Absence"/>
+<content xmltag="emails" type="list" classreference="EMail"/>
+<content xmltag="skills" type="list" classreference="Skill"/>
+</classdefinition>
+<classdefinition iid="dlambert11726124913353" active="y" revision="4" name="Adjustment" created="Tuesday, February 27, 2007 10:41:31 PM CET" updated="Sunday, March 4, 2007 9:54:12 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Adjustment defined for a workload or for reported duration.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<draft>y</draft>
+<classtype>duration</classtype>
+<uniquename>y</uniquename>
+<createderived>y</createderived>
+<content xmltag="plan" type="class" fromparent="y" classreference="Plan"/>
+<content xmltag="task" type="class" classreference="Task" listname="plan.project.tasks" errormessage="error:incorrect:task"/>
+<content xmltag="adjustment" type="integer"/>
+<classvalue label="SET" staticvalue="1"/>
+<classvalue label="ADD" staticvalue="2"/>
+<classvalue label="SUB" staticvalue="3"/>
+</classdefinition>
+<classdefinition iid="dlambert11726126543147" active="y" revision="1" name="Anonymous" created="Tuesday, February 27, 2007 10:44:14 PM CET" updated="Tuesday, February 27, 2007 10:44:14 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines an anonymous person assigned to taks in a project plan.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<draft>y</draft>
+<classtype>subclass</classtype>
+<uniquename>y</uniquename>
+<content xmltag="name" type="string"/>
+<content xmltag="description" type="string"/>
+<content xmltag="plan" type="class" fromparent="y" classreference="Plan"/>
+<content xmltag="location" type="class" classreference="Location"/>
+</classdefinition>
+<classdefinition iid="dlambert11726128641983" active="y" revision="1" name="Assignment" created="Tuesday, February 27, 2007 10:47:44 PM CET" updated="Tuesday, February 27, 2007 10:47:44 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines an assignment in a plan of one taks to an actor or anonymous.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<draft>y</draft>
+<classtype>subclass</classtype>
+<uniquename>y</uniquename>
+</classdefinition>
+<classdefinition iid="dlambert11726128879215" active="y" revision="1" name="Availability" created="Tuesday, February 27, 2007 10:48:07 PM CET" updated="Tuesday, February 27, 2007 10:48:07 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Availability defined for an actor and a project at given dates.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<draft>y</draft>
+<classtype>subclass</classtype>
+<uniquename>y</uniquename>
+</classdefinition>
+<classdefinition iid="dlambert11726129842597" active="y" revision="1" name="BusinessProcess" created="Tuesday, February 27, 2007 10:49:44 PM CET" updated="Tuesday, February 27, 2007 10:49:44 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines a business process, which is a list of tasks 
+defined in order to generate projects.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<draft>y</draft>
+<classtype>standalone</classtype>
+<uniquename>y</uniquename>
+<createderived>y</createderived>
+<content xmltag="statusTasks" type="integer"/>
+<content xmltag="tasks" type="list" classreference="Task"/>
+</classdefinition>
+<classdefinition iid="dlambert11700814644761" active="y" revision="5" name="Button" created="Monday, January 29, 2007 3:38:36 PM CET" updated="Monday, February 26, 2007 9:18:44 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Button defined in a panel.</comment>
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classtype>subclass</classtype>
+<content xmltag="label" type="string"/>
+<content xmltag="icon" type="string"/>
+<content xmltag="xmlTag" type="string"/>
+</classdefinition>
+<classdefinition iid="dlambert11708550302591" active="y" revision="5" name="ButtonParameter" created="Monday, January 29, 2007 3:38:36 PM CET" updated="Wednesday, February 7, 2007 2:30:53 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Button parameters defined in a panel.</comment>
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classtype>subclass</classtype>
+<content xmltag="xmlTagParameter" type="string"/>
+<content xmltag="xmlTagValue" type="string"/>
+</classdefinition>
+<classdefinition iid="dlambert11701015264691" active="y" revision="20" name="ClassCode" created="Monday, January 29, 2007 9:13:31 PM CET" updated="Wednesday, February 28, 2007 10:33:32 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Code attached to a class definition.</comment>
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classtype>standalone</classtype>
+<superclass>CoreEntity</superclass>
+<content xmltag="className" type="class" classreference="ClassDefinition" listname="transaction.getServer().core.classes"/>
+<content xmltag="smallComments" type="string"/>
+<content xmltag="code" type="string"/>
+</classdefinition>
+<classdefinition iid="dlambert11701523005761" revision="5" name="ClassControl" created="Tuesday, January 30, 2007 11:19:21 AM CET" updated="Wednesday, February 28, 2007 10:36:39 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines some controls to be managed on a class.</comment>
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classtype>subclass</classtype>
+<content xmltag="xmlTag" type="string"/>
+<content xmltag="listName" type="string"/>
+<content xmltag="errorMessage" type="string"/>
+<content xmltag="objectReference" type="string"/>
+</classdefinition>
+<classdefinition iid="dlambert11700983010761" active="y" revision="12" name="ClassDefinition" created="Monday, January 29, 2007 8:18:41 PM CET" updated="Wednesday, February 28, 2007 10:36:49 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Represents a class definition.</comment>
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classtype>standalone</classtype>
+<superclass>CoreEntity</superclass>
+<uniquename>y</uniquename>
+<createderived>y</createderived>
+<content xmltag="classType" type="string"/>
+<content xmltag="superClass" type="string"/>
+<content xmltag="xmlTag" type="string"/>
+<content xmltag="uniqueName" type="boolean"/>
+<content xmltag="createDerived" type="boolean"/>
+<content xmltag="items" type="list" classreference="ClassItem"/>
+<content xmltag="staticValues" type="list" classreference="ClassValue"/>
+</classdefinition>
+<classdefinition iid="dlambert11700983635962" active="y" revision="9" name="ClassItem" created="Monday, January 29, 2007 8:20:21 PM CET" updated="Wednesday, February 28, 2007 8:41:17 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Items defined within a class.</comment>
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classtype>subclass</classtype>
+<xmltag>content</xmltag>
+<content xmltag="xmlTag" type="string"/>
+<content xmltag="type" type="string"/>
+<content xmltag="fromParent" type="boolean"/>
+<content xmltag="classReference" type="string"/>
+<content xmltag="listName" type="string"/>
+<content xmltag="errorMessage" type="string"/>
+</classdefinition>
+<classdefinition iid="dlambert11716347761712" active="y" revision="5" name="ClassValue" created="Friday, February 16, 2007 3:06:16 PM CET" updated="Friday, February 16, 2007 3:10:34 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines static values to be used within a class definition.</comment>
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classtype>subclass</classtype>
+<content xmltag="label" type="string"/>
+<content xmltag="staticValue" type="string"/>
+</classdefinition>
+<classdefinition iid="dlambert11700984378433" active="y" revision="8" name="ComboBox" created="Monday, January 29, 2007 8:22:16 PM CET" updated="Monday, February 26, 2007 6:08:38 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Represents a combobox used to display a list of values.</comment>
+<packagereference>::dlambert11703647662101:net.sourceforge.projectfactory.server.data</packagereference>
+<classtype>standalone</classtype>
+<uniquename>y</uniquename>
+<content xmltag="application" type="string"/>
+<content xmltag="blankRow" type="boolean"/>
+<content xmltag="items" type="list" classreference="ComboBoxItem"/>
+</classdefinition>
+<classdefinition iid="dlambert11700989485801" active="y" revision="4" name="ComboBoxItem" created="Monday, January 29, 2007 8:29:55 PM CET" updated="Thursday, February 8, 2007 1:27:19 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Item that defines a combobox.</comment>
+<packagereference>::dlambert11703647662101:net.sourceforge.projectfactory.server.data</packagereference>
+<classtype>subclass</classtype>
+<xmltag>item</xmltag>
+<content xmltag="code" type="string"/>
+<content xmltag="label" type="string"/>
+<content xmltag="style" type="string"/>
+<content xmltag="icon" type="string"/>
+</classdefinition>
+<classdefinition iid="dlambert11726130894829" active="y" revision="1" name="Constraint" created="Tuesday, February 27, 2007 10:51:29 PM CET" updated="Tuesday, February 27, 2007 10:51:29 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Define constraints between tasks.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<draft>y</draft>
+<classtype>subclass</classtype>
+<uniquename>y</uniquename>
+</classdefinition>
+<classdefinition iid="dlambert11700991690911" active="y" revision="10" name="CoreEntity" created="Monday, January 29, 2007 8:34:02 PM CET" updated="Wednesday, February 28, 2007 10:34:08 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Represents an entity managed in core server.</comment>
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classtype>standalone</classtype>
+<uniquename>y</uniquename>
+<createderived>y</createderived>
+<content xmltag="application" type="string"/>
+<content xmltag="packageReference" type="class" classreference="Package" listname="transaction.getServer().core.packages" errormessage="error:incorrect:package"/>
+<content xmltag="draft" type="boolean"/>
+</classdefinition>
+<classdefinition iid="dlambert11700992563682" active="y" revision="8" name="Dictionary" created="Monday, January 29, 2007 8:37:05 PM CET" updated="Monday, February 26, 2007 6:11:13 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Represents an entry in the multi-languages dictionary. 
+An entry is composed by strings in different languages. 
+The system will use English string by default.</comment>
+<packagereference>::dlambert11703647662101:net.sourceforge.projectfactory.server.data</packagereference>
+<classtype>standalone</classtype>
+<uniquename>y</uniquename>
+<content xmltag="application" type="string"/>
+<content xmltag="english" type="string"/>
+<content xmltag="french" type="string"/>
+<content xmltag="german" type="string"/>
+<content xmltag="spanish" type="string"/>
+<content xmltag="arabic" type="string"/>
+</classdefinition>
+<classdefinition iid="david116795018526013" active="y" revision="7" name="EMail" created="Friday, January 5, 2007 12:19:50 AM CET" updated="Monday, January 29, 2007 9:10:42 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Email address.</comment>
+<packagereference>::david11679501597753:net.sourceforge.projectfactory.server.actors</packagereference>
+<classtype>subclass</classtype>
+<content xmltag="address" type="string"/>
+<content xmltag="principal" type="boolean"/>
+</classdefinition>
+<classdefinition iid="dlambert117261319502611" active="y" revision="1" name="Event" created="Tuesday, February 27, 2007 10:53:15 PM CET" updated="Tuesday, February 27, 2007 10:53:15 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Event attached to a project plan.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<draft>y</draft>
+<classtype>duration</classtype>
+<uniquename>y</uniquename>
+<content xmltag="plan" type="class" fromparent="y" classreference="Plan"/>
+<content xmltag="event" type="date"/>
+<content xmltag="actor" type="class" classreference="Actor"/>
+</classdefinition>
+<classdefinition iid="dlambert117261325267313" active="y" revision="1" name="Forecast" created="Tuesday, February 27, 2007 10:54:12 PM CET" updated="Tuesday, February 27, 2007 10:54:12 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Forecast calendar generated based on a project plan.
+Contains daily individual assignments, absences and events.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<draft>y</draft>
+<classtype>standalone</classtype>
+<uniquename>y</uniquename>
+</classdefinition>
+<classdefinition iid="dlambert117261402721213" active="y" revision="1" name="ForecastItem" created="Tuesday, February 27, 2007 11:07:07 PM CET" updated="Tuesday, February 27, 2007 11:07:07 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Part of the forecast calendar which contains 
+individual and daily information including date, task and assignment.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<draft>y</draft>
+<classtype>duration</classtype>
+<uniquename>y</uniquename>
+</classdefinition>
+<classdefinition iid="dlambert11700995683763" active="y" revision="4" name="Grid" created="Monday, January 29, 2007 8:40:53 PM CET" updated="Monday, February 26, 2007 9:34:41 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Represents a grid used in panels.</comment>
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classtype>standalone</classtype>
+<superclass>CoreEntity</superclass>
+<uniquename>y</uniquename>
+<createderived>y</createderived>
+<content xmltag="hierarchical" type="boolean"/>
+<content xmltag="noSort" type="boolean"/>
+<content xmltag="noButton" type="boolean"/>
+<content xmltag="items" type="list" classreference="GridItem"/>
+</classdefinition>
+<classdefinition iid="dlambert11700806031662" active="y" revision="8" name="GridItem" created="Monday, January 29, 2007 3:25:42 PM CET" updated="Wednesday, February 7, 2007 10:50:10 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Item defined in a grid.</comment>
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classtype>subclass</classtype>
+<xmltag>content</xmltag>
+<content xmltag="xmlTag" type="string"/>
+<content xmltag="label" type="string"/>
+<content xmltag="length" type="integer"/>
+<content xmltag="type" type="string"/>
+<content xmltag="readOnly" type="boolean"/>
+<content xmltag="duplicate" type="boolean"/>
+<content xmltag="defaultValue" type="string"/>
+<content xmltag="comboBox" type="string"/>
+<content xmltag="lookupClass" type="string"/>
+<content xmltag="lookupGrid" type="string"/>
+</classdefinition>
+<classdefinition iid="david11679534598135" active="y" revision="3" name="Holiday" created="Friday, January 5, 2007 12:31:26 AM CET" updated="Monday, January 29, 2007 9:51:43 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Holiday is a duration with a date.</comment>
+<packagereference>::david11679501597753:net.sourceforge.projectfactory.server.actors</packagereference>
+<classtype>duration</classtype>
+<content xmltag="holiday" type="date"/>
+</classdefinition>
+<classdefinition iid="david11679531855584" active="y" revision="6" name="HolidaySchedule" created="Friday, January 5, 2007 12:27:02 AM CET" updated="Monday, February 26, 2007 10:02:55 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defined by a list of absences.</comment>
+<packagereference>::david11679501597753:net.sourceforge.projectfactory.server.actors</packagereference>
+<classtype>standalone</classtype>
+<uniquename>y</uniquename>
+<createderived>y</createderived>
+<content xmltag="defaultHolidaySchedule" type="boolean"/>
+<content xmltag="holidays" type="list" classreference="Holiday"/>
+</classdefinition>
+<classdefinition iid="dlambert11726134713913" active="y" revision="1" name="Item" created="Tuesday, February 27, 2007 10:57:51 PM CET" updated="Tuesday, February 27, 2007 10:57:51 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines an item, which is an entity, used to create actions or tasks. 
+Contains a type and a level.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<draft>y</draft>
+<classtype>standalone</classtype>
+<uniquename>y</uniquename>
+</classdefinition>
+<classdefinition iid="david11679528257151" active="y" revision="7" name="Location" created="Friday, January 5, 2007 12:21:03 AM CET" updated="Monday, February 26, 2007 9:42:00 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>A location refers to a weekly work schedule template.</comment>
+<packagereference>::david11679501597753:net.sourceforge.projectfactory.server.actors</packagereference>
+<classtype>standalone</classtype>
+<uniquename>y</uniquename>
+<createderived>y</createderived>
+<content xmltag="timeZone" type="string"/>
+<content xmltag="defaultLocation" type="boolean"/>
+<content xmltag="monday" type="boolean"/>
+<content xmltag="tuesday" type="boolean"/>
+<content xmltag="wednesday" type="boolean"/>
+<content xmltag="thursday" type="boolean"/>
+<content xmltag="friday" type="boolean"/>
+<content xmltag="saturday" type="boolean"/>
+<content xmltag="sunday" type="boolean"/>
+</classdefinition>
+<classdefinition iid="dlambert11701091700654" active="y" revision="9" name="Member" created="Monday, January 29, 2007 11:20:22 PM CET" updated="Wednesday, February 28, 2007 10:11:14 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines an actor as member of a team for a period of time.</comment>
+<packagereference>::david11679501597753:net.sourceforge.projectfactory.server.actors</packagereference>
+<classtype>subclass</classtype>
+<createderived>y</createderived>
+<content xmltag="team" type="class" fromparent="y" classreference="Team"/>
+<content xmltag="from" type="date"/>
+<content xmltag="to" type="date"/>
+<content xmltag="role" type="string"/>
+<content xmltag="actor" type="class" classreference="Actor" listname="transaction.getServer().actors.actors" errormessage="error:incorrect:member"/>
+<content xmltag="interim" type="boolean"/>
+</classdefinition>
+<classdefinition iid="dlambert11700996683164" active="y" revision="4" name="Package" created="Monday, January 29, 2007 8:41:50 PM CET" updated="Saturday, March 3, 2007 11:43:05 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Represents a package used in order to store application definitions.</comment>
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classtype>standalone</classtype>
+<superclass>CoreEntity</superclass>
+<uniquename>y</uniquename>
+<createderived>y</createderived>
+<content xmltag="headerFile" type="string"/>
+</classdefinition>
+<classdefinition iid="dlambert11701002990411" active="y" revision="10" name="Panel" created="Monday, January 29, 2007 8:52:40 PM CET" updated="Thursday, February 15, 2007 2:42:39 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Represents a panel definition.</comment>
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classtype>standalone</classtype>
+<superclass>CoreEntity</superclass>
+<uniquename>y</uniquename>
+<createderived>y</createderived>
+<content xmltag="canEdit" type="boolean"/>
+<content xmltag="canDelete" type="boolean"/>
+<content xmltag="canSave" type="boolean"/>
+<content xmltag="items" type="list" classreference="PanelItem"/>
+<content xmltag="buttons" type="list" classreference="Button"/>
+<content xmltag="buttonParameters" type="list" classreference="ButtonParameter"/>
+<content xmltag="xmlTagAction" type="string"/>
+<content xmltag="exitXml" type="string"/>
+</classdefinition>
+<classdefinition iid="dlambert11701015264681" active="y" revision="19" name="PanelCode" created="Monday, January 29, 2007 9:13:31 PM CET" updated="Wednesday, February 28, 2007 10:34:33 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Code attached to a panel.</comment>
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classtype>standalone</classtype>
+<superclass>CoreEntity</superclass>
+<content xmltag="panelName" type="class" classreference="Panel" listname="transaction.getServer().core.panels"/>
+<content xmltag="smallComments" type="string"/>
+<content xmltag="code" type="string"/>
+</classdefinition>
+<classdefinition iid="dlambert11701003785032" active="y" revision="5" name="PanelItem" created="Monday, January 29, 2007 8:54:12 PM CET" updated="Thursday, February 8, 2007 9:36:09 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Item defined within a panel.</comment>
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classtype>subclass</classtype>
+<xmltag>content</xmltag>
+<content xmltag="xmlTag" type="string"/>
+<content xmltag="label" type="string"/>
+<content xmltag="type" type="string"/>
+<content xmltag="readOnly" type="boolean"/>
+<content xmltag="invisible" type="boolean"/>
+<content xmltag="mustSave" type="boolean"/>
+<content xmltag="comboBox" type="string"/>
+<content xmltag="grid" type="string"/>
+<content xmltag="lookupClass" type="string"/>
+</classdefinition>
+<classdefinition iid="dlambert11726135125435" active="y" revision="1" name="Phase" created="Tuesday, February 27, 2007 10:58:32 PM CET" updated="Tuesday, February 27, 2007 10:58:32 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Phase attached to a project plan.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<draft>y</draft>
+<classtype>subclass</classtype>
+<uniquename>y</uniquename>
+</classdefinition>
+<classdefinition iid="dlambert11726125761585" active="y" revision="1" name="Plan" created="Tuesday, February 27, 2007 10:42:56 PM CET" updated="Tuesday, February 27, 2007 10:42:56 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines a project plan, which is version-based. 
+Includes workloads, constraints, 
+assignments but also anonymous and events.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<draft>y</draft>
+<classtype>standalone</classtype>
+<uniquename>y</uniquename>
+</classdefinition>
+<classdefinition iid="dlambert11701004652733" active="y" revision="7" name="Preference" created="Monday, January 29, 2007 8:56:10 PM CET" updated="Monday, February 26, 2007 6:17:16 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>User preferences. Preferences are stored locally on the system.</comment>
+<packagereference>::dlambert11703647662101:net.sourceforge.projectfactory.server.data</packagereference>
+<classtype>standalone</classtype>
+<uniquename>y</uniquename>
+<content xmltag="posX" type="integer"/>
+<content xmltag="posY" type="integer"/>
+<content xmltag="lenX" type="integer"/>
+<content xmltag="lenY" type="integer"/>
+<content xmltag="posLookup" type="integer"/>
+<content xmltag="posMessages" type="integer"/>
+<content xmltag="selectionCategory" type="string"/>
+<content xmltag="displayOptions" type="string"/>
+<content xmltag="displayPeriod" type="string"/>
+<content xmltag="count" type="integer"/>
+<content xmltag="filters" type="list" classreference="PreferenceFilter"/>
+</classdefinition>
+<classdefinition iid="dlambert11701005848634" active="y" revision="4" name="PreferenceFilter" created="Monday, January 29, 2007 8:56:58 PM CET" updated="Thursday, February 1, 2007 10:22:42 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Information attached to a button.</comment>
+<packagereference>::dlambert11703647662101:net.sourceforge.projectfactory.server.data</packagereference>
+<classtype>subclass</classtype>
+<content xmltag="category" type="string"/>
+<content xmltag="filter" type="string"/>
+<content xmltag="search" type="string"/>
+</classdefinition>
+<classdefinition iid="dlambert11726121614603" active="y" revision="2" name="Project" created="Tuesday, February 27, 2007 10:36:01 PM CET" updated="Tuesday, February 27, 2007 10:49:55 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Define a project, which is a scope, a list of tasks
+(derived from business process) and teams.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<draft>y</draft>
+<classtype>standalone</classtype>
+<superclass>BusinessProcess</superclass>
+<uniquename>y</uniquename>
+<createderived>y</createderived>
+</classdefinition>
+<classdefinition iid="dlambert11726135550397" active="y" revision="1" name="ProjectTeam" created="Tuesday, February 27, 2007 10:59:15 PM CET" updated="Tuesday, February 27, 2007 10:59:15 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines a team as project member.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<draft>y</draft>
+<classtype>subclass</classtype>
+<uniquename>y</uniquename>
+</classdefinition>
+<classdefinition iid="dlambert11701086736321" active="y" revision="14" name="Recipient" created="Monday, January 29, 2007 11:12:28 PM CET" updated="Wednesday, February 28, 2007 10:10:28 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines an actor as recipient of an action.</comment>
+<packagereference>::david11679501597752:net.sourceforge.projectfactory.server.actions</packagereference>
+<classtype>subclass</classtype>
+<content xmltag="action" type="class" fromparent="y" classreference="Action"/>
+<content xmltag="role" type="integer"/>
+<content xmltag="status" type="integer"/>
+<content xmltag="actor" type="class" classreference="Actor" listname="transaction.getServer().actors.actors" errormessage="error:incorrect:recipient"/>
+<classvalue label="NOT_SENT" staticvalue="1"/>
+<classvalue label="SENT" staticvalue="2"/>
+<classvalue label="ANSWERED" staticvalue="3"/>
+<classvalue label="ERROR" staticvalue="4"/>
+<classvalue label="NA" staticvalue="5"/>
+<classvalue label="RECEIVED" staticvalue="6"/>
+</classdefinition>
+<classdefinition iid="dlambert11726135784419" active="y" revision="1" name="Risk" created="Tuesday, February 27, 2007 10:59:38 PM CET" updated="Tuesday, February 27, 2007 10:59:38 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Risk attached to a project plan.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<draft>y</draft>
+<classtype>duration</classtype>
+<uniquename>y</uniquename>
+</classdefinition>
+<classdefinition iid="dlambert117261361456311" active="y" revision="2" name="ScopeItem" created="Tuesday, February 27, 2007 11:00:14 PM CET" updated="Tuesday, February 27, 2007 11:00:34 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines an item part of a project scope.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<classtype>subclass</classtype>
+<superclass>Task</superclass>
+<uniquename>y</uniquename>
+</classdefinition>
+<classdefinition iid="dlambert11701092469455" active="y" revision="7" name="Server" created="Monday, January 29, 2007 11:21:02 PM CET" updated="Monday, February 12, 2007 11:28:27 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines a remote server.</comment>
+<packagereference>::david11679501597753:net.sourceforge.projectfactory.server.actors</packagereference>
+<classtype>standalone</classtype>
+<uniquename>y</uniquename>
+<createderived>y</createderived>
+<content xmltag="address" type="string"/>
+<content xmltag="port" type="integer"/>
+<content xmltag="encryptKey" type="string"/>
+<content xmltag="replication" type="boolean"/>
+<content xmltag="allowReplication" type="boolean"/>
+<content xmltag="activeInMail" type="boolean"/>
+<content xmltag="inMailType" type="string"/>
+<content xmltag="inMailServer" type="string"/>
+<content xmltag="inMailPort" type="integer"/>
+<content xmltag="inMailUserName" type="string"/>
+<content xmltag="inMailPassword" type="string"/>
+<content xmltag="activeOutMail" type="boolean"/>
+<content xmltag="outMailType" type="string"/>
+<content xmltag="outMailServer" type="string"/>
+<content xmltag="outMailPort" type="integer"/>
+<content xmltag="outMailAuth" type="string"/>
+<content xmltag="outMailUserName" type="string"/>
+<content xmltag="outMailPassword" type="string"/>
+<content xmltag="path" type="string"/>
+</classdefinition>
+<classdefinition iid="david11679530119962" active="y" revision="4" name="Skill" created="Friday, January 5, 2007 12:24:11 AM CET" updated="Monday, January 29, 2007 9:57:57 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines a skill with level.</comment>
+<packagereference>::david11679501597753:net.sourceforge.projectfactory.server.actors</packagereference>
+<classtype>subclass</classtype>
+<content xmltag="skill" type="string"/>
+<content xmltag="level" type="integer"/>
+<content xmltag="comment" type="string"/>
+</classdefinition>
+<classdefinition iid="dlambert11726138892513" active="y" revision="1" name="Status" created="Tuesday, February 27, 2007 11:04:49 PM CET" updated="Tuesday, February 27, 2007 11:04:49 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Project status. &#13;
+Includes %complete for each task and individual task status.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<draft>y</draft>
+<classtype>standalone</classtype>
+<uniquename>y</uniquename>
+</classdefinition>
+<classdefinition iid="dlambert11726139160165" active="y" revision="1" name="StatusItem" created="Tuesday, February 27, 2007 11:05:16 PM CET" updated="Tuesday, February 27, 2007 11:05:16 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines an item of the status, &#13;
+including %complete and confidence for an individual task.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<draft>y</draft>
+<classtype>subclass</classtype>
+<uniquename>y</uniquename>
+</classdefinition>
+<classdefinition iid="dlambert11701087741612" active="y" revision="6" name="Step" created="Monday, January 29, 2007 11:13:52 PM CET" updated="Tuesday, January 30, 2007 11:12:42 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines a Step, which is an item attached to an action.</comment>
+<packagereference>::david11679501597752:net.sourceforge.projectfactory.server.actions</packagereference>
+<classtype>subclass</classtype>
+<content xmltag="level" type="integer"/>
+<content xmltag="name" type="string"/>
+<content xmltag="complexity" type="integer"/>
+<content xmltag="actionStatus" type="integer"/>
+</classdefinition>
+<classdefinition iid="dlambert11726121786385" active="y" revision="2" name="Task" created="Tuesday, February 27, 2007 10:36:18 PM CET" updated="Tuesday, February 27, 2007 10:58:11 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines a task, which is an item attached to a business plan or a project.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<draft>y</draft>
+<classtype>standalone</classtype>
+<superclass>Item</superclass>
+<uniquename>y</uniquename>
+</classdefinition>
+<classdefinition iid="dlambert11701092735966" active="y" revision="5" name="Team" created="Monday, January 29, 2007 11:21:50 PM CET" updated="Wednesday, February 28, 2007 10:20:33 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Defines a team with its members.</comment>
+<packagereference>::david11679501597753:net.sourceforge.projectfactory.server.actors</packagereference>
+<classtype>standalone</classtype>
+<uniquename>y</uniquename>
+<createderived>y</createderived>
+<content xmltag="lead" type="class" classreference="Actor" listname="transaction.getServer().actors.actors" errormessage="error:incorrect:lead"/>
+<content xmltag="members" type="list" classreference="Member"/>
+</classdefinition>
+<classdefinition iid="dlambert11726139329837" active="y" revision="1" name="Tracking" created="Tuesday, February 27, 2007 11:05:32 PM CET" updated="Tuesday, February 27, 2007 11:05:32 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Project tracking.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<draft>y</draft>
+<classtype>standalone</classtype>
+<uniquename>y</uniquename>
+</classdefinition>
+<classdefinition iid="dlambert11726139560539" active="y" revision="1" name="TrackingItem" created="Tuesday, February 27, 2007 11:05:56 PM CET" updated="Tuesday, February 27, 2007 11:05:56 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Tracking item defined for project tracking.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<draft>y</draft>
+<classtype>duration</classtype>
+<uniquename>y</uniquename>
+</classdefinition>
+<classdefinition iid="dlambert117261397565011" active="y" revision="1" name="Workload" created="Tuesday, February 27, 2007 11:06:15 PM CET" updated="Tuesday, February 27, 2007 11:06:15 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<comment>Workload defined for a project task in a plan.</comment>
+<packagereference>::david11679501597764:net.sourceforge.projectfactory.server.projects</packagereference>
+<draft>y</draft>
+<classtype>duration</classtype>
+<uniquename>y</uniquename>
+</classdefinition>
+<panelcode iid="dlambert11701050480301" active="y" revision="1" name="essai" created="Monday, January 29, 2007 10:10:50 PM CET" updated="Monday, January 29, 2007 10:10:50 PM CET" createdby="David Lambert" updatedby="David Lambert"/>
+<panelcode iid="dlambert11701038842811" active="y" revision="1" name="test" created="Monday, January 29, 2007 9:51:39 PM CET" updated="Monday, January 29, 2007 9:51:39 PM CET" createdby="David Lambert" updatedby="David Lambert"/>
+<classcode iid="dlambert11702833921983" active="y" revision="1" name="Grid getGrid(TransactionXML transaction)" created="Wednesday, January 31, 2007 11:43:40 PM CET" updated="Wednesday, January 31, 2007 11:43:40 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classname>::dlambert11701003785032:PanelItem</classname>
+<smallcomments>Returns the grid attached to the item.</smallcomments>
+<code>for (Grid item: transaction.getServer().core.grids)
+    if(item.getName().equals(grid))
+        return item;
+return null;</code>
+</classcode>
+<classcode iid="dlambert11702775280641" active="y" revision="2" name="public boolean isAvailable(java.util.Date instant)" created="Wednesday, January 31, 2007 10:06:36 PM CET" updated="Tuesday, February 27, 2007 8:30:41 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<packagereference>::david11679501597753:net.sourceforge.projectfactory.server.actors</packagereference>
+<classname>::dlambert11701091700654:Member</classname>
+<smallcomments>Indicates if the member is available at the instant.</smallcomments>
+<code>if (instant == null) return false;&#13;
+if (from != null &amp;&amp; instant.before(from)) return false;&#13;
+if (to != null &amp;&amp; instant.after(to)) return false;&#13;
+return true;&#13;</code>
+</classcode>
+<classcode iid="dlambert1170937548262659" active="y" revision="1" name="public String getApplication()" created="Thursday, February 8, 2007 1:25:48 PM CET" updated="Thursday, February 8, 2007 1:25:48 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<packagereference>::dlambert11703647662101:net.sourceforge.projectfactory.server.data</packagereference>
+<classname>::dlambert11700992563682:Dictionary</classname>
+<smallcomments>Returns the application code.</smallcomments>
+<code>return application != null ? application : "";</code>
+</classcode>
+<classcode iid="dlambert1170937868436663" active="y" revision="1" name="public String getApplication()" created="Thursday, February 8, 2007 1:31:08 PM CET" updated="Thursday, February 8, 2007 1:31:08 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<packagereference>::dlambert11703647662101:net.sourceforge.projectfactory.server.data</packagereference>
+<classname>::dlambert11700984378433:ComboBox</classname>
+<smallcomments>Returns the application code.</smallcomments>
+<code>return application != null ? application : "";</code>
+</classcode>
+<classcode iid="dlambert11725194224443" active="y" revision="1" name="public String getApplication()" created="Monday, February 26, 2007 8:50:22 PM CET" updated="Monday, February 26, 2007 8:50:22 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<packagereference>::dlambert11703647662101:net.sourceforge.projectfactory.server.data</packagereference>
+<classname>::dlambert11725157843115:ActionBar</classname>
+<smallcomments>Returns the application code.</smallcomments>
+<code>return application != null ? application : "";</code>
+</classcode>
+<classcode iid="dlambert11725218149947" active="y" revision="1" name="public String getApplication()" created="Monday, February 26, 2007 9:30:14 PM CET" updated="Monday, February 26, 2007 9:30:14 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classname>::dlambert11700991690911:CoreEntity</classname>
+<smallcomments>Returns the application code.</smallcomments>
+<code>return application != null ? application : "";</code>
+</classcode>
+<classcode iid="dlambert11716234198624" active="y" revision="1" name="public String getSummary()" created="Friday, February 16, 2007 11:56:59 AM CET" updated="Friday, February 16, 2007 11:56:59 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<packagereference>::dlambert11703647662101:net.sourceforge.projectfactory.server.data</packagereference>
+<classname>::dlambert11700992563682:Dictionary</classname>
+<smallcomments>Provides a summary when the object is displayed in a list.</smallcomments>
+<code>return getSummaryPrefix() + super.getSummary();</code>
+</classcode>
+<classcode iid="dlambert11725096606304" active="y" revision="1" name="public String getSummary()" created="Monday, February 26, 2007 6:07:40 PM CET" updated="Monday, February 26, 2007 6:07:40 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<packagereference>::dlambert11703647662101:net.sourceforge.projectfactory.server.data</packagereference>
+<classname>::dlambert11700984378433:ComboBox</classname>
+<smallcomments>Provides a summary when the object is displayed in a list.</smallcomments>
+<code>return getSummaryPrefix() + super.getSummary();</code>
+</classcode>
+<classcode iid="dlambert11725194562135" active="y" revision="1" name="public String getSummary()" created="Monday, February 26, 2007 8:50:56 PM CET" updated="Monday, February 26, 2007 8:50:56 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<packagereference>::dlambert11703647662101:net.sourceforge.projectfactory.server.data</packagereference>
+<classname>::dlambert11725157843115:ActionBar</classname>
+<smallcomments>Provides a summary when the object is displayed in a list.</smallcomments>
+<code>return getSummaryPrefix() + super.getSummary();</code>
+</classcode>
+<classcode iid="dlambert11725217049465" active="y" revision="1" name="public String getSummary()" created="Monday, February 26, 2007 9:28:24 PM CET" updated="Monday, February 26, 2007 9:28:24 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classname>::dlambert11700991690911:CoreEntity</classname>
+<smallcomments>Provides a summary when the object is displayed in a list.</smallcomments>
+<code>return getSummaryPrefix() + super.getSummary();</code>
+</classcode>
+<classcode iid="dlambert11716233978702" active="y" revision="1" name="public String getSummaryPrefix()" created="Friday, February 16, 2007 11:56:37 AM CET" updated="Friday, February 16, 2007 11:56:37 AM CET" createdby="David Lambert" updatedby="David Lambert">
+<packagereference>::dlambert11703647662101:net.sourceforge.projectfactory.server.data</packagereference>
+<classname>::dlambert11700992563682:Dictionary</classname>
+<smallcomments>Provides a summary prefix when the object is displayed in a list.</smallcomments>
+<code>return "{" + getApplication() + "} ";</code>
+</classcode>
+<classcode iid="dlambert11725096352592" active="y" revision="1" name="public String getSummaryPrefix()" created="Monday, February 26, 2007 6:07:15 PM CET" updated="Monday, February 26, 2007 6:07:15 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<packagereference>::dlambert11703647662101:net.sourceforge.projectfactory.server.data</packagereference>
+<classname>::dlambert11700984378433:ComboBox</classname>
+<smallcomments>Provides a summary prefix when the object is displayed in a list.</smallcomments>
+<code>return "{" + getApplication() + "} ";</code>
+</classcode>
+<classcode iid="dlambert11725194833027" active="y" revision="1" name="public String getSummaryPrefix()" created="Monday, February 26, 2007 8:51:23 PM CET" updated="Monday, February 26, 2007 8:51:23 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<packagereference>::dlambert11703647662101:net.sourceforge.projectfactory.server.data</packagereference>
+<classname>::dlambert11725157843115:ActionBar</classname>
+<smallcomments>Provides a summary prefix when the object is displayed in a list.</smallcomments>
+<code>return "{" + getApplication() + "} ";</code>
+</classcode>
+<classcode iid="dlambert11725216794093" active="y" revision="1" name="public String getSummaryPrefix()" created="Monday, February 26, 2007 9:27:59 PM CET" updated="Monday, February 26, 2007 9:27:59 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classname>::dlambert11700991690911:CoreEntity</classname>
+<smallcomments>Provides a summary prefix when the object is displayed in a list.</smallcomments>
+<code>return "{" + getApplication() + "} ";</code>
+</classcode>
+<classcode iid="dlambert1170937840886661" active="y" revision="1" name="public void defaults(TransactionXML transaction)" created="Thursday, February 8, 2007 1:30:40 PM CET" updated="Thursday, February 8, 2007 1:30:40 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<packagereference>::dlambert11703647662101:net.sourceforge.projectfactory.server.data</packagereference>
+<classname>::dlambert11700984378433:ComboBox</classname>
+<smallcomments>Initializes with default values.</smallcomments>
+<code>super.defaults(transaction);
+blankRow = true;</code>
+</classcode>
+<classcode iid="dlambert11702833502571" active="y" revision="2" name="String getLabel()" created="Wednesday, January 31, 2007 11:42:43 PM CET" updated="Wednesday, January 31, 2007 11:44:50 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classname>::dlambert11701003785032:PanelItem</classname>
+<smallcomments>Returns the label.</smallcomments>
+<code>return label != null ? label : "";</code>
+</classcode>
+<classcode iid="dlambert11702827525641" active="y" revision="1" name="String getLabel()" created="Wednesday, January 31, 2007 11:32:53 PM CET" updated="Wednesday, January 31, 2007 11:32:53 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classname>::dlambert11700806031662:GridItem</classname>
+<smallcomments>Returns the label.</smallcomments>
+<code>return label != null ? label : "";</code>
+</classcode>
+<classcode iid="dlambert11702745556801" active="y" revision="1" name="String getTag()" created="Wednesday, January 31, 2007 9:16:17 PM CET" updated="Wednesday, January 31, 2007 9:16:17 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classname>::dlambert11700983635962:ClassItem</classname>
+<smallcomments>Returns the XML tag.</smallcomments>
+<code>return xmlTag != null ? xmlTag : "";</code>
+</classcode>
+<classcode iid="dlambert11702827857192" active="y" revision="2" name="String getTag()" created="Wednesday, January 31, 2007 11:33:17 PM CET" updated="Wednesday, January 31, 2007 11:33:58 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classname>::dlambert11700806031662:GridItem</classname>
+<smallcomments>Returns the XML tag.</smallcomments>
+<code>return xmlTag != null ? xmlTag : "";</code>
+</classcode>
+<classcode iid="dlambert11702833691372" active="y" revision="1" name="String getTag()" created="Wednesday, January 31, 2007 11:43:05 PM CET" updated="Wednesday, January 31, 2007 11:43:05 PM CET" createdby="David Lambert" updatedby="David Lambert">
+<packagereference>::dlambert11700805059751:net.sourceforge.projectfactory.server.core</packagereference>
+<classname>::dlambert11701003785032:PanelItem</classname>
+<smallcomments>Returns the XML tag.</smallcomments>
+<code>return xmlTag != null ? xmlTag : "";</code>
+</classcode>
+</factory>
