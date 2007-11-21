@@ -130,7 +130,9 @@ public class FactoryServer extends FactoryServerBase {
                       FactoryWriterXML answer) {
         try {
             TransactionXML transaction = new TransactionXML(session, answer);
+            System.out.println("Query : "+query);
             new QueryXML(transaction).xmlIn(query, answer, false);
+            
         } catch (Exception e) {
             returnException(answer, e);
         }

@@ -163,8 +163,9 @@ public class FactoryConnection {
     /** Executes a query toward the local server. */
     public void queryLocal(FactoryWriterXML query, 
                       FactoryWriterXML answer) {
-        if(localServer != null)
+        if(localServer != null){
 			localServer.query(localSession, query, answer);
+        }
     }
 
 	/** Shutdown client socket. */
@@ -558,6 +559,7 @@ public class FactoryConnection {
 			if(localServer == null) {
 				// Opens local database
 				try {
+					
 					localServer = createServer();
 					localSession = new FactorySession(FactoryConnection.this, 
 													  localServer);

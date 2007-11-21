@@ -70,7 +70,7 @@ class FactoryHandlerXML extends DefaultHandler {
     public void startElement(String uri, String sName, String qName, 
                              Attributes attrs) {
         if (reader != null) {
-            reader.addLevel();
+        	reader.addLevel();
             reader.startsTag(qName);
             lastTag = qName;
             characters = "";

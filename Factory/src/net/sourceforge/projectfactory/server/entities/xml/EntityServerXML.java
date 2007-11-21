@@ -72,6 +72,7 @@ public abstract class EntityServerXML extends ReaderServerXML {
     /** Starts a tag. */
     protected void startsTag(String tag) {
         if (entity != null) {
+        	System.out.println(entity.getClass());
             BaseEntityServerXML parser = entity.xmlIn(transaction, tag);
             if (parser != null)
                 parser.xmlIn(this);
