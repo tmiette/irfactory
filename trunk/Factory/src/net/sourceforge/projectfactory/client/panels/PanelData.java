@@ -910,7 +910,6 @@ public abstract class PanelData extends JPanel implements ActionListener {
         ComboBoxCode comboboxcode;
         CheckBox checkbox;
         TableBox tablebox;
-
         xml.xmlStart(tagpanel);
         if (details) {
             try {

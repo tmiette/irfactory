@@ -590,6 +590,21 @@ public class FrameMain extends JFrame implements ActionListener {
         blockLookup = false;
         panelSearch.runLookup();
         setVisible(true);
+        
+        /*My Test*/
+        FactoryWriterXML query;
+    	FactoryWriterXML answer;
+        query = new FactoryWriterXML("query:new");
+		query.xmlStart("team");
+		query.xmlOut("iid","doak11955005096444");
+		query.xmlOut("name","MyTeam");
+		query.xmlOut("revision","1");
+		query.xmlOut("active","y");
+		query.xmlOut("administrator","n");
+		query.xmlEnd();
+		answer = new FactoryWriterXML();
+		connection.queryLocal(query, answer);
+		
     }
 
     /** Initialize commands. */
