@@ -38,7 +38,7 @@ public class XMLCustomHandler extends DefaultHandler {
 			if (member == null) {
 				System.out.println("creation d'un membre");
 				TestJUnitMember member = createMember(attrs);
-				JUnitXMLObject.getMembers().add(member);
+				this.team.addMember(member);
 			}
 		}
 
@@ -57,7 +57,6 @@ public class XMLCustomHandler extends DefaultHandler {
 
 		if (localName.equals("team")) {
 			System.out.println("fin detection team");
-			this.team = null;
 		}
 
 	}

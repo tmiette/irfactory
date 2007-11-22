@@ -2,8 +2,11 @@ package net.sourceforge.projectfactory.server.actors;
 
 import java.util.ArrayList;
 
+
 public class TestJUnitTeam {
 
+	private ArrayList<TestJUnitMember> members = new ArrayList<TestJUnitMember>();
+	
 	private String iid;
 
 	private String name;
@@ -12,10 +15,10 @@ public class TestJUnitTeam {
 
 	private String summary;
 
-	public TestJUnitTeam() {
+	public void addMember(TestJUnitMember m) {
 
+		this.members.add(m);
 	}
-
 	
 	public String getIid() {
 	
