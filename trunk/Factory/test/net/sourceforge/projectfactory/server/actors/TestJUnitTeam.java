@@ -20,6 +20,13 @@ public class TestJUnitTeam {
 		this.members.add(m);
 	}
 	
+	public TestJUnitMember getMember(String name) {
+		for(TestJUnitMember m : members){
+			if(m.getActor().equals(name)) return m;
+		}
+		return null;
+	}
+	
 	public String getIid() {
 	
 		return iid;
