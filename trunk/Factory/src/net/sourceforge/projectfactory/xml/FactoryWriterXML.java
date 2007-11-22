@@ -271,8 +271,9 @@ public class FactoryWriterXML {
     public final FactoryWriterXML xmlAttribute(String tag, String value) {
         if (out == null)
             return this;
-        if (value != null && attributesImpl != null && value.length() > 0)
-            attributesImpl.addAttribute("", "", tag, "CDATA", value);
+        if (value != null && attributesImpl != null && value.length() > 0){
+        	attributesImpl.addAttribute("", "", tag, "CDATA", value);
+        }
         return this;
     }
 
