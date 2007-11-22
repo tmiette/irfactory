@@ -592,6 +592,7 @@ public class FrameMain extends JFrame implements ActionListener {
         setVisible(true);
         
         /*My Test*/
+        /*
         FactoryWriterXML query;
     	FactoryWriterXML answer;
         query = new FactoryWriterXML("query:new");
@@ -604,7 +605,7 @@ public class FrameMain extends JFrame implements ActionListener {
 		query.xmlEnd();
 		answer = new FactoryWriterXML();
 		connection.queryLocal(query, answer);
-		
+		*/
     }
 
     /** Initialize commands. */
@@ -1031,8 +1032,7 @@ public class FrameMain extends JFrame implements ActionListener {
                 if (!inError) {
                     panelSearch.runLookupAndWait();
                     setSaveRevertVisible(false, true);
-                    new ImportListXML(null, panelSearch).xmlIn(answer, null, 
-                                                               false);
+                    new ImportListXML(null, panelSearch).xmlIn(answer, null, false);
 					getCurrent().setEnabled(false);
                     setActionVisible(getCurrent() != panelBlank);
                     resetAction();
