@@ -30,10 +30,6 @@ public class TestTeam extends TestCase {
 		
 		/*send the response to the parser*/
 		/*test the data structure of team with assertions*/
-		
-		XMLParserHandler handler = new XMLParserHandler();
-		handler.parse(answer.toString());
-		System.out.println(XMLCustomHandler.team);
 	}
 	
 	public void testAddActor() {
