@@ -8,7 +8,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class XMLCustomHandler extends DefaultHandler {
 
-	private TestJUnitTeam team;
+	public static TestJUnitTeam team;
 	
 	/**
 	 * This method executes differents methods corresponding to the element

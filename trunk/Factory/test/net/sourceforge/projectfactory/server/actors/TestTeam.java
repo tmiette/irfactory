@@ -1,5 +1,7 @@
 package net.sourceforge.projectfactory.server.actors;
 
+import java.io.IOException;
+
 import junit.framework.TestCase;
 import net.sourceforge.projectfactory.client.FrameMain;
 import net.sourceforge.projectfactory.middleware.FactoryConnection;
@@ -11,7 +13,7 @@ public class TestTeam extends TestCase {
 	private FactoryWriterXML answer;
 	private FactoryConnection connection;
 	
-	public void testCreateTeam() {
+	public void testCreateTeam() throws IOException {
 		FrameMain main = new FrameMain(connection);
 		
 		query = new FactoryWriterXML("query:new");
@@ -26,6 +28,10 @@ public class TestTeam extends TestCase {
 		connection.queryLocal(query, answer);
 		/*send the response to the parser*/
 		/*test the data structure of team with assertions*/
+		
+		XMLParserHandler handler = new XMLParserHandler();
+		handler.parse(answer.toString());
+		System.out.println(XMLCustomHandler.team);
 	}
 	
 	public void testAddActor() {
@@ -45,6 +51,7 @@ public class TestTeam extends TestCase {
 		connection.queryLocal(query, answer);
 		/*send the response to the parser*/
 		/*test the data structure of team with assertions*/
+		
 	}
 	
 	private void getTeam() {
