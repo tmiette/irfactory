@@ -165,6 +165,8 @@ public class FactoryConnection {
                       FactoryWriterXML answer) {
         if(localServer != null){
 			localServer.query(localSession, query, answer);
+			System.out.println("Query : "+answer);
+			System.out.println("Answer : "+answer);
         }
     }
 
@@ -773,10 +775,11 @@ public class FactoryConnection {
 						FactoryWriterXML answer = new FactoryWriterXML();
 						
 						query.copyFrom(request);
-
+						System.out.println("Query : "+query);
 						// Execute the request on local server
 						localServer.query(session, query, answer);
-
+						
+						
 						// Sends answer and messages
 						String messagesString = answer.getErrWriter().toString();
 						String answerString = answer.getOutWriter().toString();
