@@ -58,6 +58,11 @@ public class XMLCustomHandler extends DefaultHandler {
 		if (localName.equals("team")) {
 			System.out.println("fin detection team");
 		}
+		
+		if (localName.equals("member")) {
+			System.out.println("fin detection member");
+			this.member = null;
+		}
 
 	}
 
