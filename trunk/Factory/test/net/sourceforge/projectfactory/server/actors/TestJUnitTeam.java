@@ -77,7 +77,7 @@ public class TestJUnitTeam {
 		sb.append(" summary = " + getSummary());
 		sb.append(" updated = " + getUpdated());
 		sb.append("\n");
-		sb.append("\nAffichage des membres : ");
+		sb.append("\nAffichage des membres : \n");
 		for (TestJUnitMember m : this.members) {
 			sb.append(m.toString());
 			sb.append("\n");
