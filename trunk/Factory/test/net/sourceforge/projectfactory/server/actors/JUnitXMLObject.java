@@ -19,4 +19,19 @@ public class JUnitXMLObject {
 
 		return teams;
 	}
+	
+	@Override
+	public String toString() {
+	
+		StringBuilder sb = new StringBuilder();
+		sb.append("Ensemble des membres :\n");
+		for (TestJUnitMember m : members) {
+			sb.append(m.toString());
+		}
+		sb.append("Ensemble des team :\n");
+		for (TestJUnitTeam t : teams) {
+			sb.append(t.toString());
+		}
+		return sb.toString();
+	}
 }
