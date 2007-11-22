@@ -2,38 +2,19 @@ package net.sourceforge.projectfactory.server.actors;
 
 import java.util.ArrayList;
 
-
 public class TestJUnitTeam {
 
-	private ArrayList<TestJUnitTeam> teams;
-	
 	private String iid;
-	private String active;
-	private String revision;
+
 	private String name;
-	private String created;
-	private String createdBy;
-	
-	
+
+	private String updated;
+
+	private String summary;
+
 	public TestJUnitTeam() {
 
-		this.teams = new ArrayList<TestJUnitTeam>();
 	}
-
-
-	
-	public ArrayList<TestJUnitTeam> getTeams() {
-	
-		return teams;
-	}
-
-
-	
-	public void setTeams(TestJUnitTeam team) {
-	
-		this.teams.add(team);
-	}
-
 
 	
 	public String getIid() {
@@ -41,41 +22,11 @@ public class TestJUnitTeam {
 		return iid;
 	}
 
-
 	
 	public void setIid(String iid) {
 	
 		this.iid = iid;
 	}
-
-
-	
-	public String getActive() {
-	
-		return active;
-	}
-
-
-	
-	public void setActive(String active) {
-	
-		this.active = active;
-	}
-
-
-	
-	public String getRevision() {
-	
-		return revision;
-	}
-
-
-	
-	public void setRevision(String revision) {
-	
-		this.revision = revision;
-	}
-
 
 	
 	public String getName() {
@@ -83,55 +34,46 @@ public class TestJUnitTeam {
 		return name;
 	}
 
-
 	
 	public void setName(String name) {
 	
 		this.name = name;
 	}
 
-
 	
-	public String getCreated() {
+	public String getUpdated() {
 	
-		return created;
+		return updated;
 	}
 
-
 	
-	public void setCreated(String created) {
+	public void setUpdated(String updated) {
 	
-		this.created = created;
+		this.updated = updated;
 	}
 
-
 	
-	public String getCreatedBy() {
+	public String getSummary() {
 	
-		return createdBy;
+		return summary;
 	}
 
-
 	
-	public void setCreatedBy(String createdBy) {
+	public void setSummary(String summary) {
 	
-		this.createdBy = createdBy;
+		this.summary = summary;
 	}
-	
+
 	@Override
 	public String toString() {
-	
+
 		StringBuilder sb = new StringBuilder();
-		for (TestJUnitTeam t : this.teams) {
-			sb.append("iid = " + t.getIid());
-			sb.append(" active = " + t.getActive());
-			sb.append(" revision = " + t.revision);
-			sb.append(" name = " + t.getName());
-			sb.append(" created = " + t.getCreated());
-			sb.append(" created by = " + t.getCreatedBy());
+			sb.append("iid = " + getIid());
+			sb.append(" name = " + getName());
+			sb.append(" summary = " + getSummary());
+			sb.append(" updated = " + getUpdated());
 			sb.append("\n");
-		}
-		
+
 		return sb.toString();
 	}
 }

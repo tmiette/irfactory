@@ -1,6 +1,8 @@
 package net.sourceforge.projectfactory.server.actors;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -12,7 +14,7 @@ import org.xml.sax.SAXException;
 
 public class XMLParserHandler {
 
-	public void parse(String stream) throws IOException {
+	public void parse(InputStream stream) throws IOException {
 
 		SAXParserFactory factory = SAXParserFactory.newInstance();
 		factory.setNamespaceAware(true);

@@ -1,6 +1,8 @@
 package net.sourceforge.projectfactory.server.actors;
 
 
+import java.util.ArrayList;
+
 import org.xml.sax.Attributes;
 import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
@@ -8,7 +10,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class XMLCustomHandler extends DefaultHandler {
 
-	public static TestJUnitTeam team;
+	public static ArrayList<TestJUnitTeam> teams;
 	
 	/**
 	 * This method executes differents methods corresponding to the element
@@ -25,9 +27,17 @@ public class XMLCustomHandler extends DefaultHandler {
 			Attributes attrs) throws SAXException {
 
 		if (localName.equals("team")) {
-			if (this.team == null) {
-				this.team = new TestJUnitTeam();
-				createTeam(attrs);
+			System.out.println("detection team");
+			if (teams == null) {
+				System.out.println("creation d'une team");
+				teams = new ArrayList<TestJUnitTeam>();
+				TestJUnitTeam team = createTeam(attrs);
+				teams.add(team);
+			}
+			else {
+				System.out.println("Ajout d'une team");
+				TestJUnitTeam team = createTeam(attrs);
+				teams.add(team);
 			}
 		}
 		
@@ -45,6 +55,10 @@ public class XMLCustomHandler extends DefaultHandler {
 	public void endElement(String uri, String localName, String name)
 	throws SAXException {
 
+		if (localName.equals("team")) {
+			System.out.println("fin detection team");
+			
+		}
 		
 }
 
@@ -59,14 +73,13 @@ public class XMLCustomHandler extends DefaultHandler {
 	}
 	
 	
-	private void createTeam(Attributes attrs){
+	private TestJUnitTeam createTeam(Attributes attrs){
 		
-		this.team.setIid(attrs.getValue("", "iid"));
-		this.team.setActive(attrs.getValue("", "active"));
-		this.team.setRevision(attrs.getValue("", "revision"));
-		this.team.setName(attrs.getValue("", "name"));
-		this.team.setCreated(attrs.getValue("", "created"));
-		this.team.setCreatedBy(attrs.getValue("", "createdBy"));
-		this.team.setTeams(this.team);
+		TestJUnitTeam team = new TestJUnitTeam();
+		team.setIid(attrs.getValue("", "iid"));
+		team.setName(attrs.getValue("", "name"));
+		team.setUpdated(attrs.getValue("", "updated"));
+		team.setSummary(attrs.getValue("", "summary"));
+		return team;
 	}
 }
