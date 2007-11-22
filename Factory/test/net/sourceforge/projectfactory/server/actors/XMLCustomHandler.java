@@ -1,8 +1,5 @@
 package net.sourceforge.projectfactory.server.actors;
 
-
-import java.util.ArrayList;
-
 import org.xml.sax.Attributes;
 import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
@@ -10,8 +7,10 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class XMLCustomHandler extends DefaultHandler {
 
-	public static ArrayList<TestJUnitTeam> teams;
-	
+	private TestJUnitTeam team;
+
+	private TestJUnitMember member;
+
 	/**
 	 * This method executes differents methods corresponding to the element
 	 * encountered by the SAX parser. All elements accepted by the program are
@@ -28,39 +27,40 @@ public class XMLCustomHandler extends DefaultHandler {
 
 		if (localName.equals("team")) {
 			System.out.println("detection team");
-			if (teams == null) {
+			if (team == null) {
 				System.out.println("creation d'une team");
-				teams = new ArrayList<TestJUnitTeam>();
 				TestJUnitTeam team = createTeam(attrs);
-				teams.add(team);
-			}
-			else {
-				System.out.println("Ajout d'une team");
-				TestJUnitTeam team = createTeam(attrs);
-				teams.add(team);
+				JUnitXMLObject.getTeams().add(team);
 			}
 		}
-		
+		if (localName.equals("member")) {
+			System.out.println("detection member");
+			if (member == null) {
+				System.out.println("creation d'un membre");
+				TestJUnitMember member = createMember(attrs);
+				JUnitXMLObject.getMembers().add(member);
+			}
+		}
+
 	}
 
 	/**
 	 * This method is called when an element ends. At the end of specify element
-	 * the object corresponding is added in the scene, and attributes are
-	 * reseted.
+	 * the object corresponding is added in the scene, and attributes are reseted.
 	 * 
 	 * @see org.xml.sax.helpers.DefaultHandler#endElement(java.lang.String,
 	 *      java.lang.String, java.lang.String)
 	 */
 	@Override
 	public void endElement(String uri, String localName, String name)
-	throws SAXException {
+			throws SAXException {
 
 		if (localName.equals("team")) {
 			System.out.println("fin detection team");
-			
+			this.team = null;
 		}
-		
-}
+
+	}
 
 	/**
 	 * This method permits to print to stdout where is the SAX cursor.
@@ -69,17 +69,24 @@ public class XMLCustomHandler extends DefaultHandler {
 	 */
 	@Override
 	public void setDocumentLocator(Locator locator) {
+
 		super.setDocumentLocator(locator);
 	}
-	
-	
-	private TestJUnitTeam createTeam(Attributes attrs){
-		
+
+	private TestJUnitTeam createTeam(Attributes attrs) {
+
 		TestJUnitTeam team = new TestJUnitTeam();
 		team.setIid(attrs.getValue("", "iid"));
 		team.setName(attrs.getValue("", "name"));
 		team.setUpdated(attrs.getValue("", "updated"));
 		team.setSummary(attrs.getValue("", "summary"));
 		return team;
+	}
+
+	private TestJUnitMember createMember(Attributes attrs) {
+
+		TestJUnitMember member = new TestJUnitMember();
+		member.setActor(attrs.getValue("", "actor"));
+		return member;
 	}
 }
