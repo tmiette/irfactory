@@ -1,8 +1,8 @@
 package net.sourceforge.projectfactory.server.actors;
 
-import java.io.InputStream;
-import java.io.StringReader;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import junit.framework.TestCase;
 import net.sourceforge.projectfactory.client.FrameMain;
@@ -14,6 +14,7 @@ public class TestTeam extends TestCase {
 	private FactoryWriterXML query;
 	private FactoryWriterXML answer;
 	private FactoryConnection connection;
+	private XMLParserHandler handler = new XMLParserHandler();
 	
 	public void testCreateTeam() throws IOException {
 		FrameMain main = new FrameMain(connection);
@@ -27,12 +28,19 @@ public class TestTeam extends TestCase {
 		
 		answer = new FactoryWriterXML();
 		connection.queryLocal(query, answer);
+
+		handler.parse(new ByteArrayInputStream(answer.toString().getBytes()));
 		
-		/*send the response to the parser*/
-		/*test the data structure of team with assertions*/
+		ArrayList<TestJUnitTeam> teams =  JUnitXMLObject.getTeams();
+		
+		if(teams.size() == 0) fail("Team was not created");
+		else{
+			TestJUnitTeam team = teams.get(0);
+			assertEquals(team.getName(), "Team Test");
+		}
 	}
 	
-	public void testAddActor() {
+	public void testAddActor() throws IOException {
 		
 		query = new FactoryWriterXML("query:update");
 		
@@ -45,11 +53,22 @@ public class TestTeam extends TestCase {
 		query.xmlEnd();
 		answer = new FactoryWriterXML();
 		connection.queryLocal(query, answer);
-		/*send the response to the parser*/
-		/*test the data structure of team with assertions*/
+		answer = getTeam();
+		handler.parse(new ByteArrayInputStream(answer.toString().getBytes()));
+		
+		//System.out.println("REPONSE : "+answer);
+		
+		ArrayList<TestJUnitTeam> teams =  JUnitXMLObject.getTeams();
+		
+		TestJUnitTeam team = teams.get(1);
+		
+		assertNotNull(team.getMember("Tom"));
+		
+		assertNotNull(team.getMember("Alan"));
+		
 	}
 	
-	public void testDeleteActor() {
+	public void testDeleteActor() throws IOException {
 		
 		query = new FactoryWriterXML("query:update");
 		
@@ -62,12 +81,19 @@ public class TestTeam extends TestCase {
 		
 		answer = new FactoryWriterXML();
 		connection.queryLocal(query, answer);
-		/*send the response to the parser*/
-		/*test the data structure of team with assertions*/
+		
+		
+		handler.parse(new ByteArrayInputStream(getTeam().toString().getBytes()));
+		
+		ArrayList<TestJUnitTeam> teams =  JUnitXMLObject.getTeams();
+		
+		TestJUnitTeam team = teams.get(2);
+		assertNotNull(team.getMember("Tom"));
+		assertNull(team.getMember("Alan"));
 		
 	}
 	
-	private void getTeam() {
+	private FactoryWriterXML getTeam() {
 		
 		query = new FactoryWriterXML("query:get");
 		
@@ -75,7 +101,7 @@ public class TestTeam extends TestCase {
 		
 		answer = new FactoryWriterXML();
 		connection.queryLocal(query, answer);
-		/*send the response to the parser*/
+		return answer;
 	}
 	
 	protected void setUp() throws Exception {

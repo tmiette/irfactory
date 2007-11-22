@@ -15,19 +15,27 @@ public class TestJUnitTeam {
 	private String summary;
 
 	public void addMember(TestJUnitMember m) {
-
+		System.out.println("AJOUT :  "+m.getActor());
 		this.members.add(m);
 	}
 
 	public TestJUnitMember getMember(String name) {
-
+		System.out.println("ARRAY : "+this.members+"  "+name);
 		for (TestJUnitMember m : members) {
-			if (m.getActor().equals(name))
+			
+			if (m.getActor().equals(name)){
+				
 				return m;
+			}
 		}
 		return null;
 	}
 
+	public ArrayList<TestJUnitMember> getArrayMember() {
+		
+		return members;
+	}
+	
 	public String getIid() {
 
 		return iid;

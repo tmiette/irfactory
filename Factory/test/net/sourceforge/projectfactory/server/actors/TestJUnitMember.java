@@ -9,6 +9,7 @@ public class TestJUnitMember {
 	public void setActor(String actor) {
 
 		this.actor = actor;
+		System.out.println("Création actor "+actor);
 	}
 	
 	

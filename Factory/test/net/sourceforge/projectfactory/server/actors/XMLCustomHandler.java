@@ -12,10 +12,10 @@ public class XMLCustomHandler extends DefaultHandler {
 	private TestJUnitMember member;
 
 	/**
-	 * This method executes differents methods corresponding to the element
+	 * This method executes different methods corresponding to the element
 	 * encountered by the SAX parser. All elements accepted by the program are
-	 * presents, if the SAX parser meet an unknow element, the method ignore it.
-	 * During the calls of the differents methods, all objects supported by the
+	 * presents, if the SAX parser meet an unknown element, the method ignore it.
+	 * During the calls of the different methods, all objects supported by the
 	 * program are created and added in the the scene are created.
 	 * 
 	 * @see org.xml.sax.helpers.DefaultHandler#startElement(java.lang.String,
