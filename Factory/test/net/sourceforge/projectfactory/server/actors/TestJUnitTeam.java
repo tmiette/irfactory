@@ -118,4 +118,20 @@ public class TestJUnitTeam {
 		this.createdBy = createdBy;
 	}
 	
+	@Override
+	public String toString() {
+	
+		StringBuilder sb = new StringBuilder();
+		for (TestJUnitTeam t : this.teams) {
+			sb.append("iid = " + t.getIid());
+			sb.append(" active = " + t.getActive());
+			sb.append(" revision = " + t.revision);
+			sb.append(" name = " + t.getName());
+			sb.append(" created = " + t.getCreated());
+			sb.append(" created by = " + t.getCreatedBy());
+			sb.append("\n");
+		}
+		
+		return sb.toString();
+	}
 }
