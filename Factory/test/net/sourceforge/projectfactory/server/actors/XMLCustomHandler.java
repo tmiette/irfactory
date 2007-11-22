@@ -27,19 +27,13 @@ public class XMLCustomHandler extends DefaultHandler {
 
 		if (localName.equals("team")) {
 			System.out.println("detection team");
-			if (team == null) {
-				System.out.println("creation d'une team");
-				TestJUnitTeam team = createTeam(attrs);
-				JUnitXMLObject.getTeams().add(team);
-			}
+			System.out.println("creation d'une team");
+			this.team = createTeam(attrs);
 		}
 		if (localName.equals("member")) {
 			System.out.println("detection member");
-			if (member == null) {
-				System.out.println("creation d'un membre");
-				TestJUnitMember member = createMember(attrs);
-				this.team.addMember(member);
-			}
+			System.out.println("creation d'un membre");
+			this.member = createMember(attrs);
 		}
 
 	}
@@ -57,10 +51,13 @@ public class XMLCustomHandler extends DefaultHandler {
 
 		if (localName.equals("team")) {
 			System.out.println("fin detection team");
+			JUnitXMLObject.getTeams().add(this.team);
+			this.team = null;
 		}
-		
+
 		if (localName.equals("member")) {
 			System.out.println("fin detection member");
+			this.team.addMember(member);
 			this.member = null;
 		}
 
