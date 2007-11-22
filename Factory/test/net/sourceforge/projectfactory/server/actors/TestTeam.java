@@ -1,5 +1,7 @@
 package net.sourceforge.projectfactory.server.actors;
 
+import java.io.InputStream;
+import java.io.StringReader;
 import java.io.IOException;
 
 import junit.framework.TestCase;
@@ -20,12 +22,12 @@ public class TestTeam extends TestCase {
 		query.xmlStart("team");
 		query.xmlOut("name","Team Test");
 		query.xmlOut("revision","1");
-		query.xmlOut("active","1");
-		query.xmlOut("administrator","n");
+		query.xmlOut("active","y");
 		query.xmlEnd();
 		
 		answer = new FactoryWriterXML();
 		connection.queryLocal(query, answer);
+		
 		/*send the response to the parser*/
 		/*test the data structure of team with assertions*/
 		
@@ -41,10 +43,25 @@ public class TestTeam extends TestCase {
 		query.xmlStart("team");
 		query.xmlOut("name","Team Test");
 		query.xmlOut("revision","1");
-		query.xmlOut("active","1");
-		query.xmlOut("administrator","n");
-		query.xmlOut("member").xmlAttribute("name", "Tom");
-		query.xmlOut("member").xmlAttribute("name", "Doak");
+		query.xmlOut("active","y");
+		query.xmlStart("member").xmlAttribute("actor", "Tom").xmlAttribute("interim", "y").xmlEnd();
+		query.xmlStart("member").xmlAttribute("actor", "Alan").xmlAttribute("interim", "y").xmlEnd();
+		query.xmlEnd();
+		answer = new FactoryWriterXML();
+		connection.queryLocal(query, answer);
+		/*send the response to the parser*/
+		/*test the data structure of team with assertions*/
+	}
+	
+	public void testDeleteActor() {
+		
+		query = new FactoryWriterXML("query:update");
+		
+		query.xmlStart("team");
+		query.xmlOut("name","Team Test");
+		query.xmlOut("revision","2");
+		query.xmlOut("active","y");
+		query.xmlStart("member").xmlAttribute("actor", "Tom").xmlAttribute("interim", "y").xmlEnd();
 		query.xmlEnd();
 		
 		answer = new FactoryWriterXML();
