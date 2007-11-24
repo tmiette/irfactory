@@ -7,8 +7,10 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class XMLCustomHandler extends DefaultHandler {
 
+	//the new team corresponding to xml flux
 	private TestJUnitTeam team;
 
+	//the new member corrsponding to the xml flux
 	private TestJUnitMember member;
 
 	/**
@@ -26,13 +28,11 @@ public class XMLCustomHandler extends DefaultHandler {
 			Attributes attrs) throws SAXException {
 
 		if (localName.equals("team")) {
-			System.out.println("detection team");
-			System.out.println("creation d'une team");
+			//creating of the new team
 			this.team = createTeam(attrs);
 		}
 		if (localName.equals("member")) {
-			System.out.println("detection member");
-			System.out.println("creation d'un membre");
+			//creating of the new member
 			this.member = createMember(attrs);
 		}
 
@@ -50,13 +50,13 @@ public class XMLCustomHandler extends DefaultHandler {
 			throws SAXException {
 
 		if (localName.equals("team")) {
-			System.out.println("fin detection team");
+			//adding the new team to an ArrayList in JUnitXMLObject object
 			JUnitXMLObject.getTeams().add(this.team);
 			this.team = null;
 		}
 
 		if (localName.equals("member")) {
-			System.out.println("fin detection member");
+			//adding a member to the team
 			this.team.addMember(member);
 			this.member = null;
 		}
@@ -74,9 +74,17 @@ public class XMLCustomHandler extends DefaultHandler {
 		super.setDocumentLocator(locator);
 	}
 
+	/**
+	 * This method permits to create a new team
+	 * 
+	 * @param attrs
+	 *          attributes corresponding to the team's fields
+	 * @return TestJUnitTeam the new team created
+	 */
 	private TestJUnitTeam createTeam(Attributes attrs) {
 
 		TestJUnitTeam team = new TestJUnitTeam();
+		//getting the values of the team's fields
 		team.setIid(attrs.getValue("", "iid"));
 		team.setName(attrs.getValue("", "name"));
 		team.setUpdated(attrs.getValue("", "updated"));
@@ -84,9 +92,17 @@ public class XMLCustomHandler extends DefaultHandler {
 		return team;
 	}
 
+	/**
+	 * This method permits to create a new member
+	 * 
+	 * @param attrs
+	 *          attributes corresponding to the member's fields
+	 * @return TestJUnitMember the new member created
+	 */
 	private TestJUnitMember createMember(Attributes attrs) {
 
 		TestJUnitMember member = new TestJUnitMember();
+		//getting the values of the member's fields
 		member.setActor(attrs.getValue("", "actor"));
 		return member;
 	}
