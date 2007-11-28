@@ -9,6 +9,19 @@ import net.sourceforge.projectfactory.client.FrameMain;
 import net.sourceforge.projectfactory.middleware.FactoryConnection;
 import net.sourceforge.projectfactory.xml.FactoryWriterXML;
 
+
+
+/**
+ * <?xml version="1.0" encoding="UTF-8"?>
+ * <query:get>
+ * 	<project iid="david11676720112501" name="DEMO-EN-Issue fall 2006"/>
+ * </query:get>
+ * 
+ * 
+ 
+ * @author doak
+ *
+ */
 public class TestTeam extends TestCase {
 	
 	private FactoryWriterXML query;
@@ -138,15 +151,16 @@ public class TestTeam extends TestCase {
 	 * @return the team in FactoryWriterXml format
 	 */
 	private FactoryWriterXML getTeam(String name) {
+		 
+		 query = new FactoryWriterXML("query:get");
+		 query.xmlStart("team").xmlAttribute("name", name).xmlEnd();
+		 
+		 
+		 answer = new FactoryWriterXML();
+		 
+		 //send a query and get the response
+		 connection.queryLocal(query, answer);
 		
-		//parameterizes the query
-		query = new FactoryWriterXML("query:get");
-		query.xmlStart("team").xmlAttribute("name", name).xmlEnd();
-		
-		answer = new FactoryWriterXML();
-		
-		//sends the query and get the answer
-		connection.queryLocal(query, answer);
 		
 		return answer;
 	}
@@ -208,3 +222,6 @@ public class TestTeam extends TestCase {
 		connection.queryLocal(query, new FactoryWriterXML());
 	}
 }
+
+
+
