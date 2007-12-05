@@ -35,7 +35,7 @@ import java.io.OutputStreamWriter;
 import java.util.List;
 
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -46,7 +46,7 @@ import net.sourceforge.projectfactory.xml.XMLWrapper;
 public class ClassDefinition extends ClassDefinitionBase {
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+    public void xmlOut(WriterXML xml, TransactionXML transaction, 
                        boolean tags) {
         if (tags) xmlStart(xml, "classdefinition");
 
@@ -64,7 +64,7 @@ public class ClassDefinition extends ClassDefinitionBase {
     }
 
     /** Writes associated objects as an XML output. */
-    private void xmlOutExpandClassCode(FactoryWriterXML xml, 
+    private void xmlOutExpandClassCode(WriterXML xml, 
                               TransactionXML transaction) {
         for (ClassCode classCode: transaction.getServer().core.classCodes) 
             if (classCode.packageReference != null && 
@@ -82,7 +82,7 @@ public class ClassDefinition extends ClassDefinitionBase {
     }
 
     /** Validates the object before any save or update. */
-    public boolean xmlValidate(FactoryWriterXML xml, TransactionXML transaction, 
+    public boolean xmlValidate(WriterXML xml, TransactionXML transaction, 
                             List list) {
         if(super.xmlValidate(xml, transaction, list))
             return true;

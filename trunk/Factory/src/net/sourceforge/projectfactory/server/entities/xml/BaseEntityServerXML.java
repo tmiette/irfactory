@@ -31,7 +31,7 @@ import java.util.List;
 import net.sourceforge.projectfactory.server.entities.BaseEntity;
 import net.sourceforge.projectfactory.server.xml.ReaderServerXML;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
@@ -71,7 +71,7 @@ public class BaseEntityServerXML extends ReaderServerXML {
     protected void end() {
         if (list != null) {
             if (list.contains(subEntity)) {
-                xml.xmlMessage(FactoryWriterXML.ERROR, 
+                xml.xmlMessage(WriterXML.ERROR, 
                                "error:duplicate:name:sub", 
                                subEntity.getName());
             } else {

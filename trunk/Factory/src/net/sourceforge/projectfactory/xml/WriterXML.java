@@ -42,7 +42,7 @@ import javax.xml.transform.sax.SAXTransformerFactory;
 import javax.xml.transform.sax.TransformerHandler;
 import javax.xml.transform.stream.StreamResult;
 
-import net.sourceforge.projectfactory.FactoryBuild;
+import net.sourceforge.projectfactory.AboutProjectsOrganizer;
 
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.AttributesImpl;
@@ -57,7 +57,7 @@ import org.xml.sax.helpers.AttributesImpl;
   * abstraction for Factory.
   * @author David Lambert
   */
-public class FactoryWriterXML {
+public class WriterXML {
 
     /** SAX Transformer. */
     private SAXTransformerFactory xmlOutput;
@@ -120,7 +120,7 @@ public class FactoryWriterXML {
     public static final String FATAL = "fatal";
 
     /** Constructor. */
-    public FactoryWriterXML(Writer outWriter, String document, 
+    public WriterXML(Writer outWriter, String document, 
                             boolean indent) {
         xmlOutput = (SAXTransformerFactory)SAXTransformerFactory.newInstance();
         try {
@@ -149,8 +149,8 @@ public class FactoryWriterXML {
                 out.startElement("", "", document, null);
                 err.startElement("", "", ERRORS, null);
                 if (indent)
-                    out.comment(FactoryBuild.getBuild().toCharArray(), 0, 
-                                FactoryBuild.getBuild().length());
+                    out.comment(AboutProjectsOrganizer.getBuild().toCharArray(), 0, 
+                                AboutProjectsOrganizer.getBuild().length());
             }
         } catch (SAXException e) {
             e.printStackTrace();
@@ -158,17 +158,17 @@ public class FactoryWriterXML {
     }
 
     /** Constructor. */
-    public FactoryWriterXML(String document) {
+    public WriterXML(String document) {
         this(new StringWriter(), document, false);
     }
 
     /** Constructor. */
-    public FactoryWriterXML(String document, boolean indent) {
+    public WriterXML(String document, boolean indent) {
         this(new StringWriter(), document, indent);
     }
 
     /** Constructor. */
-    public FactoryWriterXML(String fileName, 
+    public WriterXML(String fileName, 
                             String document) throws UnsupportedEncodingException, 
                                                     FileNotFoundException {
         this(new OutputStreamWriter(new FileOutputStream(fileName), "UTF-8"), 
@@ -176,7 +176,7 @@ public class FactoryWriterXML {
     }
 
     /** Constructor. */
-    public FactoryWriterXML() {
+    public WriterXML() {
         this(new StringWriter(), RESPONSE, false);
     }
 
@@ -257,7 +257,7 @@ public class FactoryWriterXML {
     }
 
     /** Prepares an element for output in the data stream. */
-    public final FactoryWriterXML xmlStart(String tag) {
+    public final WriterXML xmlStart(String tag) {
         if (out == null)
             return this;
         xmlClass();
@@ -268,7 +268,7 @@ public class FactoryWriterXML {
     }
 
     /** Adds an attribute. */
-    public final FactoryWriterXML xmlAttribute(String tag, String value) {
+    public final WriterXML xmlAttribute(String tag, String value) {
         if (out == null)
             return this;
         if (value != null && attributesImpl != null && value.length() > 0){
@@ -278,12 +278,12 @@ public class FactoryWriterXML {
     }
 
     /** Adds an attribute. */
-    public final FactoryWriterXML xmlAttribute(String tag, int value) {
+    public final WriterXML xmlAttribute(String tag, int value) {
         return xmlAttribute(tag, Integer.toString(value));
     }
 
     /** Outputs the element. */
-    private final FactoryWriterXML xmlClass() {
+    private final WriterXML xmlClass() {
         if (out == null)
             return this;
         if (tag != null && attributesImpl != null) {
@@ -299,7 +299,7 @@ public class FactoryWriterXML {
 
     /** Adds an element (tag / value) into the current element
      *  as like as an attribute. */
-    public final FactoryWriterXML xmlOut(String tag, String value) {
+    public final WriterXML xmlOut(String tag, String value) {
         if (out == null)
             return this;
         xmlClass();
@@ -317,12 +317,12 @@ public class FactoryWriterXML {
 
     /** Adds an element (tag / value) into the current element
      *  as like as an attribute. */
-    public final FactoryWriterXML xmlOut(String tag, int value) {
+    public final WriterXML xmlOut(String tag, int value) {
         return xmlOut(tag, Integer.toString(value));
     }
 
     /** Adds an empty element into the current element. */
-    public final FactoryWriterXML xmlOut(String tag) {
+    public final WriterXML xmlOut(String tag) {
         if (out == null)
             return this;
         xmlClass();
@@ -338,7 +338,7 @@ public class FactoryWriterXML {
     }
 
     /** Finishes the output of the element. */
-    public final FactoryWriterXML xmlEnd() {
+    public final WriterXML xmlEnd() {
         if (out == null)
             return this;
         xmlClass();
@@ -358,7 +358,7 @@ public class FactoryWriterXML {
     }
 
     /** Prepares an element for output in the error stream. */
-    public final FactoryWriterXML xmlStartError(String tag) {
+    public final WriterXML xmlStartError(String tag) {
         if (err == null)
             return this;
         xmlClassError();
@@ -369,7 +369,7 @@ public class FactoryWriterXML {
     }
 
     /** Adds an attribute. */
-    public final FactoryWriterXML xmlAttributeError(String tag, String value) {
+    public final WriterXML xmlAttributeError(String tag, String value) {
         if (err == null)
             return this;
         if (value != null && attributesImplErr != null && value.length() > 0)
@@ -378,7 +378,7 @@ public class FactoryWriterXML {
     }
 
     /** Outputs the element. */
-    private final FactoryWriterXML xmlClassError() {
+    private final WriterXML xmlClassError() {
         if (err == null)
             return this;
         if (tagErr != null && attributesImplErr != null) {
@@ -394,7 +394,7 @@ public class FactoryWriterXML {
 
     /** Adds an element (tag / value) into the current element
      *  as like as an attribute. */
-    private final FactoryWriterXML xmlOutError(String tag, String value) {
+    private final WriterXML xmlOutError(String tag, String value) {
         if (err == null)
             return this;
         xmlClassError();
@@ -411,7 +411,7 @@ public class FactoryWriterXML {
     }
 
     /** Finishes the output of the element. */
-    public final FactoryWriterXML xmlEndError() {
+    public final WriterXML xmlEndError() {
         if (err == null)
             return this;
         xmlClassError();

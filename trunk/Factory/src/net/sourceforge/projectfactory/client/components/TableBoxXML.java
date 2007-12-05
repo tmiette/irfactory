@@ -26,14 +26,14 @@ $Author: ddlamb_2000 $
 */
 package net.sourceforge.projectfactory.client.components;
 
-import net.sourceforge.projectfactory.xml.FactoryReaderXML;
+import net.sourceforge.projectfactory.xml.ReaderXML;
 
 
 /**
  * XML Parser used to read details of a table.
  * @author David Lambert
  */
-public class TableBoxXML extends FactoryReaderXML {
+public class TableBoxXML extends ReaderXML {
 
     /** Table to be read. */
     private TableBox table;

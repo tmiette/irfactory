@@ -35,17 +35,17 @@ import javax.swing.JButton;
  * Default interface button.
  * @author David Lambert
  */
-public class ButtonFactory extends JButton {
+public class Button extends JButton {
 	
     /** Constructor with an icon. */
-    public ButtonFactory(String title, Icon icon) {
+    public Button(String title, Icon icon) {
         super(title, icon);
         setBorder(BorderFactory.createEmptyBorder());
         setContentAreaFilled(false);
     }
 
     /** Constructor. */
-    public ButtonFactory(String title) {
+    public Button(String title) {
         this(title, null);
     }
 }

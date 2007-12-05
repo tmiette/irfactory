@@ -61,10 +61,10 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.PBEParameterSpec;
 
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.LocalMessage;
 import net.sourceforge.projectfactory.client.xml.ImportListXML;
-import net.sourceforge.projectfactory.server.FactoryServer;
+import net.sourceforge.projectfactory.server.ApplicationServer;
 import net.sourceforge.projectfactory.server.actions.Action;
 import net.sourceforge.projectfactory.server.actions.Recipient;
 import net.sourceforge.projectfactory.server.actors.Actor;
@@ -73,9 +73,9 @@ import net.sourceforge.projectfactory.server.actors.Server;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.Base64;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
-import net.sourceforge.projectfactory.xml.FactoryZipInput;
-import net.sourceforge.projectfactory.xml.FactoryZipOutput;
+import net.sourceforge.projectfactory.xml.WriterXML;
+import net.sourceforge.projectfactory.xml.ZipExtractor;
+import net.sourceforge.projectfactory.xml.ZipCompress;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -84,7 +84,7 @@ import net.sourceforge.projectfactory.xml.XMLWrapper;
  * Makes the link between servers and clients.
  * @author David Lambert
  */
-public class FactoryConnection {
+public class Connection {
 
     /** Timeout for socket connections. */
     private static int TIMEOUT = 10000;
@@ -108,16 +108,16 @@ public class FactoryConnection {
 	private static String ENCRYPTION = "PBEWithMD5AndDES";
 
 	/** Local server. */
-	static private FactoryServer localServer;
+	static private ApplicationServer localServer;
 
 	/** Local session. */
-	static private FactorySession localSession;
+	static private Session localSession;
 	
     /** Error queue. */
-    private FactoryWriterXML errQueue;
+    private WriterXML errQueue;
 
     /** Output queue. */
-    private FactoryWriterXML outputQueue;
+    private WriterXML outputQueue;
     
     /**Socket managed by the socketClient. */
     private Socket socketClient;
@@ -132,10 +132,10 @@ public class FactoryConnection {
 	private boolean replication;
 	
     /** List of clients (used for notifications). */
-    public List<FrameMain> mainFrames = new ArrayList();
+    public List<MainFrame> mainFrames = new ArrayList();
 
     /** List of sessions on the server. */
-    private List<FactorySession> sessions = new ArrayList();
+    private List<Session> sessions = new ArrayList();
 
     /** Thread used during initialization phase. */
     private ThreadInit threadInit = new ThreadInit();
@@ -147,13 +147,13 @@ public class FactoryConnection {
 	private Cipher dcipher;
 	
 	/** Creates a local server. */
-	protected FactoryServer createServer() {
-		return new FactoryServer();
+	protected ApplicationServer createServer() {
+		return new ApplicationServer();
 	}
 	
     /** Executes a query toward the server. */
-    public void query(FactoryWriterXML query, 
-                      FactoryWriterXML answer) {
+    public void query(WriterXML query, 
+                      WriterXML answer) {
         if(socketClient != null) 
 			queryRemote(query, answer);
         else 
@@ -161,8 +161,8 @@ public class FactoryConnection {
     }
 
     /** Executes a query toward the local server. */
-    public void queryLocal(FactoryWriterXML query, 
-                      FactoryWriterXML answer) {
+    public void queryLocal(WriterXML query, 
+                      WriterXML answer) {
         if(localServer != null){
 			localServer.query(localSession, query, answer);
 			System.out.println("Query : "+answer);
@@ -206,8 +206,8 @@ public class FactoryConnection {
 	}
 
 	/** Executes a query toward the remote server. */
-    private void queryRemote(FactoryWriterXML query, 
-                      FactoryWriterXML answer) {
+    private void queryRemote(WriterXML query, 
+                      WriterXML answer) {
 		synchronized (this) {
 			try {
 				// Sends query to the server
@@ -234,19 +234,19 @@ public class FactoryConnection {
 					else 
 						buffer += line;
 				}
-                answer.xmlMessage(FactoryWriterXML.ERROR, "server:error:client");
+                answer.xmlMessage(WriterXML.ERROR, "server:error:client");
 			} catch (SocketException e) {
-			    answer.xmlMessage(FactoryWriterXML.ERROR, "server:error:client");
+			    answer.xmlMessage(WriterXML.ERROR, "server:error:client");
 				shutDownClient();
 			} catch (SocketTimeoutException e) {
-			    answer.xmlMessage(FactoryWriterXML.ERROR, "server:timeout:client");
+			    answer.xmlMessage(WriterXML.ERROR, "server:timeout:client");
 				shutDownClient();
 			} catch (javax.crypto.BadPaddingException e) {
-			    answer.xmlMessage(FactoryWriterXML.ERROR, "server:error:encrypt", e.toString());
+			    answer.xmlMessage(WriterXML.ERROR, "server:error:encrypt", e.toString());
 			} catch (javax.crypto.IllegalBlockSizeException e) {
-			    answer.xmlMessage(FactoryWriterXML.ERROR, "server:error:encrypt", e.toString());
+			    answer.xmlMessage(WriterXML.ERROR, "server:error:encrypt", e.toString());
 			} catch (java.io.IOException e) {
-			    answer.xmlMessage(FactoryWriterXML.ERROR, "server:error:encrypt", e.toString());
+			    answer.xmlMessage(WriterXML.ERROR, "server:error:encrypt", e.toString());
 			} catch (Exception e) {
 			    e.printStackTrace();
 				localServer.returnException(answer, e);
@@ -256,12 +256,12 @@ public class FactoryConnection {
     }
 	
     /** Executes a query and keep the results in the queue. */
-    private void queryQueue(FactoryWriterXML query) {
+    private void queryQueue(WriterXML query) {
         query(query, errQueue);
     }
     
     /** Connects the client to the server. */
-    public void connect(FrameMain frame, 
+    public void connect(MainFrame frame, 
 						String serverName) {
 		if(isConnected()) return;
 		
@@ -339,13 +339,13 @@ public class FactoryConnection {
 				frame.addMessageDictionary("MSG", "warning:noencrypt");
 
             outputClient = new OutputStreamWriter(
-								new FactoryZipOutput(
+								new ZipCompress(
 									socketClient.getOutputStream(), 
 									C2SBUFFERSIZE), "UTF-8");
 			
             inputClient = new BufferedReader(
 								new InputStreamReader(
-									new FactoryZipInput(
+									new ZipExtractor(
 										socketClient.getInputStream()), 
 										"UTF-8"),
 										S2CBUFFERSIZE);
@@ -375,7 +375,7 @@ public class FactoryConnection {
     }
     
     /** Disconnects the client from the server. */
-    public void disconnect(FrameMain frame) {
+    public void disconnect(MainFrame frame) {
 		if(!isConnected()) return;
         frame.addMessageDictionary("MSG", "server:close:client");
         shutDownClient();
@@ -387,24 +387,24 @@ public class FactoryConnection {
     }
 
     /** Attachs a client to the server. */
-    public void attach(FrameMain frame) {
+    public void attach(MainFrame frame) {
         synchronized(mainFrames) {
             mainFrames.add(frame);
         }
     }
 
     /** Detachs a client from the server. */
-    public void detach(FrameMain frame) {
+    public void detach(MainFrame frame) {
         synchronized(mainFrames) {
             mainFrames.remove(frame);
         }
     }
 
     /** Broadcasts a message to every client connected to the server. */
-    boolean broadcastMessage(FactoryWriterXML answer) {
+    boolean broadcastMessage(WriterXML answer) {
 		boolean isError = false;
         synchronized(mainFrames) {
-            for (FrameMain frame: mainFrames) {
+            for (MainFrame frame: mainFrames) {
                 if(frame.addMessage(answer)) 
                     isError = true;
             }
@@ -416,7 +416,7 @@ public class FactoryConnection {
     void broadcastMessage(String category, String label, 
 						  String... args) {
         synchronized(mainFrames) {
-            for (FrameMain frame: mainFrames) 
+            for (MainFrame frame: mainFrames) 
                 frame.addMessageDictionary(category, label, args);
         }
         if(mainFrames.size() == 0 && !category.equals("TRC")) {
@@ -428,7 +428,7 @@ public class FactoryConnection {
     /** Broadcasts a message to every client connected to the server. */
     private void broadcastMessage(Exception e) {
         synchronized(mainFrames) {
-            for (FrameMain frame: mainFrames) 
+            for (MainFrame frame: mainFrames) 
                 frame.addMessage(e);
         }
         if(mainFrames.size() == 0) {
@@ -467,20 +467,20 @@ public class FactoryConnection {
     }
 
     /** Returns the output queue. */
-    public FactoryWriterXML getQueue() {
+    public WriterXML getQueue() {
         waitInit();
         return outputQueue;
     }
 
     /** Returns the error queue. */
-    public FactoryWriterXML getErrorQueue() {
+    public WriterXML getErrorQueue() {
         waitInit();
         return errQueue;
     }
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml) {
-        for(FactorySession session: sessions) 
+    public void xmlOut(WriterXML xml) {
+        for(Session session: sessions) 
             session.xmlOut(xml);
     }
 
@@ -503,7 +503,7 @@ public class FactoryConnection {
                 } catch (InterruptedException ex) {
                     return;
                 }
-                for (FrameMain frame: mainFrames) {
+                for (MainFrame frame: mainFrames) {
                     try {
                         frame.saveSession();
                     } catch (Exception e) {
@@ -511,8 +511,8 @@ public class FactoryConnection {
                     }
                 }
                 if(mainFrames.size() == 0) {
-                    FactoryWriterXML answer = new FactoryWriterXML();
-                    FactoryWriterXML query = new FactoryWriterXML("query:saveall");
+                    WriterXML answer = new WriterXML();
+                    WriterXML query = new WriterXML("query:saveall");
                     try {
                         queryLocal(query, answer);
                     } catch (Exception e) {
@@ -563,10 +563,10 @@ public class FactoryConnection {
 				try {
 					
 					localServer = createServer();
-					localSession = new FactorySession(FactoryConnection.this, 
+					localSession = new Session(Connection.this, 
 													  localServer);
-					errQueue = new FactoryWriterXML();
-					FactoryWriterXML query = new FactoryWriterXML("query:open");
+					errQueue = new WriterXML();
+					WriterXML query = new WriterXML("query:open");
 					queryQueue(query);
 				} catch (Exception e) {
 					broadcastMessage(e);
@@ -731,8 +731,8 @@ public class FactoryConnection {
 		
         /** Initializes the sub-servers and opens the server. */
         public void run() {
-			FactorySession session = 
-				new FactorySession(FactoryConnection.this, 
+			Session session = 
+				new Session(Connection.this, 
 									localServer, 
 									true);
 			synchronized(sessions) {
@@ -747,13 +747,13 @@ public class FactoryConnection {
 				session.setHost(address);
 
 				outputServer = new OutputStreamWriter(
-									new FactoryZipOutput(
+									new ZipCompress(
 										socketServer.getOutputStream(), 
 										S2CBUFFERSIZE), "UTF-8");
 
 				inputServer = new BufferedReader(
 								new InputStreamReader(
-									new FactoryZipInput(
+									new ZipExtractor(
 										socketServer.getInputStream()), 
 									"UTF-8"),
 									C2SBUFFERSIZE);
@@ -771,8 +771,8 @@ public class FactoryConnection {
 							session.getHost(),
 							request);
 
-						FactoryWriterXML query = new FactoryWriterXML();
-						FactoryWriterXML answer = new FactoryWriterXML();
+						WriterXML query = new WriterXML();
+						WriterXML answer = new WriterXML();
 						
 						query.copyFrom(request);
 						System.out.println("Query : "+query);
@@ -869,8 +869,8 @@ public class FactoryConnection {
         
         /** Runs the replication. */
         public void run() {
-			FactoryWriterXML query;
-			FactoryWriterXML answer;
+			WriterXML query;
+			WriterXML answer;
 			while (true) {
 				try {
 					Thread.sleep(20 * 1000);
@@ -883,20 +883,20 @@ public class FactoryConnection {
 						broadcastMessage("TRC", "message:replication");
 
                         // Ask remote server for identification of network recipients
-					    query = new FactoryWriterXML("query:getnetworkrecipients");
-					    answer = new FactoryWriterXML();
+					    query = new WriterXML("query:getnetworkrecipients");
+					    answer = new WriterXML();
                         queryRemote(query, answer);
 					    broadcastMessage(answer);
                         
                         // Ask local server to update actors based on network recipients
-                        query = new FactoryWriterXML();
+                        query = new WriterXML();
 					    String details = answer.getOutWriter().toString();
                         details = XMLWrapper.replaceAll(details, 
                                  "<response", "<query:replicate");
                         details = XMLWrapper.replaceAll(details, 
                                  "</response", "</query:replicate");
                         query.copyFrom(details);
-                        answer = new FactoryWriterXML();
+                        answer = new WriterXML();
                         queryLocal(query, answer);
                         broadcastMessage(answer);
 
@@ -907,9 +907,9 @@ public class FactoryConnection {
 						    broadcastMessage("TRC", "message:replication:class", 
                                                     className);
                             
-						    query = new FactoryWriterXML("query:list");
+						    query = new WriterXML("query:list");
 						    query.xmlOut("class", className);
-						    answer = new FactoryWriterXML();
+						    answer = new WriterXML();
                             
 						    ImportListXML importListLocal = 
 						        new ImportListXML(null, null);
@@ -918,7 +918,7 @@ public class FactoryConnection {
                             importListLocal.xmlIn(answer, null, false);
 						    broadcastMessage(answer);
                                 
-						    answer = new FactoryWriterXML();
+						    answer = new WriterXML();
 						    ImportListXML importListRemote = 
 						        new ImportListXML(null, null);
 						    queryRemote(query, answer);
@@ -954,12 +954,12 @@ public class FactoryConnection {
 									if(!replication || !isConnected())
 										break;
 									
-								    query = new FactoryWriterXML("query:save");
+								    query = new WriterXML("query:save");
 								    query.xmlStart(objectClassName);
 								    query.xmlOut("iid", iidName);
 								    query.xmlOut("name", objectName);
 								    query.xmlEnd();
-								    answer = new FactoryWriterXML();
+								    answer = new WriterXML();
 									if(phase == 1)
                                         queryRemote(query, answer);
                                     else
@@ -971,14 +971,14 @@ public class FactoryConnection {
 									
 									details = answer.getOutWriter().toString();
 									if(details.length()>0){
-									    query = new FactoryWriterXML();
+									    query = new WriterXML();
                                         details = XMLWrapper.replaceAll(details, 
                                                 "<response", "<query:replicate");
 									    details = XMLWrapper.replaceAll(details, 
                                                 "</response", "</query:replicate");
                                         query.copyFrom(details);
                                         
-									    answer = new FactoryWriterXML();
+									    answer = new WriterXML();
 									    if(phase == 1)
 									        queryLocal(query, answer);
 									    else
@@ -1075,7 +1075,7 @@ public class FactoryConnection {
 
 				if(to.length() > 0) {
 					List<Entity> prerequisites = new ArrayList(20);
-                    FactoryWriterXML xml = new FactoryWriterXML("factory", true);
+                    WriterXML xml = new WriterXML("factory", true);
 					TransactionXML transaction = new TransactionXML(localSession, xml);
                     transaction.setCode(TransactionXML.SAVE);
 					action.addPrerequisites(transaction, prerequisites);
@@ -1378,14 +1378,14 @@ public class FactoryConnection {
 						broadcastMessage("TRC", "message:get", 
 											XMLWrapper.wrapHTML(queryAction.toString()));
 
-						FactoryWriterXML query = new FactoryWriterXML();
+						WriterXML query = new WriterXML();
 						String actionString = queryAction.toString();
 						actionString = XMLWrapper.replaceAll(actionString, 
                                                 "<factory", "<query:replicate");
 						actionString = XMLWrapper.replaceAll(actionString, 
                                                 "</factory", "</query:replicate");
 						query.copyFrom(actionString);
-						FactoryWriterXML answer = new FactoryWriterXML();
+						WriterXML answer = new WriterXML();
 						queryLocal(query, answer);
 						String answerString = answer.getErrWriter().toString();
 						if(answerString.indexOf("message:replicated:created:") < 0 &&

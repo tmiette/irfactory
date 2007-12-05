@@ -42,7 +42,7 @@ import net.sourceforge.projectfactory.server.entities.DurationCount;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.BaseEntityServerXML;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -107,7 +107,7 @@ public class Plan extends Entity {
     private DurationCount totalExposure = new DurationCount();
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+    public void xmlOut(WriterXML xml, TransactionXML transaction, 
                        boolean tags) {
         boolean found;
 
@@ -256,7 +256,7 @@ public class Plan extends Entity {
     }
 
     /** Writes constraints as an XML output. */
-    private void xmlOutConstraints(FactoryWriterXML xml, 
+    private void xmlOutConstraints(WriterXML xml, 
                                    TransactionXML transaction, Task task) {
         boolean found = false;
 
@@ -278,7 +278,7 @@ public class Plan extends Entity {
     }
 
     /** Writes assignments as an XML output. */
-    private void xmlOutAssigments(FactoryWriterXML xml, 
+    private void xmlOutAssigments(WriterXML xml, 
                                   TransactionXML transaction, Task task) {
         boolean found;
         found = false;
@@ -304,7 +304,7 @@ public class Plan extends Entity {
     }
 
     /** Writes workload as an XML output. */
-    private void xmlOutWorkload(FactoryWriterXML xml, 
+    private void xmlOutWorkload(WriterXML xml, 
                                 TransactionXML transaction, Task task) {
         boolean found;
         found = false;
@@ -329,21 +329,21 @@ public class Plan extends Entity {
     }
 
     /** Writes phases as an XML output. */
-    private void xmlOutPhases(FactoryWriterXML xml, 
+    private void xmlOutPhases(WriterXML xml, 
                               TransactionXML transaction) {
         for (Phase phase: phases)
             phase.xmlOut(xml, transaction, true);
     }
 
     /** Writes anonimities as an XML output. */
-    private void xmlOutAnonymities(FactoryWriterXML xml, 
+    private void xmlOutAnonymities(WriterXML xml, 
                                    TransactionXML transaction) {
         for (Anonymous anonymous: anonymities)
             anonymous.xmlOut(xml, transaction, true);
     }
 
     /** Writes events as an XML output. */
-    private void xmlOutEvents(FactoryWriterXML xml, 
+    private void xmlOutEvents(WriterXML xml, 
                               TransactionXML transaction) {
         for (Event event: events) {
             event.xmlOut(xml, transaction, true);
@@ -365,7 +365,7 @@ public class Plan extends Entity {
     }
 
     /** Writes risks as an XML output. */
-    private void xmlOutRisk(FactoryWriterXML xml, TransactionXML transaction) {
+    private void xmlOutRisk(WriterXML xml, TransactionXML transaction) {
         for (Risk risk: risks) {
             risk.xmlOut(xml, transaction, true);
             totalExposure.addHours(risk.getExposure());
@@ -373,7 +373,7 @@ public class Plan extends Entity {
     }
 
     /** Writes members as an XML output. */
-    void xmlOutMembers(FactoryWriterXML xml, TransactionXML transaction) {
+    void xmlOutMembers(WriterXML xml, TransactionXML transaction) {
         for (ProjectTeam projectTeam:project.teams) {
             Team team = projectTeam.team;
             if (team != null) {
@@ -436,7 +436,7 @@ public class Plan extends Entity {
     }
 
     /** Reads the object from an XML input. */
-    public boolean xmlIn(FactoryWriterXML xml, TransactionXML transaction, 
+    public boolean xmlIn(WriterXML xml, TransactionXML transaction, 
                          String tag, String value) {
         if (super.xmlIn(xml, transaction, tag, value)) {
             return true;
@@ -587,7 +587,7 @@ public class Plan extends Entity {
     }
 
     /** Validates the object before any save or update. */
-    public boolean xmlValidate(FactoryWriterXML xml, TransactionXML transaction, 
+    public boolean xmlValidate(WriterXML xml, TransactionXML transaction, 
                             List list) {
         int i;
         List list1;
@@ -750,7 +750,7 @@ public class Plan extends Entity {
     }
 
     /** Generates forecast calendar, based on forecast date and hours per week. */
-    public boolean generateForecast(FactoryWriterXML xml, 
+    public boolean generateForecast(WriterXML xml, 
                                     TransactionXML transaction) {
         List list;
         List list2;
@@ -1604,7 +1604,7 @@ public class Plan extends Entity {
     }
 
     /** Validates the object before delete. */
-    public boolean xmlValidateDelete(FactoryWriterXML xml, 
+    public boolean xmlValidateDelete(WriterXML xml, 
                                   TransactionXML transaction) {
         for (Forecast forecast:transaction.getServer().projects.forecasts) {
             if (forecast.plan == this) {

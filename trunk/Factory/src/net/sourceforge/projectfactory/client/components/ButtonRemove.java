@@ -31,7 +31,7 @@ package net.sourceforge.projectfactory.client.components;
  * Defines a button used to remove or delete an object.
  * @author David Lambert
  */
-public class ButtonRemove extends ButtonFactory {
+public class ButtonRemove extends Button {
 	
 	/** Constructor. */
     public ButtonRemove() {

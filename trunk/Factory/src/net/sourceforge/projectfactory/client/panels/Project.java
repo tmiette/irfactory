@@ -28,7 +28,7 @@ $Author: ddlamb_2000 $
 package net.sourceforge.projectfactory.client.panels;
 
 import java.awt.event.ActionEvent;
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.*;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 
@@ -80,10 +80,10 @@ public class Project extends PanelData {
                                 "type","label:type",10,
                                 "actionstatus","label:status",10,
                                 "action","label:action",5);
-    protected ButtonToggleFactory button1 = new ButtonToggleFactory("button:project:newplan","button:project:newplan:tip","plan.gif");
+    protected ButtonToggle button1 = new ButtonToggle("button:project:newplan","button:project:newplan:tip","plan.gif");
 
     /** Constructor. */
-    public Project(FrameMain frame) {
+    public Project(MainFrame frame) {
         super(frame);
         businessProcess.setEnabler(false);
         businessProcess.setMustSave(true);

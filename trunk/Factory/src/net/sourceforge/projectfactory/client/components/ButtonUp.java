@@ -31,7 +31,7 @@ package net.sourceforge.projectfactory.client.components;
  * Defines a button used to move up.
  * @author David Lambert
  */
-public class ButtonUp extends ButtonFactory {
+public class ButtonUp extends Button {
 	
 	/** Constructor. */
     public ButtonUp() {

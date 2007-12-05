@@ -28,10 +28,10 @@ package net.sourceforge.projectfactory.client.xml;
 
 import java.util.Date;
 
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.LocalMessage;
-import net.sourceforge.projectfactory.xml.FactoryReaderXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.ReaderXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -39,19 +39,19 @@ import net.sourceforge.projectfactory.xml.XMLWrapper;
  * XML Parser used to read data from client side.
  * @author David Lambert
  */
-public class ImportDataXML extends FactoryReaderXML {
+public class ImportDataXML extends ReaderXML {
 
     /** Main frame of the application. */
-    protected FrameMain frame;
+    protected MainFrame frame;
 
     /** Constructor. */
-    public ImportDataXML(FrameMain frame) {
+    public ImportDataXML(MainFrame frame) {
         this.frame = frame;
     }
 
     /** Starts a tag. */
     protected void startsTag(String tag) {
-        if (tag.equals(FactoryWriterXML.RESPONSE)) {
+        if (tag.equals(WriterXML.RESPONSE)) {
             return;
         } else {
             frame.showPanel(tag);
@@ -62,7 +62,7 @@ public class ImportDataXML extends FactoryReaderXML {
     /**
 	 * XML Parser used to read details of data from client side.
 	 */
-    private class ImportDataItemXML extends FactoryReaderXML {
+    private class ImportDataItemXML extends ReaderXML {
 
         /** Name of object retieved from XML stream,
 		  * used in order to assign a title to main frame. */
@@ -94,7 +94,7 @@ public class ImportDataXML extends FactoryReaderXML {
     /**
      * XML Parser used to read calendar information from client side.
      */
-    private class ImportDataCalendarItemXML extends FactoryReaderXML {
+    private class ImportDataCalendarItemXML extends ReaderXML {
 
         /** Date to be interpreted in the calendar. */
         private Date dateCalendar;

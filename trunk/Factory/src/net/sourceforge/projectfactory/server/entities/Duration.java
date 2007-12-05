@@ -27,7 +27,7 @@ $Author: ddlamb_2000 $
 package net.sourceforge.projectfactory.server.entities;
 
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
@@ -59,7 +59,7 @@ public abstract class Duration extends BaseEntity {
     public String purpose;
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+    public void xmlOut(WriterXML xml, TransactionXML transaction, 
                        boolean tags) {
         if ((transaction.isDetail()) || 
             (transaction.isSave())) {
@@ -72,7 +72,7 @@ public abstract class Duration extends BaseEntity {
     }
 
     /** Reads the object from an XML input. */
-    public boolean xmlIn(FactoryWriterXML xml, TransactionXML transaction, 
+    public boolean xmlIn(WriterXML xml, TransactionXML transaction, 
                          String tag, String value) {
         if (tag.equals("duration")) {
             duration = xmlInInt(xml, value);

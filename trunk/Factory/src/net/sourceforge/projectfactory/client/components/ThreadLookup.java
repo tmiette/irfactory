@@ -26,9 +26,9 @@ $Author: ddlamb_2000 $
 */
 package net.sourceforge.projectfactory.client.components;
 
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.xml.ImportListXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
@@ -48,7 +48,7 @@ public class ThreadLookup implements Runnable {
     private PanelDataLookup lookupPanel;
 
     /** Main frame of the application. */
-    private FrameMain frame;
+    private MainFrame frame;
 
     /**Reference to a table that constains
      * the values to be returned by the lookupPanel.
@@ -62,7 +62,7 @@ public class ThreadLookup implements Runnable {
     private volatile boolean terminated = false;
 
     /** Constructor. */
-    public ThreadLookup(PanelDataLookup lookup, FrameMain frame, 
+    public ThreadLookup(PanelDataLookup lookup, MainFrame frame, 
                         String selectionCategory, String classname, 
                         TableBox reference) {
         this.lookupPanel = lookup;
@@ -75,7 +75,7 @@ public class ThreadLookup implements Runnable {
     }
 
     /** Constructor. */
-    public ThreadLookup(PanelDataLookup lookup, FrameMain frame, 
+    public ThreadLookup(PanelDataLookup lookup, MainFrame frame, 
                         String classname) {
         this(lookup, frame, "", classname, null);
     }
@@ -113,18 +113,18 @@ public class ThreadLookup implements Runnable {
             lookupPanel.removeSelectionTree();
 
             if (reference == null) {
-                FactoryWriterXML query = new FactoryWriterXML("query:list");
+                WriterXML query = new WriterXML("query:list");
                 query.xmlOut("category", selectionCategory);
                 query.xmlOut("class", classname);
                 query.xmlOut("filter", filterString);
                 query.xmlOut("search", search);
                 query.xmlOut("searchkey", searchKey);
-                FactoryWriterXML answer = new FactoryWriterXML();
+                WriterXML answer = new WriterXML();
                 frame.querySession(query, answer);
                 importList = new ImportListXML(this, null);
                 importList.xmlIn(answer, null, false);
             } else {
-                FactoryWriterXML query = new FactoryWriterXML("list");
+                WriterXML query = new WriterXML("list");
                 reference.generateList(query, classname, search);
                 importList = new ImportListXML(this, null);
                 importList.xmlIn(query.getOutWriter(), null, false);

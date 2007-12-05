@@ -33,7 +33,7 @@ import net.sourceforge.projectfactory.server.actors.Location;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.BaseEntityServerXML;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 /** 
   * Actor definition.
@@ -53,7 +53,7 @@ public class ActorBase extends Entity {
     public java.util.List<Skill> skills = new java.util.ArrayList();
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, boolean tags) {
+    public void xmlOut(WriterXML xml, TransactionXML transaction, boolean tags) {
         if (tags) xmlStart(xml, "actor");
         super.xmlOut(xml, transaction, false);
         if (transaction.isDetail() || transaction.isSave()) {
@@ -73,7 +73,7 @@ public class ActorBase extends Entity {
     }
 
     /** Reads the object from an XML input. */
-    public boolean xmlIn(FactoryWriterXML xml, TransactionXML transaction, String tag, String value) {
+    public boolean xmlIn(WriterXML xml, TransactionXML transaction, String tag, String value) {
         if (super.xmlIn(xml, transaction, tag, value)) return true;
         if (tag.equals("networkid")) {
             networkId = value;

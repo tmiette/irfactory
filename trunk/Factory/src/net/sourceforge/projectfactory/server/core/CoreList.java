@@ -32,11 +32,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import net.sourceforge.projectfactory.server.FactoryServerBase;
+import net.sourceforge.projectfactory.server.ApplicationServerBase;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.SubEntityServerXML;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -44,7 +44,7 @@ import net.sourceforge.projectfactory.xml.XMLWrapper;
  * Aggregates all the core objects.
  * @author David Lambert
  */
-public class FactoryCore extends FactoryServerBase {
+public class CoreList extends ApplicationServerBase {
 
     /** List of packages. */
     public List<Package> packages = new ArrayList(500);
@@ -65,7 +65,7 @@ public class FactoryCore extends FactoryServerBase {
     public List<ClassCode> classCodes = new ArrayList(40);
 
     /** Constructor. */
-    public FactoryCore(FactoryServerBase serverBase) {
+    public CoreList(ApplicationServerBase serverBase) {
         super(serverBase);
     }
 
@@ -90,7 +90,7 @@ public class FactoryCore extends FactoryServerBase {
     }
 
     /** Saves all entities. */
-    public void saveAll(FactoryWriterXML xml, TransactionXML transaction, 
+    public void saveAll(WriterXML xml, TransactionXML transaction, 
                         boolean demo, String iid) {
         for (String extension: 
                 transaction.getServer().getApplicationExtensions()) {
@@ -99,7 +99,7 @@ public class FactoryCore extends FactoryServerBase {
     }
 
     /** Saves all packages. */
-    private void savePackages(FactoryWriterXML xml, TransactionXML transaction, 
+    private void savePackages(WriterXML xml, TransactionXML transaction, 
                               String application, String iid) {
         for (Package pack: packages)
             if (pack.getApplication().equals(application))
@@ -122,7 +122,7 @@ public class FactoryCore extends FactoryServerBase {
     }
 
     /** Saves all objects in file(s). */
-    public void saveAll(FactoryWriterXML xml, TransactionXML transaction) {
+    public void saveAll(WriterXML xml, TransactionXML transaction) {
         for (String extension: 
 				transaction.getServer().getApplicationExtensions()) {
 
@@ -130,8 +130,8 @@ public class FactoryCore extends FactoryServerBase {
 								XMLWrapper.SLASH + "system" + 
 								extension + ".xml";
 			try {
-				FactoryWriterXML outputXml = 
-					new FactoryWriterXML(filename, "factory");
+				WriterXML outputXml = 
+					new WriterXML(filename, "factory");
 				savePackages(outputXml, transaction, extension, null);
 				outputXml.end();
 				traceSaving(xml, filename);

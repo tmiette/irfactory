@@ -35,8 +35,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 
-import net.sourceforge.projectfactory.client.FrameMain;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.client.MainFrame;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -44,14 +44,14 @@ import net.sourceforge.projectfactory.xml.XMLWrapper;
  * Toggle button used in order to select categories in main frame.
  * @author David Lambert
  */
-public class ToggleButtonCategory extends ButtonToggleFactory 
+public class ToggleButtonCategory extends ButtonToggle 
                                         implements ActionListener {
 
     /** Category associated to the button. */
     private String category;
 
     /** Main frame. */
-    private FrameMain frame;
+    private MainFrame frame;
 
     /** Filter associated to the category. */
     private String filter = "";
@@ -66,7 +66,7 @@ public class ToggleButtonCategory extends ButtonToggleFactory
     private List<ToggleButtonAction> associatedActions;
     
     /** Constructor. */
-    public ToggleButtonCategory(FrameMain frame, 
+    public ToggleButtonCategory(MainFrame frame, 
                                     String category, 
                                     String title) {
         super(title);
@@ -76,7 +76,7 @@ public class ToggleButtonCategory extends ButtonToggleFactory
     }
 
     /** Constructor. */
-    public ToggleButtonCategory(FrameMain frame, 
+    public ToggleButtonCategory(MainFrame frame, 
                                     String category, 
                                     String title, 
                                     String tip) {
@@ -87,7 +87,7 @@ public class ToggleButtonCategory extends ButtonToggleFactory
     }
 
     /** Constructor. */
-    public ToggleButtonCategory(FrameMain frame, 
+    public ToggleButtonCategory(MainFrame frame, 
                                     String category, 
                                     String title, 
                                     String tip, 
@@ -100,7 +100,7 @@ public class ToggleButtonCategory extends ButtonToggleFactory
     }
 
     /** Constructor. */
-    public ToggleButtonCategory(FrameMain frame, 
+    public ToggleButtonCategory(MainFrame frame, 
                                     String category, 
                                     String title, 
                                     String tip, 
@@ -166,7 +166,7 @@ public class ToggleButtonCategory extends ButtonToggleFactory
     }
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml) {
+    public void xmlOut(WriterXML xml) {
         xml.xmlStart("preferencefilter");
         xml.xmlAttribute("category", category);
         xml.xmlAttribute("filter", filter);

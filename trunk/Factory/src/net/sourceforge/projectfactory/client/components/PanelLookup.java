@@ -26,7 +26,7 @@ $Author: ddlamb_2000 $
 */
 package net.sourceforge.projectfactory.client.components;
 
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 
 import javax.swing.JPanel;
 
@@ -41,7 +41,7 @@ import javax.swing.JPanel;
 public abstract class PanelLookup extends JPanel {
 
     /** Frame. */
-    protected FrameMain frame;
+    protected MainFrame frame;
 
 	/** Initialization. */
     public void init() throws Exception {
@@ -56,7 +56,7 @@ public abstract class PanelLookup extends JPanel {
     }
 
 	/** Associates the main frame to the looup. */
-    public void setFrame(FrameMain frame) {
+    public void setFrame(MainFrame frame) {
         this.frame = frame;
     }
 }

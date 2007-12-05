@@ -99,7 +99,7 @@ public class FrameSplash extends JFrame {
 	/** Increases value of progress bar and displays a message. */
     public void addProgressValue(String text) {
         progress.setIndeterminate(false);
-        progress.setMaximum(FrameMain.PROGRESS_MAX + 1);
+        progress.setMaximum(MainFrame.PROGRESS_MAX + 1);
         progress.setValue(progress.getValue() + 1);
         progress.setStringPainted(true);
         progress.setString(LocalMessage.get("message:" + text));

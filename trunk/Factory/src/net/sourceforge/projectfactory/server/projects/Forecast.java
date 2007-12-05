@@ -35,7 +35,7 @@ import net.sourceforge.projectfactory.server.entities.DurationCount;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.BaseEntityServerXML;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -68,7 +68,7 @@ public class Forecast extends Entity {
     private DurationCount totalCompleted = new DurationCount();
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+    public void xmlOut(WriterXML xml, TransactionXML transaction, 
                        boolean tags) {
         List<WeeklyTask> weeklyTasks = new ArrayList(40);
         List<WeeklyAssignment> weeklyAssignments = new ArrayList(40);
@@ -341,7 +341,7 @@ public class Forecast extends Entity {
     }
 
     /** Reads the object from an XML input. */
-    public boolean xmlIn(FactoryWriterXML xml, TransactionXML transaction, 
+    public boolean xmlIn(WriterXML xml, TransactionXML transaction, 
                          String tag, String value) {
         if (super.xmlIn(xml, transaction, tag, value)) {
             return true;
@@ -535,7 +535,7 @@ public class Forecast extends Entity {
         }
 
         /** Writes the object as an XML output. */
-        public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+        public void xmlOut(WriterXML xml, TransactionXML transaction, 
                            boolean tags) {
             if (tags)
                 xmlStart(xml, "phase");
@@ -564,7 +564,7 @@ public class Forecast extends Entity {
         }
 
         /** Writes the object as an XML output. */
-        public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+        public void xmlOut(WriterXML xml, TransactionXML transaction, 
                            boolean tags) {
             if (tags)
                 xmlStart(xml, "weeklytask");
@@ -597,7 +597,7 @@ public class Forecast extends Entity {
         }
 
         /** Writes the object as an XML output. */
-        public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+        public void xmlOut(WriterXML xml, TransactionXML transaction, 
                            boolean tags) {
             if (tags)
                 xmlStart(xml, "weeklyassignment");

@@ -32,7 +32,7 @@ import net.sourceforge.projectfactory.xml.XMLWrapper;
  * Application titles and copyright.
  * @author David Lambert
  */
-public class FactoryBuild {
+public class AboutProjectsOrganizer {
 
     /** Title used in windows ### change Manifest.mf too ###. */
 	public static final String getBuild() {

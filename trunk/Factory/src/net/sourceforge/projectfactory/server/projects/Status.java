@@ -35,7 +35,7 @@ import net.sourceforge.projectfactory.server.entities.DurationCount;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.BaseEntityServerXML;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -79,7 +79,7 @@ public class Status extends Entity {
     private DurationCount totalExposure = new DurationCount();
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+    public void xmlOut(WriterXML xml, TransactionXML transaction, 
                        boolean tags) {
         boolean found;
         boolean found2;
@@ -331,7 +331,7 @@ public class Status extends Entity {
     }
 
     /** Writes risks as an XML output. */
-    private void xmlOutRisk(FactoryWriterXML xml, TransactionXML transaction) {
+    private void xmlOutRisk(WriterXML xml, TransactionXML transaction) {
         for (Risk risk: risks) {
             risk.xmlOut(xml, transaction, true);
             totalExposure.addHours(risk.getExposure());
@@ -339,7 +339,7 @@ public class Status extends Entity {
     }
 
     /** Writes phases as an XML output. */
-    private void xmlOutPhases(FactoryWriterXML xml, List<PhaseTask> phases) {
+    private void xmlOutPhases(WriterXML xml, List<PhaseTask> phases) {
         for (PhaseTask phase: phases) {
             xmlStart(xml, "phase");
             xmlAttribute(xml, "phase", phase.phase);
@@ -366,7 +366,7 @@ public class Status extends Entity {
     }
 
     /** Reads the object from an XML input. */
-    public boolean xmlIn(FactoryWriterXML xml, TransactionXML transaction, 
+    public boolean xmlIn(WriterXML xml, TransactionXML transaction, 
                          String tag, String value) {
         if (super.xmlIn(xml, transaction, tag, value)) {
             return true;
@@ -500,7 +500,7 @@ public class Status extends Entity {
     }
 
     /** Validates the object before any save or update. */
-    public boolean xmlValidate(FactoryWriterXML xml, TransactionXML transaction, 
+    public boolean xmlValidate(WriterXML xml, TransactionXML transaction, 
                             List list) {
         int i;
         List list1;

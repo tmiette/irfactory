@@ -31,7 +31,7 @@ package net.sourceforge.projectfactory.client.components;
  * Defines a button used to add or create a new object.
  * @author David Lambert
  */
-public class ButtonAdd extends ButtonFactory {
+public class ButtonAdd extends Button {
 
     /** Constructor. */
     public ButtonAdd() {

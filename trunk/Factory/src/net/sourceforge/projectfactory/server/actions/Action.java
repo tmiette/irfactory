@@ -36,7 +36,7 @@ import net.sourceforge.projectfactory.server.projects.Forecast;
 import net.sourceforge.projectfactory.server.projects.ForecastItem;
 import net.sourceforge.projectfactory.server.projects.Plan;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
@@ -49,7 +49,7 @@ public class Action extends ActionBase implements Comparable {
 	private Forecast forecast;
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+    public void xmlOut(WriterXML xml, TransactionXML transaction, 
                        boolean tags) {
         if (tags) xmlStart(xml, "action");
         super.xmlOut(xml, transaction, false);
@@ -75,7 +75,7 @@ public class Action extends ActionBase implements Comparable {
     }
 
     /** Writes associated plans as an XML output. */
-    private void xmlOutExpandAnswers(FactoryWriterXML xml, 
+    private void xmlOutExpandAnswers(WriterXML xml, 
                                      TransactionXML transaction) {
         for (Action action:transaction.getServer().actions.actions) {
             if (action.getParentIid() != null && 
@@ -89,14 +89,14 @@ public class Action extends ActionBase implements Comparable {
     }
 
     /** Writes the object as an XML output. */
-    public void xmlOutRecipients(FactoryWriterXML xml, TransactionXML transaction) {
+    public void xmlOutRecipients(WriterXML xml, TransactionXML transaction) {
 		for (Recipient recipient: recipients) 
 			if(recipient.actor != null) 
 				recipient.actor.xmlOutRecipient(xml, transaction);
     }
 
     /** Reads the object from an XML input. */
-    public boolean xmlIn(FactoryWriterXML xml, TransactionXML transaction, 
+    public boolean xmlIn(WriterXML xml, TransactionXML transaction, 
                          String tag, String value) {
         if (super.xmlIn(xml, transaction, tag, value)) return true;
 
@@ -278,7 +278,7 @@ public class Action extends ActionBase implements Comparable {
     }
 
     /** Validates the object before any save or update. */
-    public boolean xmlValidate(FactoryWriterXML xml, TransactionXML transaction, 
+    public boolean xmlValidate(WriterXML xml, TransactionXML transaction, 
                             List list) {
         setName();
 
@@ -372,7 +372,7 @@ public class Action extends ActionBase implements Comparable {
     }
 
 	/** Called after replication of the object. */
-	public void afterReplication(FactoryWriterXML xml, 
+	public void afterReplication(WriterXML xml, 
 									TransactionXML transaction,
 									List list) {
 		super.afterReplication(xml, transaction, list);

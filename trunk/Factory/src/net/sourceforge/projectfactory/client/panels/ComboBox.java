@@ -27,7 +27,7 @@ $Author: ddlamb_2000 $
 
 package net.sourceforge.projectfactory.client.panels;
 
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.*;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 
@@ -45,7 +45,7 @@ public class ComboBox extends PanelData {
                                 "icon","label:icon",30);
 
     /** Constructor. */
-    public ComboBox(FrameMain frame) {
+    public ComboBox(MainFrame frame) {
         super(frame);
         item.setNoSort();
         item.attachLookup(0,this,"dictionary");

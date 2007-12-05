@@ -31,7 +31,7 @@ package net.sourceforge.projectfactory.client.components;
  * Defines a button used to move down.
  * @author David Lambert
  */
-public class ButtonDown extends ButtonFactory {
+public class ButtonDown extends Button {
 	
 	/** Constructor. */
     public ButtonDown() {

@@ -30,21 +30,21 @@ import java.lang.StackTraceElement;
 
 import java.util.List;
 
-import net.sourceforge.projectfactory.FactoryBuild;
-import net.sourceforge.projectfactory.middleware.FactorySession;
-import net.sourceforge.projectfactory.server.FactoryServerBase;
-import net.sourceforge.projectfactory.server.actions.FactoryAction;
+import net.sourceforge.projectfactory.AboutProjectsOrganizer;
+import net.sourceforge.projectfactory.middleware.Session;
+import net.sourceforge.projectfactory.server.ApplicationServerBase;
+import net.sourceforge.projectfactory.server.actions.ActionList;
 import net.sourceforge.projectfactory.server.actors.Actor;
-import net.sourceforge.projectfactory.server.actors.FactoryActor;
+import net.sourceforge.projectfactory.server.actors.ActorList;
 import net.sourceforge.projectfactory.server.actors.Server;
-import net.sourceforge.projectfactory.server.core.FactoryCore;
-import net.sourceforge.projectfactory.server.data.FactoryData;
+import net.sourceforge.projectfactory.server.core.CoreList;
+import net.sourceforge.projectfactory.server.data.DataList;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.SubEntityServerXML;
-import net.sourceforge.projectfactory.server.projects.FactoryProject;
+import net.sourceforge.projectfactory.server.projects.ProjectList;
 import net.sourceforge.projectfactory.server.xml.QueryXML;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
@@ -52,7 +52,7 @@ import net.sourceforge.projectfactory.xml.FactoryWriterXML;
  * Contains links to different sub-servers.
  * @author David Lambert
  */
-public class FactoryServer extends FactoryServerBase {
+public class ApplicationServer extends ApplicationServerBase {
 
     /** Operator, owner or current user of the server. */
     private Actor operator;
@@ -61,73 +61,73 @@ public class FactoryServer extends FactoryServerBase {
     private Server localhost;
 
     /** Actor Server. */
-    public FactoryActor actors = new FactoryActor(this);
+    public ActorList actors = new ActorList(this);
 
     /** Project Server. */
-    public FactoryProject projects = new FactoryProject(this);
+    public ProjectList projects = new ProjectList(this);
 
     /** Action Server. */
-    public FactoryAction actions = new FactoryAction(this);
+    public ActionList actions = new ActionList(this);
 
     /** System data Server. */
-    public FactoryData data = new FactoryData(this);
+    public DataList data = new DataList(this);
 
     /** Core Server. */
-    public FactoryCore core = new FactoryCore(this);
+    public CoreList core = new CoreList(this);
 
     /** Constructor. */
-    public FactoryServer() {
+    public ApplicationServer() {
         super(null);
     }
 
     /** Constructor. */
-    public FactoryServer(FactoryServerBase serverBase) {
+    public ApplicationServer(ApplicationServerBase serverBase) {
         super(serverBase);
     }
 
     /** Returns home page URL. */
     public String getHomePage() {
-        return FactoryBuild.getHomePage();
+        return AboutProjectsOrganizer.getHomePage();
     }
 
     /** Returns developer page URL. */
     public String getDevPage() {
-        return FactoryBuild.getDevPage();
+        return AboutProjectsOrganizer.getDevPage();
     }
 
     /** Returns bug page URL. */
     public String getBugPage() {
-        return FactoryBuild.getBugPage();
+        return AboutProjectsOrganizer.getBugPage();
     }
 
     /** Copyright. */
     public String getCopyright() {
-        return FactoryBuild.getCopyright();
+        return AboutProjectsOrganizer.getCopyright();
     }
 
     /** Licence. */
     public String getLicense() {
-        return FactoryBuild.getLicense();
+        return AboutProjectsOrganizer.getLicense();
     }
 
     /** Returns the path to be used in order to store data. */
     public String getPath() {
-        return FactoryBuild.getPath();
+        return AboutProjectsOrganizer.getPath();
     }
 
     /** Returns build number. */
     public String getBuild() {
-        return FactoryBuild.getBuild();
+        return AboutProjectsOrganizer.getBuild();
     }
 
     /** List of extensions for managed applications. */ 
     public String[] getApplicationExtensions() {
-        return FactoryBuild.getApplicationExtensions();
+        return AboutProjectsOrganizer.getApplicationExtensions();
     }
 
     /** Executes a query toward the server. */
-    public void query(FactorySession session, FactoryWriterXML query, 
-                      FactoryWriterXML answer) {
+    public void query(Session session, WriterXML query, 
+                      WriterXML answer) {
         try {
             TransactionXML transaction = new TransactionXML(session, answer);
             System.out.println("Query : "+query);
@@ -141,13 +141,13 @@ public class FactoryServer extends FactoryServerBase {
     /** Sets all servers to 'dirty' flag. */
     public void setAllDirty() {
         setDirty();
-        for(FactoryServerBase server: servers)
+        for(ApplicationServerBase server: servers)
             server.setDirty();
     }
 
     /** Indicates if any of the servers is dirty. */
     public boolean isAnyServerDirty() {
-        for(FactoryServerBase server: servers)
+        for(ApplicationServerBase server: servers)
             if(server.isDirty()) 
                 return true;
         return false;
@@ -155,28 +155,28 @@ public class FactoryServer extends FactoryServerBase {
 
     /** Clears objects. */
     public void clear() {
-        for(FactoryServerBase server: servers)
+        for(ApplicationServerBase server: servers)
             server.clear();
     }
 
     /** Sorts objects. */
     public void sort() {
-        for(FactoryServerBase server: servers)
+        for(ApplicationServerBase server: servers)
             server.sort();
     }
 
     /** Backups all data. */
-    public void backup(FactoryWriterXML xml, TransactionXML transaction, 
+    public void backup(WriterXML xml, TransactionXML transaction, 
                        boolean demo, String iid) {
-        for(FactoryServerBase server: servers)
+        for(ApplicationServerBase server: servers)
             server.saveAll(xml, transaction, demo, iid);
     }
 
     /** Saves all data. */
-    public void save(FactoryWriterXML xml, TransactionXML transaction) {
+    public void save(WriterXML xml, TransactionXML transaction) {
 		data.saveAllPreferences(xml, transaction);
 
-        for(FactoryServerBase server: servers)
+        for(ApplicationServerBase server: servers)
             if (server.isDirty()) {
                 server.saveAll(xml, transaction);
                 server.setNotDirty();
@@ -187,20 +187,20 @@ public class FactoryServer extends FactoryServerBase {
 
     /** Adds files to be opened. */
     public void addFileList(List<String> files, String prefix) {
-        for(FactoryServerBase server: servers)
+        for(ApplicationServerBase server: servers)
             server.addFileList(files, prefix);
     }
 
     /** Adds classes used for replication. */
     public void addClassList(List classes) {
-        for(FactoryServerBase server: servers)
+        for(ApplicationServerBase server: servers)
             server.addClassList(classes);
     }
 
     /** Sends the object names to the client based on a list. */
     public boolean isAvailable(TransactionXML transaction, String category, 
                                String filter, Entity entity) {
-        for(FactoryServerBase server: servers)
+        for(ApplicationServerBase server: servers)
             if (!server.isAvailable(transaction, category, filter, entity))
                 return false;
         return true;
@@ -209,20 +209,20 @@ public class FactoryServer extends FactoryServerBase {
     /** Creates a list based on category. */
     public void listByCategory(TransactionXML transaction, List lists, 
                                String category, String filter) {
-        for(FactoryServerBase server: servers)
+        for(ApplicationServerBase server: servers)
             server.listByCategory(transaction, lists, category, filter);
     }
 
     /** Creates the list based on class. */
     public void listByClass(TransactionXML transaction, List lists, 
                             String classname) {
-        for(FactoryServerBase server: servers)
+        for(ApplicationServerBase server: servers)
             server.listByClass(transaction, lists, classname);
     }
 
     /** Returns the appropriate parser in order to read an element. */
     public SubEntityServerXML getParser(TransactionXML transaction, String tag) {
-        for(FactoryServerBase server: servers) {
+        for(ApplicationServerBase server: servers) {
             SubEntityServerXML parser = server.getParser(transaction, tag);
             if(parser != null)
                 return parser;
@@ -231,7 +231,7 @@ public class FactoryServer extends FactoryServerBase {
     }
 
     /** Returns exception details on the error output stream. */
-    public void returnException(FactoryWriterXML xml, Exception ex) {
+    public void returnException(WriterXML xml, Exception ex) {
         addMessageDictionary(xml, "FAT", "fatal:server", ex.toString());
         StackTraceElement[] stack = ex.getStackTrace();
         for (int i = 0; i < stack.length; i++)

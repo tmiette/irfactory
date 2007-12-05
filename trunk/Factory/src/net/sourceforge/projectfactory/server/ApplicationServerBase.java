@@ -32,23 +32,23 @@ import java.util.List;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.SubEntityServerXML;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
  * Base class used for sub-servers.
  * @author David Lambert
  */
-public abstract class FactoryServerBase {
+public abstract class ApplicationServerBase {
 
     /** Dirty flag. */
     private boolean dirty;
 
     /** List of servers (sub-servers). */    
-    protected List<FactoryServerBase> servers = new ArrayList(5);
+    protected List<ApplicationServerBase> servers = new ArrayList(5);
     
     /** Constructor. */
-    public FactoryServerBase(FactoryServerBase serverBase) {
+    public ApplicationServerBase(ApplicationServerBase serverBase) {
         super();
         if(serverBase != null)
             serverBase.servers.add(this);
@@ -70,14 +70,14 @@ public abstract class FactoryServerBase {
     }
 
     /** Saves a list of entities. */
-    protected void saveEntity(FactoryWriterXML xml, TransactionXML transaction, 
+    protected void saveEntity(WriterXML xml, TransactionXML transaction, 
                               List list, boolean demo, String iid) {
         for (Object entity: list)
             saveEntity(xml, transaction, (Entity)entity, demo, iid);
     }
 
     /** Saves an entity. */
-    protected void saveEntity(FactoryWriterXML xml, TransactionXML transaction, 
+    protected void saveEntity(WriterXML xml, TransactionXML transaction, 
                               Entity entity, boolean demo, String iid) {
         if ((demo && entity.isDemo()) || 
             (!demo && !entity.isDemo() && 
@@ -94,14 +94,14 @@ public abstract class FactoryServerBase {
     }
 
     /** Sends a trace message when the file is saved. */
-    protected void traceSaving(FactoryWriterXML xml, String filename) {
-        xml.xmlMessage(FactoryWriterXML.TRACE, "message:savingcomplete", "", 
+    protected void traceSaving(WriterXML xml, String filename) {
+        xml.xmlMessage(WriterXML.TRACE, "message:savingcomplete", "", 
                        filename);
     }
 
     /** Sends an error message when the file is not saved. */
-    protected void traceError(FactoryWriterXML xml, String filename) {
-        xml.xmlMessage(FactoryWriterXML.ERROR, "error:filenotsaved", "", 
+    protected void traceError(WriterXML xml, String filename) {
+        xml.xmlMessage(WriterXML.ERROR, "error:filenotsaved", "", 
                        filename);
     }
 
@@ -138,12 +138,12 @@ public abstract class FactoryServerBase {
     }
 
     /** Saves all entities. */
-    public void saveAll(FactoryWriterXML xml, TransactionXML transaction, 
+    public void saveAll(WriterXML xml, TransactionXML transaction, 
                         boolean demo, String iid) {
     }
 
     /** Saves all objects in file(s). */
-    public void saveAll(FactoryWriterXML xml, TransactionXML transaction) {
+    public void saveAll(WriterXML xml, TransactionXML transaction) {
     }
 
     /** Returns the appropriate parser in order to read an element. */
@@ -154,18 +154,18 @@ public abstract class FactoryServerBase {
     /** Returns a tag for the specified category. */
     private static String getTagCategory(String category) {
         if (category.equals("WAR"))
-            return FactoryWriterXML.WARNING;
+            return WriterXML.WARNING;
         if (category.equals("ERR"))
-            return FactoryWriterXML.ERROR;
+            return WriterXML.ERROR;
         if (category.equals("FAT"))
-            return FactoryWriterXML.FATAL;
+            return WriterXML.FATAL;
         if (category.equals("TRC"))
-            return FactoryWriterXML.TRACE;
-        return FactoryWriterXML.MESSAGE;
+            return WriterXML.TRACE;
+        return WriterXML.MESSAGE;
     }
 
     /** Sens a message based on dictionary. */
-    public static void addMessageDictionary(FactoryWriterXML xml, 
+    public static void addMessageDictionary(WriterXML xml, 
                                             String category, String label, 
                                             String... args) {
         xml.xmlMessage(getTagCategory(category), label, args);

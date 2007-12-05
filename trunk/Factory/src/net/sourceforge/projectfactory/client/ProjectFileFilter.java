@@ -37,7 +37,7 @@ import javax.swing.filechooser.FileFilter;
  *  Filter on files used for database backup and restore.
  *  @author David Lambert
  */
-class FactoryFileFilter extends FileFilter {
+class ProjectFileFilter extends FileFilter {
 	
 	/** Filters. */
 	private Hashtable filters = null;
@@ -52,7 +52,7 @@ class FactoryFileFilter extends FileFilter {
 	 * Creates a file filter. If no filters are added, then all
 	 * files are accepted.
 	 */
-	public FactoryFileFilter() {
+	public ProjectFileFilter() {
 		this.filters = new Hashtable();
 	}
 	
@@ -60,13 +60,13 @@ class FactoryFileFilter extends FileFilter {
 	 * Creates a file filter that accepts files with the given extension.
 	 * Example: new FactoryFileFilter("jpg");
 	 */
-	public FactoryFileFilter(String extension) {
+	public ProjectFileFilter(String extension) {
 		this(extension, null);
 	}
 	
 	/** Creates a file filter that accepts the given file type.
 	 *  Example: new FactoryFileFilter("jpg", "JPEG Image Images"); */
-	public FactoryFileFilter(String extension, String description) {
+	public ProjectFileFilter(String extension, String description) {
 		this();
 		
 		if (extension != null)
@@ -78,13 +78,13 @@ class FactoryFileFilter extends FileFilter {
 	
 	/** Creates a file filter from the given string array.
 	 *  Example: new FactoryFileFilter(String {"gif", "jpg"}); */
-	public FactoryFileFilter(String[] filters) {
+	public ProjectFileFilter(String[] filters) {
 		this(filters, null);
 	}
 	
 	/** Creates a file filter from the given string array and description.
 	 *  Example: new FactoryFileFilter(String {"gif", "jpg"}, "Gif and JPG Images"); */
-	public FactoryFileFilter(String[] filters, String description) {
+	public ProjectFileFilter(String[] filters, String description) {
 		this();
 		
 		for (int i = 0; i < filters.length; i++)

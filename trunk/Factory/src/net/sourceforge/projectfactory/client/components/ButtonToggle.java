@@ -33,18 +33,18 @@ import javax.swing.JToggleButton;
   * Toggle Button.
   * @author David Lambert
   */
-public class ButtonToggleFactory extends JToggleButton {
+public class ButtonToggle extends JToggleButton {
 
     /** Associated panel. */
     private String associatedPanel;
 	
     /** Constructor. */
-    public ButtonToggleFactory(String title) {
+    public ButtonToggle(String title) {
         super(title);
     }
 
     /** Constructor with tooltip and icon. */
-    public ButtonToggleFactory(String text, String tip, String icon) {
+    public ButtonToggle(String text, String tip, String icon) {
         super(LocalMessage.get(text), LocalIcon.get(icon));
         setToolTipText(LocalMessage.get(tip));
     }

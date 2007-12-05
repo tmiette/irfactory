@@ -62,7 +62,7 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
 
 import net.sourceforge.projectfactory.client.panels.PanelData;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -398,7 +398,7 @@ public class TableBox extends JTable implements ComponentEnabler,
     }
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, String tagElement) {
+    public void xmlOut(WriterXML xml, String tagElement) {
         if (getCellEditor() != null)
             getCellEditor().stopCellEditing();
         tableModel.xmlOut(xml, tagElement);
@@ -659,7 +659,7 @@ public class TableBox extends JTable implements ComponentEnabler,
     }
 
     /** Generates as list when the table is used as lookup .*/
-    public void generateList(FactoryWriterXML output, String classname, 
+    public void generateList(WriterXML output, String classname, 
                              String search) throws IOException {
         tableModel.generateList(output, classname, search);
     }
@@ -1217,7 +1217,7 @@ public class TableBox extends JTable implements ComponentEnabler,
         }
 
         /** Writes the object as an XML output. */
-        private void xmlOut(FactoryWriterXML xml, int col, Object value) {
+        private void xmlOut(WriterXML xml, int col, Object value) {
             if (value == null || value.toString().trim().length() == 0)
                 return;
 
@@ -1241,7 +1241,7 @@ public class TableBox extends JTable implements ComponentEnabler,
         }
 
         /** Writes the object as an XML output. */
-        private void xmlOut(FactoryWriterXML xml, String tagElement) {
+        private void xmlOut(WriterXML xml, String tagElement) {
             for (int row = 0; row < data.size(); row++) {
                 TableCell cell = data.get(row);
 
@@ -1381,7 +1381,7 @@ public class TableBox extends JTable implements ComponentEnabler,
         }
 
         /** Generates am XML list of items, based on column index and search string. */
-        public void generateList(FactoryWriterXML output, String classname, 
+        public void generateList(WriterXML output, String classname, 
                                  String search) throws IOException {
             List<String> list = new ArrayList();
 

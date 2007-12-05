@@ -29,33 +29,33 @@ package net.sourceforge.projectfactory.client.xml;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.ToggleButtonAction;
 import net.sourceforge.projectfactory.client.components.ToggleButtonCategory;
-import net.sourceforge.projectfactory.xml.FactoryReaderXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.ReaderXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
  * XML Parser used to read security setup from client side.
  * @author David Lambert
  */
-public class ImportSecurityXML extends FactoryReaderXML {
+public class ImportSecurityXML extends ReaderXML {
 
     /** Main frame of the application. */
-    protected FrameMain frame;
+    protected MainFrame frame;
 
     /** Actions associated to a button. */    
     private List<ToggleButtonAction> actions = new ArrayList(2);
 
     /** Constructor. */
-    public ImportSecurityXML(FrameMain frame) {
+    public ImportSecurityXML(MainFrame frame) {
         this.frame = frame;
     }
 
     /** Starts a tag. */
     public void startsTag(String tag) {
-        if (tag.equals(FactoryWriterXML.RESPONSE)) {
+        if (tag.equals(WriterXML.RESPONSE)) {
             return;
         } else if (tag.equals("actionbar")) {
             new ImportSecurityActionBarXML().xmlIn(this);
@@ -65,7 +65,7 @@ public class ImportSecurityXML extends FactoryReaderXML {
     /**
      * XML Parser used to read action bar definition from client side.
      */
-    private class ImportSecurityActionBarXML extends FactoryReaderXML {
+    private class ImportSecurityActionBarXML extends ReaderXML {
 
         /** Category. */
         private String category;
@@ -114,7 +114,7 @@ public class ImportSecurityXML extends FactoryReaderXML {
     /**
      * XML Parser used to read associated button in the action bar.
      */
-    private class ImportSecurityButtonActionBarXML extends FactoryReaderXML {
+    private class ImportSecurityButtonActionBarXML extends ReaderXML {
 
         /** Category. */
         private String button;

@@ -28,7 +28,7 @@ $Author: ddlamb_2000 $
 package net.sourceforge.projectfactory.client.panels;
 
 import java.awt.event.ActionEvent;
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.*;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 
@@ -46,10 +46,10 @@ public class BusinessProcess extends PanelData {
                                 "begin","label:begindate",10,
                                 "target","label:targetdate",10,
                                 "lead","label:lead",100);
-    protected ButtonToggleFactory button1 = new ButtonToggleFactory("button:businessprocess:newproject","button:businessprocess:newproject:tip","project.gif");
+    protected ButtonToggle button1 = new ButtonToggle("button:businessprocess:newproject","button:businessprocess:newproject:tip","project.gif");
 
     /** Constructor. */
-    public BusinessProcess(FrameMain frame) {
+    public BusinessProcess(MainFrame frame) {
         super(frame);
         task.setHierarchical();
         task.setCombo(1, new ComboBoxCode("itemtype"));

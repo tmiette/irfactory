@@ -31,7 +31,7 @@ import java.util.List;
 
 import net.sourceforge.projectfactory.server.actors.Actor;
 import net.sourceforge.projectfactory.server.actors.EMail;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
@@ -95,12 +95,12 @@ class NetworkRecipientXML extends ReaderServerXML {
                                             alternateNetworkId, 
                                             emails,
                                             true)) {
-                xml.xmlMessage(FactoryWriterXML.TRACE, 
+                xml.xmlMessage(WriterXML.TRACE, 
                                 "message:actor:identified", name);
                 return;
             }
         }
-        xml.xmlMessage(FactoryWriterXML.WARNING, 
+        xml.xmlMessage(WriterXML.WARNING, 
                         "message:actor:notidentified", name);
     }
 }

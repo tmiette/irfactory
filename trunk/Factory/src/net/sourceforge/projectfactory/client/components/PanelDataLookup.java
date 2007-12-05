@@ -58,9 +58,9 @@ import javax.swing.tree.TreeSelectionModel;
 import java.util.List;
 import java.util.ArrayList;
 
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.xml.ImportDataXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -127,7 +127,7 @@ public class PanelDataLookup extends PanelLookup implements ActionListener {
 	private List<TaskTreeNode> expandeds = new ArrayList(10);
 
     /** Constructor: panel search. */
-    public PanelDataLookup(FrameMain frame) {
+    public PanelDataLookup(MainFrame frame) {
         this.frame = frame;
     }
 
@@ -320,8 +320,8 @@ public class PanelDataLookup extends PanelLookup implements ActionListener {
             } else {
                 if(selection.iid.length() == 0 && selection.name.length() == 0) 
                     return;
-                FactoryWriterXML query = new FactoryWriterXML("query:get");
-                FactoryWriterXML answer = new FactoryWriterXML();
+                WriterXML query = new WriterXML("query:get");
+                WriterXML answer = new WriterXML();
                 query.xmlStart(selection.category);
                 query.xmlAttribute("iid", selection.iid);
                 query.xmlAttribute("name", selection.name);
@@ -362,8 +362,8 @@ public class PanelDataLookup extends PanelLookup implements ActionListener {
         }
 
         frame.addMessage("WAR", LocalMessage.get("warning:notvisible", name));
-        FactoryWriterXML query = new FactoryWriterXML("query:get");
-        FactoryWriterXML answer = new FactoryWriterXML();
+        WriterXML query = new WriterXML("query:get");
+        WriterXML answer = new WriterXML();
         query.xmlStart(category);
         query.xmlAttribute("iid", iid);
         query.xmlAttribute("name", name);

@@ -26,23 +26,23 @@ $Author: ddlamb_2000 $
 */
 package net.sourceforge.projectfactory.client.xml;
 
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.LocalMessage;
-import net.sourceforge.projectfactory.xml.FactoryReaderXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.ReaderXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
  * XML Parser used to interprets error stream.
  * @author David Lambert
  */
-public class ImportErrXML extends FactoryReaderXML {
+public class ImportErrXML extends ReaderXML {
 
     /** Maximum number of arguments. */
     private static final int MAXARGS = 5;
 
     /** Main frame of the application. */
-    protected FrameMain frame;
+    protected MainFrame frame;
 
     /** Indicates if the latest requests returned an error or not. */
     private boolean inError;
@@ -60,13 +60,13 @@ public class ImportErrXML extends FactoryReaderXML {
     private int noArgs;
 
     /** Constructor. */
-    public ImportErrXML(FrameMain frame) {
+    public ImportErrXML(MainFrame frame) {
         this.frame = frame;
     }
 
     /** Starts a tag. */
     protected void startsTag(String tag) {
-        if (tag.equals(FactoryWriterXML.ERRORS)) {
+        if (tag.equals(WriterXML.ERRORS)) {
             return;
         } else {
             this.level = tag;
@@ -85,7 +85,7 @@ public class ImportErrXML extends FactoryReaderXML {
     /**
 	 * XML Parser used to read details in error stream.
 	 */
-     private class ImportErrDetailXML extends FactoryReaderXML {
+     private class ImportErrDetailXML extends ReaderXML {
 
          /** Interprets a tag. */
          protected void getTag(String tag, String text) {

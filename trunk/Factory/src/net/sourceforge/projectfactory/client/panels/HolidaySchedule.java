@@ -27,7 +27,7 @@ $Author: ddlamb_2000 $
 
 package net.sourceforge.projectfactory.client.panels;
 
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.*;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 
@@ -48,7 +48,7 @@ public class HolidaySchedule extends PanelData {
                                 "phonenumber","label:phone",20);
 
     /** Constructor. */
-    public HolidaySchedule(FrameMain frame) {
+    public HolidaySchedule(MainFrame frame) {
         super(frame);
         holiday.setDateType(0,this);
         holiday.setIntegerType(1);

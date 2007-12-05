@@ -37,10 +37,10 @@ public class ThreadLoadPanels implements Runnable {
 	protected volatile boolean terminated;
 	
 	/** Main frame. */
-	protected FrameMain frame;
+	protected MainFrame frame;
 	
 	/** Constructor. Initializes the thread. */
-	public ThreadLoadPanels(FrameMain frame) {
+	public ThreadLoadPanels(MainFrame frame) {
 		this.frame = frame;
 		Thread runner = new Thread(this);
 		runner.start();

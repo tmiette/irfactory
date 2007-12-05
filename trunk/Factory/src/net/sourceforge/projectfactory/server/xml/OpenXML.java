@@ -35,7 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.GZIPInputStream;
 
-import net.sourceforge.projectfactory.server.FactoryServer;
+import net.sourceforge.projectfactory.server.ApplicationServer;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -109,12 +109,12 @@ class OpenXML extends ReaderServerXML {
                         new ExchangeXML(transaction).xmlIn(inputFile, xml, 
                                                                 false);
                         inputFile.close();
-                        FactoryServer.addMessageDictionary(xml, "MSG", 
+                        ApplicationServer.addMessageDictionary(xml, "MSG", 
                                                            "message:fileopen", 
                                                            file);
                     }
                 } catch (FileNotFoundException ex) {
-                    FactoryServer.addMessageDictionary(xml, "ERR", 
+                    ApplicationServer.addMessageDictionary(xml, "ERR", 
                                                        "error:filenotfound", 
                                                        file);
                 } finally {
@@ -158,11 +158,11 @@ class OpenXML extends ReaderServerXML {
                         new ExchangeXML(transaction).xmlIn(inputFile, 
                                                                 null, false);
                         inputFile.close();
-                        FactoryServer.addMessageDictionary(xml, "TRC", 
+                        ApplicationServer.addMessageDictionary(xml, "TRC", 
                                                            "message:fileopen", 
                                                            filename);
                     } catch (FileNotFoundException ex) {
-                        FactoryServer.addMessageDictionary(xml, "TRC", 
+                        ApplicationServer.addMessageDictionary(xml, "TRC", 
                                                            "error:filenotfound", 
                                                            filename);
                     }
@@ -176,14 +176,14 @@ class OpenXML extends ReaderServerXML {
             server.setOperator(server.actors.getActor(user));
 
             if (server.getOperator() == null) {
-                FactoryServer.addMessageDictionary(xml, "WAR", 
+                ApplicationServer.addMessageDictionary(xml, "WAR", 
                                                    "warning:newactor", user);
                 server.setOperator(server.actors.createActor(transaction, 
                                                                    user));
                 if (server.getOperator() != null)
                     server.getOperator().create(transaction);
             } else {
-                FactoryServer.addMessageDictionary(xml, "MSG", 
+                ApplicationServer.addMessageDictionary(xml, "MSG", 
                                                    "message:identified", user, 
                                                    server.getOperator().getName());
             }

@@ -44,10 +44,10 @@ import org.xml.sax.helpers.DefaultHandler;
  * abstraction for Factory.
  * @author David Lambert
  */
-class FactoryHandlerXML extends DefaultHandler {
+class HandlerXML extends DefaultHandler {
 
     /** Data reader. */
-    private FactoryReaderXML reader;
+    private ReaderXML reader;
 
     /** Stack of specialized readers. */
     private List readers = new ArrayList(5);
@@ -61,7 +61,7 @@ class FactoryHandlerXML extends DefaultHandler {
     static int count = 0;
 
     /** Pushes a reader to the handler in a stack. */
-    void newReader(FactoryReaderXML newReader) {
+    void newReader(ReaderXML newReader) {
         this.reader = newReader;
         readers.add(reader);
     }
@@ -104,7 +104,7 @@ class FactoryHandlerXML extends DefaultHandler {
             if (readers.size() > 0 && reader.getLevel() < 0) {
                 reader.end();
                 readers.remove(reader);
-                reader = (FactoryReaderXML)readers.get(readers.size() - 1);
+                reader = (ReaderXML)readers.get(readers.size() - 1);
                 if (reader != null)
                     reader.decLevel();
             }

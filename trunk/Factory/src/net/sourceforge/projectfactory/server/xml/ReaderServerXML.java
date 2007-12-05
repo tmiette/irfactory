@@ -26,25 +26,25 @@ $Author: ddlamb_2000 $
 */
 package net.sourceforge.projectfactory.server.xml;
 
-import net.sourceforge.projectfactory.server.FactoryServer;
-import net.sourceforge.projectfactory.xml.FactoryReaderXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.server.ApplicationServer;
+import net.sourceforge.projectfactory.xml.ReaderXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
  * XML Parser used to be run on server side.
  * @author David Lambert
  */
-public class ReaderServerXML extends FactoryReaderXML {
+public class ReaderServerXML extends ReaderXML {
 	
     /** Transaction. */
     protected TransactionXML transaction;
 
     /** XML writer attached to the transaction. */
-    protected FactoryWriterXML xml;
+    protected WriterXML xml;
 
     /** Server attached to the transaction. */
-    protected FactoryServer server;
+    protected ApplicationServer server;
     
     /** Constructor. */
     protected ReaderServerXML(TransactionXML transaction) {

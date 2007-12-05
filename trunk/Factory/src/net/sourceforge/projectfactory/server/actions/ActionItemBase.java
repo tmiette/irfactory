@@ -29,7 +29,7 @@ package net.sourceforge.projectfactory.server.actions;
 
 import net.sourceforge.projectfactory.server.entities.Duration;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 /** 
   * Part of the forecast calendar attached to an action, 
@@ -43,7 +43,7 @@ public class ActionItemBase extends Duration {
     public String assigned;
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, boolean tags) {
+    public void xmlOut(WriterXML xml, TransactionXML transaction, boolean tags) {
         if (tags) xmlStart(xml, "item");
         super.xmlOut(xml, transaction, false);
         if (transaction.isDetail() || transaction.isSave()) {
@@ -55,7 +55,7 @@ public class ActionItemBase extends Duration {
     }
 
     /** Reads the object from an XML input. */
-    public boolean xmlIn(FactoryWriterXML xml, TransactionXML transaction, String tag, String value) {
+    public boolean xmlIn(WriterXML xml, TransactionXML transaction, String tag, String value) {
         if (super.xmlIn(xml, transaction, tag, value)) return true;
         if (tag.equals("dateitem")) {
             dateItem = xmlInDate(xml, value);

@@ -27,7 +27,7 @@ $Author: ddlamb_2000 $
 
 package net.sourceforge.projectfactory.client.panels;
 
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.*;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 
@@ -51,7 +51,7 @@ public class Location extends PanelData {
                                 "phonenumber","label:phone",20);
 
     /** Constructor. */
-    public Location(FrameMain frame) {
+    public Location(MainFrame frame) {
         super(frame);
         actor.setEnabler(false);
     }

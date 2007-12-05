@@ -26,25 +26,25 @@ $Author: ddlamb_2000 $
 */
 package net.sourceforge.projectfactory.middleware;
 
-import net.sourceforge.projectfactory.server.FactoryServer;
+import net.sourceforge.projectfactory.server.ApplicationServer;
 import net.sourceforge.projectfactory.server.actors.Actor;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
  * Defines a session at server level.
  * @author David Lambert
  */
-public class FactorySession {
+public class Session {
 
     /** Remote session. */
     private boolean remote;
 
     /** Refers to the server. */
-    public FactoryServer server;
+    public ApplicationServer server;
 
     /** Refers to the connection active on the server. */
-    private FactoryConnection connection;
+    private Connection connection;
 
     /** Action during parsing.
 	 *  Refers to action values defined in EasyReaderServerXML class. */
@@ -69,13 +69,13 @@ public class FactorySession {
     private int requests;
 
     /** Constructor. */
-    FactorySession(FactoryConnection connection, FactoryServer server) {
+    Session(Connection connection, ApplicationServer server) {
         this.connection = connection;
         this.server = server;
     }
 
     /** Constructor. */
-    FactorySession(FactoryConnection connection, FactoryServer server, 
+    Session(Connection connection, ApplicationServer server, 
                    boolean remote) {
         this(connection, server);
         this.remote = remote;
@@ -121,7 +121,7 @@ public class FactorySession {
     }
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml) {
+    public void xmlOut(WriterXML xml) {
         if (isAuthorized()) {
             xml.xmlStart("connexion");
             xml.xmlOut("username", operator.getName());
@@ -169,12 +169,12 @@ public class FactorySession {
     }
 
     /** Returns the server. */
-    public FactoryServer getServer() {
+    public ApplicationServer getServer() {
         return server;
     }
 
     /** Returns the connection. */
-    public FactoryConnection getConnection() {
+    public Connection getConnection() {
         return connection;
     }
 }

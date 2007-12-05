@@ -27,7 +27,7 @@ $Author: ddlamb_2000 $
 
 package net.sourceforge.projectfactory.client.panels;
 
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.*;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 
@@ -44,7 +44,7 @@ public class Dictionary extends PanelData {
     protected TextBox arabic = new TextBox();
 
     /** Constructor. */
-    public Dictionary(FrameMain frame) {
+    public Dictionary(MainFrame frame) {
         super(frame);
     }
 

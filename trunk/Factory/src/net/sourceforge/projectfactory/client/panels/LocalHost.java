@@ -27,7 +27,7 @@ $Author: ddlamb_2000 $
 
 package net.sourceforge.projectfactory.client.panels;
 
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.*;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 
@@ -55,7 +55,7 @@ public class LocalHost extends PanelData {
     public EditBox path = new EditBox();
 
     /** Constructor. */
-    public LocalHost(FrameMain frame) {
+    public LocalHost(MainFrame frame) {
         super(frame);
         name.setMustSave(true);
     }
