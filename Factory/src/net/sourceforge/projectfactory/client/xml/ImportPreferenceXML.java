@@ -26,28 +26,28 @@ $Author: ddlamb_2000 $
 */
 package net.sourceforge.projectfactory.client.xml;
 
-import net.sourceforge.projectfactory.client.FrameMain;
-import net.sourceforge.projectfactory.xml.FactoryReaderXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.client.MainFrame;
+import net.sourceforge.projectfactory.xml.ReaderXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
  * XML Parser used to read preferences from client side.
  * @author David Lambert
  */
-public class ImportPreferenceXML extends FactoryReaderXML {
+public class ImportPreferenceXML extends ReaderXML {
 
     /** Main frame of the application. */
-    protected FrameMain frame;
+    protected MainFrame frame;
 
     /** Constructor. */
-    public ImportPreferenceXML(FrameMain frame) {
+    public ImportPreferenceXML(MainFrame frame) {
         this.frame = frame;
     }
 
     /** Starts a tag. */
     public void startsTag(String tag) {
-        if (tag.equals(FactoryWriterXML.RESPONSE)) {
+        if (tag.equals(WriterXML.RESPONSE)) {
             return;
         } else {
             new ImportPreferenceDetailXML().xmlIn(this);
@@ -57,7 +57,7 @@ public class ImportPreferenceXML extends FactoryReaderXML {
     /**
 	 * XML Parser used to read details of preferences from client side.
 	 */
-    private class ImportPreferenceDetailXML extends FactoryReaderXML {
+    private class ImportPreferenceDetailXML extends ReaderXML {
 
         /** Starts a tag. */
         public void startsTag(String tag) {
@@ -104,7 +104,7 @@ public class ImportPreferenceXML extends FactoryReaderXML {
         /**
 		 * XML Parser used to read filter preferences from client side.
 		 */
-        class ImportPreferenceFilterXML extends FactoryReaderXML {
+        class ImportPreferenceFilterXML extends ReaderXML {
 
             /** Category. */
             private String category = "";

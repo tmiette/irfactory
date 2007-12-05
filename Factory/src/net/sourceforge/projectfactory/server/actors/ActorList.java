@@ -32,11 +32,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import net.sourceforge.projectfactory.server.FactoryServerBase;
+import net.sourceforge.projectfactory.server.ApplicationServerBase;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.SubEntityServerXML;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -44,7 +44,7 @@ import net.sourceforge.projectfactory.xml.XMLWrapper;
  * Aggregates all the objects which define actors.
  * @author David Lambert
  */
-public class FactoryActor extends FactoryServerBase {
+public class ActorList extends ApplicationServerBase {
 
     /** List of actors. */
     public List<Actor> actors = new ArrayList(30);
@@ -62,7 +62,7 @@ public class FactoryActor extends FactoryServerBase {
     public List<Server> servers = new ArrayList(5);
 
     /** Constructor. */
-    public FactoryActor(FactoryServerBase serverBase) {
+    public ActorList(ApplicationServerBase serverBase) {
         super(serverBase);
     }
 
@@ -85,7 +85,7 @@ public class FactoryActor extends FactoryServerBase {
     }
 
     /** Saves all entities. */
-    public void saveAll(FactoryWriterXML xml, TransactionXML transaction, 
+    public void saveAll(WriterXML xml, TransactionXML transaction, 
                         boolean demo, String iid) {
         saveEntity(xml, transaction, actors, demo, iid);
         saveEntity(xml, transaction, teams, demo, iid);
@@ -95,11 +95,11 @@ public class FactoryActor extends FactoryServerBase {
     }
 
     /** Saves all objects in file(s). */
-    public void saveAll(FactoryWriterXML xml, TransactionXML transaction) {
+    public void saveAll(WriterXML xml, TransactionXML transaction) {
         String filename = transaction.getServer().getPath() + XMLWrapper.SLASH + "actors.xml";
         try {
-            FactoryWriterXML outputXml = 
-                new FactoryWriterXML(filename, "factory");
+            WriterXML outputXml = 
+                new WriterXML(filename, "factory");
             saveEntity(outputXml, transaction, actors, false, null);
             saveEntity(outputXml, transaction, teams, false, null);
             saveEntity(outputXml, transaction, locations, false, null);
@@ -112,8 +112,8 @@ public class FactoryActor extends FactoryServerBase {
 
         filename = transaction.getServer().getPath() + XMLWrapper.SLASH + "servers.xml";
         try {
-            FactoryWriterXML outputXml = 
-                new FactoryWriterXML(filename, "factory");
+            WriterXML outputXml = 
+                new WriterXML(filename, "factory");
             saveEntity(outputXml, transaction, servers, false, null);
             outputXml.end();
             traceSaving(xml, filename);

@@ -29,10 +29,10 @@ package net.sourceforge.projectfactory.server.entities;
 import java.util.Date;
 import java.util.List;
 
-import net.sourceforge.projectfactory.middleware.FactorySession;
+import net.sourceforge.projectfactory.middleware.Session;
 import net.sourceforge.projectfactory.server.entities.xml.BaseEntityServerXML;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
@@ -124,7 +124,7 @@ public abstract class Entity extends BaseEntity implements Comparable {
     }
 
     /** Update last modified information. */
-    public void update(FactorySession session) {
+    public void update(Session session) {
         this.updatedBy = session.getOperatorName();
         this.updated = new Date();
         if(this.createdBy == null)
@@ -207,7 +207,7 @@ public abstract class Entity extends BaseEntity implements Comparable {
     }
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+    public void xmlOut(WriterXML xml, TransactionXML transaction, 
                        boolean tags) {
         createIId();
         if (transaction.isDetail() || transaction.isSave()) {
@@ -234,7 +234,7 @@ public abstract class Entity extends BaseEntity implements Comparable {
     }
 
     /** Writes the object as an XML output. */
-    public void xmlSummary(FactoryWriterXML xml) {
+    public void xmlSummary(WriterXML xml) {
         xmlAttribute(xml, "iid", iid);
         xmlAttribute(xml, "name", name);
         xmlAttribute(xml, "summary", getSummary());
@@ -243,7 +243,7 @@ public abstract class Entity extends BaseEntity implements Comparable {
     }
 
     /** Writes the object as an XML output. */
-    public void xmlOutSummary(FactoryWriterXML xml, String tag) {
+    public void xmlOutSummary(WriterXML xml, String tag) {
         xmlStart(xml, tag);
         xmlSummary(xml);
         xmlEnd(xml);
@@ -255,7 +255,7 @@ public abstract class Entity extends BaseEntity implements Comparable {
     }
 
     /** Reads the object from an XML input. */
-    public boolean xmlIn(FactoryWriterXML xml, TransactionXML transaction, 
+    public boolean xmlIn(WriterXML xml, TransactionXML transaction, 
                          String tag, String value) {
         if (tag.equals("iid")) {
             iid = value;
@@ -381,7 +381,7 @@ public abstract class Entity extends BaseEntity implements Comparable {
     }
 
     /** Validates the object before any save or update. */
-    public boolean xmlValidate(FactoryWriterXML xml, TransactionXML transaction, 
+    public boolean xmlValidate(WriterXML xml, TransactionXML transaction, 
                             List list) {
         if (name == null || name.length() == 0) {
             xmlError(xml, "error:required:name", "");
@@ -400,7 +400,7 @@ public abstract class Entity extends BaseEntity implements Comparable {
     }
 
     /** Validates the object before delete. */
-    public boolean xmlValidateDelete(FactoryWriterXML xml, 
+    public boolean xmlValidateDelete(WriterXML xml, 
                                   TransactionXML transaction) {
         return false;
     }
@@ -470,7 +470,7 @@ public abstract class Entity extends BaseEntity implements Comparable {
     }
     
     /** Called after replication of the object. */
-    public void afterReplication(FactoryWriterXML xml, 
+    public void afterReplication(WriterXML xml, 
 									TransactionXML transaction,
 									List list) {
     }

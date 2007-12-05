@@ -48,20 +48,20 @@ import org.xml.sax.SAXException;
   * abstraction for Factory.
   * @author David Lambert
   */
-public abstract class FactoryReaderXML {
+public abstract class ReaderXML {
 
     /** Level of elements during parsing. */
     private int level;
 
     /** Handler that runs the reader. */
-    private FactoryHandlerXML handler;
+    private HandlerXML handler;
 
     /** Output streams. */
-    protected FactoryWriterXML out;
+    protected WriterXML out;
 
     /** Runs the parser, based on an handler. Used in order to continue
      * the streaming from another reader. */
-    private final void xmlIn(FactoryHandlerXML handler, FactoryWriterXML out) {
+    private final void xmlIn(HandlerXML handler, WriterXML out) {
         this.handler = handler;
         this.out = out;
         handler.newReader(this);
@@ -69,14 +69,14 @@ public abstract class FactoryReaderXML {
 
     /** Runs the parser, based on another handler. Used in order to continue
      * the streaming from another reader. */
-    public final void xmlIn(FactoryReaderXML reader) {
+    public final void xmlIn(ReaderXML reader) {
         xmlIn(reader.handler, reader.out);
     }
 
     /** Runs the parser, based on an input source. */
-    private final void xmlIn(InputSource is, FactoryWriterXML out, 
+    private final void xmlIn(InputSource is, WriterXML out, 
                             boolean validating) throws SAXException {
-        this.handler = new FactoryHandlerXML();
+        this.handler = new HandlerXML();
         xmlIn(handler, out);
         SAXParserFactory xmlInput = SAXParserFactory.newInstance();
         xmlInput.setValidating(validating);
@@ -90,7 +90,7 @@ public abstract class FactoryReaderXML {
     }
 
     /** Runs the parser, based on an URI. */
-    public void xmlIn(String uri, FactoryWriterXML out, boolean validating) {
+    public void xmlIn(String uri, WriterXML out, boolean validating) {
         try {
             xmlIn(new InputSource(uri), out, validating);
         } catch (SAXException e) {
@@ -100,7 +100,7 @@ public abstract class FactoryReaderXML {
     }
 
     /** Runs the parser, based on a query or string. */
-    public void xmlIn(Writer query, FactoryWriterXML out, boolean validating) {
+    public void xmlIn(Writer query, WriterXML out, boolean validating) {
         if (query != null && query.toString().length() > 0) {
             try {
             xmlIn(new InputSource(
@@ -115,7 +115,7 @@ public abstract class FactoryReaderXML {
     }
 
     /** Runs the parser, based on a query stored in FactoryWriterXML. */
-    public void xmlIn(FactoryWriterXML query, FactoryWriterXML out, 
+    public void xmlIn(WriterXML query, WriterXML out, 
                       boolean validating) {
         if (query != null) {
             query.end();
@@ -124,7 +124,7 @@ public abstract class FactoryReaderXML {
     }
 
     /** Runs the parser, based on a buffered reader. */
-    public void xmlIn(BufferedReader uri, FactoryWriterXML out, boolean validating) {
+    public void xmlIn(BufferedReader uri, WriterXML out, boolean validating) {
         try {
             xmlIn(new InputSource(uri), out, validating);
         } catch (SAXException e) {
@@ -134,7 +134,7 @@ public abstract class FactoryReaderXML {
     }
 
     /** Runs the parser, based on an error stream stored in FactoryWriterXML. */
-    public void xmlErrorIn(FactoryWriterXML query) {
+    public void xmlErrorIn(WriterXML query) {
         if (query != null) {
             query.end();
             xmlIn(query.getErrWriter(), null, false);
@@ -147,7 +147,7 @@ public abstract class FactoryReaderXML {
             e.printStackTrace();
             return;
         }
-        out.xmlMessage(FactoryWriterXML.FATAL, e.toString());
+        out.xmlMessage(WriterXML.FATAL, e.toString());
     }
 
     /** Interprets a that starts an element. Should be
@@ -162,7 +162,7 @@ public abstract class FactoryReaderXML {
       * associated value on the fly. */
     protected void getTag(String tag, String value) {
         if (out != null) {
-            out.xmlMessage(FactoryWriterXML.WARNING, "message:missing:tag", "", 
+            out.xmlMessage(WriterXML.WARNING, "message:missing:tag", "", 
                            tag, value, getClass().toString());
         }
     }
@@ -174,7 +174,7 @@ public abstract class FactoryReaderXML {
     }
 
     /** Returns the handler that runs the reader. */
-    protected FactoryHandlerXML getHandler() {
+    protected HandlerXML getHandler() {
         return handler;
     }
 

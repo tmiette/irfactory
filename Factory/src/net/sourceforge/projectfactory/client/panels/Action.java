@@ -28,7 +28,7 @@ $Author: ddlamb_2000 $
 package net.sourceforge.projectfactory.client.panels;
 
 import java.awt.event.ActionEvent;
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.*;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 
@@ -59,10 +59,10 @@ public class Action extends PanelData {
                                 "durationtype","label:unit",10,
                                 "assigned","label:assigned",50,
                                 "completion","label:scheduled",10);
-    protected ButtonToggleFactory button1 = new ButtonToggleFactory("button:action:answer","button:action:answer:tip","action.gif");
+    protected ButtonToggle button1 = new ButtonToggle("button:action:answer","button:action:answer:tip","action.gif");
 
     /** Constructor. */
-    public Action(FrameMain frame) {
+    public Action(MainFrame frame) {
         super(frame);
         recipient.attachLookup(0,this,"actor");
         recipient.setCombo(1, new ComboBoxCode("role"));

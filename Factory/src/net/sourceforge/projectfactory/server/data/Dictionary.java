@@ -30,7 +30,7 @@ package net.sourceforge.projectfactory.server.data;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.BaseEntityServerXML;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 /** 
   * Represents an entry in the multi-languages dictionary. 
@@ -47,7 +47,7 @@ public class Dictionary extends Entity {
     public String arabic;
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, boolean tags) {
+    public void xmlOut(WriterXML xml, TransactionXML transaction, boolean tags) {
         if (tags) xmlStart(xml, "dictionary");
         super.xmlOut(xml, transaction, false);
         if (transaction.isDetail() || transaction.isSave()) {
@@ -62,7 +62,7 @@ public class Dictionary extends Entity {
     }
 
     /** Reads the object from an XML input. */
-    public boolean xmlIn(FactoryWriterXML xml, TransactionXML transaction, String tag, String value) {
+    public boolean xmlIn(WriterXML xml, TransactionXML transaction, String tag, String value) {
         if (super.xmlIn(xml, transaction, tag, value)) return true;
         if (tag.equals("application")) {
             application = value;

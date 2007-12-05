@@ -35,8 +35,8 @@ import java.util.List;
 import net.sourceforge.projectfactory.client.components.LocalMessage;
 import net.sourceforge.projectfactory.client.components.PanelDataLookup;
 import net.sourceforge.projectfactory.client.components.ThreadLookup;
-import net.sourceforge.projectfactory.xml.FactoryReaderXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.ReaderXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -45,7 +45,7 @@ import net.sourceforge.projectfactory.xml.XMLWrapper;
  * Includes, adds or attachs the elements to a recipient (panel, thread...).
  * @author David Lambert
  */
-public class ImportListXML extends FactoryReaderXML {
+public class ImportListXML extends ReaderXML {
 
     /** Thread defined as recipient of the list interpreter. */
     private ThreadLookup lookupThread;
@@ -77,7 +77,7 @@ public class ImportListXML extends FactoryReaderXML {
 
     /** Starts a tag. */
     protected void startsTag(String tag) {
-        if (tag.equals(FactoryWriterXML.RESPONSE) || tag.equals("list")) {
+        if (tag.equals(WriterXML.RESPONSE) || tag.equals("list")) {
             return;
         } else if (!tag.equals("message") && !tag.equals("counter") && 
                    !tag.equals("totalcounter") && !tag.equals("operatorid") &&
@@ -214,7 +214,7 @@ public class ImportListXML extends FactoryReaderXML {
     /**
      * Interprets an list element coming from a XML stream.
      */
-    class ImportListItemXML extends FactoryReaderXML {
+    class ImportListItemXML extends ReaderXML {
 
         /** Category of the element. */
         private String category;

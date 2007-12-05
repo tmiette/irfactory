@@ -31,7 +31,7 @@ package net.sourceforge.projectfactory.client.components;
  * Defines a button used as a lookup.
  * @author David Lambert
  */
-public class ButtonLookup extends ButtonFactory {
+public class ButtonLookup extends Button {
 	
 	/** Defines the button or lookup state (opened/closed). */
     private boolean opened;

@@ -36,7 +36,7 @@ import net.sourceforge.projectfactory.server.entities.DurationCount;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.BaseEntityServerXML;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -74,7 +74,7 @@ public class Tracking extends Entity {
     private DurationCount cumulated = new DurationCount();
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+    public void xmlOut(WriterXML xml, TransactionXML transaction, 
                        boolean tags) {
 
         totalScheduled.reset();
@@ -396,7 +396,7 @@ public class Tracking extends Entity {
     }
 
     /** Writes tasks as an XML output. */
-    private void xmlOutTasks(FactoryWriterXML xml, 
+    private void xmlOutTasks(WriterXML xml, 
                              TransactionXML transaction) {
         for (Task item: plan.project.tasks) {
             if (Item.needsWorkload(item.type)) {
@@ -418,7 +418,7 @@ public class Tracking extends Entity {
     }
 
     /** Reads the object from an XML input. */
-    public boolean xmlIn(FactoryWriterXML xml, TransactionXML transaction, 
+    public boolean xmlIn(WriterXML xml, TransactionXML transaction, 
                          String tag, String value) {
         if (super.xmlIn(xml, transaction, tag, value)) 
             return true;
@@ -505,7 +505,7 @@ public class Tracking extends Entity {
     }
 
     /** Validates the object before any save or update. */
-    public boolean xmlValidate(FactoryWriterXML xml, TransactionXML transaction, 
+    public boolean xmlValidate(WriterXML xml, TransactionXML transaction, 
                             List list) {
         if(super.xmlValidate(xml, transaction, list))
             return true;
@@ -560,7 +560,7 @@ public class Tracking extends Entity {
         protected Actor actor;
 
         /** Writes the object as an XML output. */
-        public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+        public void xmlOut(WriterXML xml, TransactionXML transaction, 
                            String tag) {
             xmlStart(xml, tag);
             if (duration > 0) {

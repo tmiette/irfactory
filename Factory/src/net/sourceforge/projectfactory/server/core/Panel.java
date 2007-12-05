@@ -34,7 +34,7 @@ import java.io.OutputStreamWriter;
 import java.util.List;
 
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -45,7 +45,7 @@ import net.sourceforge.projectfactory.xml.XMLWrapper;
 public class Panel extends PanelBase {
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+    public void xmlOut(WriterXML xml, TransactionXML transaction, 
                        boolean tags) {
         if (tags)
             xmlStart(xml, "panel");
@@ -76,7 +76,7 @@ public class Panel extends PanelBase {
     }
 
     /** Writes associated objects as an XML output. */
-    private void xmlOutExpandPanelCode(FactoryWriterXML xml, 
+    private void xmlOutExpandPanelCode(WriterXML xml, 
                                        TransactionXML transaction) {
         for (PanelCode panelCode: transaction.getServer().core.panelCodes)
             if (panelCode.packageReference != null && 
@@ -87,7 +87,7 @@ public class Panel extends PanelBase {
     }
 
     /** Validates the object before any save or update. */
-    public boolean xmlValidate(FactoryWriterXML xml, 
+    public boolean xmlValidate(WriterXML xml, 
                                TransactionXML transaction, List list) {
         if (super.xmlValidate(xml, transaction, list))
             return true;

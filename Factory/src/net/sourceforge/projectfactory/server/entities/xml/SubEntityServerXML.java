@@ -28,7 +28,7 @@ package net.sourceforge.projectfactory.server.entities.xml;
 
 import java.util.List;
 
-import net.sourceforge.projectfactory.server.FactoryServerBase;
+import net.sourceforge.projectfactory.server.ApplicationServerBase;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
 
@@ -38,10 +38,10 @@ import net.sourceforge.projectfactory.server.xml.TransactionXML;
  */
 public class SubEntityServerXML extends EntityServerXML {
 
-    FactoryServerBase baseServer;
+    ApplicationServerBase baseServer;
 
     /** Constructor. */
-    public SubEntityServerXML(FactoryServerBase baseServer, 
+    public SubEntityServerXML(ApplicationServerBase baseServer, 
                             TransactionXML transaction, 
                             Entity entity, 
                             List list) {

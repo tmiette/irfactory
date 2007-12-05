@@ -29,7 +29,7 @@ package net.sourceforge.projectfactory.server.actors;
 import java.util.Date;
 
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
@@ -44,12 +44,12 @@ public class Member extends MemberBase {
     }
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, boolean tags) {
+    public void xmlOut(WriterXML xml, TransactionXML transaction, boolean tags) {
 		xmlOut(xml, transaction, tags, null);
 	}
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+    public void xmlOut(WriterXML xml, TransactionXML transaction, 
                        boolean tags, Date date) {
         if (tags) xmlStart(xml, "member");
         super.xmlOut(xml, transaction, false);

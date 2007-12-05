@@ -32,7 +32,7 @@ import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.projects.Item;
 import net.sourceforge.projectfactory.server.projects.Project;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
@@ -42,7 +42,7 @@ import net.sourceforge.projectfactory.xml.FactoryWriterXML;
 public class Actor extends ActorBase {
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+    public void xmlOut(WriterXML xml, TransactionXML transaction, 
                        boolean tags) {
         if (tags) xmlStart(xml, "actor");
         super.xmlOut(xml, transaction, false);
@@ -100,7 +100,7 @@ public class Actor extends ActorBase {
     }
 
     /** Writes the object as an XML output. */
-    public void xmlOutRecipient(FactoryWriterXML xml, TransactionXML transaction) {
+    public void xmlOutRecipient(WriterXML xml, TransactionXML transaction) {
         xmlStart(xml, "networkrecipient");
         xmlAttribute(xml, "iid", getIid());
         xmlAttribute(xml, "name", getName());
@@ -112,7 +112,7 @@ public class Actor extends ActorBase {
     }
 
     /** Reads the object from an XML input. */
-    public boolean xmlIn(FactoryWriterXML xml, TransactionXML transaction, 
+    public boolean xmlIn(WriterXML xml, TransactionXML transaction, 
                          String tag, String value) {
         if (super.xmlIn(xml, transaction, tag, value)) 
             return true;
@@ -288,7 +288,7 @@ public class Actor extends ActorBase {
     }
 
     /** Called after replication of the object. */
-    public void afterReplication(FactoryWriterXML xml, 
+    public void afterReplication(WriterXML xml, 
                                     TransactionXML transaction,
                                     List list) {
         // Look for duplicates

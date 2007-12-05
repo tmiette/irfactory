@@ -33,7 +33,7 @@ import net.sourceforge.projectfactory.server.entities.BaseEntity;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.xml.ReaderServerXML;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
@@ -149,7 +149,7 @@ public abstract class EntityServerXML extends ReaderServerXML {
                 entity.create(transaction);
                 transaction.setCode(TransactionXML.SUMMARY);
                 entity.xmlOut(xml, transaction, true);
-                xml.xmlMessage(FactoryWriterXML.MESSAGE, 
+                xml.xmlMessage(WriterXML.MESSAGE, 
                                                      "message:created", "", 
                                                      entity.getName());
                 isDirty = true;
@@ -158,7 +158,7 @@ public abstract class EntityServerXML extends ReaderServerXML {
             case TransactionXML.UPDATE:
                 if (draft != null) {
                     if (draft.getRevision() != entity.getRevision()) {
-                        xml.xmlMessage(FactoryWriterXML.ERROR, 
+                        xml.xmlMessage(WriterXML.ERROR, 
 															"error:lock", "");
                         return;
                     }
@@ -173,7 +173,7 @@ public abstract class EntityServerXML extends ReaderServerXML {
 
                 transaction.setCode(TransactionXML.SHORTSUMMARY);
                 entity.xmlOut(xml, transaction, true);
-                xml.xmlMessage(FactoryWriterXML.MESSAGE, 
+                xml.xmlMessage(WriterXML.MESSAGE, 
                                                      "message:updated", "", 
                                                      entity.getName());
                 isDirty = true;
@@ -186,7 +186,7 @@ public abstract class EntityServerXML extends ReaderServerXML {
                 synchronized (list) {
                     list.remove(entity);
                 }
-                xml.xmlMessage(FactoryWriterXML.MESSAGE, 
+                xml.xmlMessage(WriterXML.MESSAGE, 
                                                      "message:deleted", "", 
                                                      entity.getName());
                 isDirty = true;
@@ -204,14 +204,14 @@ public abstract class EntityServerXML extends ReaderServerXML {
 								draft.afterReplication(xml, transaction, list);
 							}
                         }
-                        xml.xmlMessage(FactoryWriterXML.MESSAGE, 
+                        xml.xmlMessage(WriterXML.MESSAGE, 
                                          transaction.getSession().isRemote() ? 
                                          "message:replicated:updated:remote" : 
                                          "message:replicated:updated:local", 
                                          entity.getName());
                         isDirty = true;
                     } else
-                        xml.xmlMessage(FactoryWriterXML.TRACE, 
+                        xml.xmlMessage(WriterXML.TRACE, 
                                          "message:replicated:uptodate", 
                                          entity.getName());
                 } else {
@@ -220,7 +220,7 @@ public abstract class EntityServerXML extends ReaderServerXML {
                         Collections.sort(list);
 						entity.afterReplication(xml, transaction, list);
                     }
-                    xml.xmlMessage(FactoryWriterXML.MESSAGE, 
+                    xml.xmlMessage(WriterXML.MESSAGE, 
                                          transaction.getSession().isRemote() ? 
                                          "message:replicated:created:remote" : 
                                          "message:replicated:created:local", 

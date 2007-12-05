@@ -26,7 +26,7 @@ $Author: ddlamb_2000 $
 */
 package net.sourceforge.projectfactory.server.entities;
 
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
@@ -127,14 +127,14 @@ public class DurationCount extends Duration {
     }
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, String tag) {
+    public void xmlOut(WriterXML xml, String tag) {
         xmlAttribute(xml, tag + "hours", hours);
         xmlAttribute(xml, tag + "halfdays", halfDays);
         xmlAttribute(xml, tag + "days", days);
     }
 
     /** Writes the object as an XML output. */
-    public void xmlOutString(FactoryWriterXML xml, String tag) {
+    public void xmlOutString(WriterXML xml, String tag) {
         normalize();
         String output = "";
         if (days != 0)
@@ -153,7 +153,7 @@ public class DurationCount extends Duration {
     }
 
     /** Writes the object as an XML output. */
-    public void xmlOutString(FactoryWriterXML xml, String tag, 
+    public void xmlOutString(WriterXML xml, String tag, 
                              int hoursPerDay) {
         normalize(hoursPerDay);
         xmlOutString(xml, tag);

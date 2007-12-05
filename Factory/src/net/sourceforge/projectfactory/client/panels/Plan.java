@@ -28,7 +28,7 @@ $Author: ddlamb_2000 $
 package net.sourceforge.projectfactory.client.panels;
 
 import java.awt.event.ActionEvent;
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.*;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 
@@ -117,12 +117,12 @@ public class Plan extends PanelData {
                                 "anonymous","label:anonym",100,
                                 "fte","label:fte",10,
                                 "free","label:free",10);
-    protected ButtonToggleFactory button1 = new ButtonToggleFactory("button:project:newversionplan","button:project:newversionplan:tip","plan.gif");
-    protected ButtonToggleFactory button2 = new ButtonToggleFactory("button:project:newstatus","button:project:newstatus:tip","status.gif");
-    protected ButtonToggleFactory button3 = new ButtonToggleFactory("button:project:newtracking","button:project:newtracking:tip","tracking.gif");
+    protected ButtonToggle button1 = new ButtonToggle("button:project:newversionplan","button:project:newversionplan:tip","plan.gif");
+    protected ButtonToggle button2 = new ButtonToggle("button:project:newstatus","button:project:newstatus:tip","status.gif");
+    protected ButtonToggle button3 = new ButtonToggle("button:project:newtracking","button:project:newtracking:tip","tracking.gif");
 
     /** Constructor. */
-    public Plan(FrameMain frame) {
+    public Plan(MainFrame frame) {
         super(frame);
         name.setEnabler(false);
         name.setMustSave(true);

@@ -32,11 +32,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import net.sourceforge.projectfactory.server.FactoryServerBase;
+import net.sourceforge.projectfactory.server.ApplicationServerBase;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.SubEntityServerXML;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -44,7 +44,7 @@ import net.sourceforge.projectfactory.xml.XMLWrapper;
  * Aggregates all the objects which define projects.
  * @author David Lambert
  */
-public class FactoryProject extends FactoryServerBase {
+public class ProjectList extends ApplicationServerBase {
 
     /** List of projects. */
     public List<Project> projects = new ArrayList(10);
@@ -65,7 +65,7 @@ public class FactoryProject extends FactoryServerBase {
     public List<Tracking> trackings = new ArrayList(50);
 
     /** Constructor. */
-    public FactoryProject(FactoryServerBase serverBase) {
+    public ProjectList(ApplicationServerBase serverBase) {
         super(serverBase);
     }
 
@@ -89,7 +89,7 @@ public class FactoryProject extends FactoryServerBase {
     }
 
     /** Saves all entities. */
-    public void saveAll(FactoryWriterXML xml, TransactionXML transaction, 
+    public void saveAll(WriterXML xml, TransactionXML transaction, 
                         boolean demo, String iid) {
         saveProjects(xml, transaction, demo, iid);
         savePlans(xml, transaction, demo, iid);
@@ -99,43 +99,43 @@ public class FactoryProject extends FactoryServerBase {
     }
 
     /** Saves all projects. */
-    public void saveProjects(FactoryWriterXML xml, TransactionXML transaction, 
+    public void saveProjects(WriterXML xml, TransactionXML transaction, 
                              boolean demo, String iid) {
         saveEntity(xml, transaction, businessProcesses, demo, iid);
         saveEntity(xml, transaction, projects, demo, iid);
     }
 
     /** Saves all plan. */
-    public void savePlans(FactoryWriterXML xml, TransactionXML transaction, 
+    public void savePlans(WriterXML xml, TransactionXML transaction, 
                              boolean demo, String iid) {
         saveEntity(xml, transaction, plans, demo, iid);
     }
 
     /** Saves all forecasts. */
-    public void saveForecasts(FactoryWriterXML xml, TransactionXML transaction, 
+    public void saveForecasts(WriterXML xml, TransactionXML transaction, 
                               boolean demo, String iid) {
         saveEntity(xml, transaction, forecasts, demo, iid);
     }
 
     /** Saves all statuses. */
-    public void saveStatuses(FactoryWriterXML xml, TransactionXML transaction, 
+    public void saveStatuses(WriterXML xml, TransactionXML transaction, 
                              boolean demo, String iid) {
         saveEntity(xml, transaction, statuses, demo, iid);
     }
 
     /** Saves all trackings. */
-    public void saveTrackings(FactoryWriterXML xml, TransactionXML transaction, 
+    public void saveTrackings(WriterXML xml, TransactionXML transaction, 
                               boolean demo, String iid) {
         saveEntity(xml, transaction, trackings, demo, iid);
     }
 
     /** Saves all objects in file(s). */
-    public void saveAll(FactoryWriterXML xml, TransactionXML transaction) {
+    public void saveAll(WriterXML xml, TransactionXML transaction) {
         String filename = transaction.getServer().getPath() + 
                             XMLWrapper.SLASH + "projects.xml";
         try {
-            FactoryWriterXML outputXml = 
-                new FactoryWriterXML(filename, "factory");
+            WriterXML outputXml = 
+                new WriterXML(filename, "factory");
             saveProjects(outputXml, transaction, false, null);
             outputXml.end();
             traceSaving(xml, filename);
@@ -146,8 +146,8 @@ public class FactoryProject extends FactoryServerBase {
         filename = transaction.getServer().getPath() + 
                         XMLWrapper.SLASH + "plans.xml";
         try {
-            FactoryWriterXML outputXml = 
-                new FactoryWriterXML(filename, "factory");
+            WriterXML outputXml = 
+                new WriterXML(filename, "factory");
             savePlans(outputXml, transaction, false, null);
             outputXml.end();
             traceSaving(xml, filename);
@@ -158,8 +158,8 @@ public class FactoryProject extends FactoryServerBase {
         filename = transaction.getServer().getPath() + 
                         XMLWrapper.SLASH + "forecasts.xml";
         try {
-            FactoryWriterXML outputXml = 
-                new FactoryWriterXML(filename, "factory");
+            WriterXML outputXml = 
+                new WriterXML(filename, "factory");
             saveForecasts(outputXml, transaction, false, null);
             outputXml.end();
             traceSaving(xml, filename);
@@ -170,8 +170,8 @@ public class FactoryProject extends FactoryServerBase {
         filename = transaction.getServer().getPath() + 
                         XMLWrapper.SLASH + "statuses.xml";
         try {
-            FactoryWriterXML outputXml = 
-                new FactoryWriterXML(filename, "factory");
+            WriterXML outputXml = 
+                new WriterXML(filename, "factory");
             saveStatuses(outputXml, transaction, false, null);
             outputXml.end();
             traceSaving(xml, filename);
@@ -182,8 +182,8 @@ public class FactoryProject extends FactoryServerBase {
         filename = transaction.getServer().getPath() + 
                     XMLWrapper.SLASH + "trackings.xml";
         try {
-            FactoryWriterXML outputXml = 
-                new FactoryWriterXML(filename, "factory");
+            WriterXML outputXml = 
+                new WriterXML(filename, "factory");
             saveTrackings(outputXml, transaction, false, null);
             outputXml.end();
             traceSaving(xml, filename);

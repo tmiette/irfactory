@@ -70,9 +70,9 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
 
-import net.sourceforge.projectfactory.FactoryBuild;
+import net.sourceforge.projectfactory.AboutProjectsOrganizer;
 import net.sourceforge.projectfactory.client.components.Arrow;
-import net.sourceforge.projectfactory.client.components.ButtonToggleFactory;
+import net.sourceforge.projectfactory.client.components.ButtonToggle;
 import net.sourceforge.projectfactory.client.components.ComboBoxCode;
 import net.sourceforge.projectfactory.client.components.LabelBox;
 import net.sourceforge.projectfactory.client.components.LocalIcon;
@@ -89,8 +89,8 @@ import net.sourceforge.projectfactory.client.xml.ImportErrXML;
 import net.sourceforge.projectfactory.client.xml.ImportListXML;
 import net.sourceforge.projectfactory.client.xml.ImportPreferenceXML;
 import net.sourceforge.projectfactory.client.xml.ImportSecurityXML;
-import net.sourceforge.projectfactory.middleware.FactoryConnection;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.middleware.Connection;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -98,14 +98,14 @@ import net.sourceforge.projectfactory.xml.XMLWrapper;
  * Main window used for the whole application.
  * @author David Lambert
  */
-public class FrameMain extends JFrame implements ActionListener {
+public class MainFrame extends JFrame implements ActionListener {
 
     /** Maximum value for the progress bar : equals to the number of statements
 	 *  LocalSplash.addProgressValue(). */
     public static final int PROGRESS_MAX = 7;
 
     /** Session to the server. */
-    protected FactoryConnection connection;
+    protected Connection connection;
 
     /** System user (provided by the operating system). */
     private static final String user = 
@@ -186,64 +186,64 @@ public class FrameMain extends JFrame implements ActionListener {
     private JToolBar commandBar = new JToolBar();
 
     /** Button 1 for new object. */
-    protected ButtonToggleFactory buttonNew1 = 
-        new ButtonToggleFactory("", "", "plus.gif");
+    protected ButtonToggle buttonNew1 = 
+        new ButtonToggle("", "", "plus.gif");
 
     /** Button 2 for new object. */
-    protected ButtonToggleFactory buttonNew2 = 
-        new ButtonToggleFactory("", "", "plus.gif");
+    protected ButtonToggle buttonNew2 = 
+        new ButtonToggle("", "", "plus.gif");
 
     /** Button 3 for new object. */
-    protected ButtonToggleFactory buttonNew3 = 
-        new ButtonToggleFactory("", "", "plus.gif");
+    protected ButtonToggle buttonNew3 = 
+        new ButtonToggle("", "", "plus.gif");
 
     /** Button separator before edit buttons. */
     private JToolBar.Separator separatorEdit = 
         new JToolBar.Separator(new Dimension(SEPARATOR_SIZE, 0));
 
     /** Close button. */
-    private ButtonToggleFactory buttonClose = 
-        new ButtonToggleFactory("button:close", "button:close:tip", "close.gif");
+    private ButtonToggle buttonClose = 
+        new ButtonToggle("button:close", "button:close:tip", "close.gif");
 
     /** Edit button. */
-    private ButtonToggleFactory buttonEdit = 
-        new ButtonToggleFactory("button:edit", "button:edit:tip", "edit.gif");
+    private ButtonToggle buttonEdit = 
+        new ButtonToggle("button:edit", "button:edit:tip", "edit.gif");
 
     /** Print button. */
-    private ButtonToggleFactory buttonPrint = 
-        new ButtonToggleFactory("", "button:print:tip", "print.gif");
+    private ButtonToggle buttonPrint = 
+        new ButtonToggle("", "button:print:tip", "print.gif");
 
     /** Print diagram button. */
-    private ButtonToggleFactory buttonPrintDiagram = 
-        new ButtonToggleFactory("", "", "print.gif");
+    private ButtonToggle buttonPrintDiagram = 
+        new ButtonToggle("", "", "print.gif");
 
     /** Delete button. */
-    private ButtonToggleFactory buttonDelete = 
-        new ButtonToggleFactory("button:delete", "button:delete:tip", "minus.gif");
+    private ButtonToggle buttonDelete = 
+        new ButtonToggle("button:delete", "button:delete:tip", "minus.gif");
 
     /** Button separator before save buttons. */
     private JToolBar.Separator separatorSave = 
         new JToolBar.Separator(new Dimension(SEPARATOR_SIZE, 0));
 
     /** Save button. */
-    private ButtonToggleFactory buttonSave = 
-        new ButtonToggleFactory("button:save", "button:save:tip", "save.gif");
+    private ButtonToggle buttonSave = 
+        new ButtonToggle("button:save", "button:save:tip", "save.gif");
 
     /** Button separator before new window button. */
     private JToolBar.Separator separatorNewWindow = 
         new JToolBar.Separator(new Dimension(SEPARATOR_SIZE, 0));
 
     /** New window button. */
-    private ButtonToggleFactory buttonNewWindow = 
-        new ButtonToggleFactory("", "button:newwindow:tip", "window.gif");
+    private ButtonToggle buttonNewWindow = 
+        new ButtonToggle("", "button:newwindow:tip", "window.gif");
 
     /** Zoom button. */
-    private ButtonToggleFactory buttonZoom = 
-        new ButtonToggleFactory("", "button:zoom:tip", "zoom.gif");
+    private ButtonToggle buttonZoom = 
+        new ButtonToggle("", "button:zoom:tip", "zoom.gif");
 
     /** Bottom Zoom button. */
-    private ButtonToggleFactory buttonBottomZoom = 
-        new ButtonToggleFactory("", "button:bottomzoom:tip", "zoominv.gif");
+    private ButtonToggle buttonBottomZoom = 
+        new ButtonToggle("", "button:bottomzoom:tip", "zoominv.gif");
 
     /** Position of horizontal and vertical spliters. */
     private int posSplitX;
@@ -401,7 +401,7 @@ public class FrameMain extends JFrame implements ActionListener {
     private static int shortCutKey = 0;
     
     /** Constructor, the window with all its decorations is initialized. */
-    public FrameMain(FactoryConnection connection) {
+    public MainFrame(Connection connection) {
         LocalSplash.addProgressValue("initialization");
         this.connection = connection;
         connection.attach(this);
@@ -599,9 +599,9 @@ public class FrameMain extends JFrame implements ActionListener {
             shortCutKey = 0;
             menuGo.removeAll();
             actionBar.removeAll();
-            FactoryWriterXML query = new FactoryWriterXML("query:connect");
+            WriterXML query = new WriterXML("query:connect");
             query.xmlOut("menulist", "y");
-            FactoryWriterXML answer = new FactoryWriterXML();
+            WriterXML answer = new WriterXML();
             querySession(query, answer);
             new ImportSecurityXML(this).xmlIn(answer, null, false);
         } catch (Exception ex) {
@@ -633,47 +633,47 @@ public class FrameMain extends JFrame implements ActionListener {
 
     /** Returns title to be used for the frame. */
     public String getFrameTitle() {
-        return FactoryBuild.getShortTitle();
+        return AboutProjectsOrganizer.getShortTitle();
     }
 
     /** Returns title to be used as build number. */
     public String getBuild() {
-        return FactoryBuild.getBuild();
+        return AboutProjectsOrganizer.getBuild();
     }
 
     /** Returns the path to be used in order to store data. */
     public String getPath() {
-        return FactoryBuild.getPath();
+        return AboutProjectsOrganizer.getPath();
     }
 
     /** Returns home page URL. */
     public String getHomePage() {
-        return FactoryBuild.getHomePage();
+        return AboutProjectsOrganizer.getHomePage();
     }
 
     /** Returns developer page URL. */
     public String getDevPage() {
-        return FactoryBuild.getDevPage();
+        return AboutProjectsOrganizer.getDevPage();
     }
 
     /** Returns bug page URL. */
     public String getBugPage() {
-        return FactoryBuild.getBugPage();
+        return AboutProjectsOrganizer.getBugPage();
     }
 
     /** Copyright. */
     public String getCopyright() {
-        return FactoryBuild.getCopyright();
+        return AboutProjectsOrganizer.getCopyright();
     }
 
     /** Licence. */
     public String getLicense() {
-        return FactoryBuild.getLicense();
+        return AboutProjectsOrganizer.getLicense();
     }
 
     /** List of extensions for managed applications. */	
     public String[] getApplicationExtensions() {
-        return FactoryBuild.getApplicationExtensions();
+        return AboutProjectsOrganizer.getApplicationExtensions();
     }
 
     /** Load panels using a thread. */
@@ -838,8 +838,8 @@ public class FrameMain extends JFrame implements ActionListener {
 
     /** Manages actions performed by buttons and menu items. */
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() instanceof ButtonToggleFactory) {
-            fireButton((ButtonToggleFactory)e.getSource());
+        if (e.getSource() instanceof ButtonToggle) {
+            fireButton((ButtonToggle)e.getSource());
         } else if (e.getSource() instanceof JMenuItem) {
             JMenuItem source = (JMenuItem)e.getSource();
 
@@ -966,10 +966,10 @@ public class FrameMain extends JFrame implements ActionListener {
 
     /** Opens a new window. */
     protected void newWindow() {
-        FrameMain frame = null;
+        MainFrame frame = null;
 
         try {
-            frame = new FrameMain(new FactoryConnection());
+            frame = new MainFrame(new Connection());
             frame.setLocationRelativeTo(null);
             frame.setLocation(getX() + (16 * windows), 
                               getY() + (16 * windows));
@@ -993,7 +993,7 @@ public class FrameMain extends JFrame implements ActionListener {
     }
 
     /** Manages menu items. */
-    public void fireButton(ButtonToggleFactory source) {
+    public void fireButton(ButtonToggle source) {
         setCursor(true);
         if (source == buttonNew1 || 
                 source == buttonNew2 || 
@@ -1003,15 +1003,15 @@ public class FrameMain extends JFrame implements ActionListener {
             return;
         } else if (source == buttonSave) {
             try {
-                FactoryWriterXML query;
+                WriterXML query;
                 if (buttonEdit.isSelected())
-                    query = new FactoryWriterXML("query:update");
+                    query = new WriterXML("query:update");
                 else if (buttonDelete.isSelected())
-                    query = new FactoryWriterXML("query:delete");
+                    query = new WriterXML("query:delete");
                 else
-                    query = new FactoryWriterXML("query:new");
+                    query = new WriterXML("query:new");
                 getCurrent().xmlOut(query, true);
-                FactoryWriterXML answer = new FactoryWriterXML();
+                WriterXML answer = new WriterXML();
                 querySession(query, answer);
                 if (!inError) {
                     panelSearch.runLookupAndWait();
@@ -1073,7 +1073,7 @@ public class FrameMain extends JFrame implements ActionListener {
             }
         } else if (source == buttonPrint || source == buttonPrintDiagram) {
             try {
-                FactoryWriterXML err = new FactoryWriterXML();
+                WriterXML err = new WriterXML();
                 getCurrent().print(err, source == buttonPrintDiagram, false);
                 new ImportErrXML(this).xmlErrorIn(err);
             } catch (Exception ex) {
@@ -1106,12 +1106,12 @@ public class FrameMain extends JFrame implements ActionListener {
     /** Reads preferences (from server). */
     protected void readPreferences() {
         try {
-            FactoryWriterXML query = new FactoryWriterXML("query:get");
+            WriterXML query = new WriterXML("query:get");
             query.xmlStart("preference");
             query.xmlEnd();
-            FactoryWriterXML answer = new FactoryWriterXML();
+            WriterXML answer = new WriterXML();
             querySession(query, answer, true);
-            new ImportPreferenceXML(FrameMain.this).xmlIn(answer, null, false);
+            new ImportPreferenceXML(MainFrame.this).xmlIn(answer, null, false);
         } catch (Exception e) {
             addMessage(e);
         }
@@ -1222,7 +1222,7 @@ public class FrameMain extends JFrame implements ActionListener {
         resetButtons();
         int no = 1;
         for(ToggleButtonAction action: actions) {
-            ButtonToggleFactory button;
+            ButtonToggle button;
             switch(no) {
                 case 1: button = buttonNew1; break;
                 case 2: button = buttonNew2; break;
@@ -1245,7 +1245,7 @@ public class FrameMain extends JFrame implements ActionListener {
     }
 
     /** Adds an object to the action bar. */
-    public void addActionBarButton(ButtonToggleFactory button) {
+    public void addActionBarButton(ButtonToggle button) {
         commandBar.add(button, 3);
     }
 
@@ -1264,7 +1264,7 @@ public class FrameMain extends JFrame implements ActionListener {
             Object component = commandBar.getComponentAtIndex(i);
             if (component.getClass().toString().indexOf("ButtonToggleFactory") >= 
                 0) {
-                ButtonToggleFactory button = (ButtonToggleFactory)component;
+                ButtonToggle button = (ButtonToggle)component;
                 if (button != buttonSave && button != buttonZoom && 
                     button != buttonBottomZoom && button != buttonClose && 
                     button != buttonNewWindow) {
@@ -1318,7 +1318,7 @@ public class FrameMain extends JFrame implements ActionListener {
     }
 
     /** Sends a request to the server, and interprets the answer. */
-    public void querySession(FactoryWriterXML query, FactoryWriterXML answer, 
+    public void querySession(WriterXML query, WriterXML answer, 
                              boolean forceLocal) {
         if (query == null)
             return;
@@ -1341,12 +1341,12 @@ public class FrameMain extends JFrame implements ActionListener {
     }
 
     /** Sends a request to the server, and interprets the answer. */
-    public void querySession(FactoryWriterXML query, FactoryWriterXML answer) {
+    public void querySession(WriterXML query, WriterXML answer) {
         querySession(query, answer, false);
     }
 
     /** Interprets the message stream and display messages. */
-    public boolean addMessage(FactoryWriterXML answer) {
+    public boolean addMessage(WriterXML answer) {
         try {
             ImportErrXML xml = new ImportErrXML(this);
             xml.xmlErrorIn(answer);
@@ -1360,7 +1360,7 @@ public class FrameMain extends JFrame implements ActionListener {
     /** Saves session parameters in preference file. */
     public void saveSession() {
         saveLookupParams();
-        FactoryWriterXML query = new FactoryWriterXML("query:update");
+        WriterXML query = new WriterXML("query:update");
 
         query.xmlStart("preference");
         query.xmlOut("posx", getX());
@@ -1383,7 +1383,7 @@ public class FrameMain extends JFrame implements ActionListener {
                 ((ToggleButtonCategory)component).xmlOut(query);
         }
         query.xmlEnd();
-        FactoryWriterXML answer = new FactoryWriterXML();
+        WriterXML answer = new WriterXML();
 
         try {
             querySession(query, answer, true);
@@ -1391,8 +1391,8 @@ public class FrameMain extends JFrame implements ActionListener {
             addMessage(e);
         }
 
-        query = new FactoryWriterXML("query:saveall");
-        answer = new FactoryWriterXML();
+        query = new WriterXML("query:saveall");
+        answer = new WriterXML();
         try {
             querySession(query, answer, true);
         } catch (Exception e) {
@@ -1612,14 +1612,14 @@ public class FrameMain extends JFrame implements ActionListener {
     }
 
     /** Appends the fault values to the output stream. */
-    public void xmlOutDefaultValues(FactoryWriterXML xml) {
+    public void xmlOutDefaultValues(WriterXML xml) {
         for (DefaultValue value: defaultValues)
             value.xmlOut(xml);
         defaultValues.clear();
     }
 
     /** Action on a 'new' button when pressed from the tool bar. */
-    private void actionNew(ButtonToggleFactory source) {
+    private void actionNew(ButtonToggle source) {
         actionNew(source, "");
     }
 
@@ -1630,7 +1630,7 @@ public class FrameMain extends JFrame implements ActionListener {
 
     /** Triggers the window to a 'new' or 'create' mode
 	 *  for a new element to be keyed. */
-    protected void actionNew(ButtonToggleFactory source, String panelName) {
+    protected void actionNew(ButtonToggle source, String panelName) {
     
         if (source == buttonNew1 || 
                 source == buttonNew2 || 
@@ -1641,9 +1641,9 @@ public class FrameMain extends JFrame implements ActionListener {
 
         if (getCurrent() != panelBlank) {
             try {
-                FactoryWriterXML query = new FactoryWriterXML("query:default");
+                WriterXML query = new WriterXML("query:default");
                 getCurrent().xmlOut(query, false);
-                FactoryWriterXML answer = new FactoryWriterXML();
+                WriterXML answer = new WriterXML();
                 querySession(query, answer);
                 new ImportDataXML(this).xmlIn(answer, null, false);
                 query = null;
@@ -1707,8 +1707,8 @@ public class FrameMain extends JFrame implements ActionListener {
 
     /** Displays a dialog for open or save files. */
     private String showDialog(int mode, String path) {
-        FileFilter gzip = new FactoryFileFilter("gzip", "XML/GZIP");
-        FileFilter xml = new FactoryFileFilter("xml", "XML");
+        FileFilter gzip = new ProjectFileFilter("gzip", "XML/GZIP");
+        FileFilter xml = new ProjectFileFilter("xml", "XML");
         JFileChooser chooser = new JFileChooser(path);
         chooser.setDialogType(mode);
         chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -1745,7 +1745,7 @@ public class FrameMain extends JFrame implements ActionListener {
         if (filename.length() > 0) {
             try {
                 setCursor(true);
-                FactoryWriterXML query = new FactoryWriterXML("query:backup");
+                WriterXML query = new WriterXML("query:backup");
                 query.xmlOut("file", filename);
                 if (!all && getCurrent() != panelBlank) 
                     query.xmlOut("iid", getCurrent().getIid());
@@ -1753,7 +1753,7 @@ public class FrameMain extends JFrame implements ActionListener {
                     query.xmlOut("demo", "y");
                 if(filename.endsWith(".gzip"))
                     query.xmlOut("gzip", "y");
-                FactoryWriterXML answer = new FactoryWriterXML();
+                WriterXML answer = new WriterXML();
                 querySession(query, answer);
             } catch (Exception e) {
                 addMessage(e);
@@ -1773,9 +1773,9 @@ public class FrameMain extends JFrame implements ActionListener {
         if (filename.length() > 0) {
             try {
                 setCursor(true);
-                FactoryWriterXML query = new FactoryWriterXML("query:restore");
+                WriterXML query = new WriterXML("query:restore");
                 query.xmlOut("file", filename);
-                FactoryWriterXML answer = new FactoryWriterXML();
+                WriterXML answer = new WriterXML();
                 querySession(query, answer);
                 panelSearch.runLookup();
             } catch (Exception e) {
@@ -1796,9 +1796,9 @@ public class FrameMain extends JFrame implements ActionListener {
         if (filename.length() > 0) {
             try {
                 setCursor(true);
-                FactoryWriterXML query = new FactoryWriterXML("query:import");
+                WriterXML query = new WriterXML("query:import");
                 query.xmlOut("file", filename);
-                FactoryWriterXML answer = new FactoryWriterXML();
+                WriterXML answer = new WriterXML();
                 querySession(query, answer);
                 panelSearch.runLookup();
             } catch (Exception e) {
@@ -1864,9 +1864,9 @@ public class FrameMain extends JFrame implements ActionListener {
         try {
             setCursor(true);
             panelSearch.unselectTree();
-            FactoryWriterXML query = 
-                new FactoryWriterXML("query:about");
-            FactoryWriterXML answer = new FactoryWriterXML();
+            WriterXML query = 
+                new WriterXML("query:about");
+            WriterXML answer = new WriterXML();
             querySession(query, answer);
             new ImportDataXML(this).xmlIn(answer, null, false);
         } catch (Exception ex) {
@@ -1885,7 +1885,7 @@ public class FrameMain extends JFrame implements ActionListener {
     private void bug() {
         try {
             setCursor(true);
-            FactoryWriterXML err = new FactoryWriterXML();
+            WriterXML err = new WriterXML();
             getCurrent().print(err, false, true);
             new ImportErrXML(this).xmlErrorIn(err);
         } catch (Exception ex) {
@@ -1900,9 +1900,9 @@ public class FrameMain extends JFrame implements ActionListener {
         try {
             setCursor(true);
             panelSearch.unselectTree();
-            FactoryWriterXML query = new FactoryWriterXML("query:get");
+            WriterXML query = new WriterXML("query:get");
             query.xmlStart("server").xmlAttribute("name", "localhost").xmlEnd();
-            FactoryWriterXML answer = new FactoryWriterXML();
+            WriterXML answer = new WriterXML();
             querySession(query, answer);
             new ImportDataXML(this).xmlIn(answer, null, false);
         } catch (Exception ex) {
@@ -1925,11 +1925,11 @@ public class FrameMain extends JFrame implements ActionListener {
         showPanel("blank");
         try {
             setCursor(true);
-            FactoryWriterXML query = new FactoryWriterXML("query:list");
+            WriterXML query = new WriterXML("query:list");
             query.xmlOut("class", "server");
             query.xmlOut("getoperatorid", "y");
             query.xmlOut("getoperatorname", "y");
-            FactoryWriterXML answer = new FactoryWriterXML();
+            WriterXML answer = new WriterXML();
             querySession(query, answer);
             importList = new ImportListXML(null, null);
             importList.xmlIn(answer, null, false);
@@ -1964,7 +1964,7 @@ public class FrameMain extends JFrame implements ActionListener {
                 connection.connect(this, serverName);
                 try {
                     if (connection.isConnected()) {
-                        FactoryWriterXML query = new FactoryWriterXML("query:connect");
+                        WriterXML query = new WriterXML("query:connect");
                         query.xmlOut("networkid", user);
                         query.xmlOut("build", getBuild());
                         query.xmlOut("os", 
@@ -1973,7 +1973,7 @@ public class FrameMain extends JFrame implements ActionListener {
                         query.xmlOut("operatorid", importList.getOperatorId());
                         query.xmlOut("operatorname", importList.getOperatorName());
                         query.xmlOut("localdate", XMLWrapper.dfUS.format(new Date()).toString());
-                        FactoryWriterXML answer = new FactoryWriterXML();
+                        WriterXML answer = new WriterXML();
                         querySession(query, answer);
                     }
                 } catch (Exception ex) {
@@ -2038,9 +2038,9 @@ public class FrameMain extends JFrame implements ActionListener {
             try {
                 setCursor(true);
                 saveLookupParams();
-                FactoryWriterXML query = new FactoryWriterXML("query:connect");
+                WriterXML query = new WriterXML("query:connect");
                 query.xmlOut("disconnect", "y");
-                FactoryWriterXML answer = new FactoryWriterXML();
+                WriterXML answer = new WriterXML();
                 querySession(query, answer);
             } catch (Exception ex) {
                 addMessage(ex);
@@ -2062,9 +2062,9 @@ public class FrameMain extends JFrame implements ActionListener {
     void showConnexions() {
         try {
             setCursor(true);
-            FactoryWriterXML query = new FactoryWriterXML("query:connect");
+            WriterXML query = new WriterXML("query:connect");
             query.xmlOut("list", "y");
-            FactoryWriterXML answer = new FactoryWriterXML();
+            WriterXML answer = new WriterXML();
             querySession(query, answer);
             new ImportDataXML(this).xmlIn(answer, null, false);
         } catch (Exception ex) {
@@ -2094,7 +2094,7 @@ public class FrameMain extends JFrame implements ActionListener {
             this.value = value;
         }
 
-        void xmlOut(FactoryWriterXML xml) {
+        void xmlOut(WriterXML xml) {
             xml.xmlOut(tag, value);
         }
     }

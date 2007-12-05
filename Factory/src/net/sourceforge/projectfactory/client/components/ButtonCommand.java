@@ -31,7 +31,7 @@ package net.sourceforge.projectfactory.client.components;
  * Default interface button used for actions.
  * @author David Lambert
  */
-public class ButtonCommand extends ButtonFactory {
+public class ButtonCommand extends Button {
 	
 	/** Constructor. */
     public ButtonCommand(String title) {

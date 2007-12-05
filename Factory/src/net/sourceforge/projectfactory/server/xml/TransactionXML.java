@@ -26,9 +26,9 @@ $Author: ddlamb_2000 $
 */
 package net.sourceforge.projectfactory.server.xml;
 
-import net.sourceforge.projectfactory.middleware.FactorySession;
-import net.sourceforge.projectfactory.server.FactoryServer;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.middleware.Session;
+import net.sourceforge.projectfactory.server.ApplicationServer;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
@@ -83,16 +83,16 @@ public class TransactionXML {
     public static final int SHORTSUMMARY = 15;
     
 	/** Refers to the session. */
-	private FactorySession session;
+	private Session session;
     
     /** XML Streams used for output. */
-    private FactoryWriterXML xml;
+    private WriterXML xml;
     
     /** Action during parsing. Refers to action values defined in the class. */
     private int code;
     
     /** Constructor. */
-    public TransactionXML(FactorySession session, FactoryWriterXML xml) {
+    public TransactionXML(Session session, WriterXML xml) {
 		this.session = session;
         this.xml = xml;
         session.incRequests();
@@ -109,17 +109,17 @@ public class TransactionXML {
     }
 
     /** Returns the session. */
-    public FactorySession getSession() {
+    public Session getSession() {
         return session;
     }
 
     /** Returns the server. */
-    public FactoryServer getServer() {
+    public ApplicationServer getServer() {
         return session.getServer();
     }
     
     /** Returns the XML streams. */
-    public FactoryWriterXML getXml() {
+    public WriterXML getXml() {
         return xml;
     }
 

@@ -28,7 +28,7 @@ $Author: ddlamb_2000 $
 package net.sourceforge.projectfactory.client.panels;
 
 import java.awt.event.ActionEvent;
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.*;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 
@@ -91,10 +91,10 @@ public class Tracking extends PanelData {
                                 "duration","label:duration",5,
                                 "durationtype","label:unit",5);
     protected LabelBox cumulated = new LabelBox();
-    protected ButtonToggleFactory button1 = new ButtonToggleFactory("button:project:newtracking","button:project:newtracking:tip","tracking.gif");
+    protected ButtonToggle button1 = new ButtonToggle("button:project:newtracking","button:project:newtracking:tip","tracking.gif");
 
     /** Constructor. */
-    public Tracking(FrameMain frame) {
+    public Tracking(MainFrame frame) {
         super(frame);
         name.setEnabler(false);
         name.setMustSave(true);

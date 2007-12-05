@@ -27,7 +27,7 @@ $Author: ddlamb_2000 $
 
 package net.sourceforge.projectfactory.client.panels;
 
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 
 /** 
   * Client side of Factory core (panels).
@@ -36,7 +36,7 @@ import net.sourceforge.projectfactory.client.FrameMain;
 public class PanelLoader {
 
     /** Construct data panels and attach them to the main frame. */
-    public void load(FrameMain frame) throws Exception {
+    public void load(MainFrame frame) throws Exception {
         frame.addPanel(new About(frame), "about");
         frame.addPanel(new Action(frame), "action");
         frame.addPanel(new ActionBar(frame), "actionbar");

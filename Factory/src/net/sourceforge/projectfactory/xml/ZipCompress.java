@@ -38,7 +38,7 @@ import java.util.zip.Deflater;
  * IMPORTANT: This is an adaptation of original implementation from
  * Philip Isenhour - http://javatechniques.com/
  */
-public class FactoryZipOutput extends FilterOutputStream {
+public class ZipCompress extends FilterOutputStream {
 
     /** Buffer for input data. */
     private byte[] inBuf = null;
@@ -58,7 +58,7 @@ public class FactoryZipOutput extends FilterOutputStream {
          * block once 'size' byte have been written. The default
          * compression strategy and level are used.
          */
-    public FactoryZipOutput(OutputStream os, int size) throws IOException {
+    public ZipCompress(OutputStream os, int size) throws IOException {
         this(os, size, Deflater.DEFAULT_COMPRESSION, 
              Deflater.DEFAULT_STRATEGY);
     }
@@ -70,7 +70,7 @@ public class FactoryZipOutput extends FilterOutputStream {
          * level and strategy should be specified using the constants
          * defined in java.util.zip.Deflator.
          */
-    public FactoryZipOutput(OutputStream os, int size, int level, 
+    public ZipCompress(OutputStream os, int size, int level, 
                             int strategy) throws IOException {
         super(os);
         this.inBuf = new byte[size];

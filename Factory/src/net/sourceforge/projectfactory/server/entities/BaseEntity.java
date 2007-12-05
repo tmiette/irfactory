@@ -32,7 +32,7 @@ import java.util.Date;
 import java.util.List;
 
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -47,14 +47,14 @@ public abstract class BaseEntity {
     }
 
     /** Prepares the element for output in the data stream. */
-    protected final BaseEntity xmlStart(FactoryWriterXML xml, String tag) {
+    protected final BaseEntity xmlStart(WriterXML xml, String tag) {
         if (xml != null)
             xml.xmlStart(tag);
         return this;
     }
 
     /** Adds an attribute. */
-    public BaseEntity xmlAttribute(FactoryWriterXML xml, String tag, 
+    public BaseEntity xmlAttribute(WriterXML xml, String tag, 
                                    String value) {
         if (xml != null)
             xml.xmlAttribute(tag, value);
@@ -62,7 +62,7 @@ public abstract class BaseEntity {
     }
 
     /** Adds an attribute. */
-    public BaseEntity xmlAttribute(FactoryWriterXML xml, String tag, 
+    public BaseEntity xmlAttribute(WriterXML xml, String tag, 
                                    int value) {
         if (xml != null && value != 0)
             xml.xmlAttribute(tag, value);
@@ -70,7 +70,7 @@ public abstract class BaseEntity {
     }
 
     /** Adds an attribute. */
-    public BaseEntity xmlAttribute(FactoryWriterXML xml, String tag, 
+    public BaseEntity xmlAttribute(WriterXML xml, String tag, 
                                    boolean value) {
         if (value && xml != null)
             xml.xmlAttribute(tag, "y");
@@ -78,7 +78,7 @@ public abstract class BaseEntity {
     }
 
     /** Adds an attribute. */
-    public BaseEntity xmlAttribute(FactoryWriterXML xml, String tag, 
+    public BaseEntity xmlAttribute(WriterXML xml, String tag, 
                                    Date value) {
         if(xml != null)
             xmlAttribute(xml, tag, 
@@ -88,7 +88,7 @@ public abstract class BaseEntity {
     }
 
     /** Adds an attribute. */
-    public BaseEntity xmlAttributeFull(FactoryWriterXML xml, String tag, 
+    public BaseEntity xmlAttributeFull(WriterXML xml, String tag, 
                                        Date value) {
         if(xml != null)
             xmlAttribute(xml, tag, 
@@ -98,7 +98,7 @@ public abstract class BaseEntity {
     }
 
     /** Adds an entity into the current element. */
-    public BaseEntity xmlAttribute(FactoryWriterXML xml, 
+    public BaseEntity xmlAttribute(WriterXML xml, 
                                    TransactionXML transaction, String tag, 
                                    Entity value) {
         if (value != null && xml != null)
@@ -110,13 +110,13 @@ public abstract class BaseEntity {
     }
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+    public void xmlOut(WriterXML xml, TransactionXML transaction, 
                        boolean tags) {
     }
 
     /** Adds an element (tag / value) into the current element
      *  as like as an attribute. */
-    public BaseEntity xmlOut(FactoryWriterXML xml, String tag, String value) {
+    public BaseEntity xmlOut(WriterXML xml, String tag, String value) {
         if (xml != null && value != null)
             xml.xmlOut(tag, value);
         return this;
@@ -124,14 +124,14 @@ public abstract class BaseEntity {
 
     /** Adds an element (tag / value) into the current element
      *  as like as an attribute. */
-    public BaseEntity xmlOut(FactoryWriterXML xml, String tag, boolean value) {
+    public BaseEntity xmlOut(WriterXML xml, String tag, boolean value) {
         if (value && xml != null)
             xml.xmlOut(tag, "y");
         return this;
     }
 
     /** Adds an entity into the current element. */
-    public BaseEntity xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+    public BaseEntity xmlOut(WriterXML xml, TransactionXML transaction, 
                              String tag, Entity value) {
         if (value != null && xml != null)
             xml.xmlOut(tag, 
@@ -143,7 +143,7 @@ public abstract class BaseEntity {
     }
 
     /** Adds a date into the current element. */
-    public BaseEntity xmlOut(FactoryWriterXML xml, String tag, Date value) {
+    public BaseEntity xmlOut(WriterXML xml, String tag, Date value) {
         if(xml != null)
             xmlOut(xml, tag, 
                value != null ? XMLWrapper.dsUS.format(value).toString() : "");
@@ -151,7 +151,7 @@ public abstract class BaseEntity {
     }
 
     /** Adds a long dateinto the current element. */
-    public BaseEntity xmlOutFull(FactoryWriterXML xml, String tag, 
+    public BaseEntity xmlOutFull(WriterXML xml, String tag, 
                                  Date value) {
         if(xml != null)
             xmlOut(xml, tag, 
@@ -160,7 +160,7 @@ public abstract class BaseEntity {
     }
 
     /** Adds an integer into the current element. */
-    public BaseEntity xmlOut(FactoryWriterXML xml, String tag, int value) {
+    public BaseEntity xmlOut(WriterXML xml, String tag, int value) {
         if (xml != null && value != 0)
             xmlOut(xml, tag, Integer.toString(value));
         return this;
@@ -168,7 +168,7 @@ public abstract class BaseEntity {
 
     /** Adds a list of elements into the current element
      *  as like as an attribute. */
-    public BaseEntity xmlOut(FactoryWriterXML xml, 
+    public BaseEntity xmlOut(WriterXML xml, 
                                 TransactionXML transaction, 
                                 List list) {
         for (BaseEntity item: (List<BaseEntity>)list)
@@ -177,7 +177,7 @@ public abstract class BaseEntity {
     }
 
     /** Finishes the output of the element. */
-    protected final void xmlEnd(FactoryWriterXML xml) {
+    protected final void xmlEnd(WriterXML xml) {
         if (xml != null)
             xml.xmlEnd();
     }
@@ -188,7 +188,7 @@ public abstract class BaseEntity {
     }
 
     /** Gets an integer value from an XML input. */
-    protected final int xmlInInt(FactoryWriterXML xml, String value) {
+    protected final int xmlInInt(WriterXML xml, String value) {
         try {
             return Integer.parseInt(value);
         } catch (java.lang.NumberFormatException e) {
@@ -198,7 +198,7 @@ public abstract class BaseEntity {
     }
 
     /** Get a date value from an XML input (short format). */
-    protected final Date xmlInDate(FactoryWriterXML xml, String value) {
+    protected final Date xmlInDate(WriterXML xml, String value) {
         try {
             return XMLWrapper.dsUS.parse(value);
         } catch (ParseException e) {
@@ -208,7 +208,7 @@ public abstract class BaseEntity {
     }
 
     /** Gets a date value from an XML input (long format). */
-    protected final Date xmlInDateFull(FactoryWriterXML xml, String value) {
+    protected final Date xmlInDateFull(WriterXML xml, String value) {
         try {
             return XMLWrapper.dfUS.parse(value);
         } catch (ParseException e) {
@@ -223,13 +223,13 @@ public abstract class BaseEntity {
     }
 
     /** Reads the object from an XML input. */
-    public boolean xmlIn(FactoryWriterXML xml, TransactionXML transaction, 
+    public boolean xmlIn(WriterXML xml, TransactionXML transaction, 
                          String tag, String value) {
         return false;
     }
     
     /** Gets an entity from an XML input. */
-    protected final BaseEntity xmlInEntity(FactoryWriterXML xml,
+    protected final BaseEntity xmlInEntity(WriterXML xml,
                                             TransactionXML transaction,
                                             String value, 
                                             BaseEntity newEntity, 
@@ -250,7 +250,7 @@ public abstract class BaseEntity {
     }
 
     /** Gets an entity from an XML input, create it during loading. */
-    protected final BaseEntity xmlInEntityCreate(FactoryWriterXML xml,
+    protected final BaseEntity xmlInEntityCreate(WriterXML xml,
                                             TransactionXML transaction,
                                             String value, 
                                             BaseEntity newEntity, 
@@ -272,7 +272,7 @@ public abstract class BaseEntity {
     }
 
     /** Gets an entity from an XML input. */
-    protected final BaseEntity xmlInEntity(FactoryWriterXML xml,
+    protected final BaseEntity xmlInEntity(WriterXML xml,
                                             TransactionXML transaction,
                                             String value, 
                                             BaseEntity newEntity, 
@@ -290,27 +290,27 @@ public abstract class BaseEntity {
     }
 
     /** Sends an error message in the XML output. */
-    protected final void xmlError(FactoryWriterXML xml, String error, 
+    protected final void xmlError(WriterXML xml, String error, 
                                   String... args) {
-        xml.xmlMessage(FactoryWriterXML.ERROR, error, args);
+        xml.xmlMessage(WriterXML.ERROR, error, args);
     }
 
     /** Sends a warning message in the XML output. */
-    protected final void xmlWarning(FactoryWriterXML xml, String error, 
+    protected final void xmlWarning(WriterXML xml, String error, 
                                     String... args) {
-        xml.xmlMessage(FactoryWriterXML.WARNING, error, args);
+        xml.xmlMessage(WriterXML.WARNING, error, args);
     }
 
     /** Sends a message in the XML output. */
-    protected final void xmlMessage(FactoryWriterXML xml, String error, 
+    protected final void xmlMessage(WriterXML xml, String error, 
                                   String... args) {
-        xml.xmlMessage(FactoryWriterXML.MESSAGE, error, args);
+        xml.xmlMessage(WriterXML.MESSAGE, error, args);
     }
 
     /** Sends a trace message in the XML output. */
-    protected final void xmlTrace(FactoryWriterXML xml, String error, 
+    protected final void xmlTrace(WriterXML xml, String error, 
                                   String... args) {
-        xml.xmlMessage(FactoryWriterXML.TRACE, error, args);
+        xml.xmlMessage(WriterXML.TRACE, error, args);
     }
 
     /** Returns a name (empty). */
@@ -319,7 +319,7 @@ public abstract class BaseEntity {
     }
 
     /** Writes a label associated to a calendar item as an XML output. */
-    protected final void xmlCalendar(FactoryWriterXML xml, Date value, 
+    protected final void xmlCalendar(WriterXML xml, Date value, 
                                      String message) {
         if (value != null) {
             xmlStart(xml, "date");
@@ -330,7 +330,7 @@ public abstract class BaseEntity {
     }
 
     /** Writes a message associated to a calendar item as an XML output. */
-    protected final void xmlCalendar(FactoryWriterXML xml, Date value, 
+    protected final void xmlCalendar(WriterXML xml, Date value, 
                                      String label, String message, 
                                      int complete) {
         if (value != null) {
@@ -345,7 +345,7 @@ public abstract class BaseEntity {
 
     /** Writes a message associated to a calendar item,
      *  including actor and duration as an XML output. */
-    protected final void xmlCalendar(FactoryWriterXML xml, Date value, 
+    protected final void xmlCalendar(WriterXML xml, Date value, 
                                      String label, int type, String who, 
                                      int duration, int durationType, 
                                      int complete) {
@@ -364,7 +364,7 @@ public abstract class BaseEntity {
 
     /** Writes a message associated to a calendar item,
      *  including actor and duration as an XML output. */
-    protected final void xmlCalendar(FactoryWriterXML xml, Date value, 
+    protected final void xmlCalendar(WriterXML xml, Date value, 
                                      String label, String message, String who, 
                                      int complete) {
         if (value != null) {

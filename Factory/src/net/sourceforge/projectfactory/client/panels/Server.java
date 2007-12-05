@@ -27,7 +27,7 @@ $Author: ddlamb_2000 $
 
 package net.sourceforge.projectfactory.client.panels;
 
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.*;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 
@@ -42,7 +42,7 @@ public class Server extends PanelData {
     protected CheckBox replication = new CheckBox("label:replication");
 
     /** Constructor. */
-    public Server(FrameMain frame) {
+    public Server(MainFrame frame) {
         super(frame);
     }
 

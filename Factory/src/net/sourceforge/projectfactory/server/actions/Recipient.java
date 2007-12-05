@@ -31,7 +31,7 @@ import net.sourceforge.projectfactory.server.actions.Action;
 import net.sourceforge.projectfactory.server.actors.Actor;
 import net.sourceforge.projectfactory.server.entities.BaseEntity;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 /** 
   * Defines an actor as recipient of an action.
@@ -55,7 +55,7 @@ public class Recipient extends BaseEntity {
     }
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, boolean tags) {
+    public void xmlOut(WriterXML xml, TransactionXML transaction, boolean tags) {
         if (tags) xmlStart(xml, "recipient");
         super.xmlOut(xml, transaction, false);
         if (transaction.isDetail() || transaction.isSave()) {
@@ -67,7 +67,7 @@ public class Recipient extends BaseEntity {
     }
 
     /** Reads the object from an XML input. */
-    public boolean xmlIn(FactoryWriterXML xml, TransactionXML transaction, String tag, String value) {
+    public boolean xmlIn(WriterXML xml, TransactionXML transaction, String tag, String value) {
         if (super.xmlIn(xml, transaction, tag, value)) return true;
         if (tag.equals("role")) {
             role = xmlInInt(xml, value);

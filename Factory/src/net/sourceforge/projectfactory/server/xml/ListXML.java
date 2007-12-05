@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.sourceforge.projectfactory.server.entities.Entity;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
@@ -95,7 +95,7 @@ class ListXML extends ReaderServerXML {
     }
 
     /** Sends the object names to the client based on a list. */
-    protected void listByCategory(FactoryWriterXML xml, 
+    protected void listByCategory(WriterXML xml, 
                                   TransactionXML transaction, List list) {
         if (list == null)
             return;
@@ -120,7 +120,7 @@ class ListXML extends ReaderServerXML {
     }
 
     /** Sends the object names to the client based on a list. */
-    protected void listByClass(FactoryWriterXML xml, 
+    protected void listByClass(WriterXML xml, 
                                TransactionXML transaction, List list) {
         if (list == null)
             return;

@@ -32,14 +32,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import net.sourceforge.projectfactory.server.FactoryServerBase;
+import net.sourceforge.projectfactory.server.ApplicationServerBase;
 import net.sourceforge.projectfactory.server.data.ComboBox;
 import net.sourceforge.projectfactory.server.data.Dictionary;
 import net.sourceforge.projectfactory.server.data.Preference;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.SubEntityServerXML;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -47,7 +47,7 @@ import net.sourceforge.projectfactory.xml.XMLWrapper;
  * Aggregates all the system data objects.
  * @author David Lambert
  */
-public class FactoryData extends FactoryServerBase {
+public class DataList extends ApplicationServerBase {
 
     /** Reference to preferences. */
     public Preference preference = new Preference();
@@ -62,7 +62,7 @@ public class FactoryData extends FactoryServerBase {
     public List<ActionBar> actionBars = new ArrayList(10);
 
     /** Constructor. */
-    public FactoryData(FactoryServerBase serverBase) {
+    public DataList(ApplicationServerBase serverBase) {
         super(serverBase);
     }
 
@@ -81,7 +81,7 @@ public class FactoryData extends FactoryServerBase {
     }
 
     /** Saves all entities. */
-    public void saveAll(FactoryWriterXML xml, TransactionXML transaction, 
+    public void saveAll(WriterXML xml, TransactionXML transaction, 
                         boolean demo, String iid) {
         for (String extension: 
                 transaction.getServer().getApplicationExtensions()) {
@@ -90,13 +90,13 @@ public class FactoryData extends FactoryServerBase {
     }
 
     /** Saves all preferences. */
-    private void savePreferences(FactoryWriterXML xml, 
+    private void savePreferences(WriterXML xml, 
                                  TransactionXML transaction) {
         saveEntity(xml, transaction, preference, false, null);
     }
 
     /** Saves all dictionaries. */
-    private void saveDictionaries(FactoryWriterXML xml, 
+    private void saveDictionaries(WriterXML xml, 
                                   TransactionXML transaction, 
                                   String application, String iid) {
         for (Dictionary dico: dictionaries)
@@ -113,7 +113,7 @@ public class FactoryData extends FactoryServerBase {
     }
 
     /** Saves all objects in file(s). */
-    public void saveAll(FactoryWriterXML xml, TransactionXML transaction) {
+    public void saveAll(WriterXML xml, TransactionXML transaction) {
         for (String extension: 
 				transaction.getServer().getApplicationExtensions()) {
 
@@ -121,8 +121,8 @@ public class FactoryData extends FactoryServerBase {
                 transaction.getServer().getPath() + 
                 XMLWrapper.SLASH + "dictionary" + extension + ".xml";
             try {
-                FactoryWriterXML outputXml = 
-                    new FactoryWriterXML(filename, "factory");
+                WriterXML outputXml = 
+                    new WriterXML(filename, "factory");
                 saveDictionaries(outputXml, transaction, extension, null);
                 outputXml.end();
                 traceSaving(xml, filename);
@@ -133,13 +133,13 @@ public class FactoryData extends FactoryServerBase {
     }
 
     /** Saves preferences in file(s). */
-    public void saveAllPreferences(FactoryWriterXML xml, 
+    public void saveAllPreferences(WriterXML xml, 
                                    TransactionXML transaction) {
         String filename = transaction.getServer().getPath() + 
                             XMLWrapper.SLASH + "preferences.xml";
         try {
-            FactoryWriterXML outputXml = 
-                new FactoryWriterXML(filename, "factory");
+            WriterXML outputXml = 
+                new WriterXML(filename, "factory");
             savePreferences(outputXml, transaction);
             outputXml.end();
             traceSaving(xml, filename);

@@ -32,11 +32,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import net.sourceforge.projectfactory.server.FactoryServerBase;
+import net.sourceforge.projectfactory.server.ApplicationServerBase;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.SubEntityServerXML;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -44,13 +44,13 @@ import net.sourceforge.projectfactory.xml.XMLWrapper;
  * Aggregates all the actions.
  * @author David Lambert
  */
-public class FactoryAction extends FactoryServerBase {
+public class ActionList extends ApplicationServerBase {
 
     /** List of actions. */
     public List<Action> actions = new ArrayList(10);
 
     /** Constructor. */
-    public FactoryAction(FactoryServerBase serverBase) {
+    public ActionList(ApplicationServerBase serverBase) {
         super(serverBase);
     }
 
@@ -65,23 +65,23 @@ public class FactoryAction extends FactoryServerBase {
     }
 
     /** Saves all entities. */
-    public void saveAll(FactoryWriterXML xml, TransactionXML transaction, 
+    public void saveAll(WriterXML xml, TransactionXML transaction, 
                         boolean demo, String iid) {
         saveActions(xml, transaction, demo, iid);
     }
 
     /** Saves all projects. */
-    public void saveActions(FactoryWriterXML xml, TransactionXML transaction, 
+    public void saveActions(WriterXML xml, TransactionXML transaction, 
                             boolean demo, String iid) {
         saveEntity(xml, transaction, actions, demo, iid);
     }
 
     /** Saves all objects in file(s). */
-    public void saveAll(FactoryWriterXML xml, TransactionXML transaction) {
+    public void saveAll(WriterXML xml, TransactionXML transaction) {
         String filename = transaction.getServer().getPath() + XMLWrapper.SLASH + "actions.xml";
         try {
-            FactoryWriterXML outputXml = 
-                new FactoryWriterXML(filename, "factory");
+            WriterXML outputXml = 
+                new WriterXML(filename, "factory");
             saveActions(outputXml, transaction, false, null);
             outputXml.end();
             traceSaving(xml, filename);

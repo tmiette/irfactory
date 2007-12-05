@@ -34,7 +34,7 @@ import java.io.InputStreamReader;
 
 import java.util.HashMap;
 
-import net.sourceforge.projectfactory.xml.FactoryReaderXML;
+import net.sourceforge.projectfactory.xml.ReaderXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -170,7 +170,7 @@ public class LocalMessage {
     /**
      * Interprets a messages set coming from a XML stream.
      */
-    private class LocalMessageXML extends FactoryReaderXML {
+    private class LocalMessageXML extends ReaderXML {
 
         /** Starts a tag. */
         protected void startsTag(String tag) {
@@ -190,7 +190,7 @@ public class LocalMessage {
     /**
 	 * Interprets a message item coming from a XML stream.
 	 */
-    private class LocalMessageItemXML extends FactoryReaderXML {
+    private class LocalMessageItemXML extends ReaderXML {
 
         /** Label of message. */
         private String label;
@@ -235,7 +235,7 @@ public class LocalMessage {
     /**
      * Interprets a combobox definition coming from a XML stream.
      */
-    private class LocalComboBoxXML extends FactoryReaderXML {
+    private class LocalComboBoxXML extends ReaderXML {
 
         /** Name of the combobox. */
         private String name;
@@ -276,7 +276,7 @@ public class LocalMessage {
     /**
      * Interprets a combobox item definition coming from a XML stream.
      */
-    private class LocalComboBoxItemXML extends FactoryReaderXML {
+    private class LocalComboBoxItemXML extends ReaderXML {
 
         /** Combobox created during xml reading. */
         private ComboBoxCode combo = new ComboBoxCode();

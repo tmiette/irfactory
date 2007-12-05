@@ -31,7 +31,7 @@ package net.sourceforge.projectfactory.client.components;
  * Defines a button used to remove a level or outdent.
  * @author David Lambert
  */
-public class ButtonRemoveLevel extends ButtonFactory {
+public class ButtonRemoveLevel extends Button {
 	
 	/** Constructor. */
     public ButtonRemoveLevel() {

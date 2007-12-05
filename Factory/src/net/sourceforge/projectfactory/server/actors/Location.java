@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.TimeZone;
 
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
@@ -41,7 +41,7 @@ import net.sourceforge.projectfactory.xml.FactoryWriterXML;
 public class Location extends LocationBase {
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+    public void xmlOut(WriterXML xml, TransactionXML transaction, 
                        boolean tags) {
         if (tags) xmlStart(xml, "location");
         super.xmlOut(xml, transaction, false);
@@ -67,7 +67,7 @@ public class Location extends LocationBase {
     }
 
     /** Validates the object before any save or update. */
-    public boolean xmlValidate(FactoryWriterXML xml, TransactionXML transaction, 
+    public boolean xmlValidate(WriterXML xml, TransactionXML transaction, 
                             List list) {
         if(super.xmlValidate(xml, transaction, list))
             return true;

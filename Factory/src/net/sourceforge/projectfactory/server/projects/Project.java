@@ -37,7 +37,7 @@ import net.sourceforge.projectfactory.server.actors.Team;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.BaseEntityServerXML;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
@@ -75,7 +75,7 @@ public class Project extends BusinessProcess {
     public List<Availability> availabilities = new ArrayList(2);
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+    public void xmlOut(WriterXML xml, TransactionXML transaction, 
                        boolean tags) {
         if (tags)
             xmlStart(xml, "project");
@@ -105,7 +105,7 @@ public class Project extends BusinessProcess {
     }
 
     /** Writes associated members as an XML output. */
-    private void xmlOutMembers(FactoryWriterXML xml, 
+    private void xmlOutMembers(WriterXML xml, 
                                TransactionXML transaction) {
         for (ProjectTeam projectTeam: teams) {
             projectTeam.xmlOut(xml, transaction, true);
@@ -136,7 +136,7 @@ public class Project extends BusinessProcess {
     }
 
     /** Writes associated scope items as an XML output. */
-    private void xmlOutScope(FactoryWriterXML xml, 
+    private void xmlOutScope(WriterXML xml, 
                              TransactionXML transaction) {
 
         // Remove updatedBy attribute for demo data
@@ -150,14 +150,14 @@ public class Project extends BusinessProcess {
     }
 
     /** Writes associated availability as an XML output. */
-    private void xmlOutAvailability(FactoryWriterXML xml, 
+    private void xmlOutAvailability(WriterXML xml, 
                                     TransactionXML transaction) {
         for (Availability availability: availabilities)
             availability.xmlOut(xml, transaction, true);
     }
 
     /** Writes associated plans as an XML output. */
-    private void xmlOutExpandPlans(FactoryWriterXML xml, 
+    private void xmlOutExpandPlans(WriterXML xml, 
                                    TransactionXML transaction) {
         for (Plan plan: transaction.getServer().projects.plans) {
             if (plan.project != null && plan.project.equals(this)) {
@@ -172,7 +172,7 @@ public class Project extends BusinessProcess {
     }
 
     /** Writes associated forecasts as an XML output. */
-    private void xmlOutExpandForecasts(FactoryWriterXML xml, 
+    private void xmlOutExpandForecasts(WriterXML xml, 
                                        TransactionXML transaction, Plan plan) {
         for (Forecast forecast:transaction.getServer().projects.forecasts) {
             if (forecast.plan != null && forecast.plan.project != null && 
@@ -185,7 +185,7 @@ public class Project extends BusinessProcess {
     }
 
     /** Writes associated forecasts as an XML output. */
-    private void xmlOutExpandStatuses(FactoryWriterXML xml, 
+    private void xmlOutExpandStatuses(WriterXML xml, 
                                       TransactionXML transaction, Plan plan) {
         for (Status status: transaction.getServer().projects.statuses) {
             if (status.plan != null && status.plan.project != null && 
@@ -197,7 +197,7 @@ public class Project extends BusinessProcess {
     }
 
     /** Writes associated trackings as an XML output. */
-    private void xmlOutExpandTrackings(FactoryWriterXML xml, 
+    private void xmlOutExpandTrackings(WriterXML xml, 
                                        TransactionXML transaction, Plan plan) {
         for (Tracking tracking: transaction.getServer().projects.trackings) {
             if (tracking.plan != null && tracking.plan.project != null && 
@@ -223,7 +223,7 @@ public class Project extends BusinessProcess {
     }
 
     /** Reads the object from an XML input. */
-    public boolean xmlIn(FactoryWriterXML xml, TransactionXML transaction, 
+    public boolean xmlIn(WriterXML xml, TransactionXML transaction, 
                          String tag, String value) {
         if (super.xmlIn(xml, transaction, tag, value)) {
             return true;
@@ -534,7 +534,7 @@ public class Project extends BusinessProcess {
     }
 
     /** Validates the object before delete. */
-    public boolean xmlValidateDelete(FactoryWriterXML xml, 
+    public boolean xmlValidateDelete(WriterXML xml, 
                                   TransactionXML transaction) {
         for (Plan plan: transaction.getServer().projects.plans) {
             if (plan.project.equals(this)) {

@@ -30,10 +30,10 @@ import java.text.ParseException;
 
 import java.util.Date;
 
-import net.sourceforge.projectfactory.server.FactoryServer;
+import net.sourceforge.projectfactory.server.ApplicationServer;
 import net.sourceforge.projectfactory.server.actors.Actor;
 import net.sourceforge.projectfactory.server.data.ActionBar;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -110,7 +110,7 @@ class ConnectionXML extends ReaderServerXML {
     }
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml) {
+    public void xmlOut(WriterXML xml) {
         xml.xmlStart("connexion");
         transaction.getSession().getConnection().xmlOut(xml);
         xml.xmlOut("serverbuild", transaction.getServer().getBuild());
@@ -144,7 +144,7 @@ class ConnectionXML extends ReaderServerXML {
             }
         } else if (!disconnect) {
             if (networkId == null) {
-                FactoryServer.addMessageDictionary(xml, "ERR", 
+                ApplicationServer.addMessageDictionary(xml, "ERR", 
                                                    "server:notidentified", "");
                 return;
             }
@@ -152,10 +152,10 @@ class ConnectionXML extends ReaderServerXML {
             Actor actor = server.actors.getActor(networkId);
 
             if (actor == null) {
-                FactoryServer.addMessageDictionary(xml, "ERR", 
+                ApplicationServer.addMessageDictionary(xml, "ERR", 
                                                    "server:notidentified", 
                                                    networkId);
-                FactoryServer.addMessageDictionary(xml, "ERR", 
+                ApplicationServer.addMessageDictionary(xml, "ERR", 
                                                    "server:close:client", "");
                 transaction.getSession().notAuthorized(networkId);
                 return;
@@ -164,10 +164,10 @@ class ConnectionXML extends ReaderServerXML {
             // Controls if the operator name matches
             if (operatorName == null || 
                 (!actor.getName().equals(operatorName))) {
-                FactoryServer.addMessageDictionary(xml, "ERR", 
+                ApplicationServer.addMessageDictionary(xml, "ERR", 
                                                    "server:notidentified", 
                                                    operatorName);
-                FactoryServer.addMessageDictionary(xml, "ERR", 
+                ApplicationServer.addMessageDictionary(xml, "ERR", 
                                                    "server:close:client", "");
                 transaction.getSession().notAuthorized(networkId);
                 return;
@@ -178,7 +178,7 @@ class ConnectionXML extends ReaderServerXML {
                 long delta = localDate.getTime() - (new Date()).getTime();
                 long TOLERANCE = 2 * 60 * 1000;
                 if (delta > TOLERANCE || delta < -TOLERANCE) {
-                    FactoryServer.addMessageDictionary(xml, "WAR", 
+                    ApplicationServer.addMessageDictionary(xml, "WAR", 
                                                        "server:timeissue", 
                                                        XMLWrapper.dfUS.format(new Date()).toString(), 
                                                        XMLWrapper.dfUS.format(localDate).toString());
@@ -188,7 +188,7 @@ class ConnectionXML extends ReaderServerXML {
             // Controls builds
             if (build != null) {
                 if (!build.equals(transaction.getServer().getBuild())) {
-                    FactoryServer.addMessageDictionary(xml, "WAR", 
+                    ApplicationServer.addMessageDictionary(xml, "WAR", 
                                                        "warning:build", 
                                                        transaction.getServer().getBuild(), 
                                                        build);
@@ -205,12 +205,12 @@ class ConnectionXML extends ReaderServerXML {
 
             transaction.getSession().setOperator(networkId, actor, os, build);
 
-            FactoryServer.addMessageDictionary(xml, "MSG", "server:greeting", 
+            ApplicationServer.addMessageDictionary(xml, "MSG", "server:greeting", 
                                                transaction.getServer().getBuild(), 
                                                System.getProperty("os.name"), 
                                                System.getProperty("os.arch"));
 
-            FactoryServer.addMessageDictionary(xml, "MSG", 
+            ApplicationServer.addMessageDictionary(xml, "MSG", 
                                                "message:identified", networkId, 
                                                actor.getName());
         }

@@ -31,7 +31,7 @@ import java.util.Date;
 import net.sourceforge.projectfactory.server.actors.Actor;
 import net.sourceforge.projectfactory.server.entities.Duration;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
@@ -89,7 +89,7 @@ public class ForecastItem extends Duration {
     }
 
     /** Writes the object as an XML output. */
-    private void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+    private void xmlOut(WriterXML xml, TransactionXML transaction, 
                         boolean tags, String tag) {
         if (tags)
             xmlStart(xml, tag);
@@ -136,7 +136,7 @@ public class ForecastItem extends Duration {
     }
 
     /** Writes calendar information as an XML output. */
-    void xmlOutCalendar(FactoryWriterXML xml) {
+    void xmlOutCalendar(WriterXML xml) {
         if (phase != null) {
             xmlCalendar(xml, dateItem, phase.phase, Item.PHASE, "", 1, 
                         Duration.DAY, 100);
@@ -154,19 +154,19 @@ public class ForecastItem extends Duration {
     }
 
     /** Writes the object as an XML output using tag "forecastitem". */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+    public void xmlOut(WriterXML xml, TransactionXML transaction, 
                        boolean tags) {
         xmlOut(xml, transaction, tags, "forecastitem");
     }
 
     /** Writes the object as an XML output using another tag. */
-    public void xmlOutCompleted(FactoryWriterXML xml, 
+    public void xmlOutCompleted(WriterXML xml, 
                                 TransactionXML transaction, boolean tags) {
         xmlOut(xml, transaction, tags, "completed");
     }
 
     /** Reads the object from an XML input. */
-    public boolean xmlIn(FactoryWriterXML xml, TransactionXML transaction, 
+    public boolean xmlIn(WriterXML xml, TransactionXML transaction, 
                          String tag, String value) {
         if (tag.equals("duration")) {
             duration = xmlInInt(xml, value);

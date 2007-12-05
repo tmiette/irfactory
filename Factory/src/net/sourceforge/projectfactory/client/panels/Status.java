@@ -28,7 +28,7 @@ $Author: ddlamb_2000 $
 package net.sourceforge.projectfactory.client.panels;
 
 import java.awt.event.ActionEvent;
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.*;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 
@@ -88,10 +88,10 @@ public class Status extends PanelData {
                                 "owner","label:owner",30,
                                 "actionstatus","label:status",10);
     public LabelBox totalExposure = new LabelBox();
-    protected ButtonToggleFactory button1 = new ButtonToggleFactory("button:project:newstatus","button:project:newstatus:tip","status.gif");
+    protected ButtonToggle button1 = new ButtonToggle("button:project:newstatus","button:project:newstatus:tip","status.gif");
 
     /** Constructor. */
-    public Status(FrameMain frame) {
+    public Status(MainFrame frame) {
         super(frame);
         name.setEnabler(false);
         name.setMustSave(true);

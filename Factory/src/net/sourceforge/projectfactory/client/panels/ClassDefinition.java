@@ -28,7 +28,7 @@ $Author: ddlamb_2000 $
 package net.sourceforge.projectfactory.client.panels;
 
 import java.awt.event.ActionEvent;
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.*;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 
@@ -56,10 +56,10 @@ public class ClassDefinition extends PanelData {
                                 "label","label:label",100,
                                 "staticvalue","label:value",20);
     public TextBox generatedCode = new TextBox();
-    protected ButtonToggleFactory button1 = new ButtonToggleFactory("button:class:newcode","button:class:newcode:tip","plus.gif");
+    protected ButtonToggle button1 = new ButtonToggle("button:class:newcode","button:class:newcode:tip","plus.gif");
 
     /** Constructor. */
-    public ClassDefinition(FrameMain frame) {
+    public ClassDefinition(MainFrame frame) {
         super(frame);
         content.setNoSort();
         content.setCombo(1, new ComboBoxCode("class:item:type"));

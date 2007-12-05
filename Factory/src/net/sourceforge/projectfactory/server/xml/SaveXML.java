@@ -35,7 +35,7 @@ import java.io.OutputStreamWriter;
 
 import java.util.zip.GZIPOutputStream;
 
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -114,15 +114,15 @@ class SaveXML extends ReaderServerXML {
                                                    "UTF-8");
 
                 outputFile = new BufferedWriter(fileWriter);
-                FactoryWriterXML outputXml = 
-                    new FactoryWriterXML(fileWriter, "factory", true);
+                WriterXML outputXml = 
+                    new WriterXML(fileWriter, "factory", true);
                 server.backup(outputXml, transaction, demo, iid);
                 outputXml.end();
                 outputFile.close();
-                xml.xmlMessage(FactoryWriterXML.MESSAGE, 
+                xml.xmlMessage(WriterXML.MESSAGE, 
                                "message:savingcomplete", "", filename);
             } catch (IOException e) {
-                xml.xmlMessage(FactoryWriterXML.ERROR, "error:filenotsaved", 
+                xml.xmlMessage(WriterXML.ERROR, "error:filenotsaved", 
                                "", filename);
                 xml.xmlException(e);
             }
@@ -132,16 +132,16 @@ class SaveXML extends ReaderServerXML {
             if (!directory.exists()) {
                 try {
                     if (!directory.mkdir()) {
-                        xml.xmlMessage(FactoryWriterXML.ERROR, 
+                        xml.xmlMessage(WriterXML.ERROR, 
                                        "message:directory", "", filename);
                     }
                 } catch (SecurityException e) {
-                    xml.xmlMessage(FactoryWriterXML.ERROR, "error:directory", 
+                    xml.xmlMessage(WriterXML.ERROR, "error:directory", 
                                    "", filename);
                     xml.xmlException(e);
                 }
             } else if (!directory.isDirectory()) {
-                xml.xmlMessage(FactoryWriterXML.ERROR, "error:directory", "", 
+                xml.xmlMessage(WriterXML.ERROR, "error:directory", "", 
                                filename);
             }
             if (server.isAnyServerDirty()) {
@@ -150,16 +150,16 @@ class SaveXML extends ReaderServerXML {
                 if (!directory.exists()) {
                     try {
                         if (!directory.mkdir()) {
-                            xml.xmlMessage(FactoryWriterXML.ERROR, 
+                            xml.xmlMessage(WriterXML.ERROR, 
                                            "message:directory", "", filename);
                         }
                     } catch (SecurityException e) {
-                        xml.xmlMessage(FactoryWriterXML.ERROR, 
+                        xml.xmlMessage(WriterXML.ERROR, 
                                        "error:directory", "", filename);
                         xml.xmlException(e);
                     }
                 } else if (!directory.isDirectory()) {
-                    xml.xmlMessage(FactoryWriterXML.ERROR, "error:directory", 
+                    xml.xmlMessage(WriterXML.ERROR, "error:directory", 
                                    "", filename);
                 }
 
@@ -171,15 +171,15 @@ class SaveXML extends ReaderServerXML {
                             new OutputStreamWriter(new GZIPOutputStream(new FileOutputStream(filename)), 
                                                    "UTF-8");
                     outputFile = new BufferedWriter(fileWriter);
-                    FactoryWriterXML outputXml = 
-                        new FactoryWriterXML(fileWriter, "factory", true);
+                    WriterXML outputXml = 
+                        new WriterXML(fileWriter, "factory", true);
                     server.backup(outputXml, transaction, demo, null);
                     outputXml.end();
                     outputFile.close();
-                    xml.xmlMessage(FactoryWriterXML.TRACE, 
+                    xml.xmlMessage(WriterXML.TRACE, 
                                    "message:savingcomplete", "", filename);
                 } catch (IOException e) {
-                    xml.xmlMessage(FactoryWriterXML.ERROR, 
+                    xml.xmlMessage(WriterXML.ERROR, 
                                    "error:filenotsaved", "", filename);
                     xml.xmlException(e);
                 }
@@ -194,7 +194,7 @@ class SaveXML extends ReaderServerXML {
                 }
             }
             server.save(xml, transaction);
-            xml.xmlMessage(FactoryWriterXML.TRACE, "message:memory", "", 
+            xml.xmlMessage(WriterXML.TRACE, "message:memory", "", 
                            "" + (double)(Runtime.getRuntime().freeMemory() / 
                                          1024));
         }

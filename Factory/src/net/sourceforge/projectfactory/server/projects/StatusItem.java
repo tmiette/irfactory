@@ -28,7 +28,7 @@ package net.sourceforge.projectfactory.server.projects;
 
 import net.sourceforge.projectfactory.server.entities.BaseEntity;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
@@ -67,7 +67,7 @@ public class StatusItem extends BaseEntity {
     }
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+    public void xmlOut(WriterXML xml, TransactionXML transaction, 
                        boolean tags) {
         xmlOutForecast(xml, transaction, tags, null);
     }
@@ -75,7 +75,7 @@ public class StatusItem extends BaseEntity {
 
     /** Writes the object as an XML output.
      *  The output contains information based on the latest forecast. */
-    public void xmlOutForecast(FactoryWriterXML xml, 
+    public void xmlOutForecast(WriterXML xml, 
                                TransactionXML transaction, boolean tags, 
                                Forecast latestForecast) {
         if (tags)
@@ -112,7 +112,7 @@ public class StatusItem extends BaseEntity {
     }
 
     /** Reads the object from an XML input. */
-    public boolean xmlIn(FactoryWriterXML xml, TransactionXML transaction, 
+    public boolean xmlIn(WriterXML xml, TransactionXML transaction, 
                          String tag, String value) {
         if (tag.equals("task")) {
             if (status != null && status.plan != null && 

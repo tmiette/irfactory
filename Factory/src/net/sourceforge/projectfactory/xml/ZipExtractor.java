@@ -40,7 +40,7 @@ import java.util.zip.Inflater;
  * IMPORTANT: This is an adaptation of original implementation from
  * Philip Isenhour - http://javatechniques.com/
  */
-public class FactoryZipInput extends FilterInputStream {
+public class ZipExtractor extends FilterInputStream {
 
     /** Buffer of compressed data read from the stream. */
     private byte[] inBuf = null;
@@ -59,7 +59,7 @@ public class FactoryZipInput extends FilterInputStream {
     /** Inflater for decompressing. */
     private Inflater inflater = null;
 
-    public FactoryZipInput(InputStream is) throws IOException {
+    public ZipExtractor(InputStream is) throws IOException {
         super(is);
         inflater = new Inflater();
     }

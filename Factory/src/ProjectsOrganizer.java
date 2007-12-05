@@ -24,12 +24,12 @@ $Date: 2007/02/04 23:12:13 $
 $Author: ddlamb_2000 $
 
 */
-import net.sourceforge.projectfactory.FactoryBuild;
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.AboutProjectsOrganizer;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.LocalMessage;
 import net.sourceforge.projectfactory.client.components.LocalSplash;
 
-import net.sourceforge.projectfactory.middleware.FactoryConnection;
+import net.sourceforge.projectfactory.middleware.Connection;
 
 import java.io.FileNotFoundException;
 
@@ -49,7 +49,7 @@ import javax.swing.UIManager;
  * 
  * @author David Lambert
  */
-public class Factory {
+public class ProjectsOrganizer {
     /** Main function.  */
     public static void main(String[] args) {
         String language = JComponent.getDefaultLocale().getLanguage();
@@ -73,7 +73,7 @@ public class Factory {
             try {
 				// Load dictionary based on system language
 				new LocalMessage(language, 
-									FactoryBuild.getApplicationExtensions());
+									AboutProjectsOrganizer.getApplicationExtensions());
             } catch (FileNotFoundException ex) {
 				System.err.println(
 					"The system is no able to load correctly resources.");
@@ -90,14 +90,14 @@ public class Factory {
             }
             if(showWindow) {
                 // Display splash window
-                LocalSplash.show(FactoryBuild.getBuild(),
-                                    FactoryBuild.getCopyright(),
-                                    FactoryBuild.getLicense(),
-                                    FactoryBuild.getShortTitle());
+                LocalSplash.show(AboutProjectsOrganizer.getBuild(),
+                                    AboutProjectsOrganizer.getCopyright(),
+                                    AboutProjectsOrganizer.getLicense(),
+                                    AboutProjectsOrganizer.getShortTitle());
                 // Create main window associated to a new server
-                new FrameMain(new FactoryConnection());
+                new MainFrame(new Connection());
             }
-            else new FactoryConnection();
+            else new Connection();
         } catch (Exception ex) {
             ex.printStackTrace();
             System.exit(0);

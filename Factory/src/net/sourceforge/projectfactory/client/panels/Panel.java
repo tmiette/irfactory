@@ -28,7 +28,7 @@ $Author: ddlamb_2000 $
 package net.sourceforge.projectfactory.client.panels;
 
 import java.awt.event.ActionEvent;
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.*;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 
@@ -63,10 +63,10 @@ public class Panel extends PanelData {
                                 "xmltagvalue","label:xmltag:value",50);
     public TextBox exitXML = new TextBox();
     public TextBox generatedCode = new TextBox();
-    protected ButtonToggleFactory button1 = new ButtonToggleFactory("button:panel:newcode","button:panel:newcode:tip","plus.gif");
+    protected ButtonToggle button1 = new ButtonToggle("button:panel:newcode","button:panel:newcode:tip","plus.gif");
 
     /** Constructor. */
-    public Panel(FrameMain frame) {
+    public Panel(MainFrame frame) {
         super(frame);
         content.setNoSort();
         content.attachLookup(1,this,"dictionary");

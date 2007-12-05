@@ -28,7 +28,7 @@ package net.sourceforge.projectfactory.server.projects;
 
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
@@ -77,7 +77,7 @@ public abstract class Item extends Entity {
     protected int priority;
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+    public void xmlOut(WriterXML xml, TransactionXML transaction, 
                        boolean tags) {
         if (tags)
             xmlStart(xml, "item");
@@ -95,7 +95,7 @@ public abstract class Item extends Entity {
     }
 
     /** Reads the object from an XML input. */
-    public boolean xmlIn(FactoryWriterXML xml, TransactionXML transaction, 
+    public boolean xmlIn(WriterXML xml, TransactionXML transaction, 
                          String tag, String value) {
         if (super.xmlIn(xml, transaction, tag, value)) {
             return true;

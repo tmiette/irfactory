@@ -41,9 +41,9 @@ import java.util.List;
 
 import javax.imageio.ImageIO;
 
-import net.sourceforge.projectfactory.FactoryBuild;
+import net.sourceforge.projectfactory.AboutProjectsOrganizer;
 import net.sourceforge.projectfactory.client.components.LocalMessage;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -54,7 +54,7 @@ import net.sourceforge.projectfactory.xml.XMLWrapper;
 public class PrintDocHtml {
 
     /** Error output stream. */
-    private FactoryWriterXML err;
+    private WriterXML err;
 
     /** Output steam. */
     private BufferedWriter out;
@@ -70,7 +70,7 @@ public class PrintDocHtml {
 
 
     /** Constructor. */
-    public PrintDocHtml(FactoryWriterXML err) {
+    public PrintDocHtml(WriterXML err) {
         this.err = err;
     }
 
@@ -114,7 +114,7 @@ public class PrintDocHtml {
 
     /** Generates file header (XHTML). */
     private void generateHeader(String type, String title) throws IOException {
-        out("<!DOCTYPE html PUBLIC \"" + FactoryBuild.getBuild() + "\">\n");
+        out("<!DOCTYPE html PUBLIC \"" + AboutProjectsOrganizer.getBuild() + "\">\n");
         out("<html>\n");
         out("<head>\n");
         out("<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n");
@@ -181,7 +181,7 @@ public class PrintDocHtml {
 
     /** Generates file footer. */
     private void generateFooter() throws IOException {
-        out("<p>" + FactoryBuild.getBuild() + "</p>\n");
+        out("<p>" + AboutProjectsOrganizer.getBuild() + "</p>\n");
         out("</div>\n");
         out("</div>\n");
         out("<div class=\"clearer\"></div>\n");
@@ -195,7 +195,7 @@ public class PrintDocHtml {
     /** Closes the document. */
     public void close() throws IOException {
         generateFooter();
-        err.xmlMessage(FactoryWriterXML.MESSAGE, "message:filegenerated", "", 
+        err.xmlMessage(WriterXML.MESSAGE, "message:filegenerated", "", 
                        path + filename);
 
         // Generates index
@@ -205,7 +205,7 @@ public class PrintDocHtml {
                                    "UTF-8");
         out = new BufferedWriter(file);
         generateHeader(LocalMessage.get("label:index"), 
-                       FactoryBuild.getShortTitle());
+                       AboutProjectsOrganizer.getShortTitle());
 
         openTable();
         for (IndexItem item: index) {
@@ -215,16 +215,16 @@ public class PrintDocHtml {
         closeTable();
 
         generateFooter();
-        err.xmlMessage(FactoryWriterXML.MESSAGE, "message:filegenerated", "", 
+        err.xmlMessage(WriterXML.MESSAGE, "message:filegenerated", "", 
                        path + "factory.report.index.html");
     }
 
     /** Displays document in system browser. */
     public void display() {
         String url = "file://" + path + filename + ".html";
-        err.xmlMessage(FactoryWriterXML.MESSAGE, "message:openurl", "", url);
+        err.xmlMessage(WriterXML.MESSAGE, "message:openurl", "", url);
         if (!BrowserControl.displayURL(url)) {
-            err.xmlMessage(FactoryWriterXML.ERROR, "error:badbrowser", "");
+            err.xmlMessage(WriterXML.ERROR, "error:badbrowser", "");
         }
     }
 

@@ -33,7 +33,7 @@ import net.sourceforge.projectfactory.server.entities.xml.BaseEntityServerXML;
 import net.sourceforge.projectfactory.server.projects.Item;
 import net.sourceforge.projectfactory.server.projects.Project;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 
 
 /**
@@ -43,7 +43,7 @@ import net.sourceforge.projectfactory.xml.FactoryWriterXML;
 public class Team extends TeamBase {
 
     /** Writes the object as an XML output. */
-    public void xmlOut(FactoryWriterXML xml, TransactionXML transaction, 
+    public void xmlOut(WriterXML xml, TransactionXML transaction, 
                        boolean tags) {
         if (tags) xmlStart(xml, "team");
         super.xmlOut(xml, transaction, false);

@@ -31,7 +31,7 @@ package net.sourceforge.projectfactory.client.components;
  * Defines a button used to add a level or indent.
  * @author David Lambert
  */
-public class ButtonAddLevel extends ButtonFactory {
+public class ButtonAddLevel extends Button {
 
 	/** Constructor. */
     public ButtonAddLevel() {

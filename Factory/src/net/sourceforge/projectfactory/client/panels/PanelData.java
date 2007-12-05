@@ -55,12 +55,12 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.PrintDocHtml;
 import net.sourceforge.projectfactory.client.components.ButtonAdd;
 import net.sourceforge.projectfactory.client.components.ButtonLookup;
 import net.sourceforge.projectfactory.client.components.ButtonRemove;
-import net.sourceforge.projectfactory.client.components.ButtonToggleFactory;
+import net.sourceforge.projectfactory.client.components.ButtonToggle;
 import net.sourceforge.projectfactory.client.components.CheckBox;
 import net.sourceforge.projectfactory.client.components.ComboBox;
 import net.sourceforge.projectfactory.client.components.ComboBoxCode;
@@ -76,8 +76,8 @@ import net.sourceforge.projectfactory.client.components.TableBox;
 import net.sourceforge.projectfactory.client.components.TableBoxLookup;
 import net.sourceforge.projectfactory.client.components.TableBoxXML;
 import net.sourceforge.projectfactory.client.components.TextBox;
-import net.sourceforge.projectfactory.xml.FactoryReaderXML;
-import net.sourceforge.projectfactory.xml.FactoryWriterXML;
+import net.sourceforge.projectfactory.xml.ReaderXML;
+import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -123,7 +123,7 @@ public abstract class PanelData extends JPanel implements ActionListener {
     private String tagpanel;
 
     /** Reference to the main frame. */
-    private FrameMain frame;
+    private MainFrame frame;
 
     /** Object ID. */
     protected final EditBox iid = new EditBox();
@@ -171,7 +171,7 @@ public abstract class PanelData extends JPanel implements ActionListener {
     private int nbClasses;
 
     /** Constructor. */
-    protected PanelData(FrameMain frame) {
+    protected PanelData(MainFrame frame) {
         this.frame = frame;
 
         if (LocalMessage.isRightToLeft()) {
@@ -201,7 +201,7 @@ public abstract class PanelData extends JPanel implements ActionListener {
     }
 
     /** Returns the frame. */
-    public final FrameMain getFrame() {
+    public final MainFrame getFrame() {
         return frame;
     }
 
@@ -746,7 +746,7 @@ public abstract class PanelData extends JPanel implements ActionListener {
         ButtonAdd buttonadd;
         ButtonRemove buttonremove;
         ButtonLookup buttonlookup;
-        ButtonToggleFactory buttoncommand;
+        ButtonToggle buttoncommand;
 
         try {
             for (int ic = nbClasses - 1; ic >= 0; ic--) {
@@ -823,7 +823,7 @@ public abstract class PanelData extends JPanel implements ActionListener {
                         } else if (fieldType.equals(CompPack + 
                                                     ".ButtonToggleFactory")) {
                             buttoncommand = 
-                                    (ButtonToggleFactory)fields[i].get(this);
+                                    (ButtonToggle)fields[i].get(this);
                             buttoncommand.setEnabled(!enabled);
                             buttoncommand.setSelected(false);
                         }
@@ -900,7 +900,7 @@ public abstract class PanelData extends JPanel implements ActionListener {
     }
 
     /** Writes the object as an XML output. */
-    public final void xmlOut(FactoryWriterXML xml, 
+    public final void xmlOut(WriterXML xml, 
                              boolean details) throws IOException {
         String fieldType;
         EditBox editbox;
@@ -1008,7 +1008,7 @@ public abstract class PanelData extends JPanel implements ActionListener {
     }
 
     /** Starts the object from an XML input. */
-    public final void xmlTagIn(String tag, FactoryReaderXML reader) {
+    public final void xmlTagIn(String tag, ReaderXML reader) {
         try {
             for (int ic = nbClasses - 1; ic >= 0; ic--) {
                 Class c = panelClasses[ic];
@@ -1129,13 +1129,13 @@ public abstract class PanelData extends JPanel implements ActionListener {
     }
 
     /** Adds an object to the frame action bar. */
-    protected final void addActionBarButton(ButtonToggleFactory button) {
+    protected final void addActionBarButton(ButtonToggle button) {
         button.setVisible(false);
         frame.addActionBarButton(button);
     }
 
     /** Attaches a local button to a menu item. */    
-    protected void refreshMenu(JMenuItem menuItem, ButtonToggleFactory button) {
+    protected void refreshMenu(JMenuItem menuItem, ButtonToggle button) {
         menuItem.setText(LocalMessage.get("menu:new:menu", button.getText()));
         menuItem.setVisible(true);
         menuItem.addActionListener(this);
@@ -1161,7 +1161,7 @@ public abstract class PanelData extends JPanel implements ActionListener {
 
                         if (fieldType.equals(CompPack + 
                                              ".ButtonToggleFactory")) {
-                            ((ButtonToggleFactory)fields[i].get(this)).setVisible(visible);
+                            ((ButtonToggle)fields[i].get(this)).setVisible(visible);
                         }
                     }
                 }
@@ -1215,7 +1215,7 @@ public abstract class PanelData extends JPanel implements ActionListener {
     }
 
     /** Generates a printable HTML document. */
-    public final void print(FactoryWriterXML err, boolean diagramOnly, 
+    public final void print(WriterXML err, boolean diagramOnly, 
                             boolean bug) throws IOException {
         String fieldType;
         EditBox editbox;

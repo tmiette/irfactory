@@ -28,7 +28,7 @@ $Author: ddlamb_2000 $
 package net.sourceforge.projectfactory.client.panels;
 
 import java.awt.event.ActionEvent;
-import net.sourceforge.projectfactory.client.FrameMain;
+import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.*;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 
@@ -40,12 +40,12 @@ public class Package extends PanelData {
     protected ComboBoxCodeApplication application = new ComboBoxCodeApplication(this);
     protected TextBox headerFile = new TextBox();
     protected TextBox generatedCode = new TextBox();
-    protected ButtonToggleFactory button1 = new ButtonToggleFactory("button:package:newgrid","button:package:newgrid:tip","grid.gif");
-    protected ButtonToggleFactory button2 = new ButtonToggleFactory("button:package:newpanel","button:package:newpanel:tip","panel.gif");
-    protected ButtonToggleFactory button3 = new ButtonToggleFactory("button:package:newclass","button:package:newclass:tip","classdefinition.gif");
+    protected ButtonToggle button1 = new ButtonToggle("button:package:newgrid","button:package:newgrid:tip","grid.gif");
+    protected ButtonToggle button2 = new ButtonToggle("button:package:newpanel","button:package:newpanel:tip","panel.gif");
+    protected ButtonToggle button3 = new ButtonToggle("button:package:newclass","button:package:newclass:tip","classdefinition.gif");
 
     /** Constructor. */
-    public Package(FrameMain frame) {
+    public Package(MainFrame frame) {
         super(frame);
         generatedCode.setEnabler(false);
         button1.addActionListener(this);
