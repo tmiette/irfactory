@@ -24,7 +24,7 @@ $Date: 2007/02/22 15:37:59 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.client.components.TableBoxes;
+package net.sourceforge.projectfactory.client.components.tableBoxes;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -63,8 +63,6 @@ import net.sourceforge.projectfactory.client.components.Arrow;
 import net.sourceforge.projectfactory.client.components.ComponentEnabler;
 import net.sourceforge.projectfactory.client.components.LocalIcon;
 import net.sourceforge.projectfactory.client.components.LocalMessage;
-import net.sourceforge.projectfactory.client.components.ComboBoxes.ComboBoxCode;
-import net.sourceforge.projectfactory.client.components.ComboBoxes.ComboItem;
 import net.sourceforge.projectfactory.client.components.buttons.Button;
 import net.sourceforge.projectfactory.client.components.buttons.ButtonAdd;
 import net.sourceforge.projectfactory.client.components.buttons.ButtonAddLevel;
@@ -73,6 +71,8 @@ import net.sourceforge.projectfactory.client.components.buttons.ButtonFactory;
 import net.sourceforge.projectfactory.client.components.buttons.ButtonRemove;
 import net.sourceforge.projectfactory.client.components.buttons.ButtonRemoveLevel;
 import net.sourceforge.projectfactory.client.components.buttons.ButtonUp;
+import net.sourceforge.projectfactory.client.components.comboBoxes.ComboBoxCode;
+import net.sourceforge.projectfactory.client.components.comboBoxes.ComboItem;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;

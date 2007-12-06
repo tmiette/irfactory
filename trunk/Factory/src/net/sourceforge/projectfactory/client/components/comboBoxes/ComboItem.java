@@ -24,7 +24,7 @@ $Date: 2006/12/22 12:24:07 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.client.components.ComboBoxes;
+package net.sourceforge.projectfactory.client.components.comboBoxes;
 
 import javax.swing.ImageIcon;
 

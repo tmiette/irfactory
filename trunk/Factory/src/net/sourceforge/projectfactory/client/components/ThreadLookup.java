@@ -27,7 +27,7 @@ $Author: ddlamb_2000 $
 package net.sourceforge.projectfactory.client.components;
 
 import net.sourceforge.projectfactory.client.MainFrame;
-import net.sourceforge.projectfactory.client.components.TableBoxes.TableBox;
+import net.sourceforge.projectfactory.client.components.tableBoxes.TableBox;
 import net.sourceforge.projectfactory.client.xml.ImportListXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
 

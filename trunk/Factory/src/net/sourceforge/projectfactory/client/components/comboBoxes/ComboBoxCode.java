@@ -24,7 +24,7 @@ $Date: 2007/01/27 19:55:15 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.client.components.ComboBoxes;
+package net.sourceforge.projectfactory.client.components.comboBoxes;
 
 import java.awt.Component;
 

@@ -24,7 +24,7 @@ $Date: 2007/02/04 23:12:14 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.client.components.ComboBoxes;
+package net.sourceforge.projectfactory.client.components.comboBoxes;
 
 import net.sourceforge.projectfactory.client.panels.PanelData;
 
