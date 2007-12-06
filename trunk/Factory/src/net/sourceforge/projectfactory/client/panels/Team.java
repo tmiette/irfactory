@@ -29,6 +29,10 @@ package net.sourceforge.projectfactory.client.panels;
 
 import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.*;
+import net.sourceforge.projectfactory.client.components.ComboBoxes.ComboBoxCode;
+import net.sourceforge.projectfactory.client.components.EditBoxes.EditBoxLookup;
+import net.sourceforge.projectfactory.client.components.TableBoxes.TableBox;
+import net.sourceforge.projectfactory.client.components.TableBoxes.TableBoxLookup;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 
 /** 

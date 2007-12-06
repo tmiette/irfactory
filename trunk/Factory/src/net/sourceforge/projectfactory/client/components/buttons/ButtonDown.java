@@ -18,24 +18,26 @@ You should have received a copy of the GNU General Public License
 along with Factory; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-$Source: /cvsroot/projectfactory/development/net/sourceforge/projectfactory/client/components/ButtonAddLevel.java,v $
+$Source: /cvsroot/projectfactory/development/net/sourceforge/projectfactory/client/components/ButtonDown.java,v $
 $Revision: 1.4 $
-$Date: 2006/12/20 12:03:14 $
+$Date: 2006/12/20 12:03:21 $
 $Author: ddlamb_2000 $
  
 */
-package net.sourceforge.projectfactory.client.components;
+package net.sourceforge.projectfactory.client.components.buttons;
+
+import net.sourceforge.projectfactory.client.components.LocalIcon;
 
 
 /**
- * Defines a button used to add a level or indent.
+ * Defines a button used to move down.
  * @author David Lambert
  */
-public class ButtonAddLevel extends Button {
-
+public class ButtonDown extends Button {
+	
 	/** Constructor. */
-    public ButtonAddLevel() {
+    ButtonDown() {
         super("");
-        setIcon(LocalIcon.get("indent.gif"));
+        setIcon(LocalIcon.get("arrow_down.gif"));
     }
 }

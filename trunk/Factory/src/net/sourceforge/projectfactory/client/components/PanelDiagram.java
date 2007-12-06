@@ -44,7 +44,6 @@ import java.awt.event.ActionListener;
 import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -56,6 +55,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import net.sourceforge.projectfactory.client.components.ComboBoxes.ComboBoxCode;
+import net.sourceforge.projectfactory.client.components.buttons.Button;
+import net.sourceforge.projectfactory.client.components.buttons.ButtonFactory;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -75,10 +77,10 @@ public class PanelDiagram extends PanelLookup implements ActionListener {
     private Diagram diagram = new Diagram();
 
     /** Button for next period display. */    
-    private ButtonDown buttonNextPeriod = new ButtonDown();
+    private Button buttonNextPeriod = ButtonFactory.createDownButton();
 
     /** Button for previous period display. */    
-    private ButtonUp buttonPreviousPeriod = new ButtonUp();
+    private Button buttonPreviousPeriod = ButtonFactory.createUpButton();
     
     /** Label used to display the current period. */
     private JLabel label = new JLabel();

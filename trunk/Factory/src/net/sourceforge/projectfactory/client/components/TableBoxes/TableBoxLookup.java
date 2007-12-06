@@ -24,8 +24,12 @@ $Date: 2007/02/06 17:42:43 $
 $Author: ddlamb_2000 $
  
 */
-package net.sourceforge.projectfactory.client.components;
+package net.sourceforge.projectfactory.client.components.TableBoxes;
 
+import net.sourceforge.projectfactory.client.components.ButtonLookup;
+import net.sourceforge.projectfactory.client.components.PanelCalendar;
+import net.sourceforge.projectfactory.client.components.PanelDataLookup;
+import net.sourceforge.projectfactory.client.components.PanelLookup;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 
 import java.awt.GridBagConstraints;

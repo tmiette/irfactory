@@ -24,7 +24,7 @@ $Date: 2006/12/04 15:28:28 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.client.components;
+package net.sourceforge.projectfactory.client.components.TableBoxes;
 
 import net.sourceforge.projectfactory.xml.ReaderXML;
 

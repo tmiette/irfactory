@@ -24,8 +24,10 @@ $Date: 2006/04/06 04:58:54 $
 $Author: ddlamb_2000 $
  
 */
-package net.sourceforge.projectfactory.client.components;
+package net.sourceforge.projectfactory.client.components.EditBoxes;
 
+import net.sourceforge.projectfactory.client.components.ButtonLookup;
+import net.sourceforge.projectfactory.client.components.PanelCalendar;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 

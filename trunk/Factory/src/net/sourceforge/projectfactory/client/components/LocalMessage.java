@@ -34,6 +34,7 @@ import java.io.InputStreamReader;
 
 import java.util.HashMap;
 
+import net.sourceforge.projectfactory.client.components.ComboBoxes.ComboBoxCode;
 import net.sourceforge.projectfactory.xml.ReaderXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 

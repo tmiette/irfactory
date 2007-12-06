@@ -29,6 +29,7 @@ package net.sourceforge.projectfactory.client.panels;
 
 import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.*;
+import net.sourceforge.projectfactory.client.components.ComboBoxes.ComboBoxCodeApplication;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 
 /** 

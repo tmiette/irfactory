@@ -33,7 +33,6 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -52,6 +51,12 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
 
+import net.sourceforge.projectfactory.client.components.EditBoxes.EditBoxDate;
+import net.sourceforge.projectfactory.client.components.TableBoxes.TableBoxLookup;
+import net.sourceforge.projectfactory.client.components.buttons.Button;
+import net.sourceforge.projectfactory.client.components.buttons.ButtonFactory;
+import net.sourceforge.projectfactory.client.components.buttons.ButtonRemoveLevel;
+import net.sourceforge.projectfactory.client.components.buttons.ButtonUp;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
@@ -92,13 +97,13 @@ public class PanelCalendar extends PanelLookup implements ActionListener {
     private CalendarTable monthTable = new CalendarTable();
 
     /** Button for next period display. */    
-    private ButtonAddLevel buttonNextPeriod = new ButtonAddLevel();
+    private Button buttonNextPeriod = ButtonFactory.createAddLevelButton();
 
     /** Button for previous period display. */    
-    private ButtonRemoveLevel buttonPreviousPeriod = new ButtonRemoveLevel();
+    private Button buttonPreviousPeriod = ButtonFactory.createRemoveLevelButton();
 
     /** Button for current period display. */    
-    private ButtonUp buttonCurrentPeriod = new ButtonUp();
+    private Button buttonCurrentPeriod = ButtonFactory.createUpButton();
     
     /** Constructor. */
     public PanelCalendar(){

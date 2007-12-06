@@ -18,24 +18,26 @@ You should have received a copy of the GNU General Public License
 along with Factory; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-$Source: /cvsroot/projectfactory/development/net/sourceforge/projectfactory/client/components/ButtonDown.java,v $
+$Source: /cvsroot/projectfactory/development/net/sourceforge/projectfactory/client/components/ButtonUp.java,v $
 $Revision: 1.4 $
-$Date: 2006/12/20 12:03:21 $
+$Date: 2006/12/20 12:03:14 $
 $Author: ddlamb_2000 $
  
 */
-package net.sourceforge.projectfactory.client.components;
+package net.sourceforge.projectfactory.client.components.buttons;
+
+import net.sourceforge.projectfactory.client.components.LocalIcon;
 
 
 /**
- * Defines a button used to move down.
+ * Defines a button used to move up.
  * @author David Lambert
  */
-public class ButtonDown extends Button {
+public class ButtonUp extends Button {
 	
 	/** Constructor. */
-    public ButtonDown() {
+    ButtonUp() {
         super("");
-        setIcon(LocalIcon.get("arrow_down.gif"));
+        setIcon(LocalIcon.get("arrow_up.gif"));
     }
 }
