@@ -24,12 +24,13 @@ $Date: 2007/02/22 15:37:59 $
 $Author: ddlamb_2000 $
  
 */
-package net.sourceforge.projectfactory.client.components;
+package net.sourceforge.projectfactory.client.components.ComboBoxes;
 
 import java.awt.Color;
 
 import javax.swing.JComboBox;
 
+import net.sourceforge.projectfactory.client.components.ComponentEnabler;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 

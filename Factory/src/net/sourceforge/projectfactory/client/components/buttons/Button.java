@@ -18,28 +18,34 @@ You should have received a copy of the GNU General Public License
 along with Factory; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-$Source: /cvsroot/projectfactory/development/net/sourceforge/projectfactory/client/components/ButtonCommand.java,v $
-$Revision: 1.2 $
-$Date: 2006/03/08 13:06:14 $
+$Source: /cvsroot/projectfactory/development/net/sourceforge/projectfactory/client/components/ButtonFactory.java,v $
+$Revision: 1.4 $
+$Date: 2006/11/15 17:31:43 $
 $Author: ddlamb_2000 $
  
 */
-package net.sourceforge.projectfactory.client.components;
+package net.sourceforge.projectfactory.client.components.buttons;
+
+import javax.swing.BorderFactory;
+import javax.swing.Icon;
+import javax.swing.JButton;
 
 
 /**
- * Default interface button used for actions.
+ * Default interface button.
  * @author David Lambert
  */
-public class ButtonCommand extends Button {
+public class Button extends JButton {
 	
-	/** Constructor. */
-    public ButtonCommand(String title) {
-        super(title);
+    /** Constructor with an icon. */
+    public Button(String title, Icon icon) {
+        super(title, icon);
+        setBorder(BorderFactory.createEmptyBorder());
+        setContentAreaFilled(false);
     }
 
-	/** Hides or unhides the button. */
-    public void setVisible(boolean b) {
-        super.setVisible(b);
+    /** Constructor. */
+    public Button(String title) {
+        this(title, null);
     }
 }

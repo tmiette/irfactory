@@ -1,6 +1,6 @@
 /*
 
-Copyright (c) 2006 David Lambert
+Copyright (c) 2005, 2006 David Lambert
 
 This file is part of Factory.
 
@@ -18,29 +18,28 @@ You should have received a copy of the GNU General Public License
 along with Factory; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-$Source: /cvsroot/projectfactory/development/net/sourceforge/projectfactory/client/components/ComboBoxCodeApplication.java,v $
+$Source: /cvsroot/projectfactory/development/net/sourceforge/projectfactory/client/components/ButtonCommand.java,v $
 $Revision: 1.2 $
-$Date: 2007/02/04 23:12:14 $
+$Date: 2006/03/08 13:06:14 $
 $Author: ddlamb_2000 $
-
+ 
 */
-package net.sourceforge.projectfactory.client.components;
-
-import net.sourceforge.projectfactory.client.panels.PanelData;
+package net.sourceforge.projectfactory.client.components.buttons;
 
 
 /**
- * Represents a combobox managing application extensions.
+ * Default interface button used for actions.
  * @author David Lambert
  */
-public class ComboBoxCodeApplication extends ComboBoxCode {
+public class ButtonCommand extends Button {
+	
+	/** Constructor. */
+    ButtonCommand(String title) {
+        super(title);
+    }
 
-    /** Constructor. */
-    public ComboBoxCodeApplication(PanelData panel) {
-        super();
-        removeItemCode("0");
-        for (String extension: panel.getFrame().getApplicationExtensions())
-            addItem(extension, extension.length() > 0 ? extension : " ");
+	/** Hides or unhides the button. */
+    public void setVisible(boolean b) {
+        super.setVisible(b);
     }
 }
-

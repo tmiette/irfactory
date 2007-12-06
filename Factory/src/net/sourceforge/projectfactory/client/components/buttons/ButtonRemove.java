@@ -18,24 +18,26 @@ You should have received a copy of the GNU General Public License
 along with Factory; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-$Source: /cvsroot/projectfactory/development/net/sourceforge/projectfactory/client/components/ButtonRemoveLevel.java,v $
+$Source: /cvsroot/projectfactory/development/net/sourceforge/projectfactory/client/components/ButtonRemove.java,v $
 $Revision: 1.4 $
 $Date: 2006/12/20 12:03:21 $
 $Author: ddlamb_2000 $
  
 */
-package net.sourceforge.projectfactory.client.components;
+package net.sourceforge.projectfactory.client.components.buttons;
+
+import net.sourceforge.projectfactory.client.components.LocalIcon;
 
 
 /**
- * Defines a button used to remove a level or outdent.
+ * Defines a button used to remove or delete an object.
  * @author David Lambert
  */
-public class ButtonRemoveLevel extends Button {
+public class ButtonRemove extends Button {
 	
 	/** Constructor. */
-    public ButtonRemoveLevel() {
+    ButtonRemove() {
         super("");
-        setIcon(LocalIcon.get("outdent.gif"));
+        setIcon(LocalIcon.get("minus.gif"));
     }
 }

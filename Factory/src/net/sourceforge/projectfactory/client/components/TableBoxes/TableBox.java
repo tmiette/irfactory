@@ -24,7 +24,7 @@ $Date: 2007/02/22 15:37:59 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.client.components;
+package net.sourceforge.projectfactory.client.components.TableBoxes;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -36,10 +36,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
 import java.io.IOException;
 import java.io.StringWriter;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -61,6 +59,20 @@ import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
 
+import net.sourceforge.projectfactory.client.components.Arrow;
+import net.sourceforge.projectfactory.client.components.ComponentEnabler;
+import net.sourceforge.projectfactory.client.components.LocalIcon;
+import net.sourceforge.projectfactory.client.components.LocalMessage;
+import net.sourceforge.projectfactory.client.components.ComboBoxes.ComboBoxCode;
+import net.sourceforge.projectfactory.client.components.ComboBoxes.ComboItem;
+import net.sourceforge.projectfactory.client.components.buttons.Button;
+import net.sourceforge.projectfactory.client.components.buttons.ButtonAdd;
+import net.sourceforge.projectfactory.client.components.buttons.ButtonAddLevel;
+import net.sourceforge.projectfactory.client.components.buttons.ButtonDown;
+import net.sourceforge.projectfactory.client.components.buttons.ButtonFactory;
+import net.sourceforge.projectfactory.client.components.buttons.ButtonRemove;
+import net.sourceforge.projectfactory.client.components.buttons.ButtonRemoveLevel;
+import net.sourceforge.projectfactory.client.components.buttons.ButtonUp;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
@@ -125,22 +137,22 @@ public class TableBox extends JTable implements ComponentEnabler,
     protected JPanel buttonPanel = new JPanel();
 
     /**  Add row button. */
-    private ButtonAdd buttonAdd = new ButtonAdd();
+    private Button buttonAdd = ButtonFactory.createAddButton();
 
     /** Remove row button. */
-    private ButtonRemove buttonRemove = new ButtonRemove();
+    private Button buttonRemove = ButtonFactory.createRemoveButton();
 
     /** Move up button. */
-    private ButtonUp buttonUp = new ButtonUp();
+    private Button buttonUp = ButtonFactory.createUpButton();
 
     /** Move down button. */
-    private ButtonDown buttonDown = new ButtonDown();
+    private Button buttonDown = ButtonFactory.createDownButton();
 
     /** Ident button. */
-    private ButtonAddLevel buttonAddLevel = new ButtonAddLevel();
+    private Button buttonAddLevel = ButtonFactory.createAddLevelButton();
 
     /** Outdent button. */
-    private ButtonRemoveLevel buttonRemoveLevel = new ButtonRemoveLevel();
+    private Button buttonRemoveLevel = ButtonFactory.createRemoveLevelButton();
 
     /** Indicates the table can't be sorted. */
     private boolean noSort;
@@ -322,7 +334,7 @@ public class TableBox extends JTable implements ComponentEnabler,
     }
 
     /** Inserts a new row at the end with defaults. */
-    protected void newRow() {
+    public void newRow() {
         tableModel.newRow(true);
     }
 

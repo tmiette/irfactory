@@ -24,16 +24,18 @@ $Date: 2006/12/22 12:24:07 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.client.components;
+package net.sourceforge.projectfactory.client.components.ComboBoxes;
 
 import javax.swing.ImageIcon;
+
+import net.sourceforge.projectfactory.client.components.LocalIcon;
 
 /**
  * Represents an item stored in comboboxes
  * composed by a code, a label and an icon.
  * @author David Lambert
  */
-class ComboItem {
+public class ComboItem {
 	
 	/** Code. */
 	String code;
@@ -48,20 +50,20 @@ class ComboItem {
 	String filename;
 	
 	/** Constructor. Code and label. */
-	ComboItem(String code, String label) {
+	public ComboItem(String code, String label) {
 		this.code = code;
 		this.label = label;
 	}
 	
 	/** Constructor. Code, label and icon file name. */
-	ComboItem(String code, String label, String filename) {
+	public ComboItem(String code, String label, String filename) {
 		this(code, label);
 		if(filename != null) this.icon = LocalIcon.get(filename);
 		this.filename = filename;
 	}
     
     /** Constructor. Clone. */
-    ComboItem(ComboItem item) {
+    public ComboItem(ComboItem item) {
         this(item != null ? item.code : "0", 
                 item != null ? item.label : " ", 
                 item != null ? item.filename : "");

@@ -1,6 +1,6 @@
 /*
 
-Copyright (c) 2005, 2006 David Lambert
+Copyright (c) 2006 David Lambert
 
 This file is part of Factory.
 
@@ -18,34 +18,29 @@ You should have received a copy of the GNU General Public License
 along with Factory; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-$Source: /cvsroot/projectfactory/development/net/sourceforge/projectfactory/client/components/ButtonFactory.java,v $
-$Revision: 1.4 $
-$Date: 2006/11/15 17:31:43 $
+$Source: /cvsroot/projectfactory/development/net/sourceforge/projectfactory/client/components/ComboBoxCodeApplication.java,v $
+$Revision: 1.2 $
+$Date: 2007/02/04 23:12:14 $
 $Author: ddlamb_2000 $
- 
-*/
-package net.sourceforge.projectfactory.client.components;
 
-import javax.swing.BorderFactory;
-import javax.swing.Icon;
-import javax.swing.JButton;
+*/
+package net.sourceforge.projectfactory.client.components.ComboBoxes;
+
+import net.sourceforge.projectfactory.client.panels.PanelData;
 
 
 /**
- * Default interface button.
+ * Represents a combobox managing application extensions.
  * @author David Lambert
  */
-public class Button extends JButton {
-	
-    /** Constructor with an icon. */
-    public Button(String title, Icon icon) {
-        super(title, icon);
-        setBorder(BorderFactory.createEmptyBorder());
-        setContentAreaFilled(false);
-    }
+public class ComboBoxCodeApplication extends ComboBoxCode {
 
     /** Constructor. */
-    public Button(String title) {
-        this(title, null);
+    public ComboBoxCodeApplication(PanelData panel) {
+        super();
+        removeItemCode("0");
+        for (String extension: panel.getFrame().getApplicationExtensions())
+            addItem(extension, extension.length() > 0 ? extension : " ");
     }
 }
+

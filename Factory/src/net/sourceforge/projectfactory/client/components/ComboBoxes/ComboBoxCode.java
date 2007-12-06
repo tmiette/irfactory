@@ -24,7 +24,7 @@ $Date: 2007/01/27 19:55:15 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.client.components;
+package net.sourceforge.projectfactory.client.components.ComboBoxes;
 
 import java.awt.Component;
 
@@ -32,6 +32,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
+
+import net.sourceforge.projectfactory.client.components.LocalMessage;
 
 
 /**

@@ -26,6 +26,8 @@ $Author: ddlamb_2000 $
 */
 package net.sourceforge.projectfactory.client.components;
 
+import net.sourceforge.projectfactory.client.components.buttons.Button;
+
 
 /**
  * Defines a button used as a lookup.

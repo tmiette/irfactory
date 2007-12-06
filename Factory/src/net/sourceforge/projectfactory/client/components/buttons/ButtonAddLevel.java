@@ -18,24 +18,26 @@ You should have received a copy of the GNU General Public License
 along with Factory; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-$Source: /cvsroot/projectfactory/development/net/sourceforge/projectfactory/client/components/ButtonAdd.java,v $
+$Source: /cvsroot/projectfactory/development/net/sourceforge/projectfactory/client/components/ButtonAddLevel.java,v $
 $Revision: 1.4 $
 $Date: 2006/12/20 12:03:14 $
 $Author: ddlamb_2000 $
  
 */
-package net.sourceforge.projectfactory.client.components;
+package net.sourceforge.projectfactory.client.components.buttons;
+
+import net.sourceforge.projectfactory.client.components.LocalIcon;
 
 
 /**
- * Defines a button used to add or create a new object.
+ * Defines a button used to add a level or indent.
  * @author David Lambert
  */
-public class ButtonAdd extends Button {
+public class ButtonAddLevel extends Button {
 
-    /** Constructor. */
-    public ButtonAdd() {
+	/** Constructor. */
+    ButtonAddLevel() {
         super("");
-        setIcon(LocalIcon.get("plus.gif"));
+        setIcon(LocalIcon.get("indent.gif"));
     }
 }
