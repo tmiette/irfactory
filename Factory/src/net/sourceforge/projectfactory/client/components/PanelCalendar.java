@@ -51,12 +51,12 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
 
-import net.sourceforge.projectfactory.client.components.EditBoxes.EditBoxDate;
-import net.sourceforge.projectfactory.client.components.TableBoxes.TableBoxLookup;
 import net.sourceforge.projectfactory.client.components.buttons.Button;
 import net.sourceforge.projectfactory.client.components.buttons.ButtonFactory;
 import net.sourceforge.projectfactory.client.components.buttons.ButtonRemoveLevel;
 import net.sourceforge.projectfactory.client.components.buttons.ButtonUp;
+import net.sourceforge.projectfactory.client.components.editBoxes.EditBoxDate;
+import net.sourceforge.projectfactory.client.components.tableBoxes.TableBoxLookup;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 

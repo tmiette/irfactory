@@ -24,7 +24,7 @@ $Date: 2007/02/22 15:37:59 $
 $Author: ddlamb_2000 $
  
 */
-package net.sourceforge.projectfactory.client.components.ComboBoxes;
+package net.sourceforge.projectfactory.client.components.comboBoxes;
 
 import java.awt.Color;
 

@@ -24,7 +24,7 @@ $Date: 2006/11/13 15:32:20 $
 $Author: ddlamb_2000 $
  
 */
-package net.sourceforge.projectfactory.client.components.EditBoxes;
+package net.sourceforge.projectfactory.client.components.editBoxes;
 
 import net.sourceforge.projectfactory.client.components.ButtonLookup;
 import net.sourceforge.projectfactory.client.components.PanelDataLookup;

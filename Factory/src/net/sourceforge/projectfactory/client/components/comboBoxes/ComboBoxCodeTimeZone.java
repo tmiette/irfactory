@@ -24,7 +24,7 @@ $Date: 2007/01/03 16:39:30 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.client.components.ComboBoxes;
+package net.sourceforge.projectfactory.client.components.comboBoxes;
 
 import java.util.ArrayList;
 import java.util.Collections;

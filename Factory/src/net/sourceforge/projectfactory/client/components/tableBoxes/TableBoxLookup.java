@@ -24,7 +24,7 @@ $Date: 2007/02/06 17:42:43 $
 $Author: ddlamb_2000 $
  
 */
-package net.sourceforge.projectfactory.client.components.TableBoxes;
+package net.sourceforge.projectfactory.client.components.tableBoxes;
 
 import net.sourceforge.projectfactory.client.components.ButtonLookup;
 import net.sourceforge.projectfactory.client.components.PanelCalendar;

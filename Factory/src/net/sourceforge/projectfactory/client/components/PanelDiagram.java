@@ -55,9 +55,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import net.sourceforge.projectfactory.client.components.ComboBoxes.ComboBoxCode;
 import net.sourceforge.projectfactory.client.components.buttons.Button;
 import net.sourceforge.projectfactory.client.components.buttons.ButtonFactory;
+import net.sourceforge.projectfactory.client.components.comboBoxes.ComboBoxCode;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
 
