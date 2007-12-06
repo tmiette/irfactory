@@ -29,8 +29,8 @@ package net.sourceforge.projectfactory.client.panels;
 
 import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.*;
-import net.sourceforge.projectfactory.client.components.EditBoxes.EditBox;
-import net.sourceforge.projectfactory.client.components.EditBoxes.EditBoxPassword;
+import net.sourceforge.projectfactory.client.components.editBoxes.EditBox;
+import net.sourceforge.projectfactory.client.components.editBoxes.EditBoxPassword;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 
 /** 

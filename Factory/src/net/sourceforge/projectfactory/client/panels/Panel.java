@@ -30,12 +30,12 @@ package net.sourceforge.projectfactory.client.panels;
 import java.awt.event.ActionEvent;
 import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.*;
-import net.sourceforge.projectfactory.client.components.ComboBoxes.ComboBoxCode;
-import net.sourceforge.projectfactory.client.components.ComboBoxes.ComboBoxCodeApplication;
-import net.sourceforge.projectfactory.client.components.EditBoxes.EditBox;
-import net.sourceforge.projectfactory.client.components.EditBoxes.EditBoxLookup;
-import net.sourceforge.projectfactory.client.components.TableBoxes.TableBox;
-import net.sourceforge.projectfactory.client.components.TableBoxes.TableBoxLookup;
+import net.sourceforge.projectfactory.client.components.comboBoxes.ComboBoxCode;
+import net.sourceforge.projectfactory.client.components.comboBoxes.ComboBoxCodeApplication;
+import net.sourceforge.projectfactory.client.components.editBoxes.EditBox;
+import net.sourceforge.projectfactory.client.components.editBoxes.EditBoxLookup;
+import net.sourceforge.projectfactory.client.components.tableBoxes.TableBox;
+import net.sourceforge.projectfactory.client.components.tableBoxes.TableBoxLookup;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 
 /** 

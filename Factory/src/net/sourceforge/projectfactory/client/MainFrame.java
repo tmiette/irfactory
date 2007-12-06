@@ -82,7 +82,7 @@ import net.sourceforge.projectfactory.client.components.PanelDataLookup;
 import net.sourceforge.projectfactory.client.components.PanelDiagram;
 import net.sourceforge.projectfactory.client.components.ToggleButtonAction;
 import net.sourceforge.projectfactory.client.components.ToggleButtonCategory;
-import net.sourceforge.projectfactory.client.components.ComboBoxes.ComboBoxCode;
+import net.sourceforge.projectfactory.client.components.comboBoxes.ComboBoxCode;
 import net.sourceforge.projectfactory.client.panels.PanelData;
 import net.sourceforge.projectfactory.client.xml.ImportDataXML;
 import net.sourceforge.projectfactory.client.xml.ImportErrXML;
