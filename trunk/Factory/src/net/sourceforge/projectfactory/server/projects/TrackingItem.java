@@ -29,8 +29,8 @@ package net.sourceforge.projectfactory.server.projects;
 import java.util.Calendar;
 import java.util.Date;
 
-import net.sourceforge.projectfactory.server.actors.Actor;
 import net.sourceforge.projectfactory.server.entities.Duration;
+import net.sourceforge.projectfactory.server.resources.Resource;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
 
@@ -51,7 +51,7 @@ public class TrackingItem extends Duration {
     protected Task task;
 
     /** Actor assigned to a task. */
-    public Actor actor;
+    public Resource actor;
 
     /** On track. */
     boolean onTrack;
@@ -146,10 +146,10 @@ public class TrackingItem extends Duration {
 
         if (tag.equals("actor")) {
             if (tracking != null) {
-                actor = (Actor) xmlInEntity(xml, 
+                actor = (Resource) xmlInEntity(xml, 
                                             transaction, 
                                             value, 
-                                            new Actor(), 
+                                            new Resource(), 
                                             transaction.getServer().actors.actors, 
                                             "error:incorrect:tracking:actor", 
                                             tracking);

@@ -30,12 +30,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import net.sourceforge.projectfactory.server.actors.Actor;
-import net.sourceforge.projectfactory.server.actors.Member;
-import net.sourceforge.projectfactory.server.actors.Skill;
-import net.sourceforge.projectfactory.server.actors.Team;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.BaseEntityServerXML;
+import net.sourceforge.projectfactory.server.resources.Member;
+import net.sourceforge.projectfactory.server.resources.Resource;
+import net.sourceforge.projectfactory.server.resources.Skill;
+import net.sourceforge.projectfactory.server.resources.Team;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
 
@@ -60,7 +60,7 @@ public class Project extends BusinessProcess {
     private int statusScope;
 
     /** Project lead. */
-    protected Actor lead;
+    protected Resource lead;
 
     /** Business process, if any. */
     BusinessProcess businessProcess;
@@ -250,10 +250,10 @@ public class Project extends BusinessProcess {
         }
 
         if (tag.equals("lead")) {
-            lead = (Actor) xmlInEntity(xml, 
+            lead = (Resource) xmlInEntity(xml, 
                                         transaction, 
                                         value, 
-                                        new Actor(), 
+                                        new Resource(), 
                                         transaction.getServer().actors.actors, 
                                         "error:incorrect:projectlead", 
                                         this);
@@ -375,7 +375,7 @@ public class Project extends BusinessProcess {
     }
 
     /** Returns true if the actor is involved in the project. */
-    public boolean isMember(Actor actor) {
+    public boolean isMember(Resource actor) {
         if (lead == actor)
             return true;
 
@@ -552,7 +552,7 @@ public class Project extends BusinessProcess {
     }
 
     /** Returns availability defined for the actor at given date. */
-    Availability getAvailability(Actor actor, Date date) {
+    Availability getAvailability(Resource actor, Date date) {
         if (date == null)
             return null;
         for (Availability availability: availabilities) {

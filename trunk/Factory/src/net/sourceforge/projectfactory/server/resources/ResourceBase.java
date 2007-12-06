@@ -25,13 +25,13 @@ $Author: ddlamb_2000 $
 
 */
 
-package net.sourceforge.projectfactory.server.actors;
+package net.sourceforge.projectfactory.server.resources;
 
-import net.sourceforge.projectfactory.server.actors.Actor;
-import net.sourceforge.projectfactory.server.actors.HolidaySchedule;
-import net.sourceforge.projectfactory.server.actors.Location;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.BaseEntityServerXML;
+import net.sourceforge.projectfactory.server.resources.HolidaySchedule;
+import net.sourceforge.projectfactory.server.resources.Location;
+import net.sourceforge.projectfactory.server.resources.Resource;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
 
@@ -39,13 +39,13 @@ import net.sourceforge.projectfactory.xml.WriterXML;
   * Actor definition.
   * @author David Lambert
   */
-public class ActorBase extends Entity {
+public class ResourceBase extends Entity {
     public String networkId;
     public String alternateNetworkId;
     public String phoneNumber;
     public boolean administrator;
     public String position;
-    public Actor reportsTo;
+    public Resource reportsTo;
     public HolidaySchedule holidaySchedule;
     public Location location;
     public java.util.List<Absence> absences = new java.util.ArrayList();
@@ -112,7 +112,7 @@ public class ActorBase extends Entity {
     /** Update method : updates the object from another entity. */
     public void update(TransactionXML transaction, Entity other) {
         if (this.getClass() != other.getClass()) return;
-        ActorBase otherEntity = (ActorBase) other;
+        ResourceBase otherEntity = (ResourceBase) other;
         super.update(transaction, other);
         this.networkId = otherEntity.networkId;
         this.alternateNetworkId = otherEntity.alternateNetworkId;

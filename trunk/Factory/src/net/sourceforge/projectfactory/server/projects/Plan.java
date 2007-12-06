@@ -32,15 +32,15 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-import net.sourceforge.projectfactory.server.actors.Absence;
-import net.sourceforge.projectfactory.server.actors.Actor;
-import net.sourceforge.projectfactory.server.actors.Holiday;
-import net.sourceforge.projectfactory.server.actors.Member;
-import net.sourceforge.projectfactory.server.actors.Team;
 import net.sourceforge.projectfactory.server.entities.Duration;
 import net.sourceforge.projectfactory.server.entities.DurationCount;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.BaseEntityServerXML;
+import net.sourceforge.projectfactory.server.resources.Absence;
+import net.sourceforge.projectfactory.server.resources.Holiday;
+import net.sourceforge.projectfactory.server.resources.Member;
+import net.sourceforge.projectfactory.server.resources.Resource;
+import net.sourceforge.projectfactory.server.resources.Team;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
@@ -1631,7 +1631,7 @@ public class Plan extends Entity {
     }
 
     /** Indicates if the actor is available at the instant. */
-    public boolean isAvailable(Actor actor, Date instant) {
+    public boolean isAvailable(Resource actor, Date instant) {
         int i;
 
         for (i = 0; i < project.teams.size(); i++) {
@@ -1691,7 +1691,7 @@ public class Plan extends Entity {
     private class MemberAvailability extends Duration {
 
         /** Actor. */
-        private Actor actor;
+        private Resource actor;
 
         /** Anonymous. */
         private Anonymous anonymous;
