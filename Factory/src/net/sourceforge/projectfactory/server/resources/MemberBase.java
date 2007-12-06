@@ -25,11 +25,11 @@ $Author: ddlamb_2000 $
 
 */
 
-package net.sourceforge.projectfactory.server.actors;
+package net.sourceforge.projectfactory.server.resources;
 
-import net.sourceforge.projectfactory.server.actors.Team;
-import net.sourceforge.projectfactory.server.actors.Actor;
 import net.sourceforge.projectfactory.server.entities.BaseEntity;
+import net.sourceforge.projectfactory.server.resources.Resource;
+import net.sourceforge.projectfactory.server.resources.Team;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
 
@@ -42,7 +42,7 @@ public class MemberBase extends BaseEntity {
     public java.util.Date from;
     public java.util.Date to;
     public String role;
-    public Actor actor;
+    public Resource actor;
     public boolean interim;
 
     /** Constructor. */
@@ -80,8 +80,8 @@ public class MemberBase extends BaseEntity {
             return true;
         }
         if (tag.equals("actor") && transaction.getServer().actors != null) {
-            actor = (Actor)xmlInEntity(xml,transaction,value,
-                new Actor(),transaction.getServer().actors.actors,
+            actor = (Resource)xmlInEntity(xml,transaction,value,
+                new Resource(),transaction.getServer().actors.actors,
                 "error:incorrect:member",team);
             return true;
         }

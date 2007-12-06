@@ -26,8 +26,8 @@ $Author: ddlamb_2000 $
 */
 package net.sourceforge.projectfactory.server.projects;
 
-import net.sourceforge.projectfactory.server.actors.Actor;
 import net.sourceforge.projectfactory.server.entities.Duration;
+import net.sourceforge.projectfactory.server.resources.Resource;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
 
@@ -48,7 +48,7 @@ public class Risk extends Duration {
     String risk;
 
     /** Owner of the risk. */
-    public Actor owner;
+    public Resource owner;
 
     /** Risk probability. */
     int probability;
@@ -127,19 +127,19 @@ public class Risk extends Duration {
 
         if (tag.equals("owner")) {
             if (plan != null && plan.project != null) {
-                owner = (Actor) xmlInEntity(xml, 
+                owner = (Resource) xmlInEntity(xml, 
                                             transaction, 
                                             value, 
-                                            new Actor(), 
+                                            new Resource(), 
                                             transaction.getServer().actors.actors, 
                                             "error:incorrect:risk:owner", 
                                             plan);
             }
             else if (status != null && status.plan != null) {
-                owner = (Actor) xmlInEntity(xml, 
+                owner = (Resource) xmlInEntity(xml, 
                                             transaction, 
                                             value, 
-                                            new Actor(), 
+                                            new Resource(), 
                                             transaction.getServer().actors.actors, 
                                             "error:incorrect:risk:owner", 
                                             status);

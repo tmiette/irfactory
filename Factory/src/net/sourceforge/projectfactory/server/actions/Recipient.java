@@ -28,8 +28,8 @@ $Author: ddlamb_2000 $
 package net.sourceforge.projectfactory.server.actions;
 
 import net.sourceforge.projectfactory.server.actions.Action;
-import net.sourceforge.projectfactory.server.actors.Actor;
 import net.sourceforge.projectfactory.server.entities.BaseEntity;
+import net.sourceforge.projectfactory.server.resources.Resource;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
 
@@ -41,7 +41,7 @@ public class Recipient extends BaseEntity {
     public Action action;
     public int role;
     public int status;
-    public Actor actor;
+    public Resource actor;
     public static int NOT_SENT = 1;
     public static int SENT = 2;
     public static int ANSWERED = 3;
@@ -78,8 +78,8 @@ public class Recipient extends BaseEntity {
             return true;
         }
         if (tag.equals("actor") && transaction.getServer().actors != null) {
-            actor = (Actor)xmlInEntity(xml,transaction,value,
-                new Actor(),transaction.getServer().actors.actors,
+            actor = (Resource)xmlInEntity(xml,transaction,value,
+                new Resource(),transaction.getServer().actors.actors,
                 "error:incorrect:recipient",action);
             return true;
         }

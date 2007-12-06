@@ -31,10 +31,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import net.sourceforge.projectfactory.server.actors.Actor;
 import net.sourceforge.projectfactory.server.entities.DurationCount;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.BaseEntityServerXML;
+import net.sourceforge.projectfactory.server.resources.Resource;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
@@ -557,7 +557,7 @@ public class Tracking extends Entity {
         protected Task task;
 
         /** Actor. */
-        protected Actor actor;
+        protected Resource actor;
 
         /** Writes the object as an XML output. */
         public void xmlOut(WriterXML xml, TransactionXML transaction, 

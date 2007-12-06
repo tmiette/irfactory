@@ -24,7 +24,7 @@ $Date: 2007/02/07 18:12:50 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.server.actors;
+package net.sourceforge.projectfactory.server.resources;
 
 import java.io.IOException;
 
@@ -44,10 +44,10 @@ import net.sourceforge.projectfactory.xml.XMLWrapper;
  * Aggregates all the objects which define actors.
  * @author David Lambert
  */
-public class ActorList extends ApplicationServerBase {
+public class ResourceList extends ApplicationServerBase {
 
     /** List of actors. */
-    public List<Actor> actors = new ArrayList(30);
+    public List<Resource> actors = new ArrayList(30);
 
     /** List of locations. */
     public List<Location> locations = new ArrayList(10);
@@ -62,7 +62,7 @@ public class ActorList extends ApplicationServerBase {
     public List<Server> servers = new ArrayList(5);
 
     /** Constructor. */
-    public ActorList(ApplicationServerBase serverBase) {
+    public ResourceList(ApplicationServerBase serverBase) {
         super(serverBase);
     }
 
@@ -148,11 +148,11 @@ public class ActorList extends ApplicationServerBase {
                     return false;
             if (filter.equals("filter:actors:myteam"))
                 if (!entity.isActive() || 
-                    !((Actor)entity).isInSameTeam(transaction, 
+                    !((Resource)entity).isInSameTeam(transaction, 
                                                   transaction.getSession().getOperator()))
                     return false;
             if (filter.equals("filter:actors:administrator"))
-                if (!((Actor)entity).isAdministrator())
+                if (!((Resource)entity).isAdministrator())
                     return false;
         } else if (category.equals("teams")) {
             if (filter.equals("filter:teams:active"))
@@ -212,7 +212,7 @@ public class ActorList extends ApplicationServerBase {
     /** Returns the appropriate parser in order to read an element. */
     public SubEntityServerXML getParser(TransactionXML transaction, String tag) {
         if (tag.equals("actor")) 
-            return new SubEntityServerXML(this, transaction, new Actor(), actors);
+            return new SubEntityServerXML(this, transaction, new Resource(), actors);
         else if (tag.equals("team")) 
             return new SubEntityServerXML(this, transaction, new Team(), teams);
         else if (tag.equals("location")) 
@@ -227,8 +227,8 @@ public class ActorList extends ApplicationServerBase {
     }
 
     /** Returns actor designed by a network Id. */
-    public Actor getActor(String networkId) {
-        for (Actor actor: actors) {
+    public Resource getActor(String networkId) {
+        for (Resource actor: actors) {
             if (actor.getNetworkId().equals(networkId) || 
                 actor.getAltNetworkId().equals(networkId))
                 return actor;
@@ -237,8 +237,8 @@ public class ActorList extends ApplicationServerBase {
     }
 
     /** Creates an actor using network Id. */
-    public Actor createActor(TransactionXML transaction, String networkId) {
-        Actor actor = new Actor();
+    public Resource createActor(TransactionXML transaction, String networkId) {
+        Resource actor = new Resource();
         actor.createDefaultOperator(networkId);
         actors.add(actor);
         actor.create(transaction);

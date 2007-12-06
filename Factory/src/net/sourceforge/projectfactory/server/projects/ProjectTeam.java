@@ -26,8 +26,8 @@ $Author: ddlamb_2000 $
 */
 package net.sourceforge.projectfactory.server.projects;
 
-import net.sourceforge.projectfactory.server.actors.Team;
 import net.sourceforge.projectfactory.server.entities.BaseEntity;
+import net.sourceforge.projectfactory.server.resources.Team;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
 

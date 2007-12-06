@@ -26,8 +26,8 @@ $Author: ddlamb_2000 $
 */
 package net.sourceforge.projectfactory.server.projects;
 
-import net.sourceforge.projectfactory.server.actors.Actor;
 import net.sourceforge.projectfactory.server.entities.BaseEntity;
+import net.sourceforge.projectfactory.server.resources.Resource;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
 
@@ -48,7 +48,7 @@ public class Assignment extends BaseEntity {
     public Anonymous anonymous;
 
     /** Actor who is assigned to the task. */
-    public Actor actor;
+    public Resource actor;
 
     /** Indicate the percentage of daily availability for the task. */
     int fte;
@@ -114,10 +114,10 @@ public class Assignment extends BaseEntity {
         }
 
         if (tag.equals("actor")) {
-            actor = (Actor) xmlInEntity(xml, 
+            actor = (Resource) xmlInEntity(xml, 
                                         transaction, 
                                         value, 
-                                        new Actor(), 
+                                        new Resource(), 
                                         transaction.getServer().actors.actors, 
                                         "error:incorrect:assignment:actor", 
                                         plan);

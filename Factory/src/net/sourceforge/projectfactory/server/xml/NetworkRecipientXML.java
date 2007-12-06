@@ -29,8 +29,8 @@ package net.sourceforge.projectfactory.server.xml;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.sourceforge.projectfactory.server.actors.Actor;
-import net.sourceforge.projectfactory.server.actors.EMail;
+import net.sourceforge.projectfactory.server.resources.EMail;
+import net.sourceforge.projectfactory.server.resources.Resource;
 import net.sourceforge.projectfactory.xml.WriterXML;
 
 
@@ -87,7 +87,7 @@ class NetworkRecipientXML extends ReaderServerXML {
 
     /** Ends the tag interpretation. */
     protected void end() {
-        for(Actor actor: server.actors.actors) {
+        for(Resource actor: server.actors.actors) {
             if(actor.matchNetworkRecipient(transaction, 
                                             iid, 
                                             name, 
