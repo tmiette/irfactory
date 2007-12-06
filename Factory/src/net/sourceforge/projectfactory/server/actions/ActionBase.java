@@ -73,7 +73,9 @@ public class ActionBase extends Entity {
         }
         if (tags) xmlEnd(xml);
     }
-
+    
+    
+    
     /** Reads the object from an XML input. */
     public boolean xmlIn(WriterXML xml, TransactionXML transaction, String tag, String value) {
         if (super.xmlIn(xml, transaction, tag, value)) return true;

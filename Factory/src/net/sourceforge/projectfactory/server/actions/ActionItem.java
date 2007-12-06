@@ -1,6 +1,6 @@
 /*
 
-Copyright (c) 2005, 2006 David Lambert
+Copyright (c) 2007 David Lambert
 
 This file is part of Factory.
 
@@ -18,31 +18,43 @@ You should have received a copy of the GNU General Public License
 along with Factory; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-$Source: /cvsroot/projectfactory/development/net/sourceforge/projectfactory/server/actions/ActionItem.java,v $
-$Revision: 1.3 $
+$Source: /cvsroot/projectfactory/development/net/sourceforge/projectfactory/server/actions/ActionItemBase.java,v $
+$Revision: 1.1 $
 $Date: 2007/02/27 22:13:11 $
 $Author: ddlamb_2000 $
 
 */
+
 package net.sourceforge.projectfactory.server.actions;
 
+import net.sourceforge.projectfactory.server.entities.Duration;
 import net.sourceforge.projectfactory.server.projects.Item;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
 
-
-/**
- * Part of the forecast calendar attached to an action,
- * which contains individual and daily information
- * including date, task and assignment.
- * @author David Lambert
- */
-public class ActionItem extends ActionItemBase {
-
+/** 
+  * Part of the forecast calendar attached to an action, 
+  * which contains individual and daily information 
+  * including date, task and assignment.
+  * @author David Lambert
+  */
+public class ActionItem extends Duration {
+    public java.util.Date dateItem;
+    public int completion;
+    public String assigned;
+    
     /** Writes the object as an XML output. */
     public void xmlOut(WriterXML xml, TransactionXML transaction, 
                         boolean tags) {
-        super.xmlOut(xml, transaction, tags);
+    	if (tags) xmlStart(xml, "item");
+        super.xmlOut(xml, transaction, false);
+        if (transaction.isDetail() || transaction.isSave()) {
+            xmlAttribute(xml, "dateitem", dateItem);
+            xmlAttribute(xml, "completion", completion);
+            xmlAttribute(xml, "assigned", assigned);
+        }
+        if (tags) xmlEnd(xml);
+        
         if (transaction.isDetail())
             xmlCalendar(xml, 
                         dateItem, 
@@ -52,5 +64,23 @@ public class ActionItem extends ActionItemBase {
                         duration, 
                         durationType, 
                         completion);
+    }
+    
+    /** Reads the object from an XML input. */
+    public boolean xmlIn(WriterXML xml, TransactionXML transaction, String tag, String value) {
+        if (super.xmlIn(xml, transaction, tag, value)) return true;
+        if (tag.equals("dateitem")) {
+            dateItem = xmlInDate(xml, value);
+            return true;
+        }
+        if (tag.equals("completion")) {
+            completion = xmlInInt(xml, value);
+            return true;
+        }
+        if (tag.equals("assigned")) {
+            assigned = value;
+            return true;
+        }
+        return false;
     }
 }
