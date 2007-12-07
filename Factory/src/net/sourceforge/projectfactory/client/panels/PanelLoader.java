@@ -40,7 +40,7 @@ public class PanelLoader {
         frame.addPanel(new About(frame), "about");
         frame.addPanel(new Action(frame), "action");
         frame.addPanel(new ActionBar(frame), "actionbar");
-        frame.addPanel(new Actor(frame), "actor");
+        frame.addPanel(new Resource(frame), "actor");
         frame.addPanel(new Blank(frame), "blank");
         frame.addPanel(new BusinessProcess(frame), "businessprocess");
         frame.addPanel(new ClassCode(frame), "classcode");

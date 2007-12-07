@@ -64,9 +64,9 @@ import net.sourceforge.projectfactory.client.components.editBoxes.EditBox;
 import net.sourceforge.projectfactory.client.components.editBoxes.EditBoxLookup;
 import net.sourceforge.projectfactory.client.components.tableBoxes.TableBox;
 import net.sourceforge.projectfactory.client.components.tableBoxes.TableBoxLookup;
-import net.sourceforge.projectfactory.client.xml.ImportDataXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
+import net.sourceforge.projectfactory.xml.client.ImportDataXML;
 
 
 /**

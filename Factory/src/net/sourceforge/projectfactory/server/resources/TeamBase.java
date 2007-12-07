@@ -31,8 +31,8 @@ import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.BaseEntityServerXML;
 import net.sourceforge.projectfactory.server.resources.Member;
 import net.sourceforge.projectfactory.server.resources.Resource;
-import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
+import net.sourceforge.projectfactory.xml.server.TransactionXML;
 
 /** 
   * Defines a team with its members.

@@ -63,7 +63,6 @@ import javax.crypto.spec.PBEParameterSpec;
 
 import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.LocalMessage;
-import net.sourceforge.projectfactory.client.xml.ImportListXML;
 import net.sourceforge.projectfactory.server.ApplicationServer;
 import net.sourceforge.projectfactory.server.actions.Action;
 import net.sourceforge.projectfactory.server.actions.Recipient;
@@ -71,12 +70,13 @@ import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.resources.EMail;
 import net.sourceforge.projectfactory.server.resources.Resource;
 import net.sourceforge.projectfactory.server.resources.Server;
-import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.Base64;
 import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.ZipExtractor;
 import net.sourceforge.projectfactory.xml.ZipCompress;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
+import net.sourceforge.projectfactory.xml.client.ImportListXML;
+import net.sourceforge.projectfactory.xml.server.TransactionXML;
 
 
 /**

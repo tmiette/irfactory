@@ -30,7 +30,7 @@ import java.util.List;
 
 import net.sourceforge.projectfactory.server.ApplicationServerBase;
 import net.sourceforge.projectfactory.server.entities.Entity;
-import net.sourceforge.projectfactory.server.xml.TransactionXML;
+import net.sourceforge.projectfactory.xml.server.TransactionXML;
 
 /**
  * XML Server-side parser used to manage objects attached to another element.

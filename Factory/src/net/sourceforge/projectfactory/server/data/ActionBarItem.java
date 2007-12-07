@@ -28,8 +28,8 @@ $Author: ddlamb_2000 $
 package net.sourceforge.projectfactory.server.data;
 
 import net.sourceforge.projectfactory.server.entities.BaseEntity;
-import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
+import net.sourceforge.projectfactory.xml.server.TransactionXML;
 
 /** 
   * Defines a panel attached to a category.

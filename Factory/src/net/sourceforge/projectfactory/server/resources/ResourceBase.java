@@ -32,8 +32,8 @@ import net.sourceforge.projectfactory.server.entities.xml.BaseEntityServerXML;
 import net.sourceforge.projectfactory.server.resources.HolidaySchedule;
 import net.sourceforge.projectfactory.server.resources.Location;
 import net.sourceforge.projectfactory.server.resources.Resource;
-import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
+import net.sourceforge.projectfactory.xml.server.TransactionXML;
 
 /** 
   * Actor definition.

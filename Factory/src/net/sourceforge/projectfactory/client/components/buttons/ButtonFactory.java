@@ -2,7 +2,10 @@ package net.sourceforge.projectfactory.client.components.buttons;
 
 /**This is a method factory which creates different buttons
  * 
- * @author Moreau Alan - Miette Tom - Mouret Sebastien - Pons Julien
+ * @author Moreau Alan
+ * @author Miette Tom
+ * @author Mouret Sebastien
+ * @author Pons Julien
  */
 public class ButtonFactory {
 	

@@ -24,7 +24,7 @@ $Date: 2007/01/31 23:59:25 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.client.xml;
+package net.sourceforge.projectfactory.xml.client;
 
 import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.xml.ReaderXML;

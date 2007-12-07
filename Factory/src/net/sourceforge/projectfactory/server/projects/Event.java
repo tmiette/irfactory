@@ -30,8 +30,8 @@ import java.util.Date;
 
 import net.sourceforge.projectfactory.server.entities.Duration;
 import net.sourceforge.projectfactory.server.resources.Resource;
-import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
+import net.sourceforge.projectfactory.xml.server.TransactionXML;
 
 
 /**
