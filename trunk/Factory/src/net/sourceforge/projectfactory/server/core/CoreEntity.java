@@ -26,7 +26,7 @@ $Author: ddlamb_2000 $
 */
 package net.sourceforge.projectfactory.server.core;
 
-import net.sourceforge.projectfactory.server.xml.TransactionXML;
+import net.sourceforge.projectfactory.xml.server.TransactionXML;
 
 
 /**

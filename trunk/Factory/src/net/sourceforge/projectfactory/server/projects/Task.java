@@ -28,8 +28,8 @@ package net.sourceforge.projectfactory.server.projects;
 
 import net.sourceforge.projectfactory.server.actions.Action;
 import net.sourceforge.projectfactory.server.entities.Entity;
-import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
+import net.sourceforge.projectfactory.xml.server.TransactionXML;
 
 
 /**

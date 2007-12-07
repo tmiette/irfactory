@@ -40,7 +40,7 @@ import net.sourceforge.projectfactory.client.panels.PanelData;
   * Panel used for actor definition, including absences, skills and contacts.
   * @author David Lambert
   */
-public class Actor extends PanelData {
+public class Resource extends PanelData {
     public EditBox position = new EditBox();
     public EditBoxLookup reportsTo = new EditBoxLookup(this, "actor");
     public EditBox phoneNumber = new EditBox();
@@ -78,7 +78,7 @@ public class Actor extends PanelData {
                                 "lead","label:lead",100);
 
     /** Constructor. */
-    public Actor(MainFrame frame) {
+    public Resource(MainFrame frame) {
         super(frame);
         email.setBooleanType(1);
         absence.setDateType(0,this);

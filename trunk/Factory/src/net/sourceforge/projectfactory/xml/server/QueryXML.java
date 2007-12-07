@@ -24,7 +24,7 @@ $Date: 2007/02/26 15:30:44 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.server.xml;
+package net.sourceforge.projectfactory.xml.server;
 
 
 /**

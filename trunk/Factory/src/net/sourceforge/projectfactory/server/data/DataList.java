@@ -38,9 +38,9 @@ import net.sourceforge.projectfactory.server.data.Dictionary;
 import net.sourceforge.projectfactory.server.data.Preference;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.SubEntityServerXML;
-import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
+import net.sourceforge.projectfactory.xml.server.TransactionXML;
 
 
 /**

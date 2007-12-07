@@ -24,7 +24,7 @@ $Date: 2007/02/22 15:37:39 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.client.xml;
+package net.sourceforge.projectfactory.xml.client;
 
 import java.text.ParseException;
 

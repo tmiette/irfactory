@@ -24,7 +24,7 @@ $Date: 2006/12/04 15:31:10 $
 $Author: ddlamb_2000 $
  
 */
-package net.sourceforge.projectfactory.server.xml;
+package net.sourceforge.projectfactory.xml.server;
 
 import net.sourceforge.projectfactory.middleware.Session;
 import net.sourceforge.projectfactory.server.ApplicationServer;

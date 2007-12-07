@@ -24,7 +24,7 @@
  $Author: ddlamb_2000 $
 
  */
-package net.sourceforge.projectfactory.server.xml;
+package net.sourceforge.projectfactory.xml.server;
 
 import java.text.ParseException;
 

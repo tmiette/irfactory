@@ -28,8 +28,8 @@ package net.sourceforge.projectfactory.client.components;
 
 import net.sourceforge.projectfactory.client.MainFrame;
 import net.sourceforge.projectfactory.client.components.tableBoxes.TableBox;
-import net.sourceforge.projectfactory.client.xml.ImportListXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
+import net.sourceforge.projectfactory.xml.client.ImportListXML;
 
 
 /**
