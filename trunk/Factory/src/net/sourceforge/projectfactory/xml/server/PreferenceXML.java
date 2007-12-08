@@ -24,7 +24,7 @@ $Date: 2007/02/27 22:12:04 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.server.xml;
+package net.sourceforge.projectfactory.xml.server;
 
 import net.sourceforge.projectfactory.server.data.Preference;
 import net.sourceforge.projectfactory.server.entities.xml.EntityServerXML;

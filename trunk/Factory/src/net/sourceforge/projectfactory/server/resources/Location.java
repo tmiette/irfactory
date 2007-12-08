@@ -30,8 +30,8 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.TimeZone;
 
-import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
+import net.sourceforge.projectfactory.xml.server.TransactionXML;
 
 
 /**

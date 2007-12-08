@@ -59,9 +59,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 import net.sourceforge.projectfactory.client.MainFrame;
-import net.sourceforge.projectfactory.client.xml.ImportDataXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
+import net.sourceforge.projectfactory.xml.client.ImportDataXML;
 
 
 /**

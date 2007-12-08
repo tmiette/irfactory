@@ -30,8 +30,8 @@ package net.sourceforge.projectfactory.server.actions;
 import net.sourceforge.projectfactory.server.actions.Action;
 import net.sourceforge.projectfactory.server.entities.BaseEntity;
 import net.sourceforge.projectfactory.server.resources.Resource;
-import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
+import net.sourceforge.projectfactory.xml.server.TransactionXML;
 
 /** 
   * Defines an actor as recipient of an action.

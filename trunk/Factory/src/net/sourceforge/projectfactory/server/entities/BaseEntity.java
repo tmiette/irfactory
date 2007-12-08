@@ -31,9 +31,9 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 
-import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
+import net.sourceforge.projectfactory.xml.server.TransactionXML;
 
 
 /**

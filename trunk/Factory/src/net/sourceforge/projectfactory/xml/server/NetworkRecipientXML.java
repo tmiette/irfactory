@@ -24,7 +24,7 @@ $Date: 2007/02/22 15:36:13 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.server.xml;
+package net.sourceforge.projectfactory.xml.server;
 
 import java.util.ArrayList;
 import java.util.List;

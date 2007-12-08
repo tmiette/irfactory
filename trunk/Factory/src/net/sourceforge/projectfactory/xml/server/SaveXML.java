@@ -24,7 +24,7 @@ $Date: 2007/02/07 18:13:14 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.server.xml;
+package net.sourceforge.projectfactory.xml.server;
 
 import java.io.BufferedWriter;
 import java.io.File;

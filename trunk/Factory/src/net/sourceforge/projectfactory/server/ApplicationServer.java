@@ -42,9 +42,9 @@ import net.sourceforge.projectfactory.server.projects.ProjectList;
 import net.sourceforge.projectfactory.server.resources.Resource;
 import net.sourceforge.projectfactory.server.resources.ResourceList;
 import net.sourceforge.projectfactory.server.resources.Server;
-import net.sourceforge.projectfactory.server.xml.QueryXML;
-import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
+import net.sourceforge.projectfactory.xml.server.QueryXML;
+import net.sourceforge.projectfactory.xml.server.TransactionXML;
 
 
 /**

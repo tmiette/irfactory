@@ -36,8 +36,8 @@ import net.sourceforge.projectfactory.server.resources.Member;
 import net.sourceforge.projectfactory.server.resources.Resource;
 import net.sourceforge.projectfactory.server.resources.Skill;
 import net.sourceforge.projectfactory.server.resources.Team;
-import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
+import net.sourceforge.projectfactory.xml.server.TransactionXML;
 
 
 /**
