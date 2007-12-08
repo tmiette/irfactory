@@ -63,6 +63,7 @@ public class ProjectsOrganizer {
             else if(args[i].equalsIgnoreCase("-console")) {
                 showWindow = false;
             }
+            
         }
         try {
             if(showWindow) {
