@@ -84,14 +84,14 @@ import net.sourceforge.projectfactory.client.components.PanelDiagram;
 import net.sourceforge.projectfactory.client.components.ToggleButtonAction;
 import net.sourceforge.projectfactory.client.components.ToggleButtonCategory;
 import net.sourceforge.projectfactory.client.panels.PanelData;
-import net.sourceforge.projectfactory.client.xml.ImportDataXML;
-import net.sourceforge.projectfactory.client.xml.ImportErrXML;
-import net.sourceforge.projectfactory.client.xml.ImportListXML;
-import net.sourceforge.projectfactory.client.xml.ImportPreferenceXML;
-import net.sourceforge.projectfactory.client.xml.ImportSecurityXML;
 import net.sourceforge.projectfactory.middleware.Connection;
 import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
+import net.sourceforge.projectfactory.xml.client.ImportDataXML;
+import net.sourceforge.projectfactory.xml.client.ImportErrXML;
+import net.sourceforge.projectfactory.xml.client.ImportListXML;
+import net.sourceforge.projectfactory.xml.client.ImportPreferenceXML;
+import net.sourceforge.projectfactory.xml.client.ImportSecurityXML;
 
 
 /**

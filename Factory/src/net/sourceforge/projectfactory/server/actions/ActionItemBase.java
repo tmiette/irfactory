@@ -28,8 +28,8 @@ $Author: ddlamb_2000 $
 package net.sourceforge.projectfactory.server.actions;
 
 import net.sourceforge.projectfactory.server.entities.Duration;
-import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
+import net.sourceforge.projectfactory.xml.server.TransactionXML;
 
 /** 
   * Part of the forecast calendar attached to an action, 

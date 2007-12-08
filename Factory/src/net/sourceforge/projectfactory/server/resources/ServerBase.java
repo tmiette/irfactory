@@ -29,8 +29,8 @@ package net.sourceforge.projectfactory.server.resources;
 
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.BaseEntityServerXML;
-import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
+import net.sourceforge.projectfactory.xml.server.TransactionXML;
 
 /** 
   * Defines a remote server.

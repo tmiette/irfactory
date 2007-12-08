@@ -34,9 +34,9 @@ import java.util.List;
 import net.sourceforge.projectfactory.server.entities.DurationCount;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.BaseEntityServerXML;
-import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
+import net.sourceforge.projectfactory.xml.server.TransactionXML;
 
 
 /**

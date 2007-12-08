@@ -24,7 +24,7 @@ $Date: 2006/12/06 09:12:01 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.client.xml;
+package net.sourceforge.projectfactory.xml.client;
 
 import java.util.Date;
 

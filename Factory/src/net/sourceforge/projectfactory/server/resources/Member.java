@@ -28,8 +28,8 @@ package net.sourceforge.projectfactory.server.resources;
 
 import java.util.Date;
 
-import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
+import net.sourceforge.projectfactory.xml.server.TransactionXML;
 
 
 /**

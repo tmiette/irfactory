@@ -31,8 +31,8 @@ import java.util.List;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.projects.Item;
 import net.sourceforge.projectfactory.server.projects.Project;
-import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
+import net.sourceforge.projectfactory.xml.server.TransactionXML;
 
 
 /**

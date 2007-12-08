@@ -29,9 +29,9 @@ package net.sourceforge.projectfactory.server.entities.xml;
 import java.util.List;
 
 import net.sourceforge.projectfactory.server.entities.BaseEntity;
-import net.sourceforge.projectfactory.server.xml.ReaderServerXML;
-import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
+import net.sourceforge.projectfactory.xml.server.ReaderServerXML;
+import net.sourceforge.projectfactory.xml.server.TransactionXML;
 
 
 /**
