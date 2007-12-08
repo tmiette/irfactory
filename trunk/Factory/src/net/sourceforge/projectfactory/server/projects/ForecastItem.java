@@ -28,8 +28,8 @@ package net.sourceforge.projectfactory.server.projects;
 
 import java.util.Date;
 
-import net.sourceforge.projectfactory.server.actors.Actor;
 import net.sourceforge.projectfactory.server.entities.Duration;
+import net.sourceforge.projectfactory.server.resources.Resource;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
 
@@ -72,7 +72,7 @@ public class ForecastItem extends Duration {
     public Forecast forecast;
 
     /** Actor assigned to a task, an event or an absence. */
-    public Actor actor;
+    public Resource actor;
 
     /** Anonymous assigned to a task or an event. */
     public Anonymous anonymous;
@@ -243,10 +243,10 @@ public class ForecastItem extends Duration {
         }
 
         if (tag.equals("actor")) {
-            actor = (Actor) xmlInEntity(xml, 
+            actor = (Resource) xmlInEntity(xml, 
                                         transaction, 
                                         value, 
-                                        new Actor(), 
+                                        new Resource(), 
                                         transaction.getServer().actors.actors);
             return true;
         }

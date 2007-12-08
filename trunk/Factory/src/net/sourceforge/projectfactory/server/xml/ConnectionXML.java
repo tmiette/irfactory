@@ -31,8 +31,8 @@ import java.text.ParseException;
 import java.util.Date;
 
 import net.sourceforge.projectfactory.server.ApplicationServer;
-import net.sourceforge.projectfactory.server.actors.Actor;
 import net.sourceforge.projectfactory.server.data.ActionBar;
+import net.sourceforge.projectfactory.server.resources.Resource;
 import net.sourceforge.projectfactory.xml.WriterXML;
 import net.sourceforge.projectfactory.xml.XMLWrapper;
 
@@ -149,7 +149,7 @@ class ConnectionXML extends ReaderServerXML {
                 return;
             }
 
-            Actor actor = server.actors.getActor(networkId);
+            Resource actor = server.actors.getActor(networkId);
 
             if (actor == null) {
                 ApplicationServer.addMessageDictionary(xml, "ERR", 

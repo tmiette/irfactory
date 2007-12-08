@@ -24,7 +24,7 @@ $Date: 2007/03/18 16:39:42 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.server.actors;
+package net.sourceforge.projectfactory.server.resources;
 
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
@@ -42,7 +42,7 @@ public class HolidaySchedule extends HolidayScheduleBase {
         if (tags) xmlStart(xml, "holidayschedule");
         super.xmlOut(xml, transaction, false);
         if (transaction.isDetail()) {
-            for (Actor other:transaction.getServer().actors.actors) {
+            for (Resource other:transaction.getServer().actors.actors) {
                 if (other.holidaySchedule != null &&
 					other.holidaySchedule.equals(this) && 
 					other.isActive()) {

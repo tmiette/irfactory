@@ -24,7 +24,7 @@ $Date: 2007/03/18 16:39:42 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.server.actors;
+package net.sourceforge.projectfactory.server.resources;
 
 import java.util.Calendar;
 import java.util.List;
@@ -46,7 +46,7 @@ public class Location extends LocationBase {
         if (tags) xmlStart(xml, "location");
         super.xmlOut(xml, transaction, false);
         if (transaction.isDetail()) {
-            for (Actor other:transaction.getServer().actors.actors) {
+            for (Resource other:transaction.getServer().actors.actors) {
                 if (other.location != null &&
 					other.location.equals(this) && 
 					other.isActive()) {

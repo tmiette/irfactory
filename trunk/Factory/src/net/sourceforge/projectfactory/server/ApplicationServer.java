@@ -34,14 +34,14 @@ import net.sourceforge.projectfactory.AboutProjectsOrganizer;
 import net.sourceforge.projectfactory.middleware.Session;
 import net.sourceforge.projectfactory.server.ApplicationServerBase;
 import net.sourceforge.projectfactory.server.actions.ActionList;
-import net.sourceforge.projectfactory.server.actors.Actor;
-import net.sourceforge.projectfactory.server.actors.ActorList;
-import net.sourceforge.projectfactory.server.actors.Server;
 import net.sourceforge.projectfactory.server.core.CoreList;
 import net.sourceforge.projectfactory.server.data.DataList;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.SubEntityServerXML;
 import net.sourceforge.projectfactory.server.projects.ProjectList;
+import net.sourceforge.projectfactory.server.resources.Resource;
+import net.sourceforge.projectfactory.server.resources.ResourceList;
+import net.sourceforge.projectfactory.server.resources.Server;
 import net.sourceforge.projectfactory.server.xml.QueryXML;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
@@ -55,13 +55,13 @@ import net.sourceforge.projectfactory.xml.WriterXML;
 public class ApplicationServer extends ApplicationServerBase {
 
     /** Operator, owner or current user of the server. */
-    private Actor operator;
+    private Resource operator;
 
     /** Local server. */
     private Server localhost;
 
     /** Actor Server. */
-    public ActorList actors = new ActorList(this);
+    public ResourceList actors = new ResourceList(this);
 
     /** Project Server. */
     public ProjectList projects = new ProjectList(this);
@@ -244,12 +244,12 @@ public class ApplicationServer extends ApplicationServerBase {
     }
 
     /** Returns operator. */
-    public Actor getOperator() {
+    public Resource getOperator() {
         return operator;
     }
 
     /** Defines operator. This action is readonly. */
-    public void setOperator(Actor operator) {
+    public void setOperator(Resource operator) {
         if (this.operator == null)
             this.operator = operator;
     }

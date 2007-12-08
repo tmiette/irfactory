@@ -28,13 +28,13 @@ package net.sourceforge.projectfactory.server.actions;
 
 import java.util.List;
 
-import net.sourceforge.projectfactory.server.actors.Actor;
-import net.sourceforge.projectfactory.server.actors.Member;
-import net.sourceforge.projectfactory.server.actors.Team;
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.projects.Forecast;
 import net.sourceforge.projectfactory.server.projects.ForecastItem;
 import net.sourceforge.projectfactory.server.projects.Plan;
+import net.sourceforge.projectfactory.server.resources.Member;
+import net.sourceforge.projectfactory.server.resources.Resource;
+import net.sourceforge.projectfactory.server.resources.Team;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
 
@@ -240,7 +240,7 @@ public class Action extends ActionBase implements Comparable {
     }
 
     /** Indicates if the action is for the actor. */
-    public boolean isForActor(TransactionXML transaction, Actor actor) {
+    public boolean isForActor(TransactionXML transaction, Resource actor) {
         for (Recipient recipient: recipients) {
             if (recipient.actor == actor)
                 return true;
@@ -249,7 +249,7 @@ public class Action extends ActionBase implements Comparable {
     }
 
     /** Indicates if the action comes from  the actor. */
-    public boolean isFromActor(Actor actor) {
+    public boolean isFromActor(Resource actor) {
         for (Recipient recipient: recipients) {
             if (recipient.actor == actor && 
 					getUpdatedBy().equals(actor.getName()))
@@ -259,7 +259,7 @@ public class Action extends ActionBase implements Comparable {
     }
 
     /** Indicates if the action is for the team members of actor. */
-    public boolean isForActorMembers(TransactionXML transaction, Actor actor) {
+    public boolean isForActorMembers(TransactionXML transaction, Resource actor) {
         for (Team team: transaction.getServer().actors.teams) {
             if (team.isMember(actor)) {
                 for(Member member:team.members) {
