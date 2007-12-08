@@ -67,10 +67,10 @@ import net.sourceforge.projectfactory.client.xml.ImportListXML;
 import net.sourceforge.projectfactory.server.ApplicationServer;
 import net.sourceforge.projectfactory.server.actions.Action;
 import net.sourceforge.projectfactory.server.actions.Recipient;
-import net.sourceforge.projectfactory.server.actors.Actor;
-import net.sourceforge.projectfactory.server.actors.EMail;
-import net.sourceforge.projectfactory.server.actors.Server;
 import net.sourceforge.projectfactory.server.entities.Entity;
+import net.sourceforge.projectfactory.server.resources.EMail;
+import net.sourceforge.projectfactory.server.resources.Resource;
+import net.sourceforge.projectfactory.server.resources.Server;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.Base64;
 import net.sourceforge.projectfactory.xml.WriterXML;
@@ -1035,7 +1035,7 @@ public class Connection {
 		}
 		
 		/** Creates an email based on action. */
-		private boolean smtp(Actor sender, Action action) throws IOException {
+		private boolean smtp(Resource sender, Action action) throws IOException {
 			synchronized (action) {
 				String from = "";
 				String fromAddress = "";
@@ -1134,7 +1134,7 @@ public class Connection {
 		}
 
 		/** Creates emails based on pending actions. */
-		private int smtp(Actor sender) throws IOException {
+		private int smtp(Resource sender) throws IOException {
 			int count = 0;
 			for(Action action: localServer.actions.actions) {
 				if(action.isActive() && 
@@ -1155,7 +1155,7 @@ public class Connection {
 		}
 		
 		/** Sends emails. */
-		private void smtp(Actor sender, Server server) {
+		private void smtp(Resource sender, Server server) {
 			if(!server.activeOutMail ||
                 server.outMailServer == null ||
 				server.outMailServer.length() == 0 ||
@@ -1446,7 +1446,7 @@ public class Connection {
 			while (errors < 6) {
 				try {
 					Server server = localServer.getServer("localhost"); 
-					Actor sender = localSession.getOperator();
+					Resource sender = localSession.getOperator();
 						
 					try {
 						Thread.sleep(30 * 1000);

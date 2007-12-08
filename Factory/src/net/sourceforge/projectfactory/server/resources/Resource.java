@@ -24,7 +24,7 @@ $Date: 2007/02/27 22:11:53 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.server.actors;
+package net.sourceforge.projectfactory.server.resources;
 
 import java.util.List;
 
@@ -39,7 +39,7 @@ import net.sourceforge.projectfactory.xml.WriterXML;
  * Actor of the system, who may be member of a team.
  * @author David Lambert
  */
-public class Actor extends ActorBase {
+public class Resource extends ResourceBase {
 
     /** Writes the object as an XML output. */
     public void xmlOut(WriterXML xml, TransactionXML transaction, 
@@ -55,7 +55,7 @@ public class Actor extends ActorBase {
                             absence.durationType, 100);
             }
 
-            for (Actor other: transaction.getServer().actors.actors) {
+            for (Resource other: transaction.getServer().actors.actors) {
                 if (other.reportsTo != null &&
                         other.reportsTo.equals(this) && 
                         other.isActive()) {
@@ -118,10 +118,10 @@ public class Actor extends ActorBase {
             return true;
 
         if (tag.equals("reportsto")) {
-            reportsTo = (Actor) xmlInEntityCreate(xml, 
+            reportsTo = (Resource) xmlInEntityCreate(xml, 
                                         transaction, 
                                         value, 
-                                        new Actor(), 
+                                        new Resource(), 
                                         transaction.getServer().actors.actors, 
                                         "error:incorrect:reportsto", 
                                         this);
@@ -190,7 +190,7 @@ public class Actor extends ActorBase {
     }
 
     /** Returns true if the actor is in the same team as another. */
-    public boolean isInSameTeam(TransactionXML transaction, Actor actor) {
+    public boolean isInSameTeam(TransactionXML transaction, Resource actor) {
         for (Team team: transaction.getServer().actors.teams) {
             if (team.isActive() && team.isMember(actor) && team.isMember(this)) 
                 return true;
@@ -277,7 +277,7 @@ public class Actor extends ActorBase {
 
     /** Controls the actor is identified in the recipient. 
      *  Updates iid if it matches. */
-    public boolean matchNetworkRecipient(TransactionXML transaction, Actor actor) {
+    public boolean matchNetworkRecipient(TransactionXML transaction, Resource actor) {
         return matchNetworkRecipient(transaction, 
                                         actor.getIid(), 
                                         actor.name, 
@@ -293,7 +293,7 @@ public class Actor extends ActorBase {
                                     List list) {
         // Look for duplicates
         for(int i=0 ; i<list.size() ; i++) {
-            Actor actor = (Actor) list.get(i);
+            Resource actor = (Resource) list.get(i);
             if(actor != this && matchNetworkRecipient(transaction, actor)) {
                 xmlWarning(xml, "warning:duplicate", actor.getName());
                 list.remove(i);

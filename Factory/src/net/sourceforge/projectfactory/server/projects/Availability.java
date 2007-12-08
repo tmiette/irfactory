@@ -29,8 +29,8 @@ package net.sourceforge.projectfactory.server.projects;
 import java.util.Calendar;
 import java.util.Date;
 
-import net.sourceforge.projectfactory.server.actors.Actor;
 import net.sourceforge.projectfactory.server.entities.BaseEntity;
+import net.sourceforge.projectfactory.server.resources.Resource;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
 
@@ -51,7 +51,7 @@ public class Availability extends BaseEntity {
     private Date to;
 
     /** Actor who is associated to the event. */
-    private Actor actor;
+    private Resource actor;
 
     /** Defines Monday as a working day. */
     private boolean monday;
@@ -116,10 +116,10 @@ public class Availability extends BaseEntity {
         }
 
         if (tag.equals("actor")) {
-            actor = (Actor) xmlInEntity(xml, 
+            actor = (Resource) xmlInEntity(xml, 
                                         transaction, 
                                         value, 
-                                        new Actor(), 
+                                        new Resource(), 
                                         transaction.getServer().actors.actors, 
                                         "error:incorrect:availability:actor", 
                                         project);
@@ -193,7 +193,7 @@ public class Availability extends BaseEntity {
     }
 
     /** Indicates if the availability is defined for the given date. */
-    boolean isDateInRange(Actor actor, Date date) {
+    boolean isDateInRange(Resource actor, Date date) {
         if (this.actor != actor)
             return false;
         if (date == null)

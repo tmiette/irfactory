@@ -25,7 +25,7 @@ $Author: ddlamb_2000 $
 
 */
 
-package net.sourceforge.projectfactory.server.actors;
+package net.sourceforge.projectfactory.server.resources;
 
 import net.sourceforge.projectfactory.server.entities.Entity;
 import net.sourceforge.projectfactory.server.entities.xml.BaseEntityServerXML;

@@ -27,7 +27,7 @@ $Author: ddlamb_2000 $
 package net.sourceforge.projectfactory.middleware;
 
 import net.sourceforge.projectfactory.server.ApplicationServer;
-import net.sourceforge.projectfactory.server.actors.Actor;
+import net.sourceforge.projectfactory.server.resources.Resource;
 import net.sourceforge.projectfactory.xml.WriterXML;
 
 
@@ -51,7 +51,7 @@ public class Session {
     public char attributes;
 
     /** Operator, owner or current user of the server. */
-    private Actor operator;
+    private Resource operator;
 
     /** Operating system. */
     private String os;
@@ -87,7 +87,7 @@ public class Session {
     }
 
     /** Returns operator. */
-    public Actor getOperator() {
+    public Resource getOperator() {
         return operator != null ? operator : server.getOperator();
     }
 
@@ -136,7 +136,7 @@ public class Session {
 
     /** Defines operator.
 	 *	This action can be executed only once. */
-    public void setOperator(String networkId, Actor operator, String os, 
+    public void setOperator(String networkId, Resource operator, String os, 
                             String build) {
         if (remote && this.operator == null) {
             this.operator = operator;

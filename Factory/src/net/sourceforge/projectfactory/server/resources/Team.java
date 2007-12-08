@@ -24,7 +24,7 @@ $Date: 2007/03/18 16:39:42 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.server.actors;
+package net.sourceforge.projectfactory.server.resources;
 
 import java.util.List;
 
@@ -98,7 +98,7 @@ public class Team extends TeamBase {
 	}
 
     /** Returns true if the actor is member of the team. */
-    public boolean isMember(Actor actor) {
+    public boolean isMember(Resource actor) {
         if (lead != null && lead.equals(actor)) 
             return true;
 

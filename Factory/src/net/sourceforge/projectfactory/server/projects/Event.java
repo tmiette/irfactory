@@ -28,8 +28,8 @@ package net.sourceforge.projectfactory.server.projects;
 
 import java.util.Date;
 
-import net.sourceforge.projectfactory.server.actors.Actor;
 import net.sourceforge.projectfactory.server.entities.Duration;
+import net.sourceforge.projectfactory.server.resources.Resource;
 import net.sourceforge.projectfactory.server.xml.TransactionXML;
 import net.sourceforge.projectfactory.xml.WriterXML;
 
@@ -47,7 +47,7 @@ public class Event extends Duration {
     Date event;
 
     /** Actor who is associated to the event. */
-    public Actor actor;
+    public Resource actor;
 
     /** Constructor. */
     public Event(Plan plan) {
@@ -84,10 +84,10 @@ public class Event extends Duration {
         }
 
         if (tag.equals("actor")) {
-            actor = (Actor) xmlInEntity(xml, 
+            actor = (Resource) xmlInEntity(xml, 
                                         transaction, 
                                         value, 
-                                        new Actor(), 
+                                        new Resource(), 
                                         transaction.getServer().actors.actors, 
                                         "error:incorrect:event:actor", 
                                         plan);

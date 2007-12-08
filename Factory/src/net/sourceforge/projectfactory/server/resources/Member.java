@@ -24,7 +24,7 @@ $Date: 2007/03/18 16:39:42 $
 $Author: ddlamb_2000 $
 
 */
-package net.sourceforge.projectfactory.server.actors;
+package net.sourceforge.projectfactory.server.resources;
 
 import java.util.Date;
 
