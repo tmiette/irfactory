@@ -142,14 +142,15 @@ public class WriterXML {
         try {
             out.startDocument();
             err.startDocument();
+            /*this.document = document;
             if (document != null) {
-                this.document = document;
+                
                 out.startElement("", "", document, null);
                 err.startElement("", "", ERRORS, null);
                 if (indent)
                     out.comment(AboutProjectsOrganizer.getBuild().toCharArray(), 0, 
                                 AboutProjectsOrganizer.getBuild().length());
-            }
+            }*/
         } catch (SAXException e) {
             e.printStackTrace();
         }
