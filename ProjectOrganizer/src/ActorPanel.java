@@ -7,11 +7,13 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
 import fr.umlv.projectOrganizer.Encodable;
+import fr.umlv.projectOrganizer.xml.XMLEncoder;
 
 
 public class ActorPanel {
@@ -21,8 +23,11 @@ public class ActorPanel {
 	@Encodable(getFieldEncodeName="nom")
 	private JTextField nom = new JTextField(70);
 	
+	@Encodable(getFieldEncodeName="test")
+	private String test = "sqdsq";
+	
 	@Encodable(getFieldEncodeName="actif")
-	private JCheckBox actif = new JCheckBox("Actif");
+	public JCheckBox actif = new JCheckBox("Actif");
 	
 	@Encodable(getFieldEncodeName="position")
 	private JTextField position = new JTextField(70);
@@ -30,8 +35,8 @@ public class ActorPanel {
 	@Encodable(getFieldEncodeName="reportsTo")
 	private JTextField reportsTo = new JTextField(70);
 	
-	@Encodable(getFieldEncodeName="description")
-	private JTextArea description = new JTextArea(5,70);
+	//@Encodable(getFieldEncodeName="description")
+	//private JTextArea description = new JTextArea(5,70);
 	
 	
 	public ActorPanel() {
@@ -48,7 +53,7 @@ public class ActorPanel {
 		addLine(1, null, actif);
 		addLine(2, new JLabel("Position :"), position);
 		addLine(3, new JLabel("Reports to :"), reportsTo);
-		addLine(4, new JLabel("Description :"), description);
+		//addLine(4, new JLabel("Description :"), description);
 	}
 	
 	/**
@@ -72,12 +77,34 @@ public class ActorPanel {
 		}
 	}
 	
+	
 	public static void main(String[] args) {
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setSize(800, 500);
 		ActorPanel actor = new ActorPanel();
-		frame.getContentPane().add(actor.getPanel());
+		JTabbedPane tabPane = new JTabbedPane();
+		tabPane.add("Actor", actor.getPanel());
+		frame.getContentPane().add(tabPane);
+		
+		try {
+			XMLEncoder.encode(ActorPanel.class, actor);
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchFieldException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		frame.setVisible(true);
 	}
 }
