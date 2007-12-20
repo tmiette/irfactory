@@ -7,23 +7,39 @@ import javax.swing.JCheckBox;
 import javax.swing.text.JTextComponent;
 
 import fr.umlv.projectOrganizer.Encodable;
+import fr.umlv.projectOrganizer.ui.PanelData;
 
 public class XMLEncoder {
 	
-	public static WriterXML encode(Class<?> c, String id) throws IllegalArgumentException, IllegalAccessException, SecurityException, NoSuchFieldException, InstantiationException{
+	public static WriterXML encode(PanelData d, String id){
 		WriterXML writer = new WriterXML();
-		Object clazz = c.newInstance();
+		Object clazz = d;
+		
 		writer = writer.xmlStart("actor");
-		for(Field field : c.getDeclaredFields()){
+		for(Field field : d.getClass().getDeclaredFields()){
 			field.setAccessible(true);
 			for(Annotation a : field.getAnnotations()){
 				if(a.annotationType() == Encodable.class){
 					if(JCheckBox.class.isAssignableFrom(field.getType())){
-						JCheckBox ch = (JCheckBox)field.get(clazz);
+						JCheckBox ch;
+						try {
+							ch = (JCheckBox)field.get(clazz);
+						} catch (IllegalArgumentException e) {
+							throw new AssertionError();
+						} catch (IllegalAccessException e) {
+							throw new AssertionError();
+						}
 						writer = writer.xmlAttribute(((Encodable)a).getFieldEncodeName(), ch.isSelected() ? "y" :  "n");
 					}
 					else if(JTextComponent.class.isAssignableFrom(field.getType())){
-						JTextComponent jt = (JTextComponent)field.get(clazz);
+						JTextComponent jt;
+						try {
+							jt = (JTextComponent)field.get(clazz);
+						} catch (IllegalArgumentException e) {
+							throw new AssertionError();
+						} catch (IllegalAccessException e) {
+							throw new AssertionError();
+						}
 						writer = writer.xmlAttribute(((Encodable)a).getFieldEncodeName(), jt.getText());
 					}
 				}
@@ -34,7 +50,7 @@ public class XMLEncoder {
 		return writer;
 	}
 	
-	public static void decode(final Class<?> c, final String id){
+	public static boolean decode(final Class<?> c, final String id){
 		ReaderXML xmlReader = new ReaderXML(){
 			private boolean ok;
 			private Object clazz;
@@ -105,6 +121,9 @@ public class XMLEncoder {
 		    	ok = false;
 		    }
 		};
+
+		
+		return true;
 	}
 	
 	
