@@ -1,6 +1,8 @@
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
@@ -40,6 +42,7 @@ public class ActorPanel {
 	
 	
 	public ActorPanel() {
+		actif.setSelected(true);
 		initPanel();
 	}
 
@@ -88,7 +91,7 @@ public class ActorPanel {
 		frame.getContentPane().add(tabPane);
 		
 		try {
-			XMLEncoder.encode(ActorPanel.class, actor);
+			XMLEncoder.encode(ActorPanel.class);
 		} catch (IllegalArgumentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -105,6 +108,7 @@ public class ActorPanel {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		frame.setVisible(true);
 	}
 }
