@@ -7,6 +7,8 @@ import javax.swing.JCheckBox;
 import javax.swing.text.JTextComponent;
 
 import fr.umlv.projectOrganizer.Encodable;
+import fr.umlv.projectOrganizer.ui.ActorPanel;
+
 import fr.umlv.projectOrganizer.ui.PanelData;
 
 public class XMLEncoder {
@@ -14,7 +16,6 @@ public class XMLEncoder {
 	public static WriterXML encode(PanelData d, String id){
 		WriterXML writer = new WriterXML();
 		Object clazz = d;
-		
 		writer = writer.xmlStart("actor");
 		for(Field field : d.getClass().getDeclaredFields()){
 			field.setAccessible(true);
@@ -59,6 +60,7 @@ public class XMLEncoder {
 			 * associated value on the fly. */
 			@Override
 			protected void startsTag(String tag) {
+
 				if(tag.equals(c.getName()+":"+id)){
 					ok = true;
 					try {
@@ -122,7 +124,9 @@ public class XMLEncoder {
 		    }
 		};
 
-		
+		//WriterXML writer = new WriterXML();
+		//xmlReader.xmlIn("po.xml", writer, false);
+		//System.out.println(writer);
 		return true;
 	}
 	
