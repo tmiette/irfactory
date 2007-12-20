@@ -155,6 +155,11 @@ public abstract class ReaderXML {
       * associated value on the fly. */
     protected void startsTag(String tag) {
     }
+    
+    /** Interprets a that starts an element. Should be
+     * overriden by any derived class thats need to interpret a tag with
+     * associated value on the fly. */
+   abstract protected void endDocument();
 
     /** Interprets a tag (defined in the class attributes 'tag'), with the
       * associated text, provided as an argument of the method. Should be
