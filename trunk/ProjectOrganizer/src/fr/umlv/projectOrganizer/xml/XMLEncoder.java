@@ -50,7 +50,7 @@ public class XMLEncoder {
 		writer.xmlEnd();
 	    
 		try {
-			updateFile("file/actors.xml", writer, id);
+			updateFile("files/po.xml", writer.toString().split("\\?>")[1], id);
 		} catch (IOException e) {
 			throw new AssertionError();
 		}
@@ -141,7 +141,7 @@ public class XMLEncoder {
 		return true;
 	}
 	
-	private static void updateFile(final String filename, final WriterXML writerRecord, final String id) throws IOException{
+	private static void updateFile(final String filename, final String record, final String id) throws IOException{
 		
 		
 		ReaderXML xmlReader = new ReaderXML(){
@@ -193,7 +193,7 @@ public class XMLEncoder {
 		    @Override
 		    protected void endDocument() {
 		    	try {
-					fileWriter.write(writerRecord.toString());
+					fileWriter.write(record);
 				} catch (IOException e) {
 					throw new AssertionError();
 				}
