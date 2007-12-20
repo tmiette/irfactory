@@ -115,7 +115,7 @@ class HandlerXML extends DefaultHandler {
     /** Receives notification of the end of the document. */
     public void endDocument() {
         if (reader != null) {
-            reader.end();
+            reader.endDocument();
         }
     }
 
