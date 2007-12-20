@@ -1,3 +1,5 @@
+package fr.umlv.projectOrganizer.ui;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -5,6 +7,10 @@ import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListCellRenderer;
@@ -21,20 +27,20 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ListModel;
 import javax.swing.WindowConstants;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 import fr.umlv.projectOrganizer.Encodable;
+import fr.umlv.projectOrganizer.xml.XMLEncoder;
 
 
-public class ActorPanel {
+public class ActorPanel implements PanelData {
 	
 	private JPanel actor = new JPanel(new GridBagLayout());
 	
 	@Encodable(getFieldEncodeName="nom")
 	private JTextField nom = new JTextField(70);
-	
-	@Encodable(getFieldEncodeName="test")
-	private String test = "sqdsq";
-	
+
 	@Encodable(getFieldEncodeName="actif")
 	public JCheckBox actif = new JCheckBox("Actif");
 	
@@ -97,25 +103,44 @@ public class ActorPanel {
 		// Main panel
 		JPanel mainPanel = new JPanel(new BorderLayout());
 		
+		// Actor panel
+		final ActorPanel actor = new ActorPanel();
+		JTabbedPane tabPane = new JTabbedPane();
+		tabPane.add("Actor", actor.getPanel());
+		
+		
 		// Panel Action
 		JPanel action = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		JButton load = new JButton("Load");
 		JButton save = new JButton("Save");
 		action.add(load);
 		action.add(save);
+		load.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				//	
+			}
+		});
+		save.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				XMLEncoder.encode(actor, "ikd");
+			}
+		});
 		
 		// Actor list
 		final DefaultListModel model = new DefaultListModel();
 		
 		Object data[] = new Object[]{"Actor1","Actor2"};
-		JList list = new JList(data); //data has type Object[]
+		final JList list = new JList(data); //data has type Object[]
 		list.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		
-		// Actor panel
-		ActorPanel actor = new ActorPanel();
-		JTabbedPane tabPane = new JTabbedPane();
-		tabPane.add("Actor", actor.getPanel());
-		
+		list.addListSelectionListener(new ListSelectionListener(){
+			public void valueChanged(ListSelectionEvent e) {
+				Object value = list.getSelectedValue();
+				System.out.println("Selection : "+value);
+				XMLEncoder.decode(actor.getClass(), (String)value);
+			}
+		});
+	
 		// Create UI
 		mainPanel.add(action, BorderLayout.NORTH);
 		mainPanel.add(list, BorderLayout.WEST);
