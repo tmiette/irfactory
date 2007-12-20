@@ -6,21 +6,21 @@ import java.lang.reflect.Field;
 import javax.swing.JCheckBox;
 import javax.swing.text.JTextComponent;
 
-import fr.umlv.projectOrganizer.Encodable;
+import fr.umlv.projectOrganizer.XmlEncodable;
 import fr.umlv.projectOrganizer.ui.ActorPanel;
 
-import fr.umlv.projectOrganizer.ui.PanelData;
+import fr.umlv.projectOrganizer.ui.Encodable;
 
 public class XMLEncoder {
 	
-	public static WriterXML encode(PanelData d, String id){
+	public static WriterXML encode(Encodable d, String id){
 		WriterXML writer = new WriterXML();
 		Object clazz = d;
 		writer = writer.xmlStart("actor");
 		for(Field field : d.getClass().getDeclaredFields()){
 			field.setAccessible(true);
 			for(Annotation a : field.getAnnotations()){
-				if(a.annotationType() == Encodable.class){
+				if(a.annotationType() == XmlEncodable.class){
 					if(JCheckBox.class.isAssignableFrom(field.getType())){
 						JCheckBox ch;
 						try {
@@ -30,7 +30,7 @@ public class XMLEncoder {
 						} catch (IllegalAccessException e) {
 							throw new AssertionError();
 						}
-						writer = writer.xmlAttribute(((Encodable)a).getFieldEncodeName(), ch.isSelected() ? "y" :  "n");
+						writer = writer.xmlAttribute(((XmlEncodable)a).getFieldEncodeName(), ch.isSelected() ? "y" :  "n");
 					}
 					else if(JTextComponent.class.isAssignableFrom(field.getType())){
 						JTextComponent jt;
@@ -41,7 +41,7 @@ public class XMLEncoder {
 						} catch (IllegalAccessException e) {
 							throw new AssertionError();
 						}
-						writer = writer.xmlAttribute(((Encodable)a).getFieldEncodeName(), jt.getText());
+						writer = writer.xmlAttribute(((XmlEncodable)a).getFieldEncodeName(), jt.getText());
 					}
 				}
 			}

@@ -5,6 +5,6 @@ package fr.umlv.projectOrganizer.ui;
  * @author Moreau Alan
  * @author Pons Julien
  */
-public interface PanelData {
+public interface Encodable {
 	
 }

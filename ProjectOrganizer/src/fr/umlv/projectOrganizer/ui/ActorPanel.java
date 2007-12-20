@@ -30,24 +30,24 @@ import javax.swing.WindowConstants;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import fr.umlv.projectOrganizer.Encodable;
+import fr.umlv.projectOrganizer.XmlEncodable;
 import fr.umlv.projectOrganizer.xml.XMLEncoder;
 
 
-public class ActorPanel implements PanelData {
+public class ActorPanel implements Encodable {
 	
 	private JPanel actor = new JPanel(new GridBagLayout());
 	
-	@Encodable(getFieldEncodeName="nom")
+	@XmlEncodable(getFieldEncodeName="nom")
 	private JTextField nom = new JTextField(70);
 
-	@Encodable(getFieldEncodeName="actif")
+	@XmlEncodable(getFieldEncodeName="actif")
 	public JCheckBox actif = new JCheckBox("Actif");
 	
-	@Encodable(getFieldEncodeName="position")
+	@XmlEncodable(getFieldEncodeName="position")
 	private JTextField position = new JTextField(70);
 	
-	@Encodable(getFieldEncodeName="reportsTo")
+	@XmlEncodable(getFieldEncodeName="reportsTo")
 	private JTextField reportsTo = new JTextField(70);
 	
 	//@Encodable(getFieldEncodeName="description")
