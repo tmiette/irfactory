@@ -10,7 +10,7 @@ import fr.umlv.projectOrganizer.Encodable;
 
 public class XMLEncoder {
 	
-	public static WriterXML encode(Class<?> c) throws IllegalArgumentException, IllegalAccessException, SecurityException, NoSuchFieldException, InstantiationException{
+	public static WriterXML encode(Class<?> c, String id) throws IllegalArgumentException, IllegalAccessException, SecurityException, NoSuchFieldException, InstantiationException{
 		WriterXML writer = new WriterXML();
 		Object clazz = c.newInstance();
 		writer = writer.xmlStart("actor");
@@ -34,13 +34,25 @@ public class XMLEncoder {
 		return writer;
 	}
 	
-	public static ReaderXML decode(Class<?> c, String file){
+	public static void decode(final Class<?> c, final String id){
 		ReaderXML xmlReader = new ReaderXML(){
+			private boolean ok;
+			private Object clazz;
 			/** Interprets a that starts an element. Should be
 			 * overriden by any derived class thats need to interpret a tag with
 			 * associated value on the fly. */
 			@Override
 			protected void startsTag(String tag) {
+				if(tag.equals(c.getName()+":"+id)){
+					ok = true;
+					try {
+						this.clazz = c.newInstance();
+					} catch (InstantiationException e) {
+						throw new AssertionError();
+					} catch (IllegalAccessException e) {
+						throw new AssertionError();
+					}
+				}
 			}
 			
 			 /** Interprets a tag (defined in the class attributes 'tag'), with the
@@ -49,7 +61,40 @@ public class XMLEncoder {
 		      * associated value on the fly. */
 		    @Override
 			protected void getTag(String tag, String value) {
-		        
+		        if(ok){
+		        	try {
+						Field field = c.getField(tag);
+						if(JCheckBox.class.isAssignableFrom(field.getType())){
+							try {
+								JCheckBox ch = new JCheckBox();
+								if(value.equals("y")) ch.setSelected(true); 
+								else{ ch.setSelected(false);} 
+								
+								field.set(clazz, ch);
+							} catch (IllegalArgumentException e) {
+								throw new AssertionError();
+							} catch (IllegalAccessException e) {
+								throw new AssertionError();
+							}
+							
+						}
+						else if(JTextComponent.class.isAssignableFrom(field.getType())){
+							try {
+								JTextComponent jt = (JTextComponent)field.get(clazz);
+								jt.setText(value);
+								field.set(clazz, jt);
+							} catch (IllegalArgumentException e) {
+								throw new AssertionError();
+							} catch (IllegalAccessException e) {
+								throw new AssertionError();
+							}
+						}
+					} catch (SecurityException e) {
+						throw new AssertionError();
+					} catch (NoSuchFieldException e) {
+						throw new AssertionError();
+					}
+		        }
 		    }
 			
 		    /** Ends the interpretation of a tag (defined in the class attributes 'tag').
@@ -57,10 +102,10 @@ public class XMLEncoder {
 		      * the fly. */
 		    @Override
 		    protected void end() {
+		    	ok = false;
 		    }
-
 		};
-		
-		return null;
 	}
+	
+	
 }
