@@ -24,7 +24,7 @@ public class XMLEncoder {
 	 * @param encodableUI an encodable swing interface
 	 * @return the xml encoded string
 	 */
-	public static WriterXML encode(Encodable encodableUI){
+	public static boolean encode(Encodable encodableUI){
 		WriterXML writer = new WriterXML();
 		Object clazz = encodableUI;
 		writer = writer.xmlStart(encodableUI.getClass()+"");
@@ -57,9 +57,12 @@ public class XMLEncoder {
 				}
 			}
 		}
-		writer.xmlEnd();
-		System.out.println(writer);
-		return writer;
+		try {
+			updateFile(xmlFile, writer.toString().split("\\?>")[1], encodableUI.getClass()+"");
+		} catch (IOException e) {
+			throw new AssertionError();
+		}
+		return true;
 	}
 	
 	/**
