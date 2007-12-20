@@ -43,6 +43,7 @@ public class ActorPanel {
 	
 	public ActorPanel() {
 		actif.setSelected(true);
+		position.setText("salut");
 		initPanel();
 	}
 
