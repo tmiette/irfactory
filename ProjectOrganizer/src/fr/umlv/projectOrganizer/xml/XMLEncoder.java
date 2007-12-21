@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 import javax.swing.JCheckBox;
 import javax.swing.text.JTextComponent;
@@ -60,7 +61,7 @@ public class XMLEncoder {
 		writer.xmlEnd();
 
 		try {
-			updateFile("files/test.xml", writer.toString().split("\\?>")[1], encodableUI.getClass()+id);
+			updateFile(xmlFile, writer.toString().split("\\?>")[1],  encodableUI.getClass().getName()+":"+id);
 		} catch (IOException e) {
 			throw new AssertionError();
 		}
@@ -80,7 +81,7 @@ public class XMLEncoder {
 			 * associated value on the fly. */
 			@Override
 			protected void startsTag(String tag) {
-				if(tag.equals(encodableUI.getClass()+id)){
+				if(tag.equals(encodableUI.getClass().getName()+":"+id)){
 					ok = true;
 				}
 			}
@@ -103,11 +104,9 @@ public class XMLEncoder {
 		        						try {
 		        							ch = (JCheckBox)field.get(encodableUI);
 		        							if (value.equals("y")){
-		        								System.out.println("true");
 		        								ch.setSelected(true);
 		        							}
 		        							else {
-		        								System.out.println("false");
 		        								ch.setSelected(false);
 		        							}
 		        						} catch (IllegalArgumentException e) {
@@ -120,6 +119,7 @@ public class XMLEncoder {
 		        						JTextComponent jt;
 		        						try {
 		        							jt = (JTextComponent)field.get(encodableUI);
+		        							System.out.println("Setting text: "+value);
 		        							jt.setText(value);
 		        						} catch (IllegalArgumentException e) {
 		        							throw new AssertionError();
@@ -160,12 +160,58 @@ public class XMLEncoder {
 	
 	
 	
-	public static void getValuesAsListFromXML(){
+	public static ArrayList<String> getValuesAsListFromXML(final Encodable encodableUI, final String needle){
 		
+		final ArrayList<String> values = new ArrayList<String>();
+		
+		ReaderXML xmlReader = new ReaderXML(){
+			private boolean ok = false;
+			private String identifier;
+			
+			@Override
+			protected void startsTag(String tag) {
+				String clazzIdentifier[] = tag.split(":");
+				if(clazzIdentifier[0].equals(encodableUI.getClass().getName())){
+					ok = true;
+					identifier = clazzIdentifier[1];
+				}
+			}
+			
+			 /** Interprets a tag (defined in the class attributes 'tag'), with the
+		      * associated text, provided as an argument of the method. Should be
+		      * overriden by any derived class thats need to interpret a tag with
+		      * associated value on the fly. */
+		    @Override
+			protected void getTag(String tag, String value) {
+		    	if (tag.equals(needle)){
+		    		values.add(value+":"+identifier);
+		    		System.out.println("Added : "+values);
+		    	}
+		    }
+			
+		    /** Ends the interpretation of a tag (defined in the class attributes 'tag').
+		      * Should be overriden by any derived class that needs to interpret a tag on
+		      * the fly. */
+		    @Override
+		    protected void end() {
+		    	ok = false;
+		    }
+		    
+			@Override
+			protected void endDocument() {
+				// Nothing
+			}
+		};
+		WriterXML writer = new WriterXML();
+		try {
+			xmlReader.xmlIn(new BufferedReader(new FileReader(new File(xmlFile))), writer, false);
+		} catch (FileNotFoundException e) {
+			System.err.println("No such file ");
+		}
+		return values;
 	}
 
 	private static void updateFile(final String filename, final String record, final String id) throws IOException{
-		
 		
 		ReaderXML xmlReader = new ReaderXML(){
 			private boolean finded;

@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListCellRenderer;
@@ -118,26 +119,34 @@ public class ActorPanel implements Encodable {
 		load.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				//	
+				
 			}
 		});
 		save.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				XMLEncoder.encode(actor, "ikd");
+				XMLEncoder.encode(actor, "id");
 			}
 		});
 		
 		// Actor list
 		final DefaultListModel model = new DefaultListModel();
-		
-		Object data[] = new Object[]{"Actor1","Actor2"};
-		final JList list = new JList(data); //data has type Object[]
+		// Init list
+		ArrayList<String> data = XMLEncoder.getValuesAsListFromXML(actor, "nom");
+
+		// Test
+		final JList list = new JList(data.toArray()); //data has type Object[]
 		list.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		list.addListSelectionListener(new ListSelectionListener(){
+			
+			private int oldSelectedIndex = -1;
+			
 			public void valueChanged(ListSelectionEvent e) {
-				Object value = list.getSelectedValue();
-				System.out.println("Selection : "+value);
-				//XMLEncoder.decode(actor.getClass(), (String)value);
+				if (oldSelectedIndex != list.getSelectedIndex()){
+					String value = (String)list.getSelectedValue();
+					System.out.println("Retrieve :"+value.split(":")[1]);
+					XMLEncoder.decode(actor, value.split(":")[1]);
+				}
+				oldSelectedIndex = list.getSelectedIndex();
 			}
 		});
 	
