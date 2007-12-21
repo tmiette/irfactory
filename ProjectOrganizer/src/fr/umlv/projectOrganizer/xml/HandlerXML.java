@@ -96,20 +96,7 @@ class HandlerXML extends DefaultHandler {
 
     /** Receives notification of the end of an element. */
     public void endElement(String uri, String sName, String qName) {
-        if (reader != null) {
-            reader.decLevel();
-            if (characters.length() > 0)
-                reader.getTag(lastTag, characters);
-            characters = "";
-            if (readers.size() > 0 && reader.getLevel() < 0) {
-                reader.end();
-                readers.remove(reader);
-                reader = (ReaderXML)readers.get(readers.size() - 1);
-                if (reader != null)
-                    reader.decLevel();
-            }
-        }
-
+    	reader.end();
     }
 
     /** Receives notification of the end of the document. */
