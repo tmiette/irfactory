@@ -29,8 +29,8 @@ public class PanelActor implements Encodable {
 	@XmlEncodable(getFieldEncodeName="reportsTo")
 	private JTextField reportsTo = new JTextField(70);
 
-//	@Encodable(getFieldEncodeName="description")
-//	private JTextArea description = new JTextArea(5,70);
+	@XmlEncodable(getFieldEncodeName="description")
+	private JTextArea description = new JTextArea(5,70);
 
 
 	public PanelActor() {
@@ -49,7 +49,7 @@ public class PanelActor implements Encodable {
 		addLine(1, null, actif);
 		addLine(2, new JLabel("Position :"), position);
 		addLine(3, new JLabel("Reports to :"), reportsTo);
-		//addLine(4, new JLabel("Description :"), description);
+		addLine(4, new JLabel("Description :"), description);
 	}
 
 	/**
