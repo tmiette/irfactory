@@ -17,11 +17,12 @@ import fr.umlv.projectOrganizer.XmlEncodable;
 import fr.umlv.projectOrganizer.ui.Encodable;
 
 public class XMLEncoder {
-
+	
 	private final static String xmlFile = "./files/po.xml";
-
+	
 	/**
-	 * Encode an encodable object
+	 * Encode an encodable object. This function writes an encodable object into a xmlfile.
+	 * Only the annoted field "xmlEncodable" will be written into the xml.
 	 * @param encodableUI an encodable swing interface
 	 * @return the xml encoded string
 	 */
@@ -70,7 +71,7 @@ public class XMLEncoder {
 	}
 
 	/**
-	 * Decode an object from xml
+	 * Decode an object from xml. The decoding reads an xmlfile and assigns the read values to the UI panel.
 	 * @param encodableUI an encodable class
 	 */
 	public static void decode(final Encodable encodableUI, final String id){
@@ -83,6 +84,7 @@ public class XMLEncoder {
 			@Override
 			protected void startsTag(String tag) {
 				if(tag.equals(encodableUI.getClass().getName()+":"+id)){
+					System.out.println("here");
 					ok = true;
 				}
 			}
@@ -165,8 +167,14 @@ public class XMLEncoder {
 	}
 
 
-
-	public static HashMap<String, String> getValuesAsListFromXML(final Encodable encodableUI, final String needle){
+	
+	/**
+	 * Retrieves all the tags that are named "needle" in xml file. All tags returned are paired with their identifier
+	 * @param encodableUI the object class from which data have to be retrieved
+	 * @param needle the tag to search for
+	 * @return a hashmap with the tag value as key and the corresponding id as a value
+	 */
+	public static HashMap<String, String> getXMLValues(final Encodable encodableUI, final String needle){
 
 		final HashMap<String, String> values = new HashMap<String, String>();
 
@@ -224,8 +232,19 @@ public class XMLEncoder {
 		return values;
 	}
 
+	
+	/**
+	 * Updates the xml database from a UI panel. This functions checks whether the record already exist, if so, then the record is modified in the xml,
+	 * otherwise the function creates a new record into the xml.
+	 * @param filename the filename to write into
+	 * @param record the record to update
+	 * @param id the record's identifier
+	 * @throws IOException
+	 */
 	private static void updateFile(final String filename, final String record, final String id) throws IOException{
-		final FileOutputStream filestream = new FileOutputStream(new File("./files/test.xml"));
+		
+		final File tmp = File.createTempFile("potmp", ".xml");
+		final FileOutputStream filestream = new FileOutputStream(tmp);
 	
 		ReaderXML xmlReader = new ReaderXML(){
 			private boolean finded;
@@ -279,7 +298,7 @@ public class XMLEncoder {
 				try {
 					filestream.write(record.getBytes());
 					filestream.write("</projectorganizer>".getBytes());
-					new File("./files/test.xml").renameTo(new File(xmlFile));
+					tmp.renameTo(new File(xmlFile));
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

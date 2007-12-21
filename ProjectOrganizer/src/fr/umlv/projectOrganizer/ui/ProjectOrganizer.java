@@ -33,67 +33,9 @@ import fr.umlv.projectOrganizer.XmlEncodable;
 import fr.umlv.projectOrganizer.xml.XMLEncoder;
 
 
-public class ActorPanel implements Encodable {
+public class ProjectOrganizer {
 
-	private JPanel actor = new JPanel(new GridBagLayout());
-
-	@XmlEncodable(getFieldEncodeName="nom")
-	private JTextField nom = new JTextField(70);
-
-	@XmlEncodable(getFieldEncodeName="actif")
-	public JCheckBox actif = new JCheckBox("Actif");
-
-	@XmlEncodable(getFieldEncodeName="position")
-	private JTextField position = new JTextField(70);
-
-	@XmlEncodable(getFieldEncodeName="reportsTo")
-	private JTextField reportsTo = new JTextField(70);
-
-	//@Encodable(getFieldEncodeName="description")
-	//private JTextArea description = new JTextArea(5,70);
-
-
-	public ActorPanel() {
-		actif.setSelected(true);
-		position.setText("salut");
-		initPanel();
-	}
-
-	public JPanel getPanel(){
-		return actor;
-	}
-
-
-	public void initPanel(){
-		addLine(0, new JLabel("Nom :"), nom);
-		addLine(1, null, actif);
-		addLine(2, new JLabel("Position :"), position);
-		addLine(3, new JLabel("Reports to :"), reportsTo);
-		//addLine(4, new JLabel("Description :"), description);
-	}
-
-	/**
-	 * Adds a new line to current panel
-	 * @param lineNumber
-	 * @param leftcomponent
-	 * @param rightcomponent
-	 */
-	public void addLine(int lineNumber, JComponent leftcomponent, JComponent rightcomponent){
-		if (leftcomponent != null){
-			GridBagConstraints gbc = new GridBagConstraints(0, lineNumber, 1, 1, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0,0,0,0), 0, 0);
-			actor.add(leftcomponent, gbc);
-		}
-		if (rightcomponent != null){
-			GridBagConstraints gbc;
-			if (rightcomponent instanceof JTextArea)
-				gbc = new GridBagConstraints(1, lineNumber, 2, 1, 1.0, 0.5, GridBagConstraints.WEST, GridBagConstraints.BOTH, new Insets(5,5,0,0), 0, 0);
-			else
-				gbc = new GridBagConstraints(1, lineNumber, 2, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(5,5,0,0), 0, 0);
-			actor.add(rightcomponent, gbc);
-		}
-	}
-
-
+	
 	public static void main(String[] args) {
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -106,12 +48,12 @@ public class ActorPanel implements Encodable {
 		JPanel mainPanel = new JPanel(new BorderLayout());
 
 		// Actor panel
-		final ActorPanel actor = new ActorPanel();
+		final PanelActor actor = new PanelActor();
 		JTabbedPane tabPane = new JTabbedPane();
 		tabPane.add("Actor", actor.getPanel());
 
 		// Init actor list
-		final HashMap<String, String> data = XMLEncoder.getValuesAsListFromXML(actor, "nom");
+		final HashMap<String, String> data = XMLEncoder.getXMLValues(actor, "nom");
 		final JList list = new JList(); 
 		list.setPrototypeCellValue(new String("prototypelenght"));
 		refreshList(list, data);
@@ -126,14 +68,14 @@ public class ActorPanel implements Encodable {
 		newActor.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				XMLEncoder.encode(actor, UUID.randomUUID().toString());
-				HashMap<String, String> newlist = XMLEncoder.getValuesAsListFromXML(actor, "nom");
+				HashMap<String, String> newlist = XMLEncoder.getXMLValues(actor, "nom");
 				refreshList(list, newlist);
 			}
 		});
 		saveActor.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				XMLEncoder.encode(actor, identifier.toString());
-				HashMap<String, String> newlist = XMLEncoder.getValuesAsListFromXML(actor, "nom");
+				HashMap<String, String> newlist = XMLEncoder.getXMLValues(actor, "nom");
 				refreshList(list, newlist);
 			}
 		});
@@ -151,7 +93,7 @@ public class ActorPanel implements Encodable {
 					String id = data.get(value);
 					identifier.append(id);
 					XMLEncoder.decode(actor, id);
-					HashMap<String, String> newEntry = XMLEncoder.getValuesAsListFromXML(actor, "nom");
+					HashMap<String, String> newEntry = XMLEncoder.getXMLValues(actor, "nom");
 					for(Entry<String, String> entry:newEntry.entrySet()){
 						if (data.get(entry.getKey()) == null){
 							data.put(entry.getKey(), entry.getValue());
