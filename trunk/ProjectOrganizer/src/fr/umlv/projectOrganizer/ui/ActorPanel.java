@@ -113,6 +113,7 @@ public class ActorPanel implements Encodable {
 		// Init actor list
 		final HashMap<String, String> data = XMLEncoder.getValuesAsListFromXML(actor, "nom");
 		final JList list = new JList(); 
+		list.setPrototypeCellValue(new String("prototypelenght"));
 		refreshList(list, data);
 
 		// Panel Action
