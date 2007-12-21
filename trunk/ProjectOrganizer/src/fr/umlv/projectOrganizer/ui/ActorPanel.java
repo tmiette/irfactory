@@ -101,6 +101,9 @@ public class ActorPanel implements Encodable {
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setSize(800, 500); 
 		
+		// currentIdentifier
+		final StringBuilder identifier = new StringBuilder();
+		
 		// Main panel
 		JPanel mainPanel = new JPanel(new BorderLayout());
 		
@@ -124,7 +127,7 @@ public class ActorPanel implements Encodable {
 		});
 		save.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				XMLEncoder.encode(actor, "id");
+				XMLEncoder.encode(actor, identifier.toString());
 			}
 		});
 		
@@ -135,6 +138,7 @@ public class ActorPanel implements Encodable {
 
 		// Test
 		final JList list = new JList(data.toArray()); //data has type Object[]
+		list.setSelectedIndex(0);
 		list.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		list.addListSelectionListener(new ListSelectionListener(){
 			
@@ -143,7 +147,10 @@ public class ActorPanel implements Encodable {
 			public void valueChanged(ListSelectionEvent e) {
 				if (oldSelectedIndex != list.getSelectedIndex()){
 					String value = (String)list.getSelectedValue();
-					System.out.println("Retrieve :"+value.split(":")[1]);
+					//System.out.println("Retrieve :"+value.split(":")[1]);
+					identifier.replace(0, identifier.length(), "");
+					identifier.append(value.split(":")[1]);
+					System.out.println(identifier);
 					XMLEncoder.decode(actor, value.split(":")[1]);
 				}
 				oldSelectedIndex = list.getSelectedIndex();

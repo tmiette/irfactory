@@ -30,6 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
 
@@ -64,6 +65,12 @@ class HandlerXML extends DefaultHandler {
     void newReader(ReaderXML newReader) {
         this.reader = newReader;
         readers.add(reader);
+    }
+    
+    @Override
+    public void startDocument() throws SAXException {
+    	if (reader != null)
+    		reader.startDocument();
     }
 
     /** Receives notification of the start of an element. */
