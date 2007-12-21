@@ -1,5 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<projectOrganizer>
-<fr.umlv.projectOrganizer.ui.ActorPanel:alan actif="y" position="salut"/>
-<fr.umlv.projectOrganizer.ui.ActorPanel:julien actif="y" position="salut"/>
-</projectOrganizer>
+<?xml version="1.0" encoding="UTF-8"?><projectorganizer><fr.umlv.projectOrganizer.ui.ActorPanel:id2 actif="y" nom="Alan" position="none"/><fr.umlv.projectOrganizer.ui.ActorPanel:id3 actif="n" nom="Toto" position="none"/><fr.umlv.projectOrganizer.ui.ActorPanel:id1 nom="Aude" actif="n" position="none"/></projectorganizer>
