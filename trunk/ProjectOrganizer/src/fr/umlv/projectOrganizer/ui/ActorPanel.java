@@ -137,7 +137,7 @@ public class ActorPanel implements Encodable {
 			public void valueChanged(ListSelectionEvent e) {
 				Object value = list.getSelectedValue();
 				System.out.println("Selection : "+value);
-				XMLEncoder.decode(actor.getClass(), (String)value);
+				//XMLEncoder.decode(actor.getClass(), (String)value);
 			}
 		});
 	

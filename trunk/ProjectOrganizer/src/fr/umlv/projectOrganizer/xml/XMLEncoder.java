@@ -24,10 +24,10 @@ public class XMLEncoder {
 	 * @param encodableUI an encodable swing interface
 	 * @return the xml encoded string
 	 */
-	public static boolean encode(Encodable encodableUI){
+	public static boolean encode(Encodable encodableUI, String id){
 		WriterXML writer = new WriterXML();
 		Object clazz = encodableUI;
-		writer = writer.xmlStart(encodableUI.getClass()+"");
+		writer = writer.xmlStart(encodableUI.getClass().getName()+":"+id);
 		for(Field field : encodableUI.getClass().getDeclaredFields()){
 			field.setAccessible(true);
 			for(Annotation a : field.getAnnotations()){
@@ -57,8 +57,10 @@ public class XMLEncoder {
 				}
 			}
 		}
+		writer.xmlEnd();
+
 		try {
-			updateFile(xmlFile, writer.toString().split("\\?>")[1], encodableUI.getClass()+"");
+			updateFile("files/test.xml", writer.toString().split("\\?>")[1], encodableUI.getClass()+id);
 		} catch (IOException e) {
 			throw new AssertionError();
 		}
@@ -69,7 +71,7 @@ public class XMLEncoder {
 	 * Decode an object from xml
 	 * @param encodableUI an encodable class
 	 */
-	public static void decode(final Encodable encodableUI){
+	public static void decode(final Encodable encodableUI, final String id){
 		ReaderXML xmlReader = new ReaderXML(){
 			private boolean ok;
 			
@@ -78,7 +80,7 @@ public class XMLEncoder {
 			 * associated value on the fly. */
 			@Override
 			protected void startsTag(String tag) {
-				if(tag.equals(encodableUI.getClass())){
+				if(tag.equals(encodableUI.getClass()+id)){
 					ok = true;
 				}
 			}
@@ -167,7 +169,6 @@ public class XMLEncoder {
 		
 		ReaderXML xmlReader = new ReaderXML(){
 			private boolean finded;
-			private Object clazz;
 			private WriterXML writer;
 			final FileWriter fileWriter = new FileWriter(new File(filename));
 			
@@ -193,6 +194,7 @@ public class XMLEncoder {
 		    @Override
 			protected void getTag(String tag, String value) {
 		    	if(!finded){
+		    		System.out.println("Non trouvé");
 		    		writer = writer.xmlAttribute(tag, value);
 		    	}
 		    }
@@ -202,9 +204,11 @@ public class XMLEncoder {
 		      * the fly. */
 		    @Override
 		    protected void end() {
+		    	System.out.println("totot");
 		    	finded = false;
 		    	try {
 					fileWriter.write(writer.toString());
+					fileWriter.flush();
 				} catch (IOException e) {
 					throw new AssertionError();
 				}
@@ -215,10 +219,17 @@ public class XMLEncoder {
 		    protected void endDocument() {
 		    	try {
 					fileWriter.write(record);
+					fileWriter.flush();
+					System.out.println("Fin doc");
 				} catch (IOException e) {
 					throw new AssertionError();
 				}
 		    }
 		};
+		try{
+			xmlReader.xmlIn(new BufferedReader(new FileReader(new File(xmlFile))), new WriterXML(), false);
+		} catch (FileNotFoundException e) {
+			System.err.println("No such file ");
+		}
 	}
 }

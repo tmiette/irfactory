@@ -1,2 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><actor:ikd actif="n" position="dsds"/>
-
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<projectOrganizer>
+<fr.umlv.projectOrganizer.ui.ActorPanel:alan actif="y" position="salut"/>
+<fr.umlv.projectOrganizer.ui.ActorPanel:julien actif="y" position="salut"/>
+</projectOrganizer>
