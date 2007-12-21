@@ -34,6 +34,7 @@ public class XMLEncoder {
 			field.setAccessible(true);
 			for(Annotation a : field.getAnnotations()){
 				if(a.annotationType() == XmlEncodable.class){
+					//System.out.println("TAG: "+((XmlEncodable)a).getFieldEncodeName());
 					if(JCheckBox.class.isAssignableFrom(field.getType())){
 						JCheckBox ch;
 						try {
@@ -47,6 +48,7 @@ public class XMLEncoder {
 					}
 					else if(JTextComponent.class.isAssignableFrom(field.getType())){
 						JTextComponent jt;
+						//System.out.println("TAG dans Jtextcomponent: "+((XmlEncodable)a).getFieldEncodeName());
 						try {
 							jt = (JTextComponent)field.get(clazz);
 						} catch (IllegalArgumentException e) {
@@ -60,7 +62,7 @@ public class XMLEncoder {
 			}
 		}
 		writer.xmlEnd();
-
+		System.out.println(writer);
 		try {
 			updateFile(xmlFile, writer.toString().split("\\?>")[1],  encodableUI.getClass().getName()+":"+id);
 		} catch (IOException e) {
@@ -84,7 +86,7 @@ public class XMLEncoder {
 			@Override
 			protected void startsTag(String tag) {
 				if(tag.equals(encodableUI.getClass().getName()+":"+id)){
-					System.out.println("here");
+					//System.out.println("here");
 					ok = true;
 				}
 			}
@@ -95,7 +97,8 @@ public class XMLEncoder {
 			 * associated value on the fly. */
 			@Override
 			protected void getTag(String tag, String value) {
-				if(ok){System.out.println(id);
+				if(ok){
+					//System.out.println(id);
 					for(Field field : encodableUI.getClass().getDeclaredFields()){
 						field.setAccessible(true);
 						try {
@@ -121,8 +124,8 @@ public class XMLEncoder {
 									JTextComponent jt;
 									try {
 										jt = (JTextComponent)field.get(encodableUI);
-										//System.out.println("Setting text: "+value);
 										jt.setText(value);
+										System.out.println("ID : "+id+" value :"+value);
 									} catch (IllegalArgumentException e) {
 										throw new AssertionError();
 									} catch (IllegalAccessException e) {
@@ -255,8 +258,10 @@ public class XMLEncoder {
 			 * associated value on the fly. */
 			@Override
 			protected void startsTag(String tag) {
+				System.out.println("Start tag : "+tag);
 				if(tag.equals(id)){
 					finded = true;
+					
 				}
 				else if (!tag.equals("projectorganizer")){
 					writer = new WriterXML();
@@ -270,8 +275,9 @@ public class XMLEncoder {
 			 * associated value on the fly. */
 			@Override
 			protected void getTag(String tag, String value) {
+				System.out.println("Get tag: "+tag+" = "+value);
 				if(!finded){
-					//System.out.println("N'a pas changé : "+tag);
+					//System.out.println("N'a pas changé : "+tag+" : "+value);
 					writer = writer.xmlAttribute(tag, value);
 				}
 			}
@@ -286,6 +292,7 @@ public class XMLEncoder {
 						writer.xmlEnd();
 						filestream.write(writer.toString().split("\\?>")[1].getBytes());
 						writer = null;
+						finded = false;
 					} catch (IOException e) {
 						throw new AssertionError();
 					}
@@ -298,6 +305,7 @@ public class XMLEncoder {
 				try {
 					filestream.write(record.getBytes());
 					filestream.write("</projectorganizer>".getBytes());
+					
 					tmp.renameTo(new File(xmlFile));
 				} catch (IOException e) {
 					// TODO Auto-generated catch block

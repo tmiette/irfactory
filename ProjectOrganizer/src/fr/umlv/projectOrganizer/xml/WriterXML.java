@@ -270,7 +270,7 @@ public class WriterXML {
     public final WriterXML xmlAttribute(String tag, String value) {
         if (out == null)
             return this;
-        if (value != null && attributesImpl != null && value.length() > 0){
+        if (value != null && attributesImpl != null){
         	attributesImpl.addAttribute("", "", tag, "CDATA", value);
         }
         return this;
