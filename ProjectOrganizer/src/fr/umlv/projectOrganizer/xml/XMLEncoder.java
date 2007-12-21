@@ -8,11 +8,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.swing.JCheckBox;
 import javax.swing.text.JTextComponent;
 
+import fr.umlv.projectOrganizer.Pair;
 import fr.umlv.projectOrganizer.XmlEncodable;
 import fr.umlv.projectOrganizer.ui.Encodable;
 
@@ -93,8 +94,7 @@ public class XMLEncoder {
 			 * associated value on the fly. */
 			@Override
 			protected void getTag(String tag, String value) {
-				if(ok){
-					//System.out.println(tag);
+				if(ok){System.out.println(id);
 					for(Field field : encodableUI.getClass().getDeclaredFields()){
 						field.setAccessible(true);
 						try {
@@ -167,9 +167,9 @@ public class XMLEncoder {
 
 
 
-	public static ArrayList<String> getValuesAsListFromXML(final Encodable encodableUI, final String needle){
+	public static HashMap<String, String> getValuesAsListFromXML(final Encodable encodableUI, final String needle){
 
-		final ArrayList<String> values = new ArrayList<String>();
+		final HashMap<String, String> values = new HashMap<String, String>();
 
 		ReaderXML xmlReader = new ReaderXML(){
 			private boolean ok = false;
@@ -191,7 +191,7 @@ public class XMLEncoder {
 			@Override
 			protected void getTag(String tag, String value) {
 				if (tag.equals(needle)){
-					values.add(value+":"+identifier);
+					values.put(value,identifier);
 					//System.out.println("Added : "+values);
 				}
 			}
@@ -215,6 +215,7 @@ public class XMLEncoder {
 				
 			}
 		};
+		
 		WriterXML writer = new WriterXML();
 		try {
 			xmlReader.xmlIn(new BufferedReader(new FileReader(new File(xmlFile))), writer, false);
