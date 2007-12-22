@@ -1,4 +1,4 @@
-package fr.umlv.projectOrganizer.ui;
+
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -27,8 +27,9 @@ import javax.swing.WindowConstants;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import fr.umlv.projectOrganizer.XmlEncodable;
+import fr.umlv.projectOrganizer.ui.PanelActor;
 import fr.umlv.projectOrganizer.xml.XMLEncoder;
+import fr.umlv.projectOrganizer.xml.XmlEncodable;
 
 
 public class ProjectOrganizer {
