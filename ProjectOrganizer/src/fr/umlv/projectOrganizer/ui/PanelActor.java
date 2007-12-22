@@ -10,7 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import fr.umlv.projectOrganizer.XmlEncodable;
+
+import fr.umlv.projectOrganizer.xml.XmlEncodable;
 
 
 public class PanelActor implements Encodable {

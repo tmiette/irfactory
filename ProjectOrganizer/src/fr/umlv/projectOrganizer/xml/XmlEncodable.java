@@ -1,4 +1,4 @@
-package fr.umlv.projectOrganizer;
+package fr.umlv.projectOrganizer.xml;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -13,7 +13,6 @@ import java.util.HashMap;
 import javax.swing.JCheckBox;
 import javax.swing.text.JTextComponent;
 
-import fr.umlv.projectOrganizer.XmlEncodable;
 import fr.umlv.projectOrganizer.ui.Encodable;
 
 public class XMLEncoder {
