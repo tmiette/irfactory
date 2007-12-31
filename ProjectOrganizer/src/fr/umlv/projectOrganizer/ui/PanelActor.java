@@ -13,7 +13,12 @@ import javax.swing.JTextField;
 
 import fr.umlv.projectOrganizer.xml.XmlEncodable;
 
-
+/**This panel defines an Actor and its attributes 
+ * 
+ * @author Moreau Alan
+ * @author Pons Julien
+ *
+ */
 public class PanelActor implements Encodable {
 
 	private JPanel actor = new JPanel(new GridBagLayout());
