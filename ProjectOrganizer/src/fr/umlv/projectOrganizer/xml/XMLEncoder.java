@@ -15,6 +15,15 @@ import javax.swing.text.JTextComponent;
 
 import fr.umlv.projectOrganizer.ui.Encodable;
 
+/**
+ * Contains methods which can encode encodable classes into XML.
+ * 
+ * @author Moreau Alan
+ * @author Pons Julien
+ * @author Mouret Sebastien
+ * @author Miette Tom
+ * 
+ */
 public class XMLEncoder {
 
 	private final static String xmlFile = "./files/po.xml";
@@ -175,17 +184,20 @@ public class XMLEncoder {
 			 */
 			@Override
 			protected void end() {
+
 				ok = false;
 			}
 
 			@Override
 			protected void endDocument() {
-				//do nothing
+
+				// do nothing
 			}
 
 			@Override
 			protected void startDocument() {
-				//do nothing
+
+				// do nothing
 			}
 		};
 

@@ -17,6 +17,8 @@ import fr.umlv.projectOrganizer.xml.XmlEncodable;
  * 
  * @author Moreau Alan
  * @author Pons Julien
+ * @author Mouret Sebastien
+ * @author Miette Tom
  *
  */
 public class PanelActor implements Encodable {
