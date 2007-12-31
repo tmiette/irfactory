@@ -175,21 +175,17 @@ public class XMLEncoder {
 			 */
 			@Override
 			protected void end() {
-
 				ok = false;
 			}
 
 			@Override
 			protected void endDocument() {
-
-				// Nothing
+				//do nothing
 			}
 
 			@Override
 			protected void startDocument() {
-
-				// TODO Auto-generated method stub
-
+				//do nothing
 			}
 		};
 

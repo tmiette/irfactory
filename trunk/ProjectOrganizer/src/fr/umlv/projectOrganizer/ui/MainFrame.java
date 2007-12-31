@@ -23,6 +23,13 @@ import javax.swing.event.ListSelectionListener;
 
 import fr.umlv.projectOrganizer.xml.XMLEncoder;
 
+/**
+ * This is the main Frame of the application
+ * It contains the different components such as JPanel or JList
+ *  
+ * @author Moreau Alan
+ * @author Pons Julien
+ */
 public class MainFrame {
 
 	private final JFrame mainFrame;
@@ -122,7 +129,7 @@ public class MainFrame {
 	}
 
 	/**
-	 * Refreshs the list containing actors
+	 * Refreshes the list containing actors
 	 * @param list oldlist
 	 * @param newlist
 	 */
@@ -133,9 +140,12 @@ public class MainFrame {
 			listModel.addElement(entry.getKey());
 		}
 	}
-
+	
+	/**Retrieves the Main Frame.
+	 * 
+	 * @return JFrame the main Frame
+	 */
 	public JFrame getMainFrame() {
-
 		return this.mainFrame;
 	}
 }
