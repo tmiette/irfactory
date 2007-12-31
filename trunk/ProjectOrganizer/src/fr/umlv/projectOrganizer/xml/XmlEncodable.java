@@ -9,6 +9,8 @@ import java.lang.annotation.Target;
  * 
  * @author Moreau Alan
  * @author Pons Julien
+ * @author Mouret Sebastien
+ * @author Miette Tom
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)

@@ -4,6 +4,8 @@ package fr.umlv.projectOrganizer.ui;
  * 
  * @author Moreau Alan
  * @author Pons Julien
+ * @author Mouret Sebastien
+ * @author Miette Tom
  */
 public interface Encodable {
 	

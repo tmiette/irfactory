@@ -29,6 +29,8 @@ import fr.umlv.projectOrganizer.xml.XMLEncoder;
  *  
  * @author Moreau Alan
  * @author Pons Julien
+ * @author Mouret Sebastien
+ * @author Miette Tom
  */
 public class MainFrame {
 
